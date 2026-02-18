@@ -1,8 +1,4 @@
----
-title: "Course Blueprint: PSYC 7750G"
----
-
-# Reproducible Psychological Research {.unnumbered}
+# Course Blueprint {.unnumbered}
 
 **Semester:** Fall 2025\
 **Instructor:** Christian A. Martinez\
