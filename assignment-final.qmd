@@ -1,0 +1,274 @@
+---
+title: "Final Project: NYC Open Data 2026 Proposal"
+subtitle: "Independent Civic Research • Reproducible Workflow • Public-Facing Communication"
+---
+
+# Overview {#sec-final}
+
+Your final project for this course is to design and conduct an **original research project** using NYC Open Data.
+
+Your project will be written as a fully reproducible **Quarto document** and structured as though it were ready for public presentation at **NYC Open Data Week**.
+
+This assignment is designed to:
+
+- Give you experience designing an independent research project  
+- Provide hands-on work with open civic datasets  
+- Produce a polished portfolio-ready artifact  
+- Strengthen your reproducible workflow and data communication skills  
+- Prepare you to submit to NYC Open Data Week 2026 if you choose  
+
+By the end of this course, you will have created a professional-quality research document suitable for public presentation.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this project, you will be able to:
+
+- Formulate a clear, data-driven research question
+- Identify and justify appropriate open datasets
+- Build a fully reproducible data workflow
+- Clean, wrangle, and analyze civic data responsibly
+- Create clear and meaningful visualizations
+- Write for a public-facing, non-technical audience
+- Connect your work to broader open data principles
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This final project synthesizes concepts in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Project Requirements
+
+------------------------------------------------------------------------
+
+## 1. Dataset Selection
+
+You must:
+
+- Select **at least one dataset** from the NYC Open Data Portal (preferred).
+- Other publicly available civic datasets regarding NYC are acceptable **with instructor approval**.
+- Clearly cite and hyperlink all datasets used.
+- Justify why the dataset is appropriate for your research question.
+
+Your project should demonstrate thoughtful dataset selection rather than convenience-based selection.
+
+------------------------------------------------------------------------
+
+## 2. Reproducible Analysis (Quarto)
+
+Your final submission must:
+
+- Be written in **Quarto (.qmd)** format.
+- Include narrative, code, output, and interpretation in one document.
+- Knit/render successfully without errors.
+- Suppress unnecessary warnings and messages in the final output.
+
+Your workflow should clearly demonstrate:
+
+- Data import  
+- Cleaning and transformation  
+- Analysis aligned with your research question  
+- Transparent decision-making  
+
+------------------------------------------------------------------------
+
+## 3. Proposal-Style Structure
+
+Your document should be structured as if it were an Open Data Week proposal.
+
+Include the following sections:
+
+### A. Title & Event Description
+
+- A clear, compelling project title.
+- A 1–2 paragraph overview explaining:
+  - Your research question
+  - Why it matters
+  - What attendees would learn
+
+Write this as though it were submitted to Open Data Week.
+
+------------------------------------------------------------------------
+
+### B. Dataset(s) Used
+
+- Describe the dataset(s).
+- Provide proper citations and links.
+- Explain how the dataset(s) connect to your research question.
+
+------------------------------------------------------------------------
+
+### C. Analysis
+
+- Present a reproducible workflow from raw data to results.
+- Clearly explain:
+  - What you cleaned and why
+  - What transformations were performed
+  - What analyses were conducted
+- Align every analysis step with your research question.
+
+------------------------------------------------------------------------
+
+### D. Visualizations
+
+Include **at least two** clear, well-labeled figures or tables created in R.
+
+All visualizations must:
+
+- Include titles
+- Include axis labels
+- Include captions
+- Be readable in a public-facing setting
+
+Explain what each visualization shows and why it matters.
+
+------------------------------------------------------------------------
+
+### E. Audience & Relevance
+
+Identify:
+
+- Who would care about this project?
+  - New Yorkers?
+  - Policymakers?
+  - Journalists?
+  - Community organizations?
+- Why does this research matter in a civic context?
+
+------------------------------------------------------------------------
+
+### F. Connection to Open Data
+
+Explain how your project:
+
+- Demonstrates transparency
+- Highlights accessibility of public data
+- Shows the value of open civic information
+- Reflects open data principles
+
+------------------------------------------------------------------------
+
+# Length & Formatting Requirements
+
+- Minimum **500 words of written narrative** (excluding code).
+- Figures and tables must be clearly labeled.
+- Citations must be properly formatted.
+- The document must render cleanly to HTML or PDF.
+
+Submit both:
+
+- Your `.qmd` file  
+- Your knitted HTML or PDF output  
+
+------------------------------------------------------------------------
+
+# Class Presentation
+
+You will present your project during the final weeks of the semester.
+
+Presentation Requirements:
+
+- 10–12 minutes
+- 2–3 minutes for Q&A
+- Use slides (Quarto, PowerPoint, etc.)
+
+Your presentation should:
+
+- Clearly explain your research question
+- Highlight key findings
+- Show at least one visualization
+- Be understandable to a non-technical audience
+
+This is practice for a potential Open Data Week 2026 submission.
+
+------------------------------------------------------------------------
+
+# Class Publication (Optional but Encouraged)
+
+At the end of the semester, projects may be compiled into a collective class book via Posit Cloud.
+
+Each student’s project may appear as a chapter.
+
+Benefits:
+
+- A publication credit
+- A portfolio artifact
+- A public-facing research contribution
+
+You may opt out if you prefer.
+
+------------------------------------------------------------------------
+
+# Grading (100 Points Total)
+
+- Dataset & Research Question (15 pts)  
+  Clarity, appropriateness, creativity  
+
+- Reproducibility (20 pts)  
+  Working document, organized workflow, transparent code  
+
+- Analysis (20 pts)  
+  Depth, correctness, alignment with question  
+
+- Visualizations (10 pts)  
+  Clarity, design, relevance  
+
+- Public Framing & Civic Relevance (10 pts)  
+  Event description, audience, connection to Open Data  
+
+- Class Presentation (15 pts)  
+  Clarity, engagement, professionalism  
+
+- Professionalism & Formatting (10 pts)  
+  Writing quality, citations, organization  
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This final project emphasizes transparent and repeatable workflows.
+
+Your document must:
+
+- Load all required packages explicitly  
+- Import data programmatically  
+- Avoid manual editing of datasets  
+- Clearly document cleaning decisions  
+- Avoid hard-coding results in interpretation  
+- Render cleanly without errors  
+- Set a seed if using sampling, modeling, or randomness
+
+The goal is that another analyst could reproduce your findings exactly.
+
+------------------------------------------------------------------------
+
+# Resources
+
+- NYC Open Data Portal: https://opendata.cityofnewyork.us/  
+- Past Open Data Week Events: https://2025.open-data.nyc/ 
+
+------------------------------------------------------------------------
+
+# Submission
+
+Required:
+
+- `.qmd` file  
+- Knitted HTML or PDF output  
+
+------------------------------------------------------------------------
+
+# Takeaway
+
+By completing this final project, you will leave the course with:
+
+- An independent, reproducible research project  
+- A polished presentation  
+- A potential publication credit  
+- A strong foundation for an Open Data Week 2026 submission  

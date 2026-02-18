@@ -1,0 +1,220 @@
+---
+title: "Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization"
+---
+
+# Overview {#sec-three}
+
+In this assignment, you will work with **NYPD Shooting Incident Data** using the `nycOpenData` package to practice data cleaning, feature engineering, exploratory insight generation, and data visualization with `ggplot2`.
+
+Compared to previous assignments, this one is more open-ended: you will make a few analytic decisions (e.g., how to define time-of-day categories and which variables to explore for your second insight).
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Retrieve real-world NYC civic data using `nycOpenData`
+-   Identify and handle missing data in a defensible way
+-   Engineer new features from dates/times and categorical columns
+-   Generate exploratory insights using grouping and summaries
+-   Communicate findings using well-designed `ggplot2` visualizations
+-   Write a short interpretation that connects summaries and plots to your insights
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 3: Visualizations** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **one `.R` script file**.
+
+Your script must:
+
+-   Run from top to bottom without errors
+-   Include your insight statements and written summary as **comments** where requested
+-   Contain **two `ggplot2` plots** with clear titles and labeled axes
+-   Include at least **one faceted plot** using `facet_wrap()`
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+## 0. Data Source
+
+You must use the `nycOpenData` package and the function:
+
+`nyc_shooting_incidents()`
+
+If you need to keep runtime reasonable, you may slice the dataset (e.g., the first 30,000 rows) after pulling it.
+
+------------------------------------------------------------------------
+
+## 1. Cleaning and Feature Engineering
+
+Complete all of the following in your script:
+
+### 1A. Missing data removal (defensible choice)
+
+-   Choose **one column** where it is reasonable to remove missing values.
+-   Compute and report (in a comment) **how many values are missing** in that column before removal.
+-   Remove rows with missing values in that column.
+-   In a comment, explain **why** that column was “safe” to use.
+
+### 1B. Lowercase a column
+
+-   Choose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.
+
+### 1C. Create `time_of_day`
+
+-   Create a new column called `time_of_day` with three categories:
+    -   Morning
+    -   Afternoon
+    -   Night
+-   You define the time boundaries.
+-   Briefly note your boundaries in a comment.
+
+### 1D. Create `days_since`
+
+-   Create a column called `days_since` showing the number of days between today’s date and the date of the shooting.
+-   Use `as.Date()` and/or `lubridate` as needed.
+
+------------------------------------------------------------------------
+
+## 2. Insights
+
+Provide the following insights as **comments** in your script:
+
+1.  **One insight about `time_of_day`**\
+    Example format: “Most shootings occur during \_\_\_ compared to \_\_\_ …”
+
+2.  **One additional insight of your choice**\
+    Explore anything you find interesting in the dataset (be creative).
+
+------------------------------------------------------------------------
+
+## 3. Visualizations (ggplot2)
+
+Create two plots using `ggplot2`:
+
+### Plot 3A. `time_of_day` plot
+
+-   Must directly relate to your `time_of_day` variable
+
+### Plot 3B. personal insight plot
+
+-   Must support your second insight
+
+Both plots must include: - Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`) - Informative axis labels - A clear title - Custom font/size settings via `theme()`
+
+Additional requirement: - At least **one** plot must use `facet_wrap()`
+
+------------------------------------------------------------------------
+
+## 4. Written Summary
+
+At the end of your script, write a short paragraph (as comments) describing:
+
+-   What you discovered from your insights
+-   What the graphs revealed that was not obvious from the raw data
+
+------------------------------------------------------------------------
+
+## Starter Code Template
+
+Copy this template into your script and complete the tasks above.
+
+```{r}
+#| label: assignment-03-starter-template
+#| eval: false
+#| echo: true
+#| warning: false
+#| message: false
+
+#############################################
+# Assignment 3: NYPD Shootings
+# Cleaning, Insights, and Visualization
+#############################################
+
+# ---- Setup ----
+library(tidyverse)
+library(lubridate)
+library(nycOpenData)
+
+# ---- Data Ingest ----
+shooting_data <- nyc_shooting_incidents()
+
+# ==============================
+# 1. CLEANING & FEATURE ENGINEERING
+# ==============================
+
+# 1A. Missingness (choose one column to drop NAs)
+# missing_n <- sum(is.na(shooting_data$YOUR_COLUMN))
+# Write a comment: how many were missing + why this column is safe
+# cleaned <- shooting_data %>% drop_na(YOUR_COLUMN)
+
+# 1B. Lowercase one categorical column
+# cleaned <- cleaned %>% mutate(YOUR_COLUMN = str_to_lower(YOUR_COLUMN))
+
+# 1C. Create time_of_day (Morning / Afternoon / Night)
+# cleaned <- cleaned %>%
+#   mutate(
+#     occur_date = as.Date(occur_date),
+#     occur_time = hm(occur_time),
+#     hour = hour(occur_time),
+#     time_of_day = case_when(
+#       hour >= ___ & hour < ___ ~ "Morning",
+#       hour >= ___ & hour < ___ ~ "Afternoon",
+#       TRUE ~ "Night"
+#     )
+#   )
+
+# 1D. Create days_since
+# cleaned <- cleaned %>%
+#   mutate(days_since = as.integer(Sys.Date() - as.Date(occur_date)))
+
+
+# ==============================
+# 2. INSIGHTS (write as comments)
+# ==============================
+
+
+# ==============================
+# 3. VISUALIZATIONS
+# ==============================
+
+# Plot A: time_of_day plot (include facet_wrap on at least one plot)
+
+# Plot B: personal insight plot
+
+
+# ==============================
+# 4. WRITTEN SUMMARY (comments)
+# ==============================
+```
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment focuses on reproducibility when working with **real civic data** and **date/time feature engineering**.
+
+In your script:
+
+-   Clearly document your analytic choices (especially your `time_of_day` boundaries) in comments.
+
+-   Keep your pipeline modular by creating a cleaned object (e.g.,`cleaned`), and build from it.
+
+-   After creating your new variables, include a quick checkpoint such as:
+
+    -   `count(cleaned, time_of_day)` or
+
+    -   `summary(cleaned$days_since)` to verify your features were created correctly.
+
+The goal is that another reader can see *exactly what choices you made*, reproduce your engineered variables, and understand how you arrived at your two insights.

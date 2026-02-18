@@ -1,0 +1,130 @@
+---
+title: "Assignment 1: Base R Foundations"
+subtitle: "R as a Calculator • Vectors • Data Frames • Built-in Datasets"
+---
+
+# Overview {#sec-one}
+
+This assignment introduces core concepts in base R, including arithmetic operations, object assignment, vectors, data frames, and built-in datasets. The goal is to build comfort with fundamental R syntax before moving into more advanced workflows.
+
+You will complete all tasks in a single `.R` script.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Perform arithmetic operations in R
+-   Assign results to objects using `<-`
+-   Create and manipulate vectors
+-   Construct and subset data frames
+-   Explore built-in datasets
+-   Produce a simple base R visualization
+-   Organize a script using clear comments
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 1: Introduction to R** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **one `.R` script file**.
+
+Your script must:
+
+-   Be clearly organized into labeled sections\
+    *(e.g., `# Part 1: R as a Calculator`)*
+-   Include all required calculations and outputs
+-   Include your reflection as comments at the end
+-   Run from top to bottom without errors
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+## Part 1: R as a Calculator
+
+1.  Calculate `12 * 2`.
+2.  Calculate the square root of `144`.
+3.  Calculate `100 / 7` and round to **2 decimals**.
+4.  Save the result of `15 * 4` as `my_product`.
+5.  Save `100 / 7`, rounded to **5 decimals**, as `my_second_product`.
+
+------------------------------------------------------------------------
+
+## Part 2: Vectors
+
+1.  Create a numeric vector of five random numbers named `randy`.
+2.  Compute the mean, median, minimum, and maximum of `randy`.
+3.  Create another numeric vector of five random numbers named `randy2`.
+4.  Create `randy_combined` by adding `randy` and `randy2`.
+5.  Create a character vector of five favorite movies.
+6.  Use indexing to print the fourth movie.
+7.  Create a factor with 11 entries of favorite foods (repeat some).
+8.  Use `table()` to count frequencies.
+9.  Sort the table in descending order and save as `organized_table`.
+
+------------------------------------------------------------------------
+
+## Part 3: Data Frames
+
+1.  Create a data frame called `class_df` with columns:
+    -   name\
+    -   age\
+    -   major
+2.  Add at least four fictional classmates.
+3.  Create `age_in_2009`.
+4.  Create `favorite_professor`.
+5.  Use indexing to:
+    -   Select only name and major.
+    -   Filter rows for Psych majors.
+
+------------------------------------------------------------------------
+
+## Part 4: Built-in Datasets
+
+Using `mtcars`:
+
+1.  Display the first 11 rows.
+2.  List all column names.
+3.  Run `str(mtcars)` and describe column types in a comment.
+4.  Run `summary(mtcars)`.
+5.  Create a base R scatterplot titled:
+
+> "My First Scatterplot"
+
+------------------------------------------------------------------------
+
+## Reflection
+
+At the end of your script, answer in 2–3 sentences (as comments):
+
+What was the most surprising or confusing thing you learned about R so far?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice (Assignment 1)
+
+For this first assignment, focus on script organization and documentation.
+
+At the top of your script, include a structured comment block containing:
+
+-   Assignment name\
+-   Your name\
+-   Date\
+-   A brief description of what the script accomplishes
+
+Your script should:
+
+-   Be divided into clearly labeled sections
+-   Run from top to bottom without manual intervention
+-   Avoid unnecessary objects
+
+This assignment establishes your baseline reproducibility habits for the semester.

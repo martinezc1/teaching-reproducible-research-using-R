@@ -1,0 +1,104 @@
+# About This Book {.unnumbered}
+
+This book represents the applied companion to [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Over the course of the semester, students transformed structured assignments into fully reproducible analyses using real datasets, transparent workflows, and public-facing communication. What began as individual homework submissions evolved into polished research chapters assembled into this cohesive volume.
+
+This book demonstrates that reproducibility is not an abstract principle — it is a habit, a discipline, and a professional standard.
+
+Each chapter reflects a progression of skills: data import, cleaning, visualization, statistical testing, modeling, interpretation, and communication. More importantly, each chapter reflects a shift in mindset — from “running code” to designing complete analytical workflows.
+
+This is not just a collection of assignments.\
+It is a curated portfolio of applied reproducible research.
+
+------------------------------------------------------------------------
+
+# What This Book Represents
+
+This volume showcases:
+
+-   Applied statistical reasoning\
+-   Transparent data cleaning and transformation\
+-   Reproducible modeling and interpretation\
+-   Clear, professional communication of results\
+-   Public-facing research using real-world datasets
+
+Every analysis in this book can be rerun from start to finish. All figures, tables, and results are generated directly from executable code. Nothing has been manually edited or pasted from external software.
+
+The goal is not perfection. The goal is transparency.
+
+------------------------------------------------------------------------
+
+# How This Book Is Organized
+
+The chapters follow the structure of the course and mirror the conceptual arc of *Reproducible Research Using R*.
+
+-   Base R Foundations - @sec-one
+-   mtcars Wrangling and Feature Engineering - @sec-two
+-   NYPD Shooting Incidents — Cleaning, Insights, and Visualization - @sec-three
+-   Merging Data and Comparing Means with t-tests - @sec-four
+-   R Script → Quarto Report - @sec-five
+-   ANOVA and Payment Patterns in NYC Camera Violations - @sec-six
+-   Midterm: Exercise & Sleep – Experimental analysis and inference - @sec-midterm
+-   NBA Analytics – Correlation and partial correlation - @sec-seven
+-   Florida Crime Analytics – Regression modeling and model comparison - @sec-eight
+-   Streaming Analytics – Categorical analysis and Chi-Square testing - @sec-nine
+-   Wage Analytics – Logistic regression and predictive modeling - @sec-ten
+-   Final Project – Independent civic data research - @sec-final
+-   Final Assignment – Building Your Reproducible Quarto Book - @sec-book
+
+Each chapter applies a specific methodological framework to a real dataset.
+
+Together, they form a complete analytical portfolio.
+
+------------------------------------------------------------------------
+
+# Reproducibility as a Professional Skill
+
+Throughout this book, reproducibility is treated as a default practice rather than an optional enhancement.
+
+Each chapter:
+
+-   Loads data programmatically\
+-   Cleans variables transparently\
+-   Documents transformation decisions\
+-   Avoids hard-coded statistical results\
+-   Produces outputs directly from executable code
+
+This workflow ensures that analyses are inspectable, repeatable, and defensible — qualities expected in graduate research, industry analytics, and public-facing data work.
+
+------------------------------------------------------------------------
+
+# From Assignment to Authorship
+
+By assembling these projects into a Quarto book, students move beyond submission-based coursework and into publication-based thinking.
+
+This book serves as:
+
+-   A professional portfolio artifact\
+-   A demonstration of applied statistical competency\
+-   Evidence of reproducible workflow mastery\
+-   A foundation for conference submissions and civic engagement
+
+Completing this book is not simply a course requirement.
+
+It is a transition point — from student to analytical author.
+
+------------------------------------------------------------------------
+
+# A Model of Publication in Practice
+
+A previous cohort of students transformed their final projects into a collective publication: [NYC Open Data Student Gallery - Brooklyn College](https://martinezc1-nyc-open-data-student-gallery.share.connect.posit.cloud/)
+
+A previous cohort of students transformed their final projects into a collective publication
+
+------------------------------------------------------------------------
+
+# A Note to Readers
+
+If you are a future employer, graduate program, research lab, or collaborator reviewing this book, you are not just reading assignments — you are reviewing a semester-long demonstration of analytical growth.
+
+If you are a student currently enrolled in the course, this book represents what is possible when structured workflow and intentional practice are sustained over time.
+
+Reproducibility is not a feature of advanced researchers.\
+It is a habit formed early.

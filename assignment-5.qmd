@@ -1,0 +1,144 @@
+---
+title: "Assignment 5: R Script → Quarto Report"
+subtitle: "From analysis script to a reproducible, published HTML report"
+---
+
+# Overview {#sec-five}
+
+This week, you will take your Week 3 homework assignment (NYPD Shooting Incidents) and convert it into a **Quarto** report (`.qmd`). Using the same prompt and the work you already completed, your task is to create a fully reproducible, publishable HTML report.
+
+Your final output should read like a short research note: code + narrative explanations + tables/plots + brief interpretation.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Convert an analysis workflow from an R script into a reproducible Quarto document
+-   Organize work into labeled code chunks that render cleanly to HTML
+-   Combine narrative text with analysis code to communicate findings
+-   Use inline R expressions to report values dynamically
+-   Create publication-quality tables and visualizations for the web
+-   Publish a reproducible report and share it via a link
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 10: Reproducible Reporting** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **two things**:
+
+1.  A link to your published HTML report (e.g., RPubs, Posit Connect/Cloud, GitHub Pages, etc.)
+2.  Your `.qmd` file
+
+**Your Quarto report must render to HTML without errors.**
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+Your Quarto document must include the following sections and components.
+
+## 1. YAML header
+
+Include:
+
+-   Title
+-   Your name as the *author*
+
+## 2. Setup chunk
+
+Load all required libraries (for example: `tidyverse`, `lubridate`, `ggplot2`, `nycOpenData`, etc.).
+
+## 3. Minimum required code chunks (4)
+
+Your report must contain *at least* the following four code chunks:
+
+1.  **Data ingest**\
+    Use `nycOpenData::nyc_shooting_incidents()` to load the NYPD shootings dataset.
+
+2.  **Data cleaning**\
+    At least **two** cleaning/feature steps (examples: dropping NAs, creating `time_of_day`, lowercasing a column, creating `days_since`).
+
+3.  **Insights**\
+    Include the code used to generate your Week 3 insights (grouped summaries, counts, etc.).
+
+4.  **Tables & Graphs**
+
+    -   At least **one table** created with `knitr::kable()`
+    -   At least **two ggplot2 graphs**:
+        -   one related to `time_of_day`
+        -   one supporting your personal insight
+
+*All tables and graphs must have captions!*
+
+## 4. Narrative text
+
+After **each** code chunk, write a short explanation describing:
+
+-   what you did
+-   why you did it
+-   what you learned or produced
+
+## 5. Inline R expression
+
+Include at least **one** inline R expression in your narrative text.
+
+Example:
+
+> The dataset contains `r nrow(shooting_data)` rows after cleaning.
+
+## 6. Hyperlink to the dataset
+
+Provide a clickable link to the dataset (not a raw URL pasted as plain text).
+
+Example:
+
+[NYC Open Data Portal — NYPD Shooting Incident Data](https://data.cityofnewyork.us/)
+
+*(You may link directly to the dataset page if you prefer.)*
+
+------------------------------------------------------------------------
+
+## Reflection
+
+In **3–5 sentences**, explain how this workflow could potentially help you in your thesis research.
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1.  Render your Quarto document to HTML.
+2.  Publish it online (e.g., RPubs).
+3.  Submit:
+    -   the link to the published HTML
+    -   your `.qmd` file
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice (Quarto Reporting)
+
+This assignment focuses on reproducibility as **communication**.
+
+In your report:
+
+-   Chunk labels should be meaningful (e.g., `data-ingest`, `cleaning`, `insights`, `plots`)
+-   Your narrative should match your code (a reader should understand what each chunk accomplishes)
+-   Inline R values should be used to avoid hard-coding numbers that may change if the dataset updates
+-   Your HTML output should render cleanly and be readable without needing the original script
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.

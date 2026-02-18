@@ -1,0 +1,253 @@
+---
+title: "Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups"
+subtitle: "Chi-Square • Residual Analysis • Contributions • Cramer's V"
+---
+
+# Overview {#sec-nine}
+
+The **Streaming Analytics Division (SAD)** has hired you as their new **Data Analyst**. Your mission is to determine whether **age group influences streaming platform preference**.
+
+The company wants to know whether certain platforms — Netflix, Hulu, Disney+, Amazon, or Other — appeal more strongly to specific age demographics (18–25, 26–40, 41+). Your analysis will guide targeted marketing strategies, promotional campaigns, and content investment decisions.
+
+Using simulated survey data, you will conduct a **fully reproducible Quarto analysis** to determine whether **Age Category and Platform Preference are statistically related**.
+
+You will:
+
+- Construct and interpret contingency tables
+- Perform a Chi-Square test of independence
+- Examine observed, expected, and residual values
+- Decompose the Chi-Square statistic into contributions
+- Visualize contributions using a heatmap
+- Compute and interpret Cramer’s V
+- Communicate findings clearly in plain language
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+- Clean and summarize categorical data
+- Construct contingency tables
+- Conduct and interpret a Chi-Square test of independence
+- Interpret observed, expected, and residual frequencies
+- Decompose the Chi-Square statistic into cell-level contributions
+- Visualize categorical data using stacked and clustered bar charts
+- Calculate and interpret Cramer’s V
+- Communicate statistical findings in accessible language
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 6: Analyzing Categorical Data** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **two files**:
+
+1. Your `.qmd` file  
+2. Your knitted and published `.html` file  
+
+Your document must:
+
+- Knit without errors
+- Suppress warnings and messages in the final HTML
+- Include clearly labeled sections
+- Include all required tables and visualizations
+- Include full statistical interpretations
+- Use at least one inline R expression
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+------------------------------------------------------------------------
+
+## 1. Data Preparation
+
+You have been provided with survey data including:
+
+- Age Category (18–25, 26–40, 41+)
+- Preferred Streaming Platform (Netflix, Hulu, Disney+, Amazon, Other)
+
+### Required Tasks
+
+You must:
+
+- Inspect the dataset
+- Compute total counts for Age Category
+- Compute total counts for Platform Preference
+- Construct a contingency table showing the joint distribution of Age Category and Platform Preference
+
+Briefly describe what the contingency table represents and why it is useful for categorical analysis.
+
+------------------------------------------------------------------------
+
+## 2. Visualization
+
+Create **two visualizations** using `ggplot2`.
+
+### Required Visualization 1
+
+A **stacked bar chart** showing the proportions of platform preferences within each age group.
+
+### Required Visualization 2
+
+A **clustered (side-by-side) bar chart** showing counts for each platform across age groups.
+
+Both visualizations must:
+
+- Include descriptive titles
+- Include labeled axes
+- Include a legend
+- Use a professional or themed style (e.g., from `ggthemes`)
+
+After each plot, provide 3–4 sentences interpreting what you observe.
+
+------------------------------------------------------------------------
+
+## 3. Chi-Square Test of Independence
+
+Conduct a **Chi-Square test of independence** to determine whether Age Category and Platform Preference are related.
+
+In your write-up, report and interpret:
+
+- The Chi-Square statistic (χ²)
+- Degrees of freedom (df)
+- The p-value
+
+Then answer:
+
+- Is there a statistically significant relationship?
+- What does this result mean in plain language?
+
+------------------------------------------------------------------------
+
+## 4. Observed, Expected, and Residual Values
+
+From your Chi-Square test, extract:
+
+- Observed counts
+- Expected counts
+- Residuals
+
+Discuss:
+
+- Which age–platform combinations show more people than expected
+- Which show fewer people than expected
+- Which residuals appear largest in magnitude
+
+Explain what residuals tell us about patterns in the data.
+
+------------------------------------------------------------------------
+
+## 5. Contributions to the Chi-Square Statistic
+
+Break down the Chi-Square statistic into **individual cell contributions**.
+
+Then:
+
+- Calculate the percentage contribution of each cell to the total χ² value
+- Identify which age–platform combinations contribute most to the overall result
+
+Visualize these percentage contributions using a **heatmap**.
+
+In your interpretation, explain:
+
+- Which cells drive the overall Chi-Square result
+- What this suggests about viewing habits across age groups
+
+------------------------------------------------------------------------
+
+## 6. Effect Size (Cramer’s V)
+
+Compute **Cramer’s V** to measure the strength of association between Age Category and Platform Preference.
+
+Interpret the value using these guidelines:
+
+- 0.00–0.10 → Very Weak  
+- 0.10–0.30 → Weak  
+- 0.30–0.50 → Moderate  
+- Above 0.50 → Strong  
+
+Provide a short, plain-language explanation of the effect size.
+
+------------------------------------------------------------------------
+
+## 7. Final Interpretation
+
+Write a professional summary addressing:
+
+- Whether the relationship between Age and Platform is statistically significant
+- Which age groups and platforms are driving the relationship
+- The strength of the association (Cramer’s V)
+- What these findings mean in a real-world marketing context
+
+Your summary should resemble a professional analytics report, not a textbook answer.
+
+------------------------------------------------------------------------
+
+# Deliverables
+
+Your final report must include:
+
+- The contingency table
+- Both visualizations (stacked and clustered)
+- Chi-Square results (χ², df, p-value)
+- Observed, expected, and residual tables
+- Contribution table and heatmap
+- Cramer’s V calculation and interpretation
+- Final written summary
+
+------------------------------------------------------------------------
+
+# Guidelines for Interpretation
+
+When discussing your results, always include:
+
+- **Statistical significance** — Is the relationship real?
+- **Direction of pattern** — Which combinations are over- or under-represented?
+- **Strength of association** — Using Cramer’s V
+- **Plain-language meaning** — What does this imply about streaming habits?
+
+Avoid jargon without explanation.
+
+------------------------------------------------------------------------
+
+# Reflection
+
+In 4–6 sentences, answer:
+
+1. Why is the Chi-Square test appropriate for categorical data?
+2. What is the difference between statistical significance and effect size?
+3. Why is it important to examine residuals and contributions rather than only the p-value?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment emphasizes transparent categorical analysis.
+
+Your document must:
+
+- Construct tables programmatically
+- Avoid manual calculations outside your script
+- Use clearly labeled code chunks
+- Avoid hard-coding statistical results in narrative
+- Use inline R expressions where appropriate
+- Render cleanly to HTML
+
+The goal is that another analyst could reproduce your entire Chi-Square analysis and verify every conclusion.
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1. Render your `.qmd` file to HTML.
+2. Confirm warnings and messages do not appear in the final document.
+3. Submit both your `.qmd` file and your published `.html` report.

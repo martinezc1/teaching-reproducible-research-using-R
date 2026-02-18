@@ -1,0 +1,168 @@
+---
+title: "Assignment 4: Merging Data and Comparing Means with t-tests"
+subtitle: "Joins • Missing Data • Paired and Independent t-tests"
+---
+
+# Overview {#sec-four}
+
+This assignment builds on our lesson about **merging datasets**, **handling missing data**, and running **t-tests** in R. You will work with two files:
+
+-   **Employee Info** (Excel): first name, last name, department (30 employees)
+-   **Employee Scores** (CSV): a single `Name` column plus two test scores (`Score Before`, `Score After`)
+
+Your goal is to merge the datasets, clean them, and answer questions using **t-tests**.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Import data from both Excel and CSV formats into R
+-   Resolve key mismatches across datasets (split/unite names to form a join key)
+-   Merge datasets using a defensible join strategy
+-   Diagnose and handle missing values in numeric columns
+-   Run and interpret:
+    -   a **paired (dependent) t-test**
+    -   an **independent t-test**
+-   Create a derived variable (`Improvement`) and use it in statistical comparisons
+-   Communicate results clearly (test statistic, p-value, interpretation)
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 4: Comparing Two Groups: Data Wrangling, Visualization, and t-Tests** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **one `.R` script file**.
+
+Your script must:
+
+-   Run from top to bottom without errors
+-   Include clear section comments separating each part of the assignment
+-   Include your interpretations and written summary as **comments** where requested
+-   Load all packages used via `library(...)`
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+## 1. Data Wrangling (Import + Merge)
+
+1.  Import both datasets into R:
+
+    -   Employee Info (Excel)
+    -   Employee Scores (CSV)
+
+2.  Notice the mismatch:
+
+    -   one dataset has `First Name` + `Last Name`
+    -   the other has a single `Name` column
+
+3.  Create a matching join key by doing **one** of the following:
+
+    -   **Option A:** split `Name` into first/last, or
+    -   **Option B:** unite first/last into a single full name
+
+4.  Rename columns if needed so the join key matches in both datasets.
+
+5.  Merge the datasets so each employee has:
+
+    -   department
+    -   first name and last name (or full name)
+    -   Score Before and Score After
+
+6.  After merging, you should have **30 rows**.
+
+    -   Write a short comment confirming the row count and what join you used.
+
+------------------------------------------------------------------------
+
+## 2. Handling Missing Data (Imputation)
+
+Some `Score Before` or `Score After` values have been removed on purpose.
+
+1.  Calculate the average of each score column:
+    -   `Score Before`
+    -   `Score After`
+2.  Replace missing values in each column with that column’s average.
+    -   *Tip:* `mean(..., na.rm = TRUE)` and `replace_na()` (or base R) will be useful.
+3.  Write a comment confirming how many missing values were replaced in each column.
+
+------------------------------------------------------------------------
+
+## 3. Dependent t-test (Paired)
+
+1.  Run a **paired t-test** comparing `Score Before` vs `Score After`.
+
+2.  Report (as comments):
+
+    -   test statistic
+    -   p-value
+    -   a 1–2 sentence interpretation (Did performance change after the intervention?)
+
+------------------------------------------------------------------------
+
+## 4. Independent t-tests (Sex + Department)
+
+### 4A. Add a Sex column (using `babynames`)
+
+1.  Add a `Sex` column by merging on first names using the `babynames` package.
+2.  If a name does not have an associated sex, remove it from the dataset.
+3.  Write a short comment reporting how many rows remain after this filtering step.
+
+### 4B. Improvement t-test by Sex
+
+1.  Create a new column:
+
+`Improvement = Score After - Score Before`
+
+2.  Run an **independent t-test** comparing `Improvement` between male and female employees.
+
+3.  Report (as comments):
+
+    -   test statistic
+    -   p-value
+    -   interpretation
+
+### 4C. Improvement analysis by Department
+
+Using the same `Improvement` column, run a t-test in conjunction with the `department` column.
+
+You can do this in one of two ways:
+
+-   If department has **two groups**, run a standard independent t-test:
+    -   `t.test(Improvement ~ department, data = ...)`
+-   If department has **more than two groups**, run **multiple** pairwise t-tests (or clearly explain why a t-test is not appropriate and what you would use instead).
+
+Write a few sentences summarizing what you found.
+
+------------------------------------------------------------------------
+
+## Written Summary
+
+At the end of your script, write a short paragraph (as comments) describing:
+
+-   Your overall findings across the t-tests
+-   Any difficulties you experienced during merging, missing data handling, or interpretation
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment focuses on reproducible workflows for **joining datasets** and **handling missing data**, where mistakes can silently change results.
+
+In your script:
+
+-   Print or comment the number of rows **before and after** the merge (confirm you ended with 30 rows).
+-   Explicitly document which join you used (e.g., `left_join`) and *why*.
+-   After replacing missing values, include a “checkpoint” that confirms there are no remaining `NA`s in the score columns (e.g., `sum(is.na(Score_Before))`).
+-   Keep key variables named consistently (e.g., `score_before`, `score_after`, `improvement`) so your analysis is easy to verify.
+
+The goal is that another reader could review your script and confirm the merge logic, the imputation logic, and the statistical results without guessing.

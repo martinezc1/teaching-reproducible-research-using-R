@@ -1,0 +1,275 @@
+---
+title: "Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge"
+subtitle: "Correlation • Multiple Regression • Model Comparison • Executive Communication"
+---
+
+# Overview {#sec-eight}
+
+The **Florida Police Department (FPD)** has hired you as their new **Data Analyst**. Your mission is to uncover which socioeconomic factors are most strongly associated with rising crime rates across Florida counties.
+
+Using county-level data, you will conduct a **fully reproducible Quarto analysis** to determine whether **income, education, or urbanization** best explain differences in crime rates.
+
+Your findings will help inform statewide prevention strategies, resource allocation, and community outreach efforts.
+
+This assignment assesses your ability to:
+
+-   Clean and prepare structured data
+-   Compute and interpret correlations
+-   Build and compare regression models
+-   Evaluate model fit using R² and AIC
+-   Communicate statistical findings to a non-technical executive audience
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Clean and standardize real-world datasets
+-   Perform exploratory data analysis (EDA)
+-   Interpret correlation matrices
+-   Build simple and multiple regression models
+-   Compare models using R², Adjusted R², and AIC
+-   Explain regression results in plain language
+-   Produce a reproducible Quarto report suitable for executive review
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **two files**:
+
+1.  Your `.qmd` file\
+2.  Your knitted and published `.html` file
+
+Your document must:
+
+-   Knit without errors
+-   Suppress warnings and messages in the final HTML
+-   Include clearly labeled sections
+-   Include all required visualizations
+-   Include regression tables and model comparisons
+-   Include a professional memo to the Chief of the FPD
+-   Use at least one inline R expression
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+------------------------------------------------------------------------
+
+## 1. Data Loading and Preparation
+
+You have been provided with an Excel file containing the following columns:
+
+| Column | Description                      |
+|--------|----------------------------------|
+| County | County name                      |
+| C      | Crime rate (per 1,000 residents) |
+| I      | Median income (in thousands)     |
+| HS     | High-school graduation rate (%)  |
+| U      | Urban population (%)             |
+
+### Required Tasks
+
+You must:
+
+-   Load the dataset reproducibly
+
+-   Rename the columns to:
+
+    -   `Crime`
+    -   `Income`
+    -   `HighSchoolGrad`
+    -   `UrbanPop`
+
+-   Format all county names so that only the first letter is capitalized
+
+-   Inspect the dataset structure
+
+-   Provide summary statistics
+
+Include a brief explanation of why consistent naming and formatting are essential for reproducible modeling.
+
+------------------------------------------------------------------------
+
+## 2. Exploratory Data Analysis
+
+Conduct exploratory analysis to understand the structure and distribution of the data.
+
+### Required Components
+
+-   Compute descriptive statistics (mean, median, range) for all numeric variables
+-   Create at least **two visualizations** (e.g., histograms, boxplots, scatterplots)
+-   Provide written interpretation of what you observe
+
+Your interpretation should address:
+
+-   Distribution shapes
+-   Potential outliers
+-   Initial patterns between predictors and crime
+
+### Bonus (Optional)
+
+Using `ggplot2` and mapping tools, create a heatmap of Florida counties based on crime rates.
+
+------------------------------------------------------------------------
+
+## 3. Correlation Analysis
+
+Investigate which factors are most strongly associated with crime.
+
+### Required Tasks
+
+-   Compute a correlation matrix including:
+
+    -   Crime
+    -   Income
+    -   HighSchoolGrad
+    -   UrbanPop
+
+-   Identify which predictor shows the strongest relationship with Crime
+
+-   Interpret the direction (positive or negative)
+
+-   Interpret the strength (weak, moderate, strong)
+
+(Optional) Visualize the correlation matrix using a correlation plotting tool.
+
+In your written interpretation, explain:
+
+-   Which factor appears most important
+-   Whether any predictors appear highly correlated with one another
+-   Why correlation does not imply causation
+
+------------------------------------------------------------------------
+
+## 4. Building Regression Models
+
+You will now build models to predict county-level crime rates.
+
+### Required Models
+
+1.  A **simple regression model** using the predictor you believe fits best
+
+2.  At least **two multiple regression models**, such as:
+
+    -   Income + HighSchoolGrad\
+    -   Income + UrbanPop\
+    -   A full model with all predictors
+
+3.  (Optional) Include an interaction term if theoretically justified
+
+### Model Comparison
+
+Compare models using:
+
+-   R²
+-   Adjusted R²
+-   AIC
+
+Interpret:
+
+-   Which predictors are statistically significant
+-   Which model explains the most variance
+-   Which model best balances simplicity and explanatory power
+
+Explain why Adjusted R² and AIC are useful when comparing multiple models.
+
+------------------------------------------------------------------------
+
+## 5. Executive Memo to the Chief of the Florida Police Department
+
+Write a short professional memo addressed to:
+
+**Chief\
+Florida Police Department**
+
+Your memo must include:
+
+-   The best-performing model
+-   The most influential predictor(s)
+-   The proportion of variance explained (R²)
+-   Clear, plain-language interpretation
+-   One limitation of your analysis
+-   One actionable recommendation for resource allocation or prevention strategy
+
+Your tone should be executive-level and professional.
+
+------------------------------------------------------------------------
+
+# Guidelines for Interpretation
+
+When discussing results, always include:
+
+-   **Direction** — Positive or negative relationship\
+-   **Strength** — Weak, moderate, or strong\
+-   **Significance** — Statistically significant or not\
+-   **Plain language meaning**
+
+Example:
+
+> Counties with lower median income tend to have higher crime rates. For every \$1,000 increase in median income, predicted crime decreases while holding other factors constant.
+
+Avoid technical jargon without explanation.
+
+------------------------------------------------------------------------
+
+# Final Question
+
+At the end of your report, include a short written response to:
+
+> Based on your analysis, which model best predicts Florida’s county-level crime rates, and why?
+
+Be specific and reference your model comparison metrics.
+
+------------------------------------------------------------------------
+
+# Reflection
+
+In 4–6 sentences, answer:
+
+1.  Why is reproducibility especially important when working with public policy data?
+2.  What did you learn about the difference between correlation and regression?
+3.  How does model comparison improve decision-making?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment emphasizes reproducible modeling and executive communication.
+
+Your document must:
+
+-   Load data programmatically
+-   Avoid manual data manipulation outside the script
+-   Use clearly labeled code chunks
+-   Avoid hard-coding results in narrative
+-   Use inline R expressions where appropriate
+-   Suppress warnings/messages in the final published HTML
+
+The goal is that another analyst could rerun your analysis and verify every claim.
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.

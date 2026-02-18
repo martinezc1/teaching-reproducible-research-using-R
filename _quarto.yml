@@ -1,0 +1,36 @@
+project:
+  type: book
+
+book:
+  title: "Teaching Reproducible Research Using R"
+  author: "Christian Martinez"
+  date: "2/16/2026"
+  chapters:
+    - index.qmd
+    - assignment-1.qmd
+    - assignment-2.qmd
+    - assignment-3.qmd
+    - assignment-4.qmd
+    - assignment-5.qmd
+    - assignment-6.qmd
+    - assignment-midterm.qmd
+    - assignment-7.qmd
+    - assignment-8.qmd
+    - assignment-9.qmd
+    - assignment-10.qmd
+    - assignment-final.qmd
+    - assignment-book.qmd
+  
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

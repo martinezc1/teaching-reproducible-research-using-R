@@ -1,0 +1,216 @@
+---
+title: "Assignment 2: mtcars Wrangling and Feature Engineering"
+---
+
+# Overview {#sec-two}
+
+This assignment continues our introduction to the **Tidyverse** by walking through a structured data-cleaning and feature-engineering workflow using the built-in `mtcars` dataset.
+
+You will complete a partially written (“skeletal”) script by filling in missing code so that each step runs successfully and produces the expected outputs.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Use `dplyr` verbs (`rename()`, `mutate()`, `group_by()`, `summarize()`, `arrange()`) to clean and transform data
+-   Engineer new features from existing numeric variables
+-   Use `case_when()` to create interpretable categories
+-   Convert numeric codes into readable factors
+-   Produce grouped summaries and identify “top N” rows within groups
+-   Create a pivot-style summary table using grouped aggregation
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 2: Introduction to tidyverse** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **one `.R` script file**.
+
+Your script must:
+
+-   Run from top to bottom without errors
+-   Include clear section comments (e.g., `# Step 1: Rename columns`)
+-   Contain your reflection responses as comments at the end of the file
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+## mtcars Data Wrangling and Feature Engineering
+
+**Goal:** Your lab has test results for a fleet of cars (`mtcars`). Clean up the columns, create useful features, and answer questions your team cares about.
+
+Complete the following steps using the **Tidyverse**:
+
+1.  **Make columns human-readable**\
+    Rename and store in a new dataset called `cars`:
+
+    -   `mpg` → `miles_per_gallon`\
+    -   `hp` → `horsepower`\
+    -   `wt` → `weight_1000lb`
+
+2.  **Engineer a performance feature**\
+    Create `hp_per_ton` (where one ton ≈ 2,000 lb).
+
+3.  **Create a power class**\
+    Using `case_when()`, create `power_class`:
+
+    -   `< 150` horsepower → `"Low"`
+    -   `150–250` horsepower → `"Medium"`
+    -   `> 250` horsepower → `"High"`
+
+4.  **Make cylinder groups readable**\
+    Convert `cyl` to a factor with labels:
+
+    -   `"4 cyl"`, `"6 cyl"`, `"8 cyl"`
+
+5.  **Mileage by cylinders**\
+    Group by `cyl` and compute for `miles_per_gallon`:
+
+    -   `n`
+    -   mean
+    -   standard deviation\
+        Sort results from best to worst average mileage.
+
+6.  **Top cars per cylinder**\
+    For each cylinder group, identify the top 3 most fuel-efficient cars (highest `miles_per_gallon`) and keep:
+
+    -   model (from row names)
+    -   `cyl`
+    -   `miles_per_gallon`
+    -   `horsepower`
+
+7.  **Transmission mix and share**\
+    Recode `am` into `trans`:
+
+    -   `0` → `"Automatic"`
+    -   `1` → `"Manual"`\
+        Compute counts and percent share of transmission type within each cylinder group.
+
+8.  **Pivot-style summary**\
+    Create a summary table for each `cyl × gear` combination that includes:
+
+    -   minimum `miles_per_gallon`
+    -   maximum `miles_per_gallon`
+    -   average `miles_per_gallon`
+    -   average `hp_per_ton`\
+        Save as `pivot_cars`.
+
+------------------------------------------------------------------------
+
+## Starter Code (Skeletal Script)
+
+Copy this into your `.R` script and complete the missing pieces.
+
+```{r}
+#| label: task-skeleton
+#| eval: false
+#| echo: true
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+# 1. Make columns human-readable
+cars <- mtcars %>%
+  rownames_to_column("model") %>%
+  rename(
+    miles_per_gallon = mpg,
+    horsepower       = hp,
+    weight_1000lb    = wt
+  )
+
+# 2. Engineer a performance feature
+cars <- cars %>%
+  mutate(
+    hp_per_ton = horsepower / (weight_1000lb * 0.5)
+  )
+
+# 3. Create a power class
+cars <- cars %>%
+  mutate(
+    power_class = case_when(
+      horsepower < 150 ~ "Low",
+      horsepower >= 150 & horsepower <= 250 ~ "Medium",
+      horsepower > 250 ~ "High"
+    )
+  )
+
+# 4. Make cylinder groups readable
+cars <- cars %>%
+  mutate(
+    cyl = factor(
+      cyl,
+      levels = c(4, 6, 8),
+      labels = c("4 cyl", "6 cyl", "8 cyl")
+    )
+  )
+
+# 5. Mileage by cylinders
+cars %>%
+  group_by(cyl) %>%
+  summarize(
+    n = n(),
+    mean_mpg = mean(miles_per_gallon, na.rm = TRUE),
+    sd_mpg   = sd(miles_per_gallon, na.rm = TRUE),
+    .groups  = "drop"
+  ) %>%
+  arrange(desc(mean_mpg))
+
+# 6. Top cars per cylinder
+cars %>%
+  group_by(cyl) %>%
+  slice_max(miles_per_gallon, n = 3, with_ties = FALSE) %>%
+  select(model, cyl, miles_per_gallon, horsepower)
+
+# 7. Transmission mix & share
+cars %>%
+  mutate(trans = recode(am, `0` = "Automatic", `1` = "Manual")) %>%
+  count(cyl, trans) %>%
+  group_by(cyl) %>%
+  mutate(pct = n / sum(n))
+
+# 8. Pivot-style summary
+pivot_cars <- cars %>%
+  group_by(cyl, gear) %>%
+  summarize(
+    min_mpg    = min(miles_per_gallon, na.rm = TRUE),
+    max_mpg    = max(miles_per_gallon, na.rm = TRUE),
+    avg_mpg    = mean(miles_per_gallon, na.rm = TRUE),
+    avg_hp_ton = mean(hp_per_ton, na.rm = TRUE),
+    .groups    = "drop"
+  )
+```
+
+## Reflection
+
+At the end of your script, answer the following as comments:
+
+- Which piece of code felt the hardest for you? Why?
+
+- Which piece of code felt the easiest for you? Why?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment focuses on **readability and “checkpoints”** in a multi-step wrangling workflow.
+
+In your script:
+
+- Use section headers that match the steps (1–8) so the workflow is easy to follow.
+
+- Do not overwrite objects unintentionally (you should end with objects named`cars`and`pivot_cars`).
+
+- After Step 4, include a quick “checkpoint” line such as`glimpse(cars)`or`count(cars, cyl)`to verify the transformation worked.
+
+The goal is that another reader can follow your transformation pipeline step-by-step and verify the results at key moments.

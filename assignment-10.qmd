@@ -1,0 +1,284 @@
+---
+title: "Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression"
+subtitle: "Binary Classification • Logistic Regression • Model Evaluation • ROC/AUC"
+---
+
+# Overview {#sec-ten}
+
+The **Wage Analytics Division (WAD)** has hired you as their new **Data Scientist**.
+
+Your mission is to determine whether demographic and employment characteristics can be used to **predict whether a worker earns a high or low wage**.
+
+Using the `Wage` dataset from the `ISLR` package, you will:
+
+-   Create a binary wage classification
+-   Explore relationships between predictors and wage
+-   Build a logistic regression model
+-   Evaluate predictive performance on unseen data
+
+Your analysis will help the company understand which characteristics are associated with higher earnings and determine how well a predictive model performs in practice.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Clean and prepare mixed-type real-world data
+-   Create a binary outcome variable
+-   Conduct t-tests, ANOVA, and Chi-Square tests
+-   Perform a train/test split
+-   Build and interpret a logistic regression model
+-   Evaluate classifier performance using confusion matrices and ROC/AUC
+-   Communicate predictive modeling results clearly and professionally
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 9: Logistic Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **two files**:
+
+1.  Your `.qmd` file\
+2.  Your knitted and published `.html` file
+
+Your document must:
+
+-   Knit without errors
+-   Suppress warnings and messages in the final HTML
+-   Include clearly labeled sections
+-   Include all statistical tests and model outputs
+-   Include performance metrics and ROC curve
+-   Include a professional final summary
+-   Use at least one inline R expression
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+------------------------------------------------------------------------
+
+## 1. Create the WageCategory Variable
+
+Begin by preparing the dataset.
+
+### Required Tasks
+
+-   Load the `Wage` dataset from the `ISLR` package
+
+-   Create a new factor variable called `WageCategory`:
+
+    -   If `wage > median(wage)` → `"High"`
+    -   If `wage < median(wage)` → `"Low"`
+
+-   Convert `WageCategory` into a factor variable
+
+### Important
+
+-   You must **NOT remove** `wage` or `logwage`
+-   Be prepared to explain the concept of **target leakage** and why it matters in predictive modeling
+
+Briefly explain why creating a binary outcome transforms this into a classification problem.
+
+------------------------------------------------------------------------
+
+## 2. Data Cleaning
+
+Some categorical variables in the `Wage` dataset contain numeric prefixes (e.g., `"3. Asian"`).
+
+### Required Tasks
+
+-   Remove numeric prefixes from all relevant categorical variables
+-   Ensure categorical variables are clean and properly formatted before analysis
+
+Provide a brief explanation of why cleaning categorical labels is important for interpretation and modeling.
+
+------------------------------------------------------------------------
+
+## 3. Classical Statistical Tests
+
+You will explore relationships between predictors and wage using classical inference methods.
+
+------------------------------------------------------------------------
+
+### A. t-test
+
+Compare **age** between High and Low wage earners.
+
+Your write-up must include:
+
+-   Mean age for each wage group
+-   t-statistic, degrees of freedom, and p-value
+-   A short interpretation of whether age differs between wage categories
+
+------------------------------------------------------------------------
+
+### B. ANOVA
+
+Using the original numeric `wage` variable, choose **one** of the following:
+
+-   `wage ~ education`
+-   `wage ~ maritl`
+-   `wage ~ jobclass`
+
+Your write-up must include:
+
+-   ANOVA table
+-   F-statistic, degrees of freedom, and p-value
+-   A brief interpretation of the result
+
+------------------------------------------------------------------------
+
+### C. Chi-Square Test
+
+Choose **one categorical relationship** that is different from your ANOVA variable.
+
+You must:
+
+-   Create a contingency table
+-   Conduct a Chi-Square test
+-   Report χ², df, and p-value
+-   Compute and interpret Cramer’s V
+-   Describe any patterns observed in the contingency table
+
+Explain what the Chi-Square test tells you about association.
+
+------------------------------------------------------------------------
+
+## 4. Logistic Regression Model
+
+You will now build a predictive model.
+
+------------------------------------------------------------------------
+
+### Train/Test Split
+
+-   Perform a 70/30 split using `sample.split()`
+-   Clearly define your training and testing datasets
+
+Explain why separating training and test data is critical in predictive modeling.
+
+------------------------------------------------------------------------
+
+### Model Specification
+
+-   Build a logistic regression model predicting `WageCategory`
+-   Choose predictors thoughtfully (be cautious of leakage or redundancy)
+
+Your write-up must include:
+
+-   Logistic regression output
+
+-   Odds ratios using `exp(coef())`
+
+-   A 2–4 sentence interpretation describing:
+
+    -   Which predictors are significant
+    -   Direction of effects
+    -   Magnitude of effects
+    -   Any surprising findings
+
+------------------------------------------------------------------------
+
+## 5. Model Evaluation on Test Data
+
+Using your **test dataset**, compute:
+
+-   Predicted probabilities
+-   Predicted classes ("High" or "Low")
+-   Confusion matrix
+
+Report and interpret:
+
+-   Accuracy
+-   Sensitivity
+-   Specificity
+-   Balanced Accuracy
+
+------------------------------------------------------------------------
+
+### ROC Curve and AUC
+
+-   Generate an ROC curve
+-   Compute AUC
+
+In your interpretation, discuss:
+
+-   How well the model identifies high earners
+-   How accuracy compares to the No Information Rate
+-   Whether the model performs better than guessing
+
+------------------------------------------------------------------------
+
+## 6. Final Interpretation
+
+Write a professional 3–5 paragraph summary addressing:
+
+-   Whether age, education, jobclass, or marital status meaningfully relate to wage
+-   Which predictors were most influential in the logistic regression
+-   How well the model performed on unseen data
+-   Which wage group the model predicts best
+-   What variables you would add or remove if repeating the analysis
+-   One limitation of your modeling approach
+
+Your tone should resemble a professional data science report, not a homework answer.
+
+------------------------------------------------------------------------
+
+# Guidelines for Interpretation
+
+When interpreting regression results, include:
+
+-   Direction (positive or negative relationship)
+-   Magnitude (odds ratio interpretation)
+-   Statistical significance
+-   Plain-language meaning
+
+Example:
+
+> Workers with higher education levels have greater odds of being classified as high earners, holding other factors constant.
+
+Avoid technical jargon without explanation.
+
+------------------------------------------------------------------------
+
+# Reflection
+
+In 4–6 sentences, answer:
+
+1.  What is the difference between inference and prediction?
+2.  Why is target leakage dangerous in predictive modeling?
+3.  What did you learn about evaluating classifier performance?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment emphasizes responsible predictive modeling.
+
+Your document must:
+
+-   Load data programmatically
+-   Clean variables reproducibly
+-   Use clearly labeled code chunks
+-   Avoid hard-coding values in narrative
+-   Use inline R expressions where appropriate
+-   Suppress warnings and messages in the final HTML
+-   Render cleanly without manual edits
+
+The goal is that another analyst could reproduce your entire workflow and validate every statistical claim.
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.

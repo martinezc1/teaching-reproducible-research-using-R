@@ -1,0 +1,234 @@
+---
+title: "Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations"
+subtitle: "Statistical Significance vs Practical Significance"
+---
+
+# Overview {#sec-six}
+
+You are working as a data scientist hired by a law firm that specializes in fighting parking and camera tickets.
+
+The firm wants to understand whether certain groups tend to pay more than others. Previously, we explored patterns by day of week and time of day. Now, you will conduct a **structured ANOVA investigation** using NYC camera violation data.
+
+Your job is to determine whether payment differences across groups are:
+
+-   Statistically significant\
+-   Practically meaningful\
+-   Strategically useful for marketing
+
+Be sure to include a hyperlink somewhere in your introduction to the dataset via the\
+[NYC Open Data Portal](https://data.cityofnewyork.us/).
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By completing this assignment, you will be able to:
+
+-   Load public NYC data using an R package
+-   Clean and prepare real-world categorical and numeric variables
+-   Engineer time-based features (day of week, time of day)
+-   Conduct multiple one-way ANOVA tests
+-   Interpret F-values, p-values, and PRE
+-   Distinguish between statistical and practical significance
+-   Communicate inferential findings clearly in a reproducible report
+
+------------------------------------------------------------------------
+
+# Textbook Connection
+
+This assignment builds directly from **Chapter 5: Comparing Multiple Groups** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+
+------------------------------------------------------------------------
+
+# Submission Instructions
+
+Submit **two files**:
+
+1.  Your `.qmd` file\
+2.  Your knitted `.html` file
+
+Your document must:
+
+-   Knit without errors
+-   Contain clearly labeled sections
+-   Include visualizations, descriptive statistics, and ANOVA results
+-   Include written interpretation after each major section
+-   Use at least one inline R expression
+
+------------------------------------------------------------------------
+
+# Assignment Tasks
+
+You must complete the following sections in order.
+
+------------------------------------------------------------------------
+
+## 1. Data Ingest
+
+Load the NYC camera violations dataset using the `nycOpenData` package.
+
+Your section must:
+
+-   Clearly state what the dataset represents\
+-   Report how many rows are in the dataset (use an inline R expression)\
+-   Confirm that the dataset loaded successfully
+
+Do not hard-code numbers in your text.
+
+------------------------------------------------------------------------
+
+## 2. Data Cleaning and Feature Engineering
+
+You must perform the following cleaning steps. You are responsible for determining how to implement them.
+
+### 2A. Numeric Conversion
+
+Ensure all payment-related variables (such as `payment_amount` and `fine_amount`) are stored as numeric.
+
+Include a short checkpoint confirming the structure is correct.
+
+------------------------------------------------------------------------
+
+### 2B. Date Cleaning
+
+The `issue_date` column may contain inconsistent formats.
+
+You must:
+
+-   Retain only properly formatted dates\
+-   Convert `issue_date` into a Date object\
+-   Create a new variable called `day_of_week`
+
+Explain briefly why cleaning dates is necessary before modeling.
+
+------------------------------------------------------------------------
+
+### 2C. Time Cleaning
+
+Using the `violation_time` column:
+
+-   Convert it into a format that can be interpreted numerically\
+-   Create a new categorical variable called `time_of_day`
+
+Your categories must include:
+
+-   Morning\
+-   Afternoon\
+-   Night
+
+Include a checkpoint showing how many observations fall into each category.
+
+Explain why feature engineering improves interpretability.
+
+------------------------------------------------------------------------
+
+## 3. Analysis 1: Day of Week and Fine Amount
+
+You will now investigate whether average **fine_amount** differs by **day_of_week**.
+
+Your section must include:
+
+-   A grouped descriptive summary (means displayed in descending order)\
+-   A one-way ANOVA\
+-   A `supernova()` table\
+-   A post-hoc test (Tukey)
+
+Then write a short paragraph answering:
+
+-   Is the effect statistically significant?\
+-   How much variance is explained (PRE)?\
+-   Is the effect practically meaningful?\
+-   Why might statistical significance be misleading here?
+
+------------------------------------------------------------------------
+
+## 4. Analysis 2: Time of Day and Fine Amount
+
+Repeat the same structure, but now examine **fine_amount by time_of_day**.
+
+Include:
+
+-   Visualization (boxplot required)\
+-   Descriptive statistics\
+-   ANOVA\
+-   PRE interpretation
+
+In your paragraph, explain:
+
+-   Whether differences are meaningful\
+-   Why fine amounts may show significance even if policy does not change
+
+------------------------------------------------------------------------
+
+## 5. Analysis 3: Violation Type and Fine Amount
+
+Examine **fine_amount by violation type**.
+
+Your section must include:
+
+-   Descriptive statistics\
+-   ANOVA\
+-   PRE interpretation
+
+In your paragraph, explain:
+
+-   Why this model is statistically strong\
+-   Why it may not be conceptually interesting\
+-   What this teaches us about modeling fixed policy variables
+
+------------------------------------------------------------------------
+
+## 6. Analysis 4: Violation Type and Payment Amount
+
+Now shift to the more behaviorally meaningful variable: **payment_amount**.
+
+Examine **payment_amount by violation type**.
+
+Your section must include:
+
+-   Visualization (boxplot required)\
+-   Descriptive statistics\
+-   ANOVA\
+-   PRE interpretation
+
+In your paragraph, explain:
+
+-   Why this analysis is more practically meaningful than fine_amount\
+-   What the size of PRE suggests\
+-   How a law firm might use this insight strategically
+
+------------------------------------------------------------------------
+
+## Final Reflection
+
+In 5–7 sentences, answer:
+
+1.  What is the difference between statistical significance and practical significance?\
+2.  Which of the four analyses above do you think is most useful for real-world decision-making?\
+3.  If you were advising the law firm, what is one concrete recommendation you would make based on your findings?
+
+------------------------------------------------------------------------
+
+# Reproducibility Practice
+
+This assignment focuses on reproducible statistical modeling.
+
+Your document must:
+
+-   Use clearly labeled code chunks\
+-   Avoid hard-coding values in your narrative\
+-   Use inline R expressions where appropriate\
+-   Include at least one data-checking “checkpoint” in each major section\
+-   Render cleanly to HTML without manual intervention
+
+The goal is that another analyst could rerun your entire workflow and verify every statistical conclusion.
+
+------------------------------------------------------------------------
+
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
