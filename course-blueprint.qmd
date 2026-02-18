@@ -1,0 +1,199 @@
+---
+title: "Course Blueprint: PSYC 7750G"
+---
+
+# Reproducible Psychological Research {.unnumbered}
+
+**Semester:** Fall 2025\
+**Instructor:** Christian A. Martinez\
+**Institution:** Brooklyn College, CUNY\
+ORCID: https://orcid.org/0009-0005-6026-6454 \| GitHub: github.com/martinezc1
+
+------------------------------------------------------------------------
+
+# Course Philosophy
+
+PSYC 7750G was designed around a simple premise: reproducibility is not an advanced skill — it is a foundational habit.
+
+Rather than treating R as a software tool to learn in isolation, this course approaches R as a complete research environment. Students learn how to move from raw data to interpretable results using transparent, inspectable, and repeatable workflows.
+
+The emphasis is not merely on running statistical tests. The emphasis is on building analytical systems that others can understand, rerun, and verify.
+
+By the end of the semester, students do not just complete assignments — they produce a cohesive analytical portfolio.
+
+------------------------------------------------------------------------
+
+# Learning Objectives
+
+By the end of this course, students are able to:
+
+-   Write and execute R scripts for applied data analysis\
+-   Clean and wrangle datasets using reproducible workflows\
+-   Create publication-quality visualizations using `ggplot2`\
+-   Conduct and interpret common statistical analyses (t-tests, ANOVA, regression, logistic regression, Chi-Square)\
+-   Reproduce analyses from published psychology papers with open datasets\
+-   Communicate results in structured Quarto documents\
+-   Apply open science practices (e.g., OSF, GitHub, transparent documentation)\
+-   Assemble individual analyses into a polished Quarto book
+
+------------------------------------------------------------------------
+
+# Course Structure
+
+The course follows a consistent weekly rhythm designed to reinforce applied learning.
+
+## Tuesdays — Concept + Guided Implementation
+
+-   Short conceptual lecture (20–25 minutes)
+-   Live coding demonstration
+-   Guided mini-lab exercises
+-   Emphasis on understanding the logic behind each method
+
+## Thursdays — Applied Workshop
+
+-   Hands-on work with real datasets
+-   Reproduction of analyses from published psychology papers
+-   Debugging as a collaborative process
+-   Screen-sharing and peer problem solving encouraged
+
+This structure ensures that students immediately apply conceptual material in authentic research contexts.
+
+------------------------------------------------------------------------
+
+# Assessment Design
+
+Evaluation in this course is cumulative and portfolio-driven.
+
+## Weekly Assignments (40%)
+
+Each week introduces a new methodological framework. Assignments require students to:
+
+-   Clean and analyze real datasets
+-   Interpret statistical output
+-   Produce reproducible visualizations
+-   Write structured narrative explanations
+
+Assignments progressively increase in complexity.
+
+## Midterm Project (30%)
+
+The midterm integrates:
+
+-   Data import and merging\
+-   Variable engineering\
+-   t-tests and ANOVA\
+-   Post-hoc comparisons\
+-   Evidence-based recommendation
+
+Students demonstrate their ability to conduct a complete inferential workflow independently.
+
+## Final Project (30%)
+
+Students design and conduct an original research project using NYC Open Data or other civic datasets.
+
+The final submission includes:
+
+-   Fully reproducible analysis\
+-   Clear research framing\
+-   Professional visualizations\
+-   Public-facing interpretation\
+-   In-class presentation
+
+------------------------------------------------------------------------
+
+# Conceptual Arc of the Semester
+
+The course progresses through four major phases:
+
+## Foundations
+
+-   R basics
+-   Data structures
+-   Functions and packages
+-   Tidyverse workflows
+
+## Visualization & Exploration
+
+-   `ggplot2`
+-   Feature engineering
+-   Exploratory data analysis
+-   Data cleaning decisions
+
+## Statistical Inference
+
+-   t-tests\
+-   ANOVA\
+-   Correlation\
+-   Linear regression\
+-   Chi-Square tests\
+-   Logistic regression
+
+## Reproducible Communication
+
+-   Quarto documents\
+-   Structured reporting\
+-   Transparent code practices\
+-   Building a Quarto book
+
+Each stage builds directly on the previous one.
+
+------------------------------------------------------------------------
+
+# Open Science Integration
+
+Reproducibility is treated as a default expectation.
+
+Students are required to:
+
+-   Load data programmatically\
+-   Avoid manual spreadsheet edits\
+-   Document all cleaning decisions\
+-   Avoid hard-coding statistical results\
+-   Use structured document formats\
+-   Present analyses transparently
+
+Open science practices such as preregistration, OSF usage, and GitHub version control are introduced and encouraged throughout the semester.
+
+------------------------------------------------------------------------
+
+# From Coursework to Authorship
+
+The final assignment requires students to assemble all assignments and projects into a cohesive Quarto book.
+
+This transforms:
+
+-   Discrete homework submissions\
+    into\
+-   A structured analytical portfolio
+
+The result is a professional artifact suitable for:
+
+-   Graduate school applications\
+-   Research lab submissions\
+-   Industry analytics portfolios\
+-   Conference presentations\
+-   Public-facing civic research
+
+Students leave the course not only having learned R, but having built a body of reproducible work.
+
+------------------------------------------------------------------------
+
+# Institutional Policies & Resources
+
+The course follows all Brooklyn College and CUNY policies regarding academic integrity, accessibility services, and student support resources.
+
+Students are expected to adhere to the CUNY Academic Integrity Policy and to utilize campus support services when needed.
+
+For official policy details, students should refer to the Brooklyn College website and Undergraduate Bulletin.
+
+------------------------------------------------------------------------
+
+# Closing Note
+
+Reproducible research is not about perfection.
+
+It is about clarity.\
+It is about transparency.\
+It is about building analytical habits that scale beyond a single course.
+
+This blueprint reflects a semester-long progression from foundational skills to independent analytical authorship.

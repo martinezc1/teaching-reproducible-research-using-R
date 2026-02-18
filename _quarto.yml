@@ -6,6 +6,7 @@ book:
   author: "Christian Martinez"
   chapters:
     - index.qmd
+    - course-blueprint.qmd
     - assignment-1.qmd
     - assignment-2.qmd
     - assignment-3.qmd
