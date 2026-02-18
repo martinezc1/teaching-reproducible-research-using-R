@@ -4,7 +4,7 @@ This book represents the applied companion to [Reproducible Research Using R](ht
 
 Over the course of the semester, students transformed structured assignments into fully reproducible analyses using real datasets, transparent workflows, and public-facing communication. What began as individual homework submissions evolved into polished research chapters assembled into this cohesive volume.
 
-This book demonstrates that reproducibility is not an abstract principle — it is a habit, a discipline, and a professional standard.
+This book demonstrates that reproducibility is not an afterthought — it is a habit, a discipline, and a professional standard.
 
 Each chapter reflects a progression of skills: data import, cleaning, visualization, statistical testing, modeling, interpretation, and communication. More importantly, each chapter reflects a shift in mindset — from “running code” to designing complete analytical workflows.
 
@@ -33,19 +33,19 @@ The goal is not perfection. The goal is transparency.
 
 The chapters follow the structure of the course and mirror the conceptual arc of *Reproducible Research Using R*.
 
--   Base R Foundations - @sec-one
--   mtcars Wrangling and Feature Engineering - @sec-two
--   NYPD Shooting Incidents — Cleaning, Insights, and Visualization - @sec-three
--   Merging Data and Comparing Means with t-tests - @sec-four
--   R Script → Quarto Report - @sec-five
--   ANOVA and Payment Patterns in NYC Camera Violations - @sec-six
--   Midterm: Exercise & Sleep – Experimental analysis and inference - @sec-midterm
--   NBA Analytics – Correlation and partial correlation - @sec-seven
--   Florida Crime Analytics – Regression modeling and model comparison - @sec-eight
--   Streaming Analytics – Categorical analysis and Chi-Square testing - @sec-nine
--   Wage Analytics – Logistic regression and predictive modeling - @sec-ten
--   Final Project – Independent civic data research - @sec-final
--   Final Assignment – Building Your Reproducible Quarto Book - @sec-book
+-   [Base R Foundations](#sec-one)
+-   [mtcars Wrangling and Feature Engineering](#sec-two)
+-   [NYPD Shooting Incidents — Cleaning, Insights, and Visualization](#sec-three)
+-   [Merging Data and Comparing Means with t-tests](#sec-four)
+-   [R Script → Quarto Report](#sec-five)
+-   [ANOVA and Payment Patterns in NYC Camera Violations](#sec-six)
+-   [Midterm: Exercise & Sleep – Experimental Analysis and Inference](#sec-midterm)
+-   [NBA Analytics – Correlation and Partial Correlation](#sec-seven)
+-   [Florida Crime Analytics – Regression Modeling and Model Comparison](#sec-eight)
+-   [Streaming Analytics – Categorical Analysis and Chi-Square Testing](#sec-nine)
+-   [Wage Analytics – Logistic Regression and Predictive Modeling](#sec-ten)
+-   [Final Project – Independent Civic Data Research](#sec-final)
+-   [Final Assignment – Building Your Reproducible Quarto Book](#sec-book)
 
 Each chapter applies a specific methodological framework to a real dataset.
 

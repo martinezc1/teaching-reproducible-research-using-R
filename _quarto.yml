@@ -4,7 +4,6 @@ project:
 book:
   title: "Teaching Reproducible Research Using R"
   author: "Christian Martinez"
-  date: "2/16/2026"
   chapters:
     - index.qmd
     - assignment-1.qmd
