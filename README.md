@@ -38,11 +38,6 @@ This volume showcases:
 -   Clear, professional communication of results\
 -   Public-facing research using real-world datasets
 
-Every analysis in this book can be rerun from start to finish.\
-All figures, tables, and results are generated directly from executable code.
-
-Nothing has been manually edited or pasted from external software.
-
 > The goal is not perfection. The goal is transparency.
 
 ------------------------------------------------------------------------
@@ -85,9 +80,9 @@ Each chapter:
 
 This ensures analyses are:
 
--inspectable\
-- repeatable\
-- defensible
+-   inspectable\
+-   repeatable\
+-   defensible
 
 These are the expectations of: - graduate research\
 - industry analytics\
@@ -106,8 +101,7 @@ This book serves as:
 -   Evidence of reproducible workflow mastery\
 -   A foundation for conference submissions and civic engagement
 
-> Completing this book is not simply a course requirement.\
-> It is a transition point — from student to analytical author.
+> Completing this book is not simply a course requirement. It is a transition point — from student to analytical author.
 
 ------------------------------------------------------------------------
 
