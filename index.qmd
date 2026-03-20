@@ -103,6 +103,22 @@ Under the following terms:
 
 ------------------------------------------------------------------------
 
+## How to Cite
+
+If you use this textbook in your teaching, research, or projects, please cite it as:
+
+Martinez, C. (2026). *Teaching Reproducible Research Using R* (Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19138801
+
+### Version History
+
+#### v1.0.0 (2026)
+
+- Initial public release
+- Full textbook curriculum covering data analysis, visualization, and modeling in R
+- Used in Fall 2025 coursework at Brooklyn College (CUNY)
+
+------------------------------------------------------------------------
+
 # A Model of Publication in Practice
 
 A previous cohort of students transformed their final projects into a collective publication: [NYC Open Data Student Gallery - Brooklyn College](https://martinezc1-nyc-open-data-student-gallery.share.connect.posit.cloud/)
