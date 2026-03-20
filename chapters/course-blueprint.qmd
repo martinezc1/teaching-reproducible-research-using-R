@@ -3,13 +3,13 @@
 **Semester:** Fall 2025\
 **Instructor:** Christian A. Martinez\
 **Institution:** Brooklyn College, CUNY\
-ORCID: https://orcid.org/0009-0005-6026-6454 \| GitHub: github.com/martinezc1
+**ORCID:** https://orcid.org/0009-0005-6026-6454 \| **GitHub:** github.com/martinezc1
 
 ------------------------------------------------------------------------
 
 # Course Philosophy
 
-PSYC 7750G was designed around a simple premise: reproducibility is not an advanced skill — it is a foundational habit.
+This course is structured around a simple premise: reproducibility is not an advanced skill — it is a foundational habit.
 
 Rather than treating R as a software tool to learn in isolation, this course approaches R as a complete research environment. Students learn how to move from raw data to interpretable results using transparent, inspectable, and repeatable workflows.
 
@@ -41,12 +41,12 @@ The course follows a consistent weekly rhythm designed to reinforce applied lear
 ## Tuesdays — Concept + Guided Implementation
 
 -   Short conceptual lecture (20–25 minutes)
--   Live coding demonstration
 -   Guided mini-lab exercises
 -   Emphasis on understanding the logic behind each method
 
 ## Thursdays — Applied Workshop
 
+-   Live coding demonstration
 -   Hands-on work with real datasets
 -   Reproduction of analyses from published psychology papers
 -   Debugging as a collaborative process
@@ -170,7 +170,7 @@ The result is a professional artifact suitable for:
 -   Conference presentations\
 -   Public-facing civic research
 
-Students leave the course not only having learned R, but having built a body of reproducible work.
+The structure of the course ensures that students leave not only with technical fluency in R, but with a coherent body of reproducible work.
 
 ------------------------------------------------------------------------
 

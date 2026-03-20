@@ -4,7 +4,7 @@ This book represents the applied companion to [Reproducible Research Using R](ht
 
 Over the course of the semester, students transformed structured assignments into fully reproducible analyses using real datasets, transparent workflows, and public-facing communication. What began as individual homework submissions evolved into polished research chapters assembled into this cohesive volume.
 
-This book demonstrates that reproducibility is not an afterthought — it is a habit, a discipline, and a professional standard.
+This book treats reproducibility not as an enhancement, but as a default professional practice.
 
 Each chapter reflects a progression of skills: data import, cleaning, visualization, statistical testing, modeling, interpretation, and communication. More importantly, each chapter reflects a shift in mindset — from “running code” to designing complete analytical workflows.
 
@@ -86,11 +86,26 @@ It is a transition point — from student to analytical author.
 
 ------------------------------------------------------------------------
 
+# License
+
+This work is licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to:
+
+-   Share — copy and redistribute the material
+-   Adapt — remix, transform, and build upon the material
+
+Under the following terms:
+
+-   Attribution — You must give appropriate credit.
+
+[Full license](https://creativecommons.org/licenses/by/4.0/)
+
+------------------------------------------------------------------------
+
 # A Model of Publication in Practice
 
 A previous cohort of students transformed their final projects into a collective publication: [NYC Open Data Student Gallery - Brooklyn College](https://martinezc1-nyc-open-data-student-gallery.share.connect.posit.cloud/)
-
-A previous cohort of students transformed their final projects into a collective publication
 
 ------------------------------------------------------------------------
 

@@ -6,23 +6,23 @@ book:
   author: "Christian Martinez"
   chapters:
     - index.qmd
-    - course-blueprint.qmd
-    - assignment-1.qmd
-    - assignment-2.qmd
-    - assignment-3.qmd
-    - assignment-4.qmd
-    - assignment-5.qmd
-    - assignment-6.qmd
-    - assignment-midterm.qmd
-    - assignment-7.qmd
-    - assignment-8.qmd
-    - assignment-9.qmd
-    - assignment-10.qmd
-    - assignment-final.qmd
-    - assignment-book.qmd
-  
+    - chapters/course-blueprint.qmd
+    - chapters/assignment-1.qmd
+    - chapters/assignment-2.qmd
+    - chapters/assignment-3.qmd
+    - chapters/assignment-4.qmd
+    - chapters/assignment-5.qmd
+    - chapters/assignment-6.qmd
+    - chapters/assignment-midterm.qmd
+    - chapters/assignment-7.qmd
+    - chapters/assignment-8.qmd
+    - chapters/assignment-9.qmd
+    - chapters/assignment-10.qmd
+    - chapters/assignment-final.qmd
+    - chapters/assignment-book.qmd
 
-bibliography: references.bib
+bibliography: bibliography/packages.bib
+link-citations: true
 
 format:
   html:
@@ -31,6 +31,10 @@ format:
       - brand
   pdf:
     documentclass: scrreprt
+    code-copy: true
+    code-summary: "Show the code"
+    toc: true
+    number-sections: true
 
 editor: visual
 

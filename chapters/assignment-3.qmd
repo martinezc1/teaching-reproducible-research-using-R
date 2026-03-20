@@ -6,7 +6,7 @@ title: "Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visual
 
 In this assignment, you will work with **NYPD Shooting Incident Data** using the `nycOpenData` package to practice data cleaning, feature engineering, exploratory insight generation, and data visualization with `ggplot2`.
 
-Compared to previous assignments, this one is more open-ended: you will make a few analytic decisions (e.g., how to define time-of-day categories and which variables to explore for your second insight).
+Compared to previous assignments, this one is more open-ended: you will make a few analytic decisions (e.g., how to define time-of-day categories and which variables to explore for your second insight). This marks your transition from structured exercises to defensible analytic decision-making.
 
 ------------------------------------------------------------------------
 
@@ -52,8 +52,6 @@ You must use the `nycOpenData` package and the function:
 
 `nyc_shooting_incidents()`
 
-If you need to keep runtime reasonable, you may slice the dataset (e.g., the first 30,000 rows) after pulling it.
-
 ------------------------------------------------------------------------
 
 ## 1. Cleaning and Feature Engineering
@@ -92,7 +90,7 @@ Complete all of the following in your script:
 Provide the following insights as **comments** in your script:
 
 1.  **One insight about `time_of_day`**\
-    Example format: “Most shootings occur during \_\_\_ compared to \_\_\_ …”
+    Example format: “Shootings are more frequent during \_\_\_ than \_\_\_ suggestion...”
 
 2.  **One additional insight of your choice**\
     Explore anything you find interesting in the dataset (be creative).
@@ -111,9 +109,16 @@ Create two plots using `ggplot2`:
 
 -   Must support your second insight
 
-Both plots must include: - Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`) - Informative axis labels - A clear title - Custom font/size settings via `theme()`
+Both plots must include: 
 
-Additional requirement: - At least **one** plot must use `facet_wrap()`
+-   Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`) 
+-   Informative axis labels 
+-   A clear title 
+-   Custom font/size settings via `theme()`
+
+Additional requirement: 
+
+-   At least **one** plot must use `facet_wrap()`
 
 ------------------------------------------------------------------------
 
@@ -128,7 +133,7 @@ At the end of your script, write a short paragraph (as comments) describing:
 
 ## Starter Code Template
 
-Copy this template into your script and complete the tasks above.
+Copy this template into your script and complete the tasks above. (@R-tidyverse) (@R-lubridate) (@R-nycOpenData)
 
 ```{r}
 #| label: assignment-03-starter-template

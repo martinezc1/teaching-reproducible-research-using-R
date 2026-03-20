@@ -69,6 +69,13 @@ Your script must:
 
     -   **Option A:** split `Name` into first/last, or
     -   **Option B:** unite first/last into a single full name
+    -   **Clean the names:** make sure all column names are lowercase and are connected through an _ (e.g. score_before)
+    
+::: callout-tip
+## When cleaning column names:
+
+The `clean_names()` functio from the `janitor` can be very helpful.
+:::
 
 4.  Rename columns if needed so the join key matches in both datasets.
 
@@ -121,7 +128,7 @@ Some `Score Before` or `Score After` values have been removed on purpose.
 
 1.  Create a new column:
 
-`Improvement = Score After - Score Before`
+`Improvement = score_after - score_before`
 
 2.  Run an **independent t-test** comparing `Improvement` between male and female employees.
 
@@ -162,7 +169,7 @@ In your script:
 
 -   Print or comment the number of rows **before and after** the merge (confirm you ended with 30 rows).
 -   Explicitly document which join you used (e.g., `left_join`) and *why*.
--   After replacing missing values, include a “checkpoint” that confirms there are no remaining `NA`s in the score columns (e.g., `sum(is.na(Score_Before))`).
+-   After replacing missing values, include a “checkpoint” that confirms there are no remaining `NA`s in the score columns (e.g., `sum(is.na(score_before))`).
 -   Keep key variables named consistently (e.g., `score_before`, `score_after`, `improvement`) so your analysis is easy to verify.
 
 The goal is that another reader could review your script and confirm the merge logic, the imputation logic, and the statistical results without guessing.

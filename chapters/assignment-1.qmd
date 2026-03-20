@@ -49,7 +49,7 @@ Your script must:
 
 # Assignment Tasks
 
-## Part 1: R as a Calculator
+## 1. R as a Calculator
 
 1.  Calculate `12 * 2`.
 2.  Calculate the square root of `144`.
@@ -59,7 +59,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## Part 2: Vectors
+## 2. Vectors
 
 1.  Create a numeric vector of five random numbers named `randy`.
 2.  Compute the mean, median, minimum, and maximum of `randy`.
@@ -73,7 +73,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## Part 3: Data Frames
+## 3. Data Frames
 
 1.  Create a data frame called `class_df` with columns:
     -   name\
@@ -88,7 +88,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## Part 4: Built-in Datasets
+## 4. Built-in Datasets
 
 Using `mtcars`:
 
@@ -110,7 +110,7 @@ What was the most surprising or confusing thing you learned about R so far?
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice (Assignment 1)
+# Reproducibility Practice
 
 For this first assignment, focus on script organization and documentation.
 
