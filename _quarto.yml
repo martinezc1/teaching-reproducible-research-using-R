@@ -20,6 +20,8 @@ book:
     - chapters/assignment-10.qmd
     - chapters/assignment-final.qmd
     - chapters/assignment-book.qmd
+  appendices:
+    - chapters/References.qmd
 
 bibliography: bibliography/packages.bib
 link-citations: true
