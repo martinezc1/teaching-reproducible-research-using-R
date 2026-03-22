@@ -1,22 +1,20 @@
 cff-version: 1.2.0
-message: "If you use this book, please cite it as follows."
-title: "Teaching Reproducible Research Using R"
-type: book
+message: "If you use this repository, please cite the book below."
+title: "teaching-reproducible-research-using-R"
 authors:
   - family-names: "Martinez"
     given-names: "Christian"
     orcid: "https://orcid.org/0009-0005-6026-6454"
-license: "CC-BY-4.0"
-version: "1.0.1"
-date-released: "2026-02-26"
-doi: 10.5281/zenodo.19139302
 url: "https://github.com/martinezc1/teaching-reproducible-research-using-R"
-repository-code: "https://github.com/martinezc1/teaching-reproducible-research-using-R"
-abstract: "An open educational resource designed to support instructors in teaching reproducible research using R, including course materials, assignments, and structured pedagogical guidance."
-keywords:
-  - reproducible research
-  - R
-  - teaching
-  - open educational resources
-  - data science education
 
+preferred-citation:
+  type: book
+  title: "Teaching Reproducible Research Using R"
+  authors:
+    - family-names: "Martinez"
+      given-names: "Christian"
+      orcid: "https://orcid.org/0009-0005-6026-6454"
+  year: 2026
+  date-released: 2026-02-26
+  doi: "10.5281/zenodo.19139302"
+  url: "https://doi.org/10.5281/zenodo.19139302"
