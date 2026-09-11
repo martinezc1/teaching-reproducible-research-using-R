@@ -6,7 +6,7 @@
 
 ------------------------------------------------------------------------
 
-# Course Philosophy
+## Course Philosophy
 
 This course is structured around a simple premise: reproducibility is not an advanced skill — it is a foundational habit.
 
@@ -16,7 +16,7 @@ By the end of the semester, students do not just complete assignments — they p
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By the end of this course, students are able to:
 
@@ -31,17 +31,17 @@ By the end of this course, students are able to:
 
 ------------------------------------------------------------------------
 
-# Course Structure
+## Course Structure
 
 The course follows a consistent weekly rhythm designed to reinforce applied learning.
 
-## Tuesdays — Concept + Guided Implementation
+### Tuesdays — Concept + Guided Implementation
 
 - Short conceptual lecture (20–25 minutes)
 - Guided mini-lab exercises
 - Emphasis on understanding the logic behind each method
 
-## Thursdays — Applied Workshop
+### Thursdays — Applied Workshop
 
 - Live coding demonstration
 - Hands-on work with real datasets
@@ -53,11 +53,11 @@ This structure ensures that students immediately apply conceptual material in au
 
 ------------------------------------------------------------------------
 
-# Assessment Design
+## Assessment Design
 
 Evaluation in this course is cumulative and portfolio-driven.
 
-## Weekly Assignments (40%)
+### Weekly Assignments (40%)
 
 Each week introduces a new methodological framework. Assignments require students to:
 
@@ -68,7 +68,7 @@ Each week introduces a new methodological framework. Assignments require student
 
 Assignments progressively increase in complexity.
 
-## Midterm Project (30%)
+### Midterm Project (30%)
 
 The midterm integrates:
 
@@ -80,7 +80,7 @@ The midterm integrates:
 
 Students demonstrate their ability to conduct a complete inferential workflow independently.
 
-## Final Project (30%)
+### Final Project (30%)
 
 Students design and conduct an original research project using NYC Open Data or other civic datasets.
 
@@ -94,25 +94,25 @@ The final submission includes:
 
 ------------------------------------------------------------------------
 
-# Conceptual Arc of the Semester
+## Conceptual Arc of the Semester
 
 The course progresses through four major phases:
 
-## Foundations
+### Foundations
 
 - R basics
 - Data structures
 - Functions and packages
 - Tidyverse workflows
 
-## Visualization & Exploration
+### Visualization & Exploration
 
 - `ggplot2`
 - Feature engineering
 - Exploratory data analysis
 - Data cleaning decisions
 
-## Statistical Inference
+### Statistical Inference
 
 - t-tests\
 - ANOVA\
@@ -121,7 +121,7 @@ The course progresses through four major phases:
 - Chi-Square tests\
 - Logistic regression
 
-## Reproducible Communication
+### Reproducible Communication
 
 - Quarto documents\
 - Structured reporting\
@@ -132,7 +132,7 @@ Each stage builds directly on the previous one.
 
 ------------------------------------------------------------------------
 
-# Open Science Integration
+## Open Science Integration
 
 Reproducibility is treated as a default expectation.
 
@@ -149,7 +149,7 @@ Open science practices such as preregistration, OSF usage, and GitHub version co
 
 ------------------------------------------------------------------------
 
-# From Coursework to Authorship
+## From Coursework to Authorship
 
 The final assignment requires students to assemble all homeworks into a cohesive Quarto book, moving away from "one-and-done" assignments.
 
@@ -171,7 +171,7 @@ The structure of the course ensures that students leave not only with technical 
 
 ------------------------------------------------------------------------
 
-# Institutional Policies & Resources
+## Institutional Policies & Resources
 
 The course follows all Brooklyn College and CUNY policies regarding academic integrity, accessibility services, and student support resources.
 
@@ -181,7 +181,7 @@ For official policy details, students should refer to the Brooklyn College websi
 
 ------------------------------------------------------------------------
 
-# Closing Note
+## Closing Note
 
 Reproducible research is not about perfection.
 

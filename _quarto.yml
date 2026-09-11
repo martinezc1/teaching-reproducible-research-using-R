@@ -31,14 +31,12 @@ format:
     theme:
       - cosmo
       - brand
-    number-sections: false
     
   pdf:
     documentclass: scrreprt
     code-copy: true
     code-summary: "Show the code"
     toc: true
-    number-sections: false
 
 editor: visual
 

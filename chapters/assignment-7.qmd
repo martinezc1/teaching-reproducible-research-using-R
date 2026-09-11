@@ -14,7 +14,7 @@ Your final product should read like a professional analytics report prepared for
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -29,7 +29,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 7: Correlation** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -37,7 +37,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two files**:
 
@@ -55,15 +55,15 @@ Your document must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
 ------------------------------------------------------------------------
 
-## 1. Data Ingest and Preparation
+### 1. Data Ingest and Preparation
 
 You must programmatically load all 30 teams from the Excel workbook.
 
-### Required Tasks
+#### Required Tasks
 
 Create a function that:
 
@@ -84,7 +84,7 @@ Then:
 - Apply your function to every sheet using `lapply()`\
 - Combine all teams into one complete dataset using a row-binding method
 
-### Requirements
+#### Requirements
 
 - Your code must not manually load sheets one-by-one\
 - The final dataset must include all 30 teams\
@@ -95,7 +95,7 @@ Briefly explain why writing a function improves reproducibility.
 
 ------------------------------------------------------------------------
 
-## 2. Adding Conference Information
+### 2. Adding Conference Information
 
 You are provided with a Conference lookup sheet.
 
@@ -114,16 +114,16 @@ Briefly explain why binary coding is useful for correlation analysis.
 
 ------------------------------------------------------------------------
 
-## 3. Visual Exploration
+### 3. Visual Exploration
 
 Create **at least two visualizations** using `ggplot2`.
 
-### Required Plot 1
+#### Required Plot 1
 
 - A scatterplot showing the relationship between `PRA` and `STOCKS`
 - Points must be colored by Conference
 
-### Required Plot 2
+#### Required Plot 2
 
 - A second visualization of your choice\
   (Examples: distribution of PRA by conference, age vs PRA, STOCKS vs Age, etc.)
@@ -142,11 +142,11 @@ All plots must include:
 
 ------------------------------------------------------------------------
 
-## 4. Correlation Analysis
+### 4. Correlation Analysis
 
 ------------------------------------------------------------------------
 
-### A. Point-Biserial Correlation
+#### A. Point-Biserial Correlation
 
 Test whether Conference (East = 1, West = 0) is related to:
 
@@ -163,7 +163,7 @@ Report:
 
 ------------------------------------------------------------------------
 
-### B. Correlation Matrix
+#### B. Correlation Matrix
 
 Create a small correlation matrix including at least:
 
@@ -181,7 +181,7 @@ Then answer:
 
 ------------------------------------------------------------------------
 
-### C. Partial Correlation
+#### C. Partial Correlation
 
 Run a partial correlation examining the relationship between:
 
@@ -197,7 +197,7 @@ Explain in plain language what "controlling for" means.
 
 ------------------------------------------------------------------------
 
-## 5. Executive Memo to Adam Silver
+### 5. Executive Memo to Adam Silver
 
 Write a short professional memo addressed to:
 
@@ -216,7 +216,7 @@ Your tone should be professional and executive-level, not academic.
 
 ------------------------------------------------------------------------
 
-# Guidelines for Interpretation
+## Guidelines for Interpretation
 
 When interpreting correlations, always include:
 
@@ -231,7 +231,7 @@ Example of plain-language style:
 
 ------------------------------------------------------------------------
 
-# Reflection
+## Reflection
 
 In 4–6 sentences, answer:
 
@@ -241,7 +241,15 @@ In 4–6 sentences, answer:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
 
 This assignment emphasizes reproducible data pipelines.
 
@@ -255,11 +263,3 @@ Your document must:
 - Render cleanly to HTML
 
 The goal is that another analyst could rerun your entire workflow and verify your findings without guessing what steps were taken.
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.

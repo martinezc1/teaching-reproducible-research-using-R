@@ -27,7 +27,7 @@ You are officially becoming an author.
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this project, you will:
 
@@ -39,7 +39,7 @@ By completing this project, you will:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This final assignment synthesizes concepts in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -47,11 +47,11 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Assignment Requirements
+## Assignment Requirements
 
 ------------------------------------------------------------------------
 
-## 1. Create a Quarto Book Project
+### 1. Create a Quarto Book Project
 
 You must:
 
@@ -64,7 +64,7 @@ Your book must render cleanly without errors.
 
 ------------------------------------------------------------------------
 
-## 2. Required Chapters (In This Order)
+### 2. Required Chapters (In This Order)
 
 Your book must include the following chapters, in this exact order:
 
@@ -81,7 +81,7 @@ Each chapter must be its own `.qmd` file.
 
 ------------------------------------------------------------------------
 
-## 3. Title Page
+### 3. Title Page
 
 Your book must include a professional title page containing:
 
@@ -94,7 +94,7 @@ This page should feel polished and intentional.
 
 ------------------------------------------------------------------------
 
-## 4. Cover Image
+### 4. Cover Image
 
 Your book must include a cover image.
 
@@ -109,7 +109,7 @@ The image must be appropriate and professional.
 
 ------------------------------------------------------------------------
 
-## 5. Chapter Introductions
+### 5. Chapter Introductions
 
 Each chapter must begin with a short introduction explaining:
 
@@ -123,7 +123,7 @@ Think of this as guiding a new reader through your work.
 
 ------------------------------------------------------------------------
 
-## 6. Figure and Table Captions
+### 6. Figure and Table Captions
 
 Every figure, plot, and table must include:
 
@@ -137,7 +137,7 @@ There should be no unlabeled figures in your book.
 
 ------------------------------------------------------------------------
 
-## 7. Final Reflection Chapter
+### 7. Final Reflection Chapter
 
 Your final chapter must be a reflective essay (minimum 400 words) addressing:
 
@@ -151,7 +151,7 @@ This chapter should be written in thoughtful, professional prose.
 
 ------------------------------------------------------------------------
 
-# Book Quality Standards
+## Book Quality Standards
 
 Your book should:
 
@@ -168,7 +168,7 @@ It is a cohesive analytical portfolio.
 
 ------------------------------------------------------------------------
 
-# Publishing Requirement
+## Publishing Requirement
 
 You must publish your completed Quarto book.
 
@@ -181,7 +181,7 @@ Your published book should be accessible and shareable.
 
 ------------------------------------------------------------------------
 
-# Grading (100 Points Total)
+## Grading (100 Points Total)
 
 - Structure & Organization (20 pts)\
   Proper chapter order, functioning book structure
@@ -203,7 +203,7 @@ Your published book should be accessible and shareable.
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 Your book must:
 
@@ -218,7 +218,7 @@ The goal is that anyone could download your project and recreate your entire boo
 
 ------------------------------------------------------------------------
 
-# Takeaway
+## Takeaway
 
 By completing this assignment, you will leave the course with:
 

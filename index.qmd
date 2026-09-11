@@ -13,7 +13,7 @@ It is a curated portfolio of applied reproducible research.
 
 ------------------------------------------------------------------------
 
-# What This Book Represents
+## What This Book Represents
 
 This volume showcases:
 
@@ -29,7 +29,7 @@ The goal is not perfection. The goal is transparency.
 
 ------------------------------------------------------------------------
 
-# How This Book Is Organized
+## How This Book Is Organized
 
 The chapters follow the structure of the course and mirror the conceptual arc of *Reproducible Research Using R*.
 
@@ -53,7 +53,7 @@ Together, they form a complete analytical portfolio.
 
 ------------------------------------------------------------------------
 
-# Reproducibility as a Professional Skill
+## Reproducibility as a Professional Skill
 
 Throughout this book, reproducibility is treated as a default practice rather than an optional enhancement.
 
@@ -69,7 +69,7 @@ This workflow ensures that analyses are inspectable, repeatable, and defensible 
 
 ------------------------------------------------------------------------
 
-# From Assignment to Authorship
+## From Assignment to Authorship
 
 By assembling these projects into a Quarto book, students move beyond submission-based coursework and into publication-based thinking.
 
@@ -86,7 +86,7 @@ It is a transition point — from student to analytical author.
 
 ------------------------------------------------------------------------
 
-# License
+## License
 
 This work is licensed under a Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
@@ -103,15 +103,15 @@ Under the following terms:
 
 ------------------------------------------------------------------------
 
-## How to Cite
+### How to Cite
 
 If you use this textbook in your teaching, research, or projects, please cite it as:
 
 Martinez, C. (2026). *Teaching Reproducible Research Using R* (Version 1.0.1). Zenodo. https://doi.org/10.5281/zenodo.19139302
 
-### Version History
+#### Version History
 
-#### v1.0.1 (2026)
+##### v1.0.1 (2026)
 
 -   Initial public release
 -   Full textbook curriculum covering data analysis, visualization, and modeling in R
@@ -119,13 +119,13 @@ Martinez, C. (2026). *Teaching Reproducible Research Using R* (Version 1.0.1). Z
 
 ------------------------------------------------------------------------
 
-# A Model of Publication in Practice
+## A Model of Publication in Practice
 
 A previous cohort of students transformed their final projects into a collective publication: [NYC Open Data Student Gallery - Brooklyn College](https://martinezc1-nyc-open-data-student-gallery.share.connect.posit.cloud/)
 
 ------------------------------------------------------------------------
 
-# A Note to Readers
+## A Note to Readers
 
 If you are a future employer, graduate program, research lab, or collaborator reviewing this book, you are not just reading assignments — you are reviewing a semester-long demonstration of analytical growth.
 

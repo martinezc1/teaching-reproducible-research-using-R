@@ -8,7 +8,7 @@ You will complete all tasks in a single `.R` script.
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -22,7 +22,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 1: Introduction to R** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -30,7 +30,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **one `.R` script file**.
 
@@ -44,9 +44,9 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
-## 1. R as a Calculator
+### 1. R as a Calculator
 
 1.  Calculate `12 * 2`.
 2.  Calculate the square root of `144`.
@@ -56,7 +56,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## 2. Vectors
+### 2. Vectors
 
 1.  Create a numeric vector of five random numbers named `randy`.
 2.  Compute the mean, median, minimum, and maximum of `randy`.
@@ -70,7 +70,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## 3. Data Frames
+### 3. Data Frames
 
 1.  Create a data frame called `class_df` with columns:
     - name\
@@ -85,7 +85,7 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-## 4. Built-in Datasets
+### 4. Built-in Datasets
 
 Using `mtcars`:
 
@@ -99,7 +99,7 @@ Using `mtcars`:
 
 ------------------------------------------------------------------------
 
-## Reflection
+### Reflection
 
 At the end of your script, answer in 2–3 sentences (as comments):
 
@@ -107,7 +107,7 @@ What was the most surprising or confusing thing you learned about R so far?
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 For this first assignment, focus on script organization and documentation.
 

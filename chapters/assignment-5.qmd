@@ -8,7 +8,7 @@ Your final output should read like a short research note: code + narrative expla
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -21,7 +21,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 10: Reproducible Reporting** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -29,7 +29,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two things**:
 
@@ -40,22 +40,22 @@ Submit **two things**:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
 Your Quarto document must include the following sections and components.
 
-## 1. YAML header
+### 1. YAML header
 
 Include:
 
 - Title
 - Your name as the *author*
 
-## 2. Setup chunk
+### 2. Setup chunk
 
 Load all required libraries (for example: `tidyverse`, `lubridate`, `ggplot2`, `nycOpenData`, etc.).
 
-## 3. Minimum required code chunks (4)
+### 3. Minimum required code chunks (4)
 
 Your report must contain *at least* the following four code chunks:
 
@@ -77,7 +77,7 @@ Your report must contain *at least* the following four code chunks:
 
 *All tables and graphs must have captions!*
 
-## 4. Narrative text
+### 4. Narrative text
 
 After **each** code chunk, write a short explanation describing:
 
@@ -85,7 +85,7 @@ After **each** code chunk, write a short explanation describing:
 - why you did it
 - what you learned or produced
 
-## 5. Inline R expression
+### 5. Inline R expression
 
 Include at least **one** inline R expression in your narrative text.
 
@@ -93,7 +93,7 @@ Example:
 
 > The dataset contains `r nrow(shooting_data)` rows after cleaning.
 
-## 6. Hyperlink to the dataset
+### 6. Hyperlink to the dataset
 
 Provide a clickable link to the dataset (not a raw URL pasted as plain text).
 
@@ -105,13 +105,13 @@ Example:
 
 ------------------------------------------------------------------------
 
-## Reflection
+### Reflection
 
 In **3–5 sentences**, explain how this workflow could potentially help you in your thesis research.
 
 ------------------------------------------------------------------------
 
-# Publishing Instructions
+## Publishing Instructions
 
 1.  Render your Quarto document to HTML.
 2.  Publish it online (e.g., RPubs).
@@ -121,7 +121,7 @@ In **3–5 sentences**, explain how this workflow could potentially help you in 
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice (Quarto Reporting)
+## Reproducibility Practice (Quarto Reporting)
 
 This assignment focuses on reproducibility as **communication**.
 
@@ -131,11 +131,3 @@ In your report:
 - Your narrative should match your code (a reader should understand what each chunk accomplishes)
 - Inline R values should be used to avoid hard-coding numbers that may change if the dataset updates
 - Your HTML output should render cleanly and be readable without needing the original script
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.

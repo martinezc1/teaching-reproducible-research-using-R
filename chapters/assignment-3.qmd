@@ -8,7 +8,7 @@ Compared to previous assignments, this one is more open-ended: you will make a f
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -21,7 +21,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 3: Visualizations** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -29,7 +29,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **one `.R` script file**.
 
@@ -42,9 +42,9 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
-## 0. Data Source
+### 0. Data Source
 
 You must use the `nycOpenData` package and the function:
 
@@ -52,22 +52,22 @@ You must use the `nycOpenData` package and the function:
 
 ------------------------------------------------------------------------
 
-## 1. Cleaning and Feature Engineering
+### 1. Cleaning and Feature Engineering
 
 Complete all of the following in your script:
 
-### 1A. Missing data removal (defensible choice)
+#### 1A. Missing data removal (defensible choice)
 
 - Choose **one column** where it is reasonable to remove missing values.
 - Compute and report (in a comment) **how many values are missing** in that column before removal.
 - Remove rows with missing values in that column.
 - In a comment, explain **why** that column was “safe” to use.
 
-### 1B. Lowercase a column
+#### 1B. Lowercase a column
 
 - Choose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.
 
-### 1C. Create `time_of_day`
+#### 1C. Create `time_of_day`
 
 - Create a new column called `time_of_day` with three categories:
   - Morning
@@ -76,14 +76,14 @@ Complete all of the following in your script:
 - You define the time boundaries.
 - Briefly note your boundaries in a comment.
 
-### 1D. Create `days_since`
+#### 1D. Create `days_since`
 
 - Create a column called `days_since` showing the number of days between today’s date and the date of the shooting.
 - Use `as.Date()` and/or `lubridate` as needed.
 
 ------------------------------------------------------------------------
 
-## 2. Insights
+### 2. Insights
 
 Provide the following insights as **comments** in your script:
 
@@ -95,15 +95,15 @@ Provide the following insights as **comments** in your script:
 
 ------------------------------------------------------------------------
 
-## 3. Visualizations (ggplot2)
+### 3. Visualizations (ggplot2)
 
 Create two plots using `ggplot2`:
 
-### Plot 3A. `time_of_day` plot
+#### Plot 3A. `time_of_day` plot
 
 - Must directly relate to your `time_of_day` variable
 
-### Plot 3B. personal insight plot
+#### Plot 3B. personal insight plot
 
 - Must support your second insight
 
@@ -120,7 +120,7 @@ Additional requirement:
 
 ------------------------------------------------------------------------
 
-## 4. Written Summary
+### 4. Written Summary
 
 At the end of your script, write a short paragraph (as comments) describing:
 
@@ -129,7 +129,7 @@ At the end of your script, write a short paragraph (as comments) describing:
 
 ------------------------------------------------------------------------
 
-## Starter Code Template
+### Starter Code Template
 
 Copy this template into your script and complete the tasks above. (@R-tidyverse) (@R-lubridate) (@R-nycOpenData)
 
@@ -204,7 +204,7 @@ shooting_data <- nyc_shooting_incidents()
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 This assignment focuses on reproducibility when working with **real civic data** and **date/time feature engineering**.
 

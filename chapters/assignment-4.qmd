@@ -11,7 +11,7 @@ Your goal is to merge the datasets, clean them, and answer questions using **t-t
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -27,7 +27,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 4: Comparing Two Groups: Data Wrangling, Visualization, and t-Tests** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -35,7 +35,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **one `.R` script file**.
 
@@ -48,9 +48,9 @@ Your script must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
-## 1. Data Wrangling (Import + Merge)
+### 1. Data Wrangling (Import + Merge)
 
 1.  Import both datasets into R:
 
@@ -69,7 +69,7 @@ Your script must:
     - **Clean the names:** make sure all column names are lowercase and are connected through an \_ (e.g. score_before)
 
 ::: callout-tip
-## When cleaning column names:
+#### When cleaning column names:
 
 The `clean_names()` functio from the `janitor` can be very helpful.
 :::
@@ -88,7 +88,7 @@ The `clean_names()` functio from the `janitor` can be very helpful.
 
 ------------------------------------------------------------------------
 
-## 2. Handling Missing Data (Imputation)
+### 2. Handling Missing Data (Imputation)
 
 Some `Score Before` or `Score After` values have been removed on purpose.
 
@@ -101,7 +101,7 @@ Some `Score Before` or `Score After` values have been removed on purpose.
 
 ------------------------------------------------------------------------
 
-## 3. Dependent t-test (Paired)
+### 3. Dependent t-test (Paired)
 
 1.  Run a **paired t-test** comparing `Score Before` vs `Score After`.
 
@@ -113,15 +113,15 @@ Some `Score Before` or `Score After` values have been removed on purpose.
 
 ------------------------------------------------------------------------
 
-## 4. Independent t-tests (Sex + Department)
+### 4. Independent t-tests (Sex + Department)
 
-### 4A. Add a Sex column (using `babynames`)
+#### 4A. Add a Sex column (using `babynames`)
 
 1.  Add a `Sex` column by merging on first names using the `babynames` package.
 2.  If a name does not have an associated sex, remove it from the dataset.
 3.  Write a short comment reporting how many rows remain after this filtering step.
 
-### 4B. Improvement t-test by Sex
+#### 4B. Improvement t-test by Sex
 
 1.  Create a new column:
 
@@ -135,7 +135,7 @@ Some `Score Before` or `Score After` values have been removed on purpose.
     - p-value
     - interpretation
 
-### 4C. Improvement analysis by Department
+#### 4C. Improvement analysis by Department
 
 Using the same `Improvement` column, run a t-test in conjunction with the `department` column.
 
@@ -149,7 +149,7 @@ Write a few sentences summarizing what you found.
 
 ------------------------------------------------------------------------
 
-## Written Summary
+### Written Summary
 
 At the end of your script, write a short paragraph (as comments) describing:
 
@@ -158,7 +158,7 @@ At the end of your script, write a short paragraph (as comments) describing:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 This assignment focuses on reproducible workflows for **joining datasets** and **handling missing data**, where mistakes can silently change results.
 

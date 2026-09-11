@@ -1,0 +1,1153 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Teaching Reproducible Research Using R",
+    "section": "",
+    "text": "About This Book\nThis book represents the applied companion to Reproducible Research Using R.\nOver the course of the semester, students transformed structured assignments into fully reproducible analyses using real datasets, transparent workflows, and public-facing communication. What began as individual homework submissions evolved into polished research chapters assembled into this cohesive volume.\nThis book treats reproducibility not as an enhancement, but as a default professional practice.\nEach chapter reflects a progression of skills: data import, cleaning, visualization, statistical testing, modeling, interpretation, and communication. More importantly, each chapter reflects a shift in mindset — from “running code” to designing complete analytical workflows.\nThis is not just a collection of assignments.\nIt is a curated portfolio of applied reproducible research.",
+    "crumbs": [
+      "About This Book"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-cite",
+    "href": "index.html#how-to-cite",
+    "title": "Teaching Reproducible Research Using R",
+    "section": "How to Cite",
+    "text": "How to Cite\nIf you use this textbook in your teaching, research, or projects, please cite it as:\nMartinez, C. (2026). Teaching Reproducible Research Using R (Version 1.0.1). Zenodo. https://doi.org/10.5281/zenodo.19139302\n\nVersion History\n\nv1.0.1 (2026)\n\nInitial public release\nFull textbook curriculum covering data analysis, visualization, and modeling in R\nUsed in Fall 2025 coursework at Brooklyn College (CUNY)",
+    "crumbs": [
+      "About This Book"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html",
+    "href": "chapters/course-blueprint.html",
+    "title": "Course Blueprint",
+    "section": "",
+    "text": "Course Philosophy\nSemester: Fall 2025\nInstructor: Christian A. Martinez\nInstitution: Brooklyn College, CUNY\nThis course is structured around a simple premise: reproducibility is not an advanced skill — it is a foundational habit.\nRather than treating R as a programming language to learn in isolation, this course approaches R as a complete research environment. Students learn how to move from raw data to interpretable results using transparent, inspectable, and reproducible workflows.\nBy the end of the semester, students do not just complete assignments — they produce a cohesive analytical portfolio.",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#tuesdays-concept-guided-implementation",
+    "href": "chapters/course-blueprint.html#tuesdays-concept-guided-implementation",
+    "title": "Course Blueprint",
+    "section": "Tuesdays — Concept + Guided Implementation",
+    "text": "Tuesdays — Concept + Guided Implementation\n\nShort conceptual lecture (20–25 minutes)\nGuided mini-lab exercises\nEmphasis on understanding the logic behind each method",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#thursdays-applied-workshop",
+    "href": "chapters/course-blueprint.html#thursdays-applied-workshop",
+    "title": "Course Blueprint",
+    "section": "Thursdays — Applied Workshop",
+    "text": "Thursdays — Applied Workshop\n\nLive coding demonstration\nHands-on work with real datasets\nReproduction of analyses from published psychology papers\nDebugging as a collaborative process\nScreen-sharing and peer problem solving encouraged\n\nThis structure ensures that students immediately apply conceptual material in authentic research contexts.",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#weekly-assignments-40",
+    "href": "chapters/course-blueprint.html#weekly-assignments-40",
+    "title": "Course Blueprint",
+    "section": "Weekly Assignments (40%)",
+    "text": "Weekly Assignments (40%)\nEach week introduces a new methodological framework. Assignments require students to:\n\nClean and analyze real datasets\nInterpret statistical output\nProduce reproducible visualizations\nWrite structured narrative explanations\n\nAssignments progressively increase in complexity.",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#midterm-project-30",
+    "href": "chapters/course-blueprint.html#midterm-project-30",
+    "title": "Course Blueprint",
+    "section": "Midterm Project (30%)",
+    "text": "Midterm Project (30%)\nThe midterm integrates:\n\nData import and merging\n\nVariable engineering\n\nt-tests and ANOVA\n\nPost-hoc comparisons\n\nEvidence-based recommendation\n\nStudents demonstrate their ability to conduct a complete inferential workflow independently.",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#final-project-30",
+    "href": "chapters/course-blueprint.html#final-project-30",
+    "title": "Course Blueprint",
+    "section": "Final Project (30%)",
+    "text": "Final Project (30%)\nStudents design and conduct an original research project using NYC Open Data or other civic datasets.\nThe final submission includes:\n\nFully reproducible analysis\n\nClear research framing\n\nProfessional visualizations\n\nPublic-facing interpretation\n\nIn-class presentation",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#foundations",
+    "href": "chapters/course-blueprint.html#foundations",
+    "title": "Course Blueprint",
+    "section": "Foundations",
+    "text": "Foundations\n\nR basics\nData structures\nFunctions and packages\nTidyverse workflows",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#visualization-exploration",
+    "href": "chapters/course-blueprint.html#visualization-exploration",
+    "title": "Course Blueprint",
+    "section": "Visualization & Exploration",
+    "text": "Visualization & Exploration\n\nggplot2\nFeature engineering\nExploratory data analysis\nData cleaning decisions",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#statistical-inference",
+    "href": "chapters/course-blueprint.html#statistical-inference",
+    "title": "Course Blueprint",
+    "section": "Statistical Inference",
+    "text": "Statistical Inference\n\nt-tests\n\nANOVA\n\nCorrelation\n\nLinear regression\n\nChi-Square tests\n\nLogistic regression",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/course-blueprint.html#reproducible-communication",
+    "href": "chapters/course-blueprint.html#reproducible-communication",
+    "title": "Course Blueprint",
+    "section": "Reproducible Communication",
+    "text": "Reproducible Communication\n\nQuarto documents\n\nStructured reporting\n\nTransparent code practices\n\nBuilding a Quarto book\n\nEach stage builds directly on the previous one.",
+    "crumbs": [
+      "Course Blueprint"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html",
+    "href": "chapters/assignment-1.html",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "",
+    "text": "1.1 Overview\nThis assignment introduces core concepts in base R, including arithmetic operations, object assignment, vectors, data frames, and built-in datasets. The goal is to build comfort with fundamental R syntax before moving into more advanced workflows.\nYou will complete all tasks in a single .R script.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html#r-as-a-calculator",
+    "href": "chapters/assignment-1.html#r-as-a-calculator",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "5.1 1. R as a Calculator",
+    "text": "5.1 1. R as a Calculator\n\nCalculate 12 * 2.\nCalculate the square root of 144.\nCalculate 100 / 7 and round to 2 decimals.\nSave the result of 15 * 4 as my_product.\nSave 100 / 7, rounded to 5 decimals, as my_second_product.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html#vectors",
+    "href": "chapters/assignment-1.html#vectors",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "5.2 2. Vectors",
+    "text": "5.2 2. Vectors\n\nCreate a numeric vector of five random numbers named randy.\nCompute the mean, median, minimum, and maximum of randy.\nCreate another numeric vector of five random numbers named randy2.\nCreate randy_combined by adding randy and randy2.\nCreate a character vector of five favorite movies.\nUse indexing to print the fourth movie.\nCreate a factor with 11 entries of favorite foods (repeat some).\nUse table() to count frequencies.\nSort the table in descending order and save as organized_table.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html#data-frames",
+    "href": "chapters/assignment-1.html#data-frames",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "5.3 3. Data Frames",
+    "text": "5.3 3. Data Frames\n\nCreate a data frame called class_df with columns:\n\nname\n\nage\n\nmajor\n\nAdd at least four fictional classmates.\nCreate age_in_2009.\nCreate favorite_professor.\nUse indexing to:\n\nSelect only name and major.\nFilter rows for Psych majors.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html#built-in-datasets",
+    "href": "chapters/assignment-1.html#built-in-datasets",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "5.4 4. Built-in Datasets",
+    "text": "5.4 4. Built-in Datasets\nUsing mtcars:\n\nDisplay the first 11 rows.\nList all column names.\nRun str(mtcars) and describe column types in a comment.\nRun summary(mtcars).\nCreate a base R scatterplot titled:\n\n\n“My First Scatterplot”",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-1.html#reflection",
+    "href": "chapters/assignment-1.html#reflection",
+    "title": "1  Assignment 1: Base R Foundations",
+    "section": "5.5 Reflection",
+    "text": "5.5 Reflection\nAt the end of your script, answer in 2–3 sentences (as comments):\nWhat was the most surprising or confusing thing you learned about R so far?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Assignment 1: Base R Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html",
+    "href": "chapters/assignment-2.html",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "",
+    "text": "2.1 Overview\nThis assignment continues our introduction to the Tidyverse using data from the pixarfilms package.\nThe pixarfilms package contains several datasets describing Pixar movies, including their genres, box-office performance, audience responses, and release information.\nYou will use these datasets to answer a series of questions about Pixar’s history and films.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#learning-objectives",
+    "href": "chapters/assignment-2.html#learning-objectives",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "2.2 Learning Objectives",
+    "text": "2.2 Learning Objectives\nBy completing this assignment, you will be able to:\n\nUse dplyr verbs such as select(), distinct(), mutate(), count(), group_by(), summarize(), and arrange() to explore data\nIdentify unique values within a dataset\nCreate new variables from existing variables\nUse case_when() to recode categorical information\nIdentify the highest and lowest values using slice_max() and slice_min()\nCalculate grouped summary statistics\nApply Tidyverse skills to a new dataset independently\nDevelop and answer your own data-driven question",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#textbook-connection",
+    "href": "chapters/assignment-2.html#textbook-connection",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "2.3 Textbook Connection",
+    "text": "2.3 Textbook Connection\nThis assignment builds directly from Chapter 2: Introduction to tidyverse in Reproducible Research Using R.\nStudents are encouraged to review the chapter and the code we worked through together in class before beginning this assignment.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#submission-instructions",
+    "href": "chapters/assignment-2.html#submission-instructions",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "2.4 Submission Instructions",
+    "text": "2.4 Submission Instructions\nSubmit one .R script file.\nYour script must:\n\nRun from top to bottom without errors\nInclude clear section comments for each question\nSave newly created datasets when instructed\nContain your written responses as comments where requested\n\nBegin your script by loading the packages needed for this assignment:\nlibrary(tidyverse)\nlibrary(pixarfilms)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#exploring-pixar-genres",
+    "href": "chapters/assignment-2.html#exploring-pixar-genres",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "3.1 1. Exploring Pixar Genres",
+    "text": "3.1 1. Exploring Pixar Genres\nThe genres dataset contains the genres associated with each Pixar film. Notice that a movie can appear more than once because a single movie may belong to multiple genres.\n\n3.1.1 1.1 What Genres Appear in Pixar Films?\nFirst, let’s find out which genres appear in the dataset.\nUsing the genres dataset:\n\nUse distinct() to identify the unique genres represented in Pixar films.\nDetermine the total number of distinct genres.\nArrange the unique genres alphabetically.\n\nQuestion: How many distinct genres appear in the dataset?\n\n\n3.1.2 1.2 How Many Genres Does Each Film Have?\nNext, investigate how many genres are associated with each Pixar film.\nUsing the genres dataset:\n\nCount the number of genres associated with each film.\nArrange the results from the greatest number of genres to the fewest.\nSave the result as film_genres.\n\nQuestion: Which Pixar film or films are associated with the greatest number of genres?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#which-pixar-films-made-the-most-money",
+    "href": "chapters/assignment-2.html#which-pixar-films-made-the-most-money",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "3.2 2. Which Pixar Films Made the Most Money?",
+    "text": "3.2 2. Which Pixar Films Made the Most Money?\nThe box_office dataset contains information about the production budget and box-office performance of Pixar films.\nFor this assignment, we will estimate how much money a film made by subtracting its production budget from its worldwide box-office revenue.\nUsing box_office:\n\nUse select() to keep only the following variables:\n\nfilm\nbudget\nbox_office_worldwide\n\nUse mutate() to create a new variable called net, calculated as:\nworldwide box office - budget\nSave the resulting dataset as pixar_money.\nUsing slice_max(), identify the three films with the highest net.\nUsing slice_min(), identify the three films with the lowest net.\n\nQuestions:\n\nWhich Pixar film had the highest estimated net?\nWhich Pixar film had the lowest estimated net?\n\n\n\n\n\n\n\nNote\n\n\n\nFor this assignment, net is a simplified measure of financial performance. A film’s production budget and worldwide box-office revenue do not account for all costs or sources of revenue.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#turning-cinema_score-grades-into-numbers",
+    "href": "chapters/assignment-2.html#turning-cinema_score-grades-into-numbers",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "3.3 3. Turning cinema_score Grades into Numbers",
+    "text": "3.3 3. Turning cinema_score Grades into Numbers\nThe public_response dataset contains several measures of how Pixar films were received by critics and audiences.\nOne of these variables is cinema_score, which uses letter grades such as \"A+\", \"A\", \"A-\", and so on.\nLet’s convert these letter grades into numeric scores.\nUsing the public_response dataset:\n\nUse mutate() and case_when() to create a new variable called cinema_numeric.\nUse the grading scale from our course syllabus to determine the numeric value associated with each letter grade.\nSave the resulting dataset as pixar_scores.\nCalculate the average numeric cinema_score across Pixar films.\nIdentify the three films with the highest numeric cinema_score.\nIdentify the three films with the lowest numeric cinema_score.\n\nQuestions:\n\nWhat was the average numeric cinema_score for Pixar films?\nWhich films received the highest converted scores?\nWhich films received the lowest converted scores?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#pixar-through-the-decades",
+    "href": "chapters/assignment-2.html#pixar-through-the-decades",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "3.4 4. Pixar Through the Decades",
+    "text": "3.4 4. Pixar Through the Decades\nThe pixar_films dataset contains basic information about Pixar’s films, including their release dates and runtimes.\nWe want to investigate how Pixar’s films have changed across decades.\n\n3.4.1 4.1 Create a Decade Variable\nUsing pixar_films, use mutate() to create a new variable called decade based on release_date.\nYour categories should identify films as belonging to the:\n\n1990s\n2000s\n2010s\n2020s\n\nSave the resulting dataset as pixar_decades.\n\n\n3.4.2 4.2 Summarize Pixar Films by Decade\nNext, group the films by decade and calculate:\n\nNumber of films\nMean runtime\nMedian runtime\nMinimum runtime\nMaximum runtime\n\nArrange the resulting table from the most recent decade to the oldest.\nSave this summary as decade_summary.\nQuestion: Based on your summary, do Pixar movies appear to have become longer, shorter, or stayed approximately the same length over time? Briefly explain your answer as a comment in your script.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-2.html#pixar-data-challenge",
+    "href": "chapters/assignment-2.html#pixar-data-challenge",
+    "title": "2  Assignment 2: Exploring Pixar with the Tidyverse",
+    "section": "3.5 5. Pixar Data Challenge",
+    "text": "3.5 5. Pixar Data Challenge\nNow it’s your turn!\nUsing any dataset in the pixarfilms package, come up with one question about Pixar that you find interesting.\nSome possibilities include questions about:\n\nBox-office performance\nGenres\nMovie ratings\nAcademy Awards\nRelease dates\nRuntime\n\nYou are not limited to these topics.\nWrite your question as a comment in your script.\nThen:\n\nUse at least three Tidyverse functions to investigate your question.\nShow the code used to answer it.\nWrite 1–2 sentences as comments explaining what you found.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Assignment 2: Exploring Pixar with the Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html",
+    "href": "chapters/assignment-3.html",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "",
+    "text": "3.1 Overview\nIn this assignment, you will work with NYPD Shooting Incident Data using the nycOpenData package to practice data cleaning, feature engineering, exploratory insight generation, and data visualization with ggplot2.\nCompared to previous assignments, this one is more open-ended: you will make a few analytic decisions (e.g., how to define time-of-day categories and which variables to explore for your second insight). This marks your transition from structured exercises to defensible analytic decision-making.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#data-source",
+    "href": "chapters/assignment-3.html#data-source",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.1 0. Data Source",
+    "text": "7.1 0. Data Source\nYou must use the nycOpenData package and the function:\nnyc_shooting_incidents()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#cleaning-and-feature-engineering",
+    "href": "chapters/assignment-3.html#cleaning-and-feature-engineering",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.2 1. Cleaning and Feature Engineering",
+    "text": "7.2 1. Cleaning and Feature Engineering\nComplete all of the following in your script:\n\n7.2.1 1A. Missing data removal (defensible choice)\n\nChoose one column where it is reasonable to remove missing values.\nCompute and report (in a comment) how many values are missing in that column before removal.\nRemove rows with missing values in that column.\nIn a comment, explain why that column was “safe” to use.\n\n\n\n7.2.2 1B. Lowercase a column\n\nChoose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.\n\n\n\n7.2.3 1C. Create time_of_day\n\nCreate a new column called time_of_day with three categories:\n\nMorning\nAfternoon\nNight\n\nYou define the time boundaries.\nBriefly note your boundaries in a comment.\n\n\n\n7.2.4 1D. Create days_since\n\nCreate a column called days_since showing the number of days between today’s date and the date of the shooting.\nUse as.Date() and/or lubridate as needed.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#insights",
+    "href": "chapters/assignment-3.html#insights",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.3 2. Insights",
+    "text": "7.3 2. Insights\nProvide the following insights as comments in your script:\n\nOne insight about time_of_day\nExample format: “Shootings are more frequent during ___ than ___ suggestion…”\nOne additional insight of your choice\nExplore anything you find interesting in the dataset (be creative).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#visualizations-ggplot2",
+    "href": "chapters/assignment-3.html#visualizations-ggplot2",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.4 3. Visualizations (ggplot2)",
+    "text": "7.4 3. Visualizations (ggplot2)\nCreate two plots using ggplot2:\n\n7.4.1 Plot 3A. time_of_day plot\n\nMust directly relate to your time_of_day variable\n\n\n\n7.4.2 Plot 3B. personal insight plot\n\nMust support your second insight\n\nBoth plots must include:\n\nColor using an aesthetic mapping (aes(color = ...) or aes(fill = ...))\nInformative axis labels\nA clear title\nCustom font/size settings via theme()\n\nAdditional requirement:\n\nAt least one plot must use facet_wrap()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#written-summary",
+    "href": "chapters/assignment-3.html#written-summary",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.5 4. Written Summary",
+    "text": "7.5 4. Written Summary\nAt the end of your script, write a short paragraph (as comments) describing:\n\nWhat you discovered from your insights\nWhat the graphs revealed that was not obvious from the raw data",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-3.html#starter-code-template",
+    "href": "chapters/assignment-3.html#starter-code-template",
+    "title": "3  Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization",
+    "section": "7.6 Starter Code Template",
+    "text": "7.6 Starter Code Template\nCopy this template into your script and complete the tasks above. (Wickham (2023)) (Spinu et al. (2024)) (Martinez (2026))\n\n#############################################\n# Assignment 3: NYPD Shootings\n# Cleaning, Insights, and Visualization\n#############################################\n\n# ---- Setup ----\nlibrary(tidyverse)\nlibrary(lubridate)\nlibrary(nycOpenData)\n\n# ---- Data Ingest ----\nshooting_data &lt;- nyc_shooting_incidents()\n\n# ==============================\n# 1. CLEANING & FEATURE ENGINEERING\n# ==============================\n\n# 1A. Missingness (choose one column to drop NAs)\n# missing_n &lt;- sum(is.na(shooting_data$YOUR_COLUMN))\n# Write a comment: how many were missing + why this column is safe\n# cleaned &lt;- shooting_data %&gt;% drop_na(YOUR_COLUMN)\n\n# 1B. Lowercase one categorical column\n# cleaned &lt;- cleaned %&gt;% mutate(YOUR_COLUMN = str_to_lower(YOUR_COLUMN))\n\n# 1C. Create time_of_day (Morning / Afternoon / Night)\n# cleaned &lt;- cleaned %&gt;%\n#   mutate(\n#     occur_date = as.Date(occur_date),\n#     occur_time = hm(occur_time),\n#     hour = hour(occur_time),\n#     time_of_day = case_when(\n#       hour &gt;= ___ & hour &lt; ___ ~ \"Morning\",\n#       hour &gt;= ___ & hour &lt; ___ ~ \"Afternoon\",\n#       TRUE ~ \"Night\"\n#     )\n#   )\n\n# 1D. Create days_since\n# cleaned &lt;- cleaned %&gt;%\n#   mutate(days_since = as.integer(Sys.Date() - as.Date(occur_date)))\n\n\n# ==============================\n# 2. INSIGHTS (write as comments)\n# ==============================\n\n\n# ==============================\n# 3. VISUALIZATIONS\n# ==============================\n\n# Plot A: time_of_day plot (include facet_wrap on at least one plot)\n\n# Plot B: personal insight plot\n\n\n# ==============================\n# 4. WRITTEN SUMMARY (comments)\n# ==============================",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html",
+    "href": "chapters/assignment-4.html",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "",
+    "text": "4.1 Overview\nThis assignment builds on our lesson about merging datasets, handling missing data, and running t-tests in R. You will work with two files:\nYour goal is to merge the datasets, clean them, and answer questions using t-tests.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#sec-four",
+    "href": "chapters/assignment-4.html#sec-four",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "",
+    "text": "Employee Info (Excel): first name, last name, department (30 employees)\nEmployee Scores (CSV): a single Name column plus two test scores (Score Before, Score After)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#data-wrangling-import-merge",
+    "href": "chapters/assignment-4.html#data-wrangling-import-merge",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "8.1 1. Data Wrangling (Import + Merge)",
+    "text": "8.1 1. Data Wrangling (Import + Merge)\n\nImport both datasets into R:\n\nEmployee Info (Excel)\nEmployee Scores (CSV)\n\nNotice the mismatch:\n\none dataset has First Name + Last Name\nthe other has a single Name column\n\nCreate a matching join key by doing one of the following:\n\nOption A: split Name into first/last, or\nOption B: unite first/last into a single full name\nClean the names: make sure all column names are lowercase and are connected through an _ (e.g. score_before)\n\n\n\n\n\n\n\n\nTipWhen cleaning column names:\n\n\n\nThe clean_names() functio from the janitor can be very helpful.\n\n\n\nRename columns if needed so the join key matches in both datasets.\nMerge the datasets so each employee has:\n\ndepartment\nfirst name and last name (or full name)\nScore Before and Score After\n\nAfter merging, you should have 30 rows.\n\nWrite a short comment confirming the row count and what join you used.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#handling-missing-data-imputation",
+    "href": "chapters/assignment-4.html#handling-missing-data-imputation",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "8.2 2. Handling Missing Data (Imputation)",
+    "text": "8.2 2. Handling Missing Data (Imputation)\nSome Score Before or Score After values have been removed on purpose.\n\nCalculate the average of each score column:\n\nScore Before\nScore After\n\nReplace missing values in each column with that column’s average.\n\nTip: mean(..., na.rm = TRUE) and replace_na() (or base R) will be useful.\n\nWrite a comment confirming how many missing values were replaced in each column.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#dependent-t-test-paired",
+    "href": "chapters/assignment-4.html#dependent-t-test-paired",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "8.3 3. Dependent t-test (Paired)",
+    "text": "8.3 3. Dependent t-test (Paired)\n\nRun a paired t-test comparing Score Before vs Score After.\nReport (as comments):\n\ntest statistic\np-value\na 1–2 sentence interpretation (Did performance change after the intervention?)",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#independent-t-tests-sex-department",
+    "href": "chapters/assignment-4.html#independent-t-tests-sex-department",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "8.4 4. Independent t-tests (Sex + Department)",
+    "text": "8.4 4. Independent t-tests (Sex + Department)\n\n8.4.1 4A. Add a Sex column (using babynames)\n\nAdd a Sex column by merging on first names using the babynames package.\nIf a name does not have an associated sex, remove it from the dataset.\nWrite a short comment reporting how many rows remain after this filtering step.\n\n\n\n8.4.2 4B. Improvement t-test by Sex\n\nCreate a new column:\n\nImprovement = score_after - score_before\n\nRun an independent t-test comparing Improvement between male and female employees.\nReport (as comments):\n\ntest statistic\np-value\ninterpretation\n\n\n\n\n8.4.3 4C. Improvement analysis by Department\nUsing the same Improvement column, run a t-test in conjunction with the department column.\nYou can do this in one of two ways:\n\nIf department has two groups, run a standard independent t-test:\n\nt.test(Improvement ~ department, data = ...)\n\nIf department has more than two groups, run multiple pairwise t-tests (or clearly explain why a t-test is not appropriate and what you would use instead).\n\nWrite a few sentences summarizing what you found.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-4.html#written-summary",
+    "href": "chapters/assignment-4.html#written-summary",
+    "title": "4  Assignment 4: Merging Data and Comparing Means with t-tests",
+    "section": "8.5 Written Summary",
+    "text": "8.5 Written Summary\nAt the end of your script, write a short paragraph (as comments) describing:\n\nYour overall findings across the t-tests\nAny difficulties you experienced during merging, missing data handling, or interpretation",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Assignment 4: Merging Data and Comparing Means with t-tests</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html",
+    "href": "chapters/assignment-5.html",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "",
+    "text": "5.1 Overview\nThis week, you will take your Week 3 homework assignment (NYPD Shooting Incidents) and convert it into a Quarto report (.qmd). Using the same prompt and the work you already completed, your task is to create a fully reproducible, publishable HTML report.\nYour final output should read like a short research note: code + narrative explanations + tables/plots + brief interpretation.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#yaml-header",
+    "href": "chapters/assignment-5.html#yaml-header",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.1 1. YAML header",
+    "text": "9.1 1. YAML header\nInclude:\n\nTitle\nYour name as the author",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#setup-chunk",
+    "href": "chapters/assignment-5.html#setup-chunk",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.2 2. Setup chunk",
+    "text": "9.2 2. Setup chunk\nLoad all required libraries (for example: tidyverse, lubridate, ggplot2, nycOpenData, etc.).",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#minimum-required-code-chunks-4",
+    "href": "chapters/assignment-5.html#minimum-required-code-chunks-4",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.3 3. Minimum required code chunks (4)",
+    "text": "9.3 3. Minimum required code chunks (4)\nYour report must contain at least the following four code chunks:\n\nData ingest\nUse nycOpenData::nyc_shooting_incidents() to load the NYPD shootings dataset.\nData cleaning\nAt least two cleaning/feature steps (examples: dropping NAs, creating time_of_day, lowercasing a column, creating days_since).\nInsights\nInclude the code used to generate your Week 3 insights (grouped summaries, counts, etc.).\nTables & Graphs\n\nAt least one table created with knitr::kable()\nAt least two ggplot2 graphs:\n\none related to time_of_day\none supporting your personal insight\n\n\n\nAll tables and graphs must have captions!",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#narrative-text",
+    "href": "chapters/assignment-5.html#narrative-text",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.4 4. Narrative text",
+    "text": "9.4 4. Narrative text\nAfter each code chunk, write a short explanation describing:\n\nwhat you did\nwhy you did it\nwhat you learned or produced",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#inline-r-expression",
+    "href": "chapters/assignment-5.html#inline-r-expression",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.5 5. Inline R expression",
+    "text": "9.5 5. Inline R expression\nInclude at least one inline R expression in your narrative text.\nExample:\n\nThe dataset contains r nrow(shooting_data) rows after cleaning.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#hyperlink-to-the-dataset",
+    "href": "chapters/assignment-5.html#hyperlink-to-the-dataset",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.6 6. Hyperlink to the dataset",
+    "text": "9.6 6. Hyperlink to the dataset\nProvide a clickable link to the dataset (not a raw URL pasted as plain text).\nExample:\nNYC Open Data Portal — NYPD Shooting Incident Data\n(You may link directly to the dataset page if you prefer.)",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-5.html#reflection",
+    "href": "chapters/assignment-5.html#reflection",
+    "title": "5  Assignment 5: R Script → Quarto Report",
+    "section": "9.7 Reflection",
+    "text": "9.7 Reflection\nIn 3–5 sentences, explain how this workflow could potentially help you in your thesis research.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Assignment 5: R Script → Quarto Report</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html",
+    "href": "chapters/assignment-6.html",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "",
+    "text": "6.1 Overview\nYou are working as a data scientist hired by a law firm that specializes in fighting parking and camera tickets.\nThe firm wants to understand whether certain groups tend to pay more than others. Previously, we explored patterns by day of week and time of day. Now, you will conduct a structured ANOVA investigation using NYC camera violation data.\nYour job is to determine whether payment differences across groups are:\nBe sure to include a hyperlink somewhere in your introduction to the dataset via the\nNYC Open Data Portal.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#sec-six",
+    "href": "chapters/assignment-6.html#sec-six",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "",
+    "text": "Statistically significant\n\nPractically meaningful\n\nStrategically useful for marketing",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#data-ingest",
+    "href": "chapters/assignment-6.html#data-ingest",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.1 1. Data Ingest",
+    "text": "10.1 1. Data Ingest\nLoad the NYC camera violations dataset using the nycOpenData package.\nYour section must:\n\nClearly state what the dataset represents\n\nReport how many rows are in the dataset (use an inline R expression)\n\nConfirm that the dataset loaded successfully\n\nDo not hard-code numbers in your text.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#data-cleaning-and-feature-engineering",
+    "href": "chapters/assignment-6.html#data-cleaning-and-feature-engineering",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.2 2. Data Cleaning and Feature Engineering",
+    "text": "10.2 2. Data Cleaning and Feature Engineering\nYou must perform the following cleaning steps. You are responsible for determining how to implement them.\n\n10.2.1 2A. Numeric Conversion\nEnsure all payment-related variables (such as payment_amount and fine_amount) are stored as numeric.\nInclude a short checkpoint confirming the structure is correct.\n\n\n\n10.2.2 2B. Date Cleaning\nThe issue_date column may contain inconsistent formats.\nYou must:\n\nRetain only properly formatted dates\n\nConvert issue_date into a Date object\n\nCreate a new variable called day_of_week\n\nExplain briefly why cleaning dates is necessary before modeling.\n\n\n\n10.2.3 2C. Time Cleaning\nUsing the violation_time column:\n\nConvert it into a format that can be interpreted numerically\n\nCreate a new categorical variable called time_of_day\n\nYour categories must include:\n\nMorning\n\nAfternoon\n\nNight\n\nInclude a checkpoint showing how many observations fall into each category.\nExplain why feature engineering improves interpretability.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#analysis-1-day-of-week-and-fine-amount",
+    "href": "chapters/assignment-6.html#analysis-1-day-of-week-and-fine-amount",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.3 3. Analysis 1: Day of Week and Fine Amount",
+    "text": "10.3 3. Analysis 1: Day of Week and Fine Amount\nYou will now investigate whether average fine_amount differs by day_of_week.\nYour section must include:\n\nA grouped descriptive summary (means displayed in descending order)\n\nA one-way ANOVA\n\nA supernova() table\n\nA post-hoc test (Tukey)\n\nThen write a short paragraph answering:\n\nIs the effect statistically significant?\n\nHow much variance is explained (PRE)?\n\nIs the effect practically meaningful?\n\nWhy might statistical significance be misleading here?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#analysis-2-time-of-day-and-fine-amount",
+    "href": "chapters/assignment-6.html#analysis-2-time-of-day-and-fine-amount",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.4 4. Analysis 2: Time of Day and Fine Amount",
+    "text": "10.4 4. Analysis 2: Time of Day and Fine Amount\nRepeat the same structure, but now examine fine_amount by time_of_day.\nInclude:\n\nVisualization (boxplot required)\n\nDescriptive statistics\n\nANOVA\n\nPRE interpretation\n\nIn your paragraph, explain:\n\nWhether differences are meaningful\n\nWhy fine amounts may show significance even if policy does not change",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#analysis-3-violation-type-and-fine-amount",
+    "href": "chapters/assignment-6.html#analysis-3-violation-type-and-fine-amount",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.5 5. Analysis 3: Violation Type and Fine Amount",
+    "text": "10.5 5. Analysis 3: Violation Type and Fine Amount\nExamine fine_amount by violation type.\nYour section must include:\n\nDescriptive statistics\n\nANOVA\n\nPRE interpretation\n\nIn your paragraph, explain:\n\nWhy this model is statistically strong\n\nWhy it may not be conceptually interesting\n\nWhat this teaches us about modeling fixed policy variables",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#analysis-4-violation-type-and-payment-amount",
+    "href": "chapters/assignment-6.html#analysis-4-violation-type-and-payment-amount",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.6 6. Analysis 4: Violation Type and Payment Amount",
+    "text": "10.6 6. Analysis 4: Violation Type and Payment Amount\nNow shift to the more behaviorally meaningful variable: payment_amount.\nExamine payment_amount by violation type.\nYour section must include:\n\nVisualization (boxplot required)\n\nDescriptive statistics\n\nANOVA\n\nPRE interpretation\n\nIn your paragraph, explain:\n\nWhy this analysis is more practically meaningful than fine_amount\n\nWhat the size of PRE suggests\n\nHow a law firm might use this insight strategically",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-6.html#final-reflection",
+    "href": "chapters/assignment-6.html#final-reflection",
+    "title": "6  Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations",
+    "section": "10.7 Final Reflection",
+    "text": "10.7 Final Reflection\nIn 5–7 sentences, answer:\n\nWhat is the difference between statistical significance and practical significance?\n\nWhich of the four analyses above do you think is most useful for real-world decision-making?\n\nIf you were advising the law firm, what is one concrete recommendation you would make based on your findings?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html",
+    "href": "chapters/assignment-midterm.html",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "",
+    "text": "7.1 Overview\nYou are a researcher in sleep expert Matthew Walker’s lab. You have just run an experiment measuring the effect of different exercise methods on sleep habits.\nYou measured:\nDr. Walker needs you to identify which (if any) exercise method best improves sleep, and to make a clear, evidence-based recommendation.\nThis midterm assesses your ability to build a fully reproducible analysis from raw data through statistical inference and final reporting.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#sec-midterm",
+    "href": "chapters/assignment-midterm.html#sec-midterm",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "",
+    "text": "Average hours of sleep before the experiment\n\nAverage hours of sleep after the experiment\n\nSleep efficiency at the end of the experiment",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#setup-data-import",
+    "href": "chapters/assignment-midterm.html#setup-data-import",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.1 1. Setup & Data Import",
+    "text": "11.1 1. Setup & Data Import\n\n11.1.1 Tasks\n\nLoad all packages you use\n\nImport both sheets from midterm_sleep_exercise.xlsx using readxl:\n\nparticipant_info_midterm\n\nsleep_data_midterm\n\nPreview both datasets using appropriate functions (e.g., glimpse() or head())",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#merge-base-cleaning",
+    "href": "chapters/assignment-midterm.html#merge-base-cleaning",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.2 2. Merge & Base Cleaning",
+    "text": "11.2 2. Merge & Base Cleaning\n\n11.2.1 Tasks\n\nClean column names so they are consistent and easy to work with\n\nStandardize labels for:\n\nExercise_Group (e.g., “cardio”, “CARDIO” → “Cardio”)\n\nSex (e.g., “m”, “MALE” → “Male”)\n\nMerge the two datasets into a single dataset\n\n\n\n11.2.2 Requirements\n\nFinal dataset should be one row per participant\nDataset should include demographics + sleep variables\nInclude a checkpoint verifying row count and that the merge behaved as expected",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#create-derived-variables",
+    "href": "chapters/assignment-midterm.html#create-derived-variables",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.3 3. Create Derived Variables",
+    "text": "11.3 3. Create Derived Variables\n\n11.3.1 Tasks\n\nCreate a numeric sleep-change variable:\n\nSleep_Difference = post_sleep - pre_sleep_num\n\nCreate AgeGroup2 using case_when() with exactly two groups\n(example: &lt; 40 vs &gt;= 40)\nIdentify how many rows are missing Sleep_Difference\nDrop rows with missing Sleep_Difference\n\n\n\n11.3.2 Requirements\n\nInclude a checkpoint showing how many rows were removed and why\nYour narrative should briefly justify your missing-data decision",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#descriptive-statistics",
+    "href": "chapters/assignment-midterm.html#descriptive-statistics",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.4 4. Descriptive Statistics",
+    "text": "11.4 4. Descriptive Statistics\n\n11.4.1 Tasks\nReport descriptive statistics for:\n\nSleep_Difference (overall)\nSleep_Efficiency (overall)\n\nFor each variable, include:\n\nMean\nSD\nMin\nMax\n\nThen report group-wise summaries by Exercise_Group for:\n\nSleep_Difference\nSleep_Efficiency\n\n\n\n11.4.2 Requirements\n\nGroup summaries must be clearly readable\nTables should be formatted professionally using kable() and appropriate captions.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#visualizations-3-plots",
+    "href": "chapters/assignment-midterm.html#visualizations-3-plots",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.5 5. Visualizations (3 plots)",
+    "text": "11.5 5. Visualizations (3 plots)\nCreate three plots:\n\nBoxplot: Sleep_Difference by Exercise_Group\n\nBoxplot: Sleep_Efficiency by Exercise_Group\n\nScatterplot: Sleep_Difference vs Sleep_Efficiency, with a trend line\n\n\n11.5.1 Requirements\nEach plot must include:\n\nDescriptive title\nClear x- and y-axis labels\nA clean theme (e.g., theme_minimal())\nAppropriate captions\n\nAfter each plot, write 1–3 sentences describing what the plot suggests.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#t-tests-two",
+    "href": "chapters/assignment-midterm.html#t-tests-two",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.6 6. t-tests (Two)",
+    "text": "11.6 6. t-tests (Two)\nRun two t-tests:\n\nSleep_Difference ~ Sex\n\nSleep_Difference ~ AgeGroup2\n\n\n11.6.1 Requirements\nFor each t-test, report:\n\nGroup means\nt statistic\ndf\np-value\n\nThen interpret in plain language:\n\nIs the difference statistically significant?\nIs it practically meaningful?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#anovas-two-post-hoc-tests",
+    "href": "chapters/assignment-midterm.html#anovas-two-post-hoc-tests",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.7 7. ANOVAs (Two) + Post-hoc Tests",
+    "text": "11.7 7. ANOVAs (Two) + Post-hoc Tests\nRun two ANOVAs:\n\nANOVA A: Sleep_Difference ~ Exercise_Group\nANOVA B: Sleep_Efficiency ~ Exercise_Group\n\n\n11.7.1 Requirements\nFor each ANOVA, include:\n\nANOVA table output\nF statistic\ndf\np-value\nA brief effect-size comment\nPRE from supernova() (required)\n\nThen run Tukey post-hoc tests:\n\nTukeyHSD() for each ANOVA\n\nInterpret results:\n\nWhich groups differ significantly?\nWhich exercise group appears to “win” for each outcome?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#synthesis-recommendation",
+    "href": "chapters/assignment-midterm.html#synthesis-recommendation",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.8 8. Synthesis & Recommendation",
+    "text": "11.8 8. Synthesis & Recommendation\nWrite 4–6 sentences answering:\n\nConsidering both outcomes (Sleep_Difference and Sleep_Efficiency) and your post-hoc results, which single exercise regimen would you recommend to improve overall sleep?\n\n\n11.8.1 Requirements\n\nYou may only pick one regimen\nSupport your recommendation with specific statistical evidence:\n\nF values and p-values\nKey Tukey contrasts\nAny meaningful patterns from your plots/tables\n\n\nYour recommendation must be actionable and executive-friendly.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-midterm.html#reflection",
+    "href": "chapters/assignment-midterm.html#reflection",
+    "title": "7  Midterm: Exercise & Sleep",
+    "section": "11.9 9. Reflection",
+    "text": "11.9 9. Reflection\nWrite 3–5 sentences addressing:\n\nWhat was most challenging?\nWhat did you feel confident about?\nWhat would you do differently next time to improve your analysis or report?",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Midterm: Exercise & Sleep</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html",
+    "href": "chapters/assignment-7.html",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "",
+    "text": "8.1 Overview\nThe NBA season is about to begin, and you have just been hired as a Data Analyst for the National Basketball Association. Commissioner Adam Silver wants insights into last season’s team performances — specifically:\nYou have been given an Excel workbook containing all 30 NBA teams, with each team stored on a separate sheet. Your job is to build a fully reproducible Quarto analysis that loads, cleans, visualizes, and analyzes the data.\nYour final product should read like a professional analytics report prepared for an executive audience.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#sec-seven",
+    "href": "chapters/assignment-7.html#sec-seven",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "",
+    "text": "How offensive and defensive metrics relate to one another\n\nWhether teams from the Eastern and Western Conferences differ\n\nWhether team-level characteristics help explain performance patterns",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#data-ingest-and-preparation",
+    "href": "chapters/assignment-7.html#data-ingest-and-preparation",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "12.1 1. Data Ingest and Preparation",
+    "text": "12.1 1. Data Ingest and Preparation\nYou must programmatically load all 30 teams from the Excel workbook.\n\n12.1.1 Required Tasks\nCreate a function that:\n\nLoads a single sheet from the workbook\n\nAdds a new column identifying the Team (using the sheet name)\n\nCreates a binary column called Won_award (0 = No, 1 = Yes)\n\nCalculates the following metrics:\n\nPRA = Points + Rebounds + Assists (offensive metric)\n\nSTOCKS = Steals + Blocks (defensive metric)\n\n\nThen:\n\nUse excel_sheets() to list all sheet names\n\nApply your function to every sheet using lapply()\n\nCombine all teams into one complete dataset using a row-binding method\n\n\n\n12.1.2 Requirements\n\nYour code must not manually load sheets one-by-one\n\nThe final dataset must include all 30 teams\n\nInclude a checkpoint confirming the total number of rows\n\nReport the total number of observations using an inline R expression\n\nBriefly explain why writing a function improves reproducibility.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#adding-conference-information",
+    "href": "chapters/assignment-7.html#adding-conference-information",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "12.2 2. Adding Conference Information",
+    "text": "12.2 2. Adding Conference Information\nYou are provided with a Conference lookup sheet.\nYou must:\n\nMerge Conference information into your combined dataset\n\nRecode Conference as a binary variable for analysis:\n\nEast = 1\n\nWest = 0\n\n\nInclude a small checkpoint confirming that both conferences are represented correctly.\nBriefly explain why binary coding is useful for correlation analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#visual-exploration",
+    "href": "chapters/assignment-7.html#visual-exploration",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "12.3 3. Visual Exploration",
+    "text": "12.3 3. Visual Exploration\nCreate at least two visualizations using ggplot2.\n\n12.3.1 Required Plot 1\n\nA scatterplot showing the relationship between PRA and STOCKS\nPoints must be colored by Conference\n\n\n\n12.3.2 Required Plot 2\n\nA second visualization of your choice\n(Examples: distribution of PRA by conference, age vs PRA, STOCKS vs Age, etc.)\n\nFor each plot, write 3–4 sentences describing:\n\nWhat patterns you observe\n\nWhether offensive and defensive metrics appear related\n\nWhether conferences appear visually different\n\nAll plots must include:\n\nClear titles\n\nAxis labels\n\nA caption",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#correlation-analysis",
+    "href": "chapters/assignment-7.html#correlation-analysis",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "12.4 4. Correlation Analysis",
+    "text": "12.4 4. Correlation Analysis\n\n\n12.4.1 A. Point-Biserial Correlation\nTest whether Conference (East = 1, West = 0) is related to:\n\nPRA\n\nSTOCKS\n\nReport:\n\nCorrelation coefficient (r)\n\nDirection (positive or negative)\n\nStrength (weak, moderate, strong)\n\nStatistical significance\n\nPlain-language interpretation\n\n\n\n\n12.4.2 B. Correlation Matrix\nCreate a small correlation matrix including at least:\n\nAge\n\nPRA\n\nSTOCKS\n\nVisualize the matrix using ggcorrplot.\nThen answer:\n\nWhich relationships are strongest?\n\nAre offensive and defensive metrics strongly related?\n\nDoes Age appear meaningfully associated with performance?\n\n\n\n\n12.4.3 C. Partial Correlation\nRun a partial correlation examining the relationship between:\n\nPRA and STOCKS\n\nWhile controlling for either Age or Minutes Played\n\nInterpret:\n\nHow the relationship changes when controlling for the third variable\n\nWhether the association appears independent of that control variable\n\nExplain in plain language what “controlling for” means.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-7.html#executive-memo-to-adam-silver",
+    "href": "chapters/assignment-7.html#executive-memo-to-adam-silver",
+    "title": "8  Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis",
+    "section": "12.5 5. Executive Memo to Adam Silver",
+    "text": "12.5 5. Executive Memo to Adam Silver\nWrite a short professional memo addressed to:\nAdam Silver\nCommissioner, National Basketball Association\nYour memo must include:\n\nA summary of your key findings\n\nWhether Eastern and Western Conference teams appear statistically different\n\nWhether offensive and defensive performances tend to move together\n\nOne limitation of your analysis\n\nOne recommended next step\n\nYour tone should be professional and executive-level, not academic.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html",
+    "href": "chapters/assignment-8.html",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "",
+    "text": "9.1 Overview\nThe Florida Police Department (FPD) has hired you as their new Data Analyst. Your mission is to uncover which socioeconomic factors are most strongly associated with rising crime rates across Florida counties.\nUsing county-level data, you will conduct a fully reproducible Quarto analysis to determine whether income, education, or urbanization best explain differences in crime rates.\nYour findings will help inform statewide prevention strategies, resource allocation, and community outreach efforts.\nThis assignment assesses your ability to:",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#sec-eight",
+    "href": "chapters/assignment-8.html#sec-eight",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "",
+    "text": "Clean and prepare structured data\nCompute and interpret correlations\nBuild and compare regression models\nEvaluate model fit using R² and AIC\nCommunicate statistical findings to a non-technical executive audience",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#data-loading-and-preparation",
+    "href": "chapters/assignment-8.html#data-loading-and-preparation",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "14.1 1. Data Loading and Preparation",
+    "text": "14.1 1. Data Loading and Preparation\nYou have been provided with an Excel file containing the following columns:\n\n\n\nColumn\nDescription\n\n\n\n\nCounty\nCounty name\n\n\nC\nCrime rate (per 1,000 residents)\n\n\nI\nMedian income (in thousands)\n\n\nHS\nHigh-school graduation rate (%)\n\n\nU\nUrban population (%)\n\n\n\n\n14.1.1 Required Tasks\nYou must:\n\nLoad the dataset reproducibly\nRename the columns to:\n\nCrime\nIncome\nHighSchoolGrad\nUrbanPop\n\nFormat all county names so that only the first letter is capitalized\nInspect the dataset structure\nProvide summary statistics\n\nInclude a brief explanation of why consistent naming and formatting are essential for reproducible modeling.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#exploratory-data-analysis",
+    "href": "chapters/assignment-8.html#exploratory-data-analysis",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "14.2 2. Exploratory Data Analysis",
+    "text": "14.2 2. Exploratory Data Analysis\nConduct exploratory analysis to understand the structure and distribution of the data.\n\n14.2.1 Required Components\n\nCompute descriptive statistics (mean, median, range) for all numeric variables\nCreate at least two visualizations (e.g., histograms, boxplots, scatterplots)\nProvide written interpretation of what you observe\n\nYour interpretation should address:\n\nDistribution shapes\nPotential outliers\nInitial patterns between predictors and crime\n\n\n\n14.2.2 Bonus (Optional)\nUsing ggplot2 and mapping tools, create a heatmap of Florida counties based on crime rates.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#correlation-analysis",
+    "href": "chapters/assignment-8.html#correlation-analysis",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "14.3 3. Correlation Analysis",
+    "text": "14.3 3. Correlation Analysis\nInvestigate which factors are most strongly associated with crime.\n\n14.3.1 Required Tasks\n\nCompute a correlation matrix including:\n\nCrime\nIncome\nHighSchoolGrad\nUrbanPop\n\nIdentify which predictor shows the strongest relationship with Crime\nInterpret the direction (positive or negative)\nInterpret the strength (weak, moderate, strong)\n\n(Optional) Visualize the correlation matrix using a correlation plotting tool.\nIn your written interpretation, explain:\n\nWhich factor appears most important\nWhether any predictors appear highly correlated with one another\nWhy correlation does not imply causation",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#building-regression-models",
+    "href": "chapters/assignment-8.html#building-regression-models",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "14.4 4. Building Regression Models",
+    "text": "14.4 4. Building Regression Models\nYou will now build models to predict county-level crime rates.\n\n14.4.1 Required Models\n\nA simple regression model using the predictor you believe fits best\nAt least two multiple regression models, such as:\n\nIncome + HighSchoolGrad\n\nIncome + UrbanPop\n\nA full model with all predictors\n\n(Optional) Include an interaction term if theoretically justified\n\n\n\n14.4.2 Model Comparison\nCompare models using:\n\nR²\nAdjusted R²\nAIC\n\nInterpret:\n\nWhich predictors are statistically significant\nWhich model explains the most variance\nWhich model best balances simplicity and explanatory power\n\nExplain why Adjusted R² and AIC are useful when comparing multiple models.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-8.html#executive-memo-to-the-chief-of-the-florida-police-department",
+    "href": "chapters/assignment-8.html#executive-memo-to-the-chief-of-the-florida-police-department",
+    "title": "9  Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge",
+    "section": "14.5 5. Executive Memo to the Chief of the Florida Police Department",
+    "text": "14.5 5. Executive Memo to the Chief of the Florida Police Department\nWrite a short professional memo addressed to:\nChief\nFlorida Police Department\nYour memo must include:\n\nThe best-performing model\nThe most influential predictor(s)\nThe proportion of variance explained (R²)\nClear, plain-language interpretation\nOne limitation of your analysis\nOne actionable recommendation for resource allocation or prevention strategy\n\nYour tone should be executive-level and professional.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html",
+    "href": "chapters/assignment-9.html",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "",
+    "text": "10.1 Overview\nThe Streaming Analytics Division (SAD) has hired you as their new Data Analyst. Your mission is to determine whether age group influences streaming platform preference.\nThe company wants to know whether certain platforms — Netflix, Hulu, Disney+, Amazon, or Other — appeal more strongly to specific age demographics (18–25, 26–40, 41+). Your analysis will guide targeted marketing strategies, promotional campaigns, and content investment decisions.\nUsing simulated survey data, you will conduct a fully reproducible Quarto analysis to determine whether Age Category and Platform Preference are statistically related.\nYou will:",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#sec-nine",
+    "href": "chapters/assignment-9.html#sec-nine",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "",
+    "text": "Construct and interpret contingency tables\nPerform a Chi-Square test of independence\nExamine observed, expected, and residual values\nDecompose the Chi-Square statistic into contributions\nVisualize contributions using a heatmap\nCompute and interpret Cramer’s V\nCommunicate findings clearly in plain language",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#data-preparation",
+    "href": "chapters/assignment-9.html#data-preparation",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.1 1. Data Preparation",
+    "text": "14.1 1. Data Preparation\nYou have been provided with survey data including:\n\nAge Category (18–25, 26–40, 41+)\nPreferred Streaming Platform (Netflix, Hulu, Disney+, Amazon, Other)\n\n\n14.1.1 Required Tasks\nYou must:\n\nInspect the dataset\nCompute total counts for Age Category\nCompute total counts for Platform Preference\nConstruct a contingency table showing the joint distribution of Age Category and Platform Preference\n\nBriefly describe what the contingency table represents and why it is useful for categorical analysis.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#visualization",
+    "href": "chapters/assignment-9.html#visualization",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.2 2. Visualization",
+    "text": "14.2 2. Visualization\nCreate two visualizations using ggplot2.\n\n14.2.1 Required Visualization 1\nA stacked bar chart showing the proportions of platform preferences within each age group.\n\n\n14.2.2 Required Visualization 2\nA clustered (side-by-side) bar chart showing counts for each platform across age groups.\nBoth visualizations must:\n\nInclude descriptive titles\nInclude labeled axes\nInclude a legend\nUse a professional or themed style (e.g., from ggthemes)\n\nAfter each plot, provide 3–4 sentences interpreting what you observe.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#chi-square-test-of-independence",
+    "href": "chapters/assignment-9.html#chi-square-test-of-independence",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.3 3. Chi-Square Test of Independence",
+    "text": "14.3 3. Chi-Square Test of Independence\nConduct a Chi-Square test of independence to determine whether Age Category and Platform Preference are related.\nIn your write-up, report and interpret:\n\nThe Chi-Square statistic (χ²)\nDegrees of freedom (df)\nThe p-value\n\nThen answer:\n\nIs there a statistically significant relationship?\nWhat does this result mean in plain language?",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#observed-expected-and-residual-values",
+    "href": "chapters/assignment-9.html#observed-expected-and-residual-values",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.4 4. Observed, Expected, and Residual Values",
+    "text": "14.4 4. Observed, Expected, and Residual Values\nFrom your Chi-Square test, extract:\n\nObserved counts\nExpected counts\nResiduals\n\nDiscuss:\n\nWhich age–platform combinations show more people than expected\nWhich show fewer people than expected\nWhich residuals appear largest in magnitude\n\nExplain what residuals tell us about patterns in the data.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#contributions-to-the-chi-square-statistic",
+    "href": "chapters/assignment-9.html#contributions-to-the-chi-square-statistic",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.5 5. Contributions to the Chi-Square Statistic",
+    "text": "14.5 5. Contributions to the Chi-Square Statistic\nBreak down the Chi-Square statistic into individual cell contributions.\nThen:\n\nCalculate the percentage contribution of each cell to the total χ² value\nIdentify which age–platform combinations contribute most to the overall result\n\nVisualize these percentage contributions using a heatmap.\nIn your interpretation, explain:\n\nWhich cells drive the overall Chi-Square result\nWhat this suggests about viewing habits across age groups",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#effect-size-cramers-v",
+    "href": "chapters/assignment-9.html#effect-size-cramers-v",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.6 6. Effect Size (Cramer’s V)",
+    "text": "14.6 6. Effect Size (Cramer’s V)\nCompute Cramer’s V to measure the strength of association between Age Category and Platform Preference.\nInterpret the value using these guidelines:\n\n0.00–0.10 → Very Weak\n\n0.10–0.30 → Weak\n\n0.30–0.50 → Moderate\n\nAbove 0.50 → Strong\n\nProvide a short, plain-language explanation of the effect size.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-9.html#final-interpretation",
+    "href": "chapters/assignment-9.html#final-interpretation",
+    "title": "10  Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups",
+    "section": "14.7 7. Final Interpretation",
+    "text": "14.7 7. Final Interpretation\nWrite a professional summary addressing:\n\nWhether the relationship between Age and Platform is statistically significant\nWhich age groups and platforms are driving the relationship\nThe strength of the association (Cramer’s V)\nWhat these findings mean in a real-world marketing context\n\nYour summary should resemble a professional analytics report, not a textbook answer.",
+    "crumbs": [
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html",
+    "href": "chapters/assignment-10.html",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "",
+    "text": "11.1 Overview\nThe Wage Analytics Division (WAD) has hired you as their new Data Scientist.\nYour mission is to determine whether demographic and employment characteristics can be used to predict whether a worker earns a high or low wage.\nUsing the Wage dataset from the ISLR package, you will:\nYour analysis will help the company understand which characteristics are associated with higher earnings and determine how well a predictive model performs in practice.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#sec-ten",
+    "href": "chapters/assignment-10.html#sec-ten",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "",
+    "text": "Create a binary wage classification\nExplore relationships between predictors and wage\nBuild a logistic regression model\nEvaluate predictive performance on unseen data",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#create-the-wagecategory-variable",
+    "href": "chapters/assignment-10.html#create-the-wagecategory-variable",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.1 1. Create the WageCategory Variable",
+    "text": "15.1 1. Create the WageCategory Variable\nBegin by preparing the dataset.\n\n15.1.1 Required Tasks\n\nLoad the Wage dataset from the ISLR package\nCreate a new factor variable called WageCategory:\n\nIf wage &gt; median(wage) → \"High\"\nIf wage &lt; median(wage) → \"Low\"\n\nConvert WageCategory into a factor variable\n\n\n\n15.1.2 Important\n\nYou must NOT remove wage or logwage\nBe prepared to explain the concept of target leakage and why it matters in predictive modeling\n\nBriefly explain why creating a binary outcome transforms this into a classification problem.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#data-cleaning",
+    "href": "chapters/assignment-10.html#data-cleaning",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.2 2. Data Cleaning",
+    "text": "15.2 2. Data Cleaning\nSome categorical variables in the Wage dataset contain numeric prefixes (e.g., \"3. Asian\").\n\n15.2.1 Required Tasks\n\nRemove numeric prefixes from all relevant categorical variables\nEnsure categorical variables are clean and properly formatted before analysis\n\nProvide a brief explanation of why cleaning categorical labels is important for interpretation and modeling.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#classical-statistical-tests",
+    "href": "chapters/assignment-10.html#classical-statistical-tests",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.3 3. Classical Statistical Tests",
+    "text": "15.3 3. Classical Statistical Tests\nYou will explore relationships between predictors and wage using classical inference methods.\n\n\n15.3.1 A. t-test\nCompare age between High and Low wage earners.\nYour write-up must include:\n\nMean age for each wage group\nt-statistic, degrees of freedom, and p-value\nA short interpretation of whether age differs between wage categories\n\n\n\n\n15.3.2 B. ANOVA\nUsing the original numeric wage variable, choose one of the following:\n\nwage ~ education\nwage ~ maritl\nwage ~ jobclass\n\nYour write-up must include:\n\nANOVA table\nF-statistic, degrees of freedom, and p-value\nA brief interpretation of the result\n\n\n\n\n15.3.3 C. Chi-Square Test\nChoose one categorical relationship that is different from your ANOVA variable.\nYou must:\n\nCreate a contingency table\nConduct a Chi-Square test\nReport χ², df, and p-value\nCompute and interpret Cramer’s V\nDescribe any patterns observed in the contingency table\n\nExplain what the Chi-Square test tells you about association.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#logistic-regression-model",
+    "href": "chapters/assignment-10.html#logistic-regression-model",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.4 4. Logistic Regression Model",
+    "text": "15.4 4. Logistic Regression Model\nYou will now build a predictive model.\n\n\n15.4.1 Train/Test Split\n\nPerform a 70/30 split using sample.split()\nClearly define your training and testing datasets\n\nExplain why separating training and test data is critical in predictive modeling.\n\n\n\n15.4.2 Model Specification\n\nBuild a logistic regression model predicting WageCategory\nChoose predictors thoughtfully (be cautious of leakage or redundancy)\n\nYour write-up must include:\n\nLogistic regression output\nOdds ratios using exp(coef())\nA 2–4 sentence interpretation describing:\n\nWhich predictors are significant\nDirection of effects\nMagnitude of effects\nAny surprising findings",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#model-evaluation-on-test-data",
+    "href": "chapters/assignment-10.html#model-evaluation-on-test-data",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.5 5. Model Evaluation on Test Data",
+    "text": "15.5 5. Model Evaluation on Test Data\nUsing your test dataset, compute:\n\nPredicted probabilities\nPredicted classes (“High” or “Low”)\nConfusion matrix\n\nReport and interpret:\n\nAccuracy\nSensitivity\nSpecificity\nBalanced Accuracy\n\n\n\n15.5.1 ROC Curve and AUC\n\nGenerate an ROC curve\nCompute AUC\n\nIn your interpretation, discuss:\n\nHow well the model identifies high earners\nHow accuracy compares to the No Information Rate\nWhether the model performs better than guessing",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-10.html#final-interpretation",
+    "href": "chapters/assignment-10.html#final-interpretation",
+    "title": "11  Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression",
+    "section": "15.6 6. Final Interpretation",
+    "text": "15.6 6. Final Interpretation\nWrite a professional 3–5 paragraph summary addressing:\n\nWhether age, education, jobclass, or marital status meaningfully relate to wage\nWhich predictors were most influential in the logistic regression\nHow well the model performed on unseen data\nWhich wage group the model predicts best\nWhat variables you would add or remove if repeating the analysis\nOne limitation of your modeling approach\n\nYour tone should resemble a professional data science report, not a homework answer.",
+    "crumbs": [
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-final.html",
+    "href": "chapters/assignment-final.html",
+    "title": "12  Final Project: NYC Open Data 2026 Proposal",
+    "section": "",
+    "text": "12.1 Overview\nYour final project for this course is to design and conduct an original research project using NYC Open Data.\nYour project will be written as a fully reproducible Quarto document and structured as though it were ready for public presentation at NYC Open Data Week.\nThis assignment is designed to:\nBy the end of this course, you will have created a professional-quality research document suitable for public presentation.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Final Project: NYC Open Data 2026 Proposal</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-final.html#sec-final",
+    "href": "chapters/assignment-final.html#sec-final",
+    "title": "12  Final Project: NYC Open Data 2026 Proposal",
+    "section": "",
+    "text": "Give you experience designing an independent research project\n\nProvide hands-on work with open civic datasets\n\nProduce a polished portfolio-ready artifact\n\nStrengthen your reproducible workflow and data communication skills\n\nPrepare you to submit to NYC Open Data Week 2026 if you choose",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Final Project: NYC Open Data 2026 Proposal</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-final.html#dataset-selection",
+    "href": "chapters/assignment-final.html#dataset-selection",
+    "title": "12  Final Project: NYC Open Data 2026 Proposal",
+    "section": "15.1 1. Dataset Selection",
+    "text": "15.1 1. Dataset Selection\nYou must:\n\nSelect at least one dataset from the NYC Open Data Portal (preferred).\nOther publicly available civic datasets regarding NYC are acceptable with instructor approval.\nClearly cite and hyperlink all datasets used.\nJustify why the dataset is appropriate for your research question.\n\nYour project should demonstrate thoughtful dataset selection rather than convenience-based selection.",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Final Project: NYC Open Data 2026 Proposal</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-final.html#reproducible-analysis-quarto",
+    "href": "chapters/assignment-final.html#reproducible-analysis-quarto",
+    "title": "12  Final Project: NYC Open Data 2026 Proposal",
+    "section": "15.2 2. Reproducible Analysis (Quarto)",
+    "text": "15.2 2. Reproducible Analysis (Quarto)\nYour final submission must:\n\nBe written in Quarto (.qmd) format.\nInclude narrative, code, output, and interpretation in one document.\nKnit/render successfully without errors.\nSuppress unnecessary warnings and messages in the final output.\n\nYour workflow should clearly demonstrate:\n\nData import\n\nCleaning and transformation\n\nAnalysis aligned with your research question\n\nTransparent decision-making",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Final Project: NYC Open Data 2026 Proposal</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-final.html#proposal-style-structure",
+    "href": "chapters/assignment-final.html#proposal-style-structure",
+    "title": "12  Final Project: NYC Open Data 2026 Proposal",
+    "section": "15.3 3. Proposal-Style Structure",
+    "text": "15.3 3. Proposal-Style Structure\nYour document should be structured as if it were an Open Data Week proposal.\nInclude the following sections:\n\n15.3.1 A. Title & Event Description\n\nA clear, compelling project title.\nA 1–2 paragraph overview explaining:\n\nYour research question\nWhy it matters\nWhat attendees would learn\n\n\nWrite this as though it were submitted to Open Data Week.\n\n\n\n15.3.2 B. Dataset(s) Used\n\nDescribe the dataset(s).\nProvide proper citations and links.\nExplain how the dataset(s) connect to your research question.\n\n\n\n\n15.3.3 C. Analysis\n\nPresent a reproducible workflow from raw data to results.\nClearly explain:\n\nWhat you cleaned and why\nWhat transformations were performed\nWhat analyses were conducted\n\nAlign every analysis step with your research question.\n\n\n\n\n15.3.4 D. Visualizations\nInclude at least two clear, well-labeled figures or tables created in R.\nAll visualizations must:\n\nInclude titles\nInclude axis labels\nInclude captions\nBe readable in a public-facing setting\n\nExplain what each visualization shows and why it matters.\n\n\n\n15.3.5 E. Audience & Relevance\nIdentify:\n\nWho would care about this project?\n\nNew Yorkers?\nPolicymakers?\nJournalists?\nCommunity organizations?\n\nWhy does this research matter in a civic context?\n\n\n\n\n15.3.6 F. Connection to Open Data\nExplain how your project:\n\nDemonstrates transparency\nHighlights accessibility of public data\nShows the value of open civic information\nReflects open data principles",
+    "crumbs": [
+      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Final Project: NYC Open Data 2026 Proposal</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html",
+    "href": "chapters/assignment-book.html",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "",
+    "text": "13.1 Overview\nYour final assignment is to transform all of your completed course work into a polished, cohesive Quarto book.\nThroughout the semester, every assignment was written in Quarto format for a reason. Now, you will combine them into a single published book.\nYou will:\nThis book will serve as a professional portfolio artifact that you can share with:\nBy completing this assignment, you are not just submitting coursework —\nYou are officially becoming an author.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#sec-book",
+    "href": "chapters/assignment-book.html#sec-book",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "",
+    "text": "Convert your assignments into a structured Quarto book project\n\nOrganize them into chapters\n\nPolish formatting and presentation\n\nPublish your completed book\n\n\n\nPotential employers\n\nGraduate programs\n\nResearch labs\n\nCollaborators\n\nFriends and family",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#create-a-quarto-book-project",
+    "href": "chapters/assignment-book.html#create-a-quarto-book-project",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.1 1. Create a Quarto Book Project",
+    "text": "16.1 1. Create a Quarto Book Project\nYou must:\n\nCreate a Quarto book project (_quarto.yml configured as a book)\nOrganize your assignments as individual chapters\nEnsure the book renders successfully from start to finish\nPublish your completed book (via your chosen publishing method)\n\nYour book must render cleanly without errors.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#required-chapters-in-this-order",
+    "href": "chapters/assignment-book.html#required-chapters-in-this-order",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.2 2. Required Chapters (In This Order)",
+    "text": "16.2 2. Required Chapters (In This Order)\nYour book must include the following chapters, in this exact order:\n\nR Script → R Markdown Report\n\nHomework: Continuing the Law Firm Analysis (Part 2)\n\nMidterm\n\nNBA Analytics – Exploring Team Performance Through Reproducible Analysis\n\nFlorida Crime Analytics – Uncovering the Root of Florida’s Crime Surge\n\nStreaming Analytics – Understanding Platform Popularity Across Age Groups\n\nWage Analytics – Predicting High vs Low Earners Using Logistic Regression\n\nRMarkdown, Shiny, and NYC 311 Data\n\nEach chapter must be its own .qmd file.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#title-page",
+    "href": "chapters/assignment-book.html#title-page",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.3 3. Title Page",
+    "text": "16.3 3. Title Page\nYour book must include a professional title page containing:\n\nA clear, descriptive book title\n\nYour full name\n\nCourse name and semester\n\nA short “About This Book” section (2–4 sentences)\n\nThis page should feel polished and intentional.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#cover-image",
+    "href": "chapters/assignment-book.html#cover-image",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.4 4. Cover Image",
+    "text": "16.4 4. Cover Image\nYour book must include a cover image.\nYour cover image can be:\n\nSomething you designed\n\nAn image related to your analyses\n\nA professional photo or graphic\n\nA visual that represents your identity as a data analyst\n\nThe image must be appropriate and professional.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#chapter-introductions",
+    "href": "chapters/assignment-book.html#chapter-introductions",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.5 5. Chapter Introductions",
+    "text": "16.5 5. Chapter Introductions\nEach chapter must begin with a short introduction explaining:\n\nThe purpose of the assignment\n\nThe skills or methods used\n\nAny relevant context for the reader\n\nIf the original assignment does not contain a chapter introduction, you must add one.\nThink of this as guiding a new reader through your work.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#figure-and-table-captions",
+    "href": "chapters/assignment-book.html#figure-and-table-captions",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.6 6. Figure and Table Captions",
+    "text": "16.6 6. Figure and Table Captions\nEvery figure, plot, and table must include:\n\nA clear, descriptive caption\n\nAn explanation of what the reader is viewing\n\nWhy the figure or table matters\n\nUse proper Quarto chunk options (e.g., fig-cap) to ensure captions render correctly.\nThere should be no unlabeled figures in your book.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/assignment-book.html#final-reflection-chapter",
+    "href": "chapters/assignment-book.html#final-reflection-chapter",
+    "title": "13  Final Assignment: Building Your Reproducible Quarto Book",
+    "section": "16.7 7. Final Reflection Chapter",
+    "text": "16.7 7. Final Reflection Chapter\nYour final chapter must be a reflective essay (minimum 400 words) addressing:\n\nWhat you learned this semester\n\nWhat challenged you the most\n\nWhat you are most proud of\n\nHow your skills and confidence have changed\n\nHow reproducibility has influenced your thinking\n\nThis chapter should be written in thoughtful, professional prose.",
+    "crumbs": [
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Final Assignment: Building Your Reproducible Quarto Book</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/References.html",
+    "href": "chapters/References.html",
+    "title": "Appendix A — References",
+    "section": "",
+    "text": "B References\n\n\nMartinez, Christian. 2026. nycOpenData: Convenient Access to NYC\nOpen Data API Endpoints. https://martinezc1.github.io/nycOpenData/.\n\n\nSpinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2024.\nLubridate: Make Dealing with Dates a Little Easier. https://lubridate.tidyverse.org.\n\n\nWickham, Hadley. 2023. Tidyverse: Easily Install and Load the\nTidyverse. https://tidyverse.tidyverse.org.",
+    "crumbs": [
+      "Appendices",
+      "<span class='chapter-number'>A</span>  <span class='chapter-title'>References</span>"
+    ]
+  }
+]

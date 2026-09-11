@@ -18,7 +18,7 @@ By the end of this course, you will have created a professional-quality research
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this project, you will be able to:
 
@@ -32,7 +32,7 @@ By completing this project, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This final project synthesizes concepts in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -40,11 +40,11 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Project Requirements
+## Project Requirements
 
 ------------------------------------------------------------------------
 
-## 1. Dataset Selection
+### 1. Dataset Selection
 
 You must:
 
@@ -57,7 +57,7 @@ Your project should demonstrate thoughtful dataset selection rather than conveni
 
 ------------------------------------------------------------------------
 
-## 2. Reproducible Analysis (Quarto)
+### 2. Reproducible Analysis (Quarto)
 
 Your final submission must:
 
@@ -75,13 +75,13 @@ Your workflow should clearly demonstrate:
 
 ------------------------------------------------------------------------
 
-## 3. Proposal-Style Structure
+### 3. Proposal-Style Structure
 
 Your document should be structured as if it were an Open Data Week proposal.
 
 Include the following sections:
 
-### A. Title & Event Description
+#### A. Title & Event Description
 
 - A clear, compelling project title.
 - A 1–2 paragraph overview explaining:
@@ -93,7 +93,7 @@ Write this as though it were submitted to Open Data Week.
 
 ------------------------------------------------------------------------
 
-### B. Dataset(s) Used
+#### B. Dataset(s) Used
 
 - Describe the dataset(s).
 - Provide proper citations and links.
@@ -101,7 +101,7 @@ Write this as though it were submitted to Open Data Week.
 
 ------------------------------------------------------------------------
 
-### C. Analysis
+#### C. Analysis
 
 - Present a reproducible workflow from raw data to results.
 - Clearly explain:
@@ -112,7 +112,7 @@ Write this as though it were submitted to Open Data Week.
 
 ------------------------------------------------------------------------
 
-### D. Visualizations
+#### D. Visualizations
 
 Include **at least two** clear, well-labeled figures or tables created in R.
 
@@ -127,7 +127,7 @@ Explain what each visualization shows and why it matters.
 
 ------------------------------------------------------------------------
 
-### E. Audience & Relevance
+#### E. Audience & Relevance
 
 Identify:
 
@@ -140,7 +140,7 @@ Identify:
 
 ------------------------------------------------------------------------
 
-### F. Connection to Open Data
+#### F. Connection to Open Data
 
 Explain how your project:
 
@@ -151,7 +151,7 @@ Explain how your project:
 
 ------------------------------------------------------------------------
 
-# Length & Formatting Requirements
+## Length & Formatting Requirements
 
 - Minimum **500 words of written narrative** (excluding code).
 - Figures and tables must be clearly labeled.
@@ -165,7 +165,7 @@ Submit both:
 
 ------------------------------------------------------------------------
 
-# Class Presentation
+## Class Presentation
 
 You will present your project during the final weeks of the semester.
 
@@ -186,7 +186,7 @@ This is practice for a potential Open Data Week 2026 submission.
 
 ------------------------------------------------------------------------
 
-# Class Publication (Optional but Encouraged)
+## Class Publication (Optional but Encouraged)
 
 At the end of the semester, projects may be compiled into a collective class book via Posit Cloud.
 
@@ -202,7 +202,7 @@ You may opt out if you prefer.
 
 ------------------------------------------------------------------------
 
-# Grading (100 Points Total)
+## Grading (100 Points Total)
 
 - Dataset & Research Question (15 pts)\
   Clarity, appropriateness, creativity
@@ -227,7 +227,7 @@ You may opt out if you prefer.
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 This final project emphasizes transparent and repeatable workflows.
 
@@ -245,14 +245,14 @@ The goal is that another analyst could reproduce your findings exactly.
 
 ------------------------------------------------------------------------
 
-# Resources
+## Resources
 
 - NYC Open Data Portal: https://opendata.cityofnewyork.us/\
 - Past Open Data Week Events: https://2025.open-data.nyc/
 
 ------------------------------------------------------------------------
 
-# Submission
+## Submission
 
 Required:
 
@@ -261,7 +261,7 @@ Required:
 
 ------------------------------------------------------------------------
 
-# Takeaway
+## Takeaway
 
 By completing this final project, you will leave the course with:
 

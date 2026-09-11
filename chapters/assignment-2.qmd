@@ -53,13 +53,13 @@ library(pixarfilms)
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
-## 1. Exploring Pixar Genres
+### 1. Exploring Pixar Genres
 
 The `genres` dataset contains the genres associated with each Pixar film. Notice that a movie can appear more than once because a single movie may belong to multiple genres.
 
-### 1.1 What Genres Appear in Pixar Films?
+#### 1.1 What Genres Appear in Pixar Films?
 
 First, let's find out which genres appear in the dataset.
 
@@ -71,7 +71,7 @@ Using the `genres` dataset:
 
 **Question:** How many distinct genres appear in the dataset?
 
-### 1.2 How Many Genres Does Each Film Have?
+#### 1.2 How Many Genres Does Each Film Have?
 
 Next, investigate how many genres are associated with each Pixar film.
 
@@ -85,7 +85,7 @@ Using the `genres` dataset:
 
 ------------------------------------------------------------------------
 
-## 2. Which Pixar Films Made the Most Money?
+### 2. Which Pixar Films Made the Most Money?
 
 The `box_office` dataset contains information about the production budget and box-office performance of Pixar films.
 
@@ -120,7 +120,7 @@ For this assignment, `net` is a simplified measure of financial performance. A f
 
 ------------------------------------------------------------------------
 
-## 3. Turning `cinema_score` Grades into Numbers
+### 3. Turning `cinema_score` Grades into Numbers
 
 The `public_response` dataset contains several measures of how Pixar films were received by critics and audiences.
 
@@ -145,13 +145,13 @@ Using the `public_response` dataset:
 
 ------------------------------------------------------------------------
 
-## 4. Pixar Through the Decades
+### 4. Pixar Through the Decades
 
 The `pixar_films` dataset contains basic information about Pixar's films, including their release dates and runtimes.
 
 We want to investigate how Pixar's films have changed across decades.
 
-### 4.1 Create a Decade Variable
+#### 4.1 Create a Decade Variable
 
 Using `pixar_films`, use `mutate()` to create a new variable called `decade` based on `release_date`.
 
@@ -164,7 +164,7 @@ Your categories should identify films as belonging to the:
 
 Save the resulting dataset as `pixar_decades`.
 
-### 4.2 Summarize Pixar Films by Decade
+#### 4.2 Summarize Pixar Films by Decade
 
 Next, group the films by `decade` and calculate:
 
@@ -182,7 +182,7 @@ Save this summary as `decade_summary`.
 
 ------------------------------------------------------------------------
 
-## 5. Pixar Data Challenge
+### 5. Pixar Data Challenge
 
 Now it's your turn!
 
@@ -209,7 +209,7 @@ Then:
 
 ------------------------------------------------------------------------
 
-# Reflection
+## Reflection
 
 At the end of your script, answer the following questions as comments:
 
@@ -219,7 +219,7 @@ At the end of your script, answer the following questions as comments:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Reproducibility Practice
 
 This assignment focuses on creating a **clear and reproducible data-analysis workflow**.
 

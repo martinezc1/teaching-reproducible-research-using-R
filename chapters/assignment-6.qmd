@@ -17,7 +17,7 @@ Be sure to include a hyperlink somewhere in your introduction to the dataset via
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -31,7 +31,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 5: Comparing Multiple Groups** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -39,7 +39,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two files**:
 
@@ -56,13 +56,13 @@ Your document must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
 You must complete the following sections in order.
 
 ------------------------------------------------------------------------
 
-## 1. Data Ingest
+### 1. Data Ingest
 
 Load the NYC camera violations dataset using the `nycOpenData` package.
 
@@ -76,11 +76,11 @@ Do not hard-code numbers in your text.
 
 ------------------------------------------------------------------------
 
-## 2. Data Cleaning and Feature Engineering
+### 2. Data Cleaning and Feature Engineering
 
 You must perform the following cleaning steps. You are responsible for determining how to implement them.
 
-### 2A. Numeric Conversion
+#### 2A. Numeric Conversion
 
 Ensure all payment-related variables (such as `payment_amount` and `fine_amount`) are stored as numeric.
 
@@ -88,7 +88,7 @@ Include a short checkpoint confirming the structure is correct.
 
 ------------------------------------------------------------------------
 
-### 2B. Date Cleaning
+#### 2B. Date Cleaning
 
 The `issue_date` column may contain inconsistent formats.
 
@@ -102,7 +102,7 @@ Explain briefly why cleaning dates is necessary before modeling.
 
 ------------------------------------------------------------------------
 
-### 2C. Time Cleaning
+#### 2C. Time Cleaning
 
 Using the `violation_time` column:
 
@@ -121,7 +121,7 @@ Explain why feature engineering improves interpretability.
 
 ------------------------------------------------------------------------
 
-## 3. Analysis 1: Day of Week and Fine Amount
+### 3. Analysis 1: Day of Week and Fine Amount
 
 You will now investigate whether average **fine_amount** differs by **day_of_week**.
 
@@ -141,7 +141,7 @@ Then write a short paragraph answering:
 
 ------------------------------------------------------------------------
 
-## 4. Analysis 2: Time of Day and Fine Amount
+### 4. Analysis 2: Time of Day and Fine Amount
 
 Repeat the same structure, but now examine **fine_amount by time_of_day**.
 
@@ -159,7 +159,7 @@ In your paragraph, explain:
 
 ------------------------------------------------------------------------
 
-## 5. Analysis 3: Violation Type and Fine Amount
+### 5. Analysis 3: Violation Type and Fine Amount
 
 Examine **fine_amount by violation type**.
 
@@ -177,7 +177,7 @@ In your paragraph, explain:
 
 ------------------------------------------------------------------------
 
-## 6. Analysis 4: Violation Type and Payment Amount
+### 6. Analysis 4: Violation Type and Payment Amount
 
 Now shift to the more behaviorally meaningful variable: **payment_amount**.
 
@@ -198,7 +198,7 @@ In your paragraph, explain:
 
 ------------------------------------------------------------------------
 
-## Final Reflection
+### Final Reflection
 
 In 5–7 sentences, answer:
 
@@ -208,7 +208,15 @@ In 5–7 sentences, answer:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
 
 This assignment focuses on reproducible statistical modeling.
 
@@ -221,11 +229,3 @@ Your document must:
 - Render cleanly to HTML without manual intervention
 
 The goal is that another analyst could rerun your entire workflow and verify every statistical conclusion.
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.

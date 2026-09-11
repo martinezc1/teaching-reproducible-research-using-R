@@ -16,7 +16,7 @@ This midterm assesses your ability to build a **fully reproducible analysis** fr
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this midterm, you will be able to:
 
@@ -32,7 +32,7 @@ By completing this midterm, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapters 1-5 (and 10)** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -40,7 +40,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two files**:
 
@@ -57,13 +57,13 @@ Your report must:
 
 ------------------------------------------------------------------------
 
-# Midterm Tasks
+## Midterm Tasks
 
 ------------------------------------------------------------------------
 
-## 1. Setup & Data Import
+### 1. Setup & Data Import
 
-### Tasks
+#### Tasks
 
 - Load all packages you use\
 
@@ -76,9 +76,9 @@ Your report must:
 
 ------------------------------------------------------------------------
 
-## 2. Merge & Base Cleaning
+### 2. Merge & Base Cleaning
 
-### Tasks
+#### Tasks
 
 - Clean column names so they are consistent and easy to work with\
 
@@ -89,7 +89,7 @@ Your report must:
 
 - Merge the two datasets into a single dataset
 
-### Requirements
+#### Requirements
 
 - Final dataset should be **one row per participant**
 - Dataset should include demographics + sleep variables
@@ -97,9 +97,9 @@ Your report must:
 
 ------------------------------------------------------------------------
 
-## 3. Create Derived Variables
+### 3. Create Derived Variables
 
-### Tasks
+#### Tasks
 
 - Create a numeric sleep-change variable:
 
@@ -112,16 +112,16 @@ Your report must:
 
 - Drop rows with missing `Sleep_Difference`
 
-### Requirements
+#### Requirements
 
 - Include a checkpoint showing how many rows were removed and why
 - Your narrative should briefly justify your missing-data decision
 
 ------------------------------------------------------------------------
 
-## 4. Descriptive Statistics
+### 4. Descriptive Statistics
 
-### Tasks
+#### Tasks
 
 Report descriptive statistics for:
 
@@ -140,14 +140,14 @@ Then report group-wise summaries by `Exercise_Group` for:
 - `Sleep_Difference`
 - `Sleep_Efficiency`
 
-### Requirements
+#### Requirements
 
 - Group summaries must be clearly readable
 - Tables should be formatted professionally using `kable()` and appropriate captions.
 
 ------------------------------------------------------------------------
 
-## 5. Visualizations (3 plots)
+### 5. Visualizations (3 plots)
 
 Create **three** plots:
 
@@ -155,7 +155,7 @@ Create **three** plots:
 2.  Boxplot: `Sleep_Efficiency` by `Exercise_Group`\
 3.  Scatterplot: `Sleep_Difference` vs `Sleep_Efficiency`, with a trend line
 
-### Requirements
+#### Requirements
 
 Each plot must include:
 
@@ -168,14 +168,14 @@ After each plot, write 1–3 sentences describing what the plot suggests.
 
 ------------------------------------------------------------------------
 
-## 6. t-tests (Two)
+### 6. t-tests (Two)
 
 Run **two** t-tests:
 
 1.  `Sleep_Difference ~ Sex`\
 2.  `Sleep_Difference ~ AgeGroup2`
 
-### Requirements
+#### Requirements
 
 For each t-test, report:
 
@@ -191,14 +191,14 @@ Then interpret in plain language:
 
 ------------------------------------------------------------------------
 
-## 7. ANOVAs (Two) + Post-hoc Tests
+### 7. ANOVAs (Two) + Post-hoc Tests
 
 Run **two** ANOVAs:
 
 - ANOVA A: `Sleep_Difference ~ Exercise_Group`
 - ANOVA B: `Sleep_Efficiency ~ Exercise_Group`
 
-### Requirements
+#### Requirements
 
 For each ANOVA, include:
 
@@ -220,13 +220,13 @@ Interpret results:
 
 ------------------------------------------------------------------------
 
-## 8. Synthesis & Recommendation
+### 8. Synthesis & Recommendation
 
 Write **4–6 sentences** answering:
 
 - Considering **both** outcomes (`Sleep_Difference` and `Sleep_Efficiency`) and your post-hoc results, which **single** exercise regimen would you recommend to improve overall sleep?
 
-### Requirements
+#### Requirements
 
 - You may only pick **one** regimen
 
@@ -240,7 +240,7 @@ Your recommendation must be actionable and executive-friendly.
 
 ------------------------------------------------------------------------
 
-## 9. Reflection
+### 9. Reflection
 
 Write **3–5 sentences** addressing:
 
@@ -250,7 +250,15 @@ Write **3–5 sentences** addressing:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
 
 This midterm evaluates not only statistical accuracy, but workflow transparency. Your report must:
 
@@ -262,11 +270,3 @@ This midterm evaluates not only statistical accuracy, but workflow transparency.
 - Avoid hard-coding statistical values in written interpretation
 - Suppress unnecessary warnings/messages
 - Render cleanly to HTML
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.

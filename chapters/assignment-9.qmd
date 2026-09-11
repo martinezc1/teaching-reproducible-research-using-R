@@ -20,7 +20,7 @@ You will:
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -35,7 +35,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 6: Analyzing Categorical Data** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -43,7 +43,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two files**:
 
@@ -61,18 +61,18 @@ Your document must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
 ------------------------------------------------------------------------
 
-## 1. Data Preparation
+### 1. Data Preparation
 
 You have been provided with survey data including:
 
 - Age Category (18–25, 26–40, 41+)
 - Preferred Streaming Platform (Netflix, Hulu, Disney+, Amazon, Other)
 
-### Required Tasks
+#### Required Tasks
 
 You must:
 
@@ -85,15 +85,15 @@ Briefly describe what the contingency table represents and why it is useful for 
 
 ------------------------------------------------------------------------
 
-## 2. Visualization
+### 2. Visualization
 
 Create **two visualizations** using `ggplot2`.
 
-### Required Visualization 1
+#### Required Visualization 1
 
 A **stacked bar chart** showing the proportions of platform preferences within each age group.
 
-### Required Visualization 2
+#### Required Visualization 2
 
 A **clustered (side-by-side) bar chart** showing counts for each platform across age groups.
 
@@ -108,7 +108,7 @@ After each plot, provide 3–4 sentences interpreting what you observe.
 
 ------------------------------------------------------------------------
 
-## 3. Chi-Square Test of Independence
+### 3. Chi-Square Test of Independence
 
 Conduct a **Chi-Square test of independence** to determine whether Age Category and Platform Preference are related.
 
@@ -125,7 +125,7 @@ Then answer:
 
 ------------------------------------------------------------------------
 
-## 4. Observed, Expected, and Residual Values
+### 4. Observed, Expected, and Residual Values
 
 From your Chi-Square test, extract:
 
@@ -143,7 +143,7 @@ Explain what residuals tell us about patterns in the data.
 
 ------------------------------------------------------------------------
 
-## 5. Contributions to the Chi-Square Statistic
+### 5. Contributions to the Chi-Square Statistic
 
 Break down the Chi-Square statistic into **individual cell contributions**.
 
@@ -161,7 +161,7 @@ In your interpretation, explain:
 
 ------------------------------------------------------------------------
 
-## 6. Effect Size (Cramer’s V)
+### 6. Effect Size (Cramer’s V)
 
 Compute **Cramer’s V** to measure the strength of association between Age Category and Platform Preference.
 
@@ -176,7 +176,7 @@ Provide a short, plain-language explanation of the effect size.
 
 ------------------------------------------------------------------------
 
-## 7. Final Interpretation
+### 7. Final Interpretation
 
 Write a professional summary addressing:
 
@@ -189,7 +189,7 @@ Your summary should resemble a professional analytics report, not a textbook ans
 
 ------------------------------------------------------------------------
 
-# Deliverables
+## Deliverables
 
 Your final report must include:
 
@@ -203,7 +203,7 @@ Your final report must include:
 
 ------------------------------------------------------------------------
 
-# Guidelines for Interpretation
+## Guidelines for Interpretation
 
 When discussing your results, always include:
 
@@ -216,7 +216,7 @@ Avoid jargon without explanation.
 
 ------------------------------------------------------------------------
 
-# Reflection
+## Reflection
 
 In 4–6 sentences, answer:
 
@@ -226,7 +226,15 @@ In 4–6 sentences, answer:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+## Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
 
 This assignment emphasizes transparent categorical analysis.
 
@@ -240,11 +248,3 @@ Your document must:
 - Render cleanly to HTML
 
 The goal is that another analyst could reproduce your entire Chi-Square analysis and verify every conclusion.
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.

@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Final Project: NYC Open Data 2026 Proposal – Teaching Reproducible Research Using R</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../chapters/assignment-book.html" rel="next">
+<link href="../chapters/assignment-10.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5ccb035bea26c1e21f80f44cf7c27909.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/assignment-final.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Final Project: NYC Open Data 2026 Proposal</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Teaching Reproducible Research Using R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About This Book</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/course-blueprint.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Blueprint</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Assignment 1: Base R Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Assignment 2: Exploring Pixar with the Tidyverse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Assignment 4: Merging Data and Comparing Means with t-tests</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 5: R Script → Quarto Report</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-midterm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Midterm: Exercise &amp; Sleep</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-final.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Final Project: NYC Open Data 2026 Proposal</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/assignment-book.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Final Assignment: Building Your Reproducible Quarto Book</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/References.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">References</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-final" id="toc-sec-final" class="nav-link active" data-scroll-target="#sec-final"><span class="header-section-number">12.1</span> Overview</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">13</span> Learning Objectives</a></li>
+  <li><a href="#textbook-connection" id="toc-textbook-connection" class="nav-link" data-scroll-target="#textbook-connection"><span class="header-section-number">14</span> Textbook Connection</a></li>
+  <li><a href="#project-requirements" id="toc-project-requirements" class="nav-link" data-scroll-target="#project-requirements"><span class="header-section-number">15</span> Project Requirements</a>
+  <ul class="collapse">
+  <li><a href="#dataset-selection" id="toc-dataset-selection" class="nav-link" data-scroll-target="#dataset-selection"><span class="header-section-number">15.1</span> 1. Dataset Selection</a></li>
+  <li><a href="#reproducible-analysis-quarto" id="toc-reproducible-analysis-quarto" class="nav-link" data-scroll-target="#reproducible-analysis-quarto"><span class="header-section-number">15.2</span> 2. Reproducible Analysis (Quarto)</a></li>
+  <li><a href="#proposal-style-structure" id="toc-proposal-style-structure" class="nav-link" data-scroll-target="#proposal-style-structure"><span class="header-section-number">15.3</span> 3. Proposal-Style Structure</a>
+  <ul class="collapse">
+  <li><a href="#a.-title-event-description" id="toc-a.-title-event-description" class="nav-link" data-scroll-target="#a.-title-event-description"><span class="header-section-number">15.3.1</span> A. Title &amp; Event Description</a></li>
+  <li><a href="#b.-datasets-used" id="toc-b.-datasets-used" class="nav-link" data-scroll-target="#b.-datasets-used"><span class="header-section-number">15.3.2</span> B. Dataset(s) Used</a></li>
+  <li><a href="#c.-analysis" id="toc-c.-analysis" class="nav-link" data-scroll-target="#c.-analysis"><span class="header-section-number">15.3.3</span> C. Analysis</a></li>
+  <li><a href="#d.-visualizations" id="toc-d.-visualizations" class="nav-link" data-scroll-target="#d.-visualizations"><span class="header-section-number">15.3.4</span> D. Visualizations</a></li>
+  <li><a href="#e.-audience-relevance" id="toc-e.-audience-relevance" class="nav-link" data-scroll-target="#e.-audience-relevance"><span class="header-section-number">15.3.5</span> E. Audience &amp; Relevance</a></li>
+  <li><a href="#f.-connection-to-open-data" id="toc-f.-connection-to-open-data" class="nav-link" data-scroll-target="#f.-connection-to-open-data"><span class="header-section-number">15.3.6</span> F. Connection to Open Data</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#length-formatting-requirements" id="toc-length-formatting-requirements" class="nav-link" data-scroll-target="#length-formatting-requirements"><span class="header-section-number">16</span> Length &amp; Formatting Requirements</a></li>
+  <li><a href="#class-presentation" id="toc-class-presentation" class="nav-link" data-scroll-target="#class-presentation"><span class="header-section-number">17</span> Class Presentation</a></li>
+  <li><a href="#class-publication-optional-but-encouraged" id="toc-class-publication-optional-but-encouraged" class="nav-link" data-scroll-target="#class-publication-optional-but-encouraged"><span class="header-section-number">18</span> Class Publication (Optional but Encouraged)</a></li>
+  <li><a href="#grading-100-points-total" id="toc-grading-100-points-total" class="nav-link" data-scroll-target="#grading-100-points-total"><span class="header-section-number">19</span> Grading (100 Points Total)</a></li>
+  <li><a href="#reproducibility-practice" id="toc-reproducibility-practice" class="nav-link" data-scroll-target="#reproducibility-practice"><span class="header-section-number">20</span> Reproducibility Practice</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">21</span> Resources</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">22</span> Submission</a></li>
+  <li><a href="#takeaway" id="toc-takeaway" class="nav-link" data-scroll-target="#takeaway"><span class="header-section-number">23</span> Takeaway</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Final Project: NYC Open Data 2026 Proposal</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="sec-final" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="sec-final"><span class="header-section-number">12.1</span> Overview</h2>
+<p>Your final project for this course is to design and conduct an <strong>original research project</strong> using NYC Open Data.</p>
+<p>Your project will be written as a fully reproducible <strong>Quarto document</strong> and structured as though it were ready for public presentation at <strong>NYC Open Data Week</strong>.</p>
+<p>This assignment is designed to:</p>
+<ul>
+<li>Give you experience designing an independent research project<br>
+</li>
+<li>Provide hands-on work with open civic datasets<br>
+</li>
+<li>Produce a polished portfolio-ready artifact<br>
+</li>
+<li>Strengthen your reproducible workflow and data communication skills<br>
+</li>
+<li>Prepare you to submit to NYC Open Data Week 2026 if you choose</li>
+</ul>
+<p>By the end of this course, you will have created a professional-quality research document suitable for public presentation.</p>
+<hr>
+</section>
+<section id="learning-objectives" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Learning Objectives</h1>
+<p>By completing this project, you will be able to:</p>
+<ul>
+<li>Formulate a clear, data-driven research question</li>
+<li>Identify and justify appropriate open datasets</li>
+<li>Build a fully reproducible data workflow</li>
+<li>Clean, wrangle, and analyze civic data responsibly</li>
+<li>Create clear and meaningful visualizations</li>
+<li>Write for a public-facing, non-technical audience</li>
+<li>Connect your work to broader open data principles</li>
+</ul>
+<hr>
+</section>
+<section id="textbook-connection" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Textbook Connection</h1>
+<p>This final project synthesizes concepts in <a href="https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/">Reproducible Research Using R</a>.</p>
+<p>Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.</p>
+<hr>
+</section>
+<section id="project-requirements" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Project Requirements</h1>
+<hr>
+<section id="dataset-selection" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="dataset-selection"><span class="header-section-number">15.1</span> 1. Dataset Selection</h2>
+<p>You must:</p>
+<ul>
+<li>Select <strong>at least one dataset</strong> from the NYC Open Data Portal (preferred).</li>
+<li>Other publicly available civic datasets regarding NYC are acceptable <strong>with instructor approval</strong>.</li>
+<li>Clearly cite and hyperlink all datasets used.</li>
+<li>Justify why the dataset is appropriate for your research question.</li>
+</ul>
+<p>Your project should demonstrate thoughtful dataset selection rather than convenience-based selection.</p>
+<hr>
+</section>
+<section id="reproducible-analysis-quarto" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="reproducible-analysis-quarto"><span class="header-section-number">15.2</span> 2. Reproducible Analysis (Quarto)</h2>
+<p>Your final submission must:</p>
+<ul>
+<li>Be written in <strong>Quarto (.qmd)</strong> format.</li>
+<li>Include narrative, code, output, and interpretation in one document.</li>
+<li>Knit/render successfully without errors.</li>
+<li>Suppress unnecessary warnings and messages in the final output.</li>
+</ul>
+<p>Your workflow should clearly demonstrate:</p>
+<ul>
+<li>Data import<br>
+</li>
+<li>Cleaning and transformation<br>
+</li>
+<li>Analysis aligned with your research question<br>
+</li>
+<li>Transparent decision-making</li>
+</ul>
+<hr>
+</section>
+<section id="proposal-style-structure" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="proposal-style-structure"><span class="header-section-number">15.3</span> 3. Proposal-Style Structure</h2>
+<p>Your document should be structured as if it were an Open Data Week proposal.</p>
+<p>Include the following sections:</p>
+<section id="a.-title-event-description" class="level3" data-number="15.3.1">
+<h3 data-number="15.3.1" class="anchored" data-anchor-id="a.-title-event-description"><span class="header-section-number">15.3.1</span> A. Title &amp; Event Description</h3>
+<ul>
+<li>A clear, compelling project title.</li>
+<li>A 1–2 paragraph overview explaining:
+<ul>
+<li>Your research question</li>
+<li>Why it matters</li>
+<li>What attendees would learn</li>
+</ul></li>
+</ul>
+<p>Write this as though it were submitted to Open Data Week.</p>
+<hr>
+</section>
+<section id="b.-datasets-used" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="b.-datasets-used"><span class="header-section-number">15.3.2</span> B. Dataset(s) Used</h3>
+<ul>
+<li>Describe the dataset(s).</li>
+<li>Provide proper citations and links.</li>
+<li>Explain how the dataset(s) connect to your research question.</li>
+</ul>
+<hr>
+</section>
+<section id="c.-analysis" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="c.-analysis"><span class="header-section-number">15.3.3</span> C. Analysis</h3>
+<ul>
+<li>Present a reproducible workflow from raw data to results.</li>
+<li>Clearly explain:
+<ul>
+<li>What you cleaned and why</li>
+<li>What transformations were performed</li>
+<li>What analyses were conducted</li>
+</ul></li>
+<li>Align every analysis step with your research question.</li>
+</ul>
+<hr>
+</section>
+<section id="d.-visualizations" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="d.-visualizations"><span class="header-section-number">15.3.4</span> D. Visualizations</h3>
+<p>Include <strong>at least two</strong> clear, well-labeled figures or tables created in R.</p>
+<p>All visualizations must:</p>
+<ul>
+<li>Include titles</li>
+<li>Include axis labels</li>
+<li>Include captions</li>
+<li>Be readable in a public-facing setting</li>
+</ul>
+<p>Explain what each visualization shows and why it matters.</p>
+<hr>
+</section>
+<section id="e.-audience-relevance" class="level3" data-number="15.3.5">
+<h3 data-number="15.3.5" class="anchored" data-anchor-id="e.-audience-relevance"><span class="header-section-number">15.3.5</span> E. Audience &amp; Relevance</h3>
+<p>Identify:</p>
+<ul>
+<li>Who would care about this project?
+<ul>
+<li>New Yorkers?</li>
+<li>Policymakers?</li>
+<li>Journalists?</li>
+<li>Community organizations?</li>
+</ul></li>
+<li>Why does this research matter in a civic context?</li>
+</ul>
+<hr>
+</section>
+<section id="f.-connection-to-open-data" class="level3" data-number="15.3.6">
+<h3 data-number="15.3.6" class="anchored" data-anchor-id="f.-connection-to-open-data"><span class="header-section-number">15.3.6</span> F. Connection to Open Data</h3>
+<p>Explain how your project:</p>
+<ul>
+<li>Demonstrates transparency</li>
+<li>Highlights accessibility of public data</li>
+<li>Shows the value of open civic information</li>
+<li>Reflects open data principles</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="length-formatting-requirements" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Length &amp; Formatting Requirements</h1>
+<ul>
+<li>Minimum <strong>500 words of written narrative</strong> (excluding code).</li>
+<li>Figures and tables must be clearly labeled.</li>
+<li>Citations must be properly formatted.</li>
+<li>The document must render cleanly to HTML or PDF.</li>
+</ul>
+<p>Submit both:</p>
+<ul>
+<li>Your <code>.qmd</code> file<br>
+</li>
+<li>Your knitted HTML or PDF output</li>
+</ul>
+<hr>
+</section>
+<section id="class-presentation" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Class Presentation</h1>
+<p>You will present your project during the final weeks of the semester.</p>
+<p>Presentation Requirements:</p>
+<ul>
+<li>10–12 minutes</li>
+<li>2–3 minutes for Q&amp;A</li>
+<li>Use slides (Quarto, PowerPoint, etc.)</li>
+</ul>
+<p>Your presentation should:</p>
+<ul>
+<li>Clearly explain your research question</li>
+<li>Highlight key findings</li>
+<li>Show at least one visualization</li>
+<li>Be understandable to a non-technical audience</li>
+</ul>
+<p>This is practice for a potential Open Data Week 2026 submission.</p>
+<hr>
+</section>
+<section id="class-publication-optional-but-encouraged" class="level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span> Class Publication (Optional but Encouraged)</h1>
+<p>At the end of the semester, projects may be compiled into a collective class book via Posit Cloud.</p>
+<p>Each student’s project may appear as a chapter.</p>
+<p>Benefits:</p>
+<ul>
+<li>A publication credit</li>
+<li>A portfolio artifact</li>
+<li>A public-facing research contribution</li>
+</ul>
+<p>You may opt out if you prefer.</p>
+<hr>
+</section>
+<section id="grading-100-points-total" class="level1" data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span> Grading (100 Points Total)</h1>
+<ul>
+<li><p>Dataset &amp; Research Question (15 pts)<br>
+Clarity, appropriateness, creativity</p></li>
+<li><p>Reproducibility (20 pts)<br>
+Working document, organized workflow, transparent code</p></li>
+<li><p>Analysis (20 pts)<br>
+Depth, correctness, alignment with question</p></li>
+<li><p>Visualizations (10 pts)<br>
+Clarity, design, relevance</p></li>
+<li><p>Public Framing &amp; Civic Relevance (10 pts)<br>
+Event description, audience, connection to Open Data</p></li>
+<li><p>Class Presentation (15 pts)<br>
+Clarity, engagement, professionalism</p></li>
+<li><p>Professionalism &amp; Formatting (10 pts)<br>
+Writing quality, citations, organization</p></li>
+</ul>
+<hr>
+</section>
+<section id="reproducibility-practice" class="level1" data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span> Reproducibility Practice</h1>
+<p>This final project emphasizes transparent and repeatable workflows.</p>
+<p>Your document must:</p>
+<ul>
+<li>Load all required packages explicitly<br>
+</li>
+<li>Import data programmatically<br>
+</li>
+<li>Avoid manual editing of datasets<br>
+</li>
+<li>Clearly document cleaning decisions<br>
+</li>
+<li>Avoid hard-coding results in interpretation<br>
+</li>
+<li>Render cleanly without errors<br>
+</li>
+<li>Set a seed if using sampling, modeling, or randomness</li>
+</ul>
+<p>The goal is that another analyst could reproduce your findings exactly.</p>
+<hr>
+</section>
+<section id="resources" class="level1" data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Resources</h1>
+<ul>
+<li>NYC Open Data Portal: https://opendata.cityofnewyork.us/<br>
+</li>
+<li>Past Open Data Week Events: https://2025.open-data.nyc/</li>
+</ul>
+<hr>
+</section>
+<section id="submission" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Submission</h1>
+<p>Required:</p>
+<ul>
+<li><code>.qmd</code> file<br>
+</li>
+<li>Knitted HTML or PDF output</li>
+</ul>
+<hr>
+</section>
+<section id="takeaway" class="level1" data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> Takeaway</h1>
+<p>By completing this final project, you will leave the course with:</p>
+<ul>
+<li>An independent, reproducible research project<br>
+</li>
+<li>A polished presentation<br>
+</li>
+<li>A potential publication credit<br>
+</li>
+<li>A strong foundation for an Open Data Week 2026 submission</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/assignment-10.html" class="pagination-link" aria-label="Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/assignment-book.html" class="pagination-link" aria-label="Final Assignment: Building Your Reproducible Quarto Book">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Final Assignment: Building Your Reproducible Quarto Book</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

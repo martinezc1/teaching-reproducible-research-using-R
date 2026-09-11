@@ -18,7 +18,7 @@ This assignment assesses your ability to:
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
@@ -32,7 +32,7 @@ By completing this assignment, you will be able to:
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -40,7 +40,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
 This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
@@ -48,7 +48,7 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **two files**:
 
@@ -67,11 +67,11 @@ Your document must:
 
 ------------------------------------------------------------------------
 
-# Assignment Tasks
+## Assignment Tasks
 
 ------------------------------------------------------------------------
 
-## 1. Data Loading and Preparation
+### 1. Data Loading and Preparation
 
 You have been provided with an Excel file containing the following columns:
 
@@ -83,7 +83,7 @@ You have been provided with an Excel file containing the following columns:
 | HS     | High-school graduation rate (%)  |
 | U      | Urban population (%)             |
 
-### Required Tasks
+#### Required Tasks
 
 You must:
 
@@ -106,11 +106,11 @@ Include a brief explanation of why consistent naming and formatting are essentia
 
 ------------------------------------------------------------------------
 
-## 2. Exploratory Data Analysis
+### 2. Exploratory Data Analysis
 
 Conduct exploratory analysis to understand the structure and distribution of the data.
 
-### Required Components
+#### Required Components
 
 - Compute descriptive statistics (mean, median, range) for all numeric variables
 - Create at least **two visualizations** (e.g., histograms, boxplots, scatterplots)
@@ -122,17 +122,17 @@ Your interpretation should address:
 - Potential outliers
 - Initial patterns between predictors and crime
 
-### Bonus (Optional)
+#### Bonus (Optional)
 
 Using `ggplot2` and mapping tools, create a heatmap of Florida counties based on crime rates.
 
 ------------------------------------------------------------------------
 
-## 3. Correlation Analysis
+### 3. Correlation Analysis
 
 Investigate which factors are most strongly associated with crime.
 
-### Required Tasks
+#### Required Tasks
 
 - Compute a correlation matrix including:
 
@@ -157,11 +157,11 @@ In your written interpretation, explain:
 
 ------------------------------------------------------------------------
 
-## 4. Building Regression Models
+### 4. Building Regression Models
 
 You will now build models to predict county-level crime rates.
 
-### Required Models
+#### Required Models
 
 1.  A **simple regression model** using the predictor you believe fits best
 
@@ -173,7 +173,7 @@ You will now build models to predict county-level crime rates.
 
 3.  (Optional) Include an interaction term if theoretically justified
 
-### Model Comparison
+#### Model Comparison
 
 Compare models using:
 
@@ -191,7 +191,7 @@ Explain why Adjusted R² and AIC are useful when comparing multiple models.
 
 ------------------------------------------------------------------------
 
-## 5. Executive Memo to the Chief of the Florida Police Department
+### 5. Executive Memo to the Chief of the Florida Police Department
 
 Write a short professional memo addressed to:
 
@@ -211,7 +211,7 @@ Your tone should be executive-level and professional.
 
 ------------------------------------------------------------------------
 
-# Guidelines for Interpretation
+## Guidelines for Interpretation
 
 When discussing results, always include:
 
@@ -228,7 +228,7 @@ Avoid technical jargon without explanation.
 
 ------------------------------------------------------------------------
 
-# Final Question
+## Final Question
 
 At the end of your report, include a short written response to:
 
@@ -238,7 +238,7 @@ Be specific and reference your model comparison metrics.
 
 ------------------------------------------------------------------------
 
-# Reflection
+## Reflection
 
 In 4–6 sentences, answer:
 
@@ -248,7 +248,15 @@ In 4–6 sentences, answer:
 
 ------------------------------------------------------------------------
 
-# Reproducibility Practice
+# Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
 
 This assignment emphasizes reproducible modeling and executive communication.
 
@@ -262,11 +270,3 @@ Your document must:
 - Suppress warnings/messages in the final published HTML
 
 The goal is that another analyst could rerun your analysis and verify every claim.
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.
