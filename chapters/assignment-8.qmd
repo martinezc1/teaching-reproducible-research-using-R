@@ -1,9 +1,6 @@
----
-title: "Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge"
-subtitle: "Correlation • Multiple Regression • Model Comparison • Executive Communication"
----
+# Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge
 
-# Overview {#sec-eight}
+## Overview {#sec-eight}
 
 The **Florida Police Department (FPD)** has hired you as their new **Data Analyst**. Your mission is to uncover which socioeconomic factors are most strongly associated with rising crime rates across Florida counties.
 
@@ -13,11 +10,11 @@ Your findings will help inform statewide prevention strategies, resource allocat
 
 This assignment assesses your ability to:
 
--   Clean and prepare structured data
--   Compute and interpret correlations
--   Build and compare regression models
--   Evaluate model fit using R² and AIC
--   Communicate statistical findings to a non-technical executive audience
+- Clean and prepare structured data
+- Compute and interpret correlations
+- Build and compare regression models
+- Evaluate model fit using R² and AIC
+- Communicate statistical findings to a non-technical executive audience
 
 ------------------------------------------------------------------------
 
@@ -25,13 +22,13 @@ This assignment assesses your ability to:
 
 By completing this assignment, you will be able to:
 
--   Clean and standardize real-world datasets
--   Perform exploratory data analysis (EDA)
--   Interpret correlation matrices
--   Build simple and multiple regression models
--   Compare models using R², Adjusted R², and AIC
--   Explain regression results in plain language
--   Produce a reproducible Quarto report suitable for executive review
+- Clean and standardize real-world datasets
+- Perform exploratory data analysis (EDA)
+- Interpret correlation matrices
+- Build simple and multiple regression models
+- Compare models using R², Adjusted R², and AIC
+- Explain regression results in plain language
+- Produce a reproducible Quarto report suitable for executive review
 
 ------------------------------------------------------------------------
 
@@ -60,13 +57,13 @@ Submit **two files**:
 
 Your document must:
 
--   Knit without errors
--   Suppress warnings and messages in the final HTML
--   Include clearly labeled sections
--   Include all required visualizations
--   Include regression tables and model comparisons
--   Include a professional memo to the Chief of the FPD
--   Use at least one inline R expression
+- Knit without errors
+- Suppress warnings and messages in the final HTML
+- Include clearly labeled sections
+- Include all required visualizations
+- Include regression tables and model comparisons
+- Include a professional memo to the Chief of the FPD
+- Use at least one inline R expression
 
 ------------------------------------------------------------------------
 
@@ -90,20 +87,20 @@ You have been provided with an Excel file containing the following columns:
 
 You must:
 
--   Load the dataset reproducibly
+- Load the dataset reproducibly
 
--   Rename the columns to:
+- Rename the columns to:
 
-    -   `Crime`
-    -   `Income`
-    -   `HighSchoolGrad`
-    -   `UrbanPop`
+  - `Crime`
+  - `Income`
+  - `HighSchoolGrad`
+  - `UrbanPop`
 
--   Format all county names so that only the first letter is capitalized
+- Format all county names so that only the first letter is capitalized
 
--   Inspect the dataset structure
+- Inspect the dataset structure
 
--   Provide summary statistics
+- Provide summary statistics
 
 Include a brief explanation of why consistent naming and formatting are essential for reproducible modeling.
 
@@ -115,15 +112,15 @@ Conduct exploratory analysis to understand the structure and distribution of the
 
 ### Required Components
 
--   Compute descriptive statistics (mean, median, range) for all numeric variables
--   Create at least **two visualizations** (e.g., histograms, boxplots, scatterplots)
--   Provide written interpretation of what you observe
+- Compute descriptive statistics (mean, median, range) for all numeric variables
+- Create at least **two visualizations** (e.g., histograms, boxplots, scatterplots)
+- Provide written interpretation of what you observe
 
 Your interpretation should address:
 
--   Distribution shapes
--   Potential outliers
--   Initial patterns between predictors and crime
+- Distribution shapes
+- Potential outliers
+- Initial patterns between predictors and crime
 
 ### Bonus (Optional)
 
@@ -137,26 +134,26 @@ Investigate which factors are most strongly associated with crime.
 
 ### Required Tasks
 
--   Compute a correlation matrix including:
+- Compute a correlation matrix including:
 
-    -   Crime
-    -   Income
-    -   HighSchoolGrad
-    -   UrbanPop
+  - Crime
+  - Income
+  - HighSchoolGrad
+  - UrbanPop
 
--   Identify which predictor shows the strongest relationship with Crime
+- Identify which predictor shows the strongest relationship with Crime
 
--   Interpret the direction (positive or negative)
+- Interpret the direction (positive or negative)
 
--   Interpret the strength (weak, moderate, strong)
+- Interpret the strength (weak, moderate, strong)
 
 (Optional) Visualize the correlation matrix using a correlation plotting tool.
 
 In your written interpretation, explain:
 
--   Which factor appears most important
--   Whether any predictors appear highly correlated with one another
--   Why correlation does not imply causation
+- Which factor appears most important
+- Whether any predictors appear highly correlated with one another
+- Why correlation does not imply causation
 
 ------------------------------------------------------------------------
 
@@ -170,9 +167,9 @@ You will now build models to predict county-level crime rates.
 
 2.  At least **two multiple regression models**, such as:
 
-    -   Income + HighSchoolGrad\
-    -   Income + UrbanPop\
-    -   A full model with all predictors
+    - Income + HighSchoolGrad\
+    - Income + UrbanPop\
+    - A full model with all predictors
 
 3.  (Optional) Include an interaction term if theoretically justified
 
@@ -180,15 +177,15 @@ You will now build models to predict county-level crime rates.
 
 Compare models using:
 
--   R²
--   Adjusted R²
--   AIC
+- R²
+- Adjusted R²
+- AIC
 
 Interpret:
 
--   Which predictors are statistically significant
--   Which model explains the most variance
--   Which model best balances simplicity and explanatory power
+- Which predictors are statistically significant
+- Which model explains the most variance
+- Which model best balances simplicity and explanatory power
 
 Explain why Adjusted R² and AIC are useful when comparing multiple models.
 
@@ -203,12 +200,12 @@ Florida Police Department**
 
 Your memo must include:
 
--   The best-performing model
--   The most influential predictor(s)
--   The proportion of variance explained (R²)
--   Clear, plain-language interpretation
--   One limitation of your analysis
--   One actionable recommendation for resource allocation or prevention strategy
+- The best-performing model
+- The most influential predictor(s)
+- The proportion of variance explained (R²)
+- Clear, plain-language interpretation
+- One limitation of your analysis
+- One actionable recommendation for resource allocation or prevention strategy
 
 Your tone should be executive-level and professional.
 
@@ -218,10 +215,10 @@ Your tone should be executive-level and professional.
 
 When discussing results, always include:
 
--   **Direction** — Positive or negative relationship\
--   **Strength** — Weak, moderate, or strong\
--   **Significance** — Statistically significant or not\
--   **Plain language meaning**
+- **Direction** — Positive or negative relationship\
+- **Strength** — Weak, moderate, or strong\
+- **Significance** — Statistically significant or not\
+- **Plain language meaning**
 
 Example:
 
@@ -257,12 +254,12 @@ This assignment emphasizes reproducible modeling and executive communication.
 
 Your document must:
 
--   Load data programmatically
--   Avoid manual data manipulation outside the script
--   Use clearly labeled code chunks
--   Avoid hard-coding results in narrative
--   Use inline R expressions where appropriate
--   Suppress warnings/messages in the final published HTML
+- Load data programmatically
+- Avoid manual data manipulation outside the script
+- Use clearly labeled code chunks
+- Avoid hard-coding results in narrative
+- Use inline R expressions where appropriate
+- Suppress warnings/messages in the final published HTML
 
 The goal is that another analyst could rerun your analysis and verify every claim.
 

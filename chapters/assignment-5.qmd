@@ -1,9 +1,6 @@
----
-title: "Assignment 5: R Script → Quarto Report"
-subtitle: "From analysis script to a reproducible, published HTML report"
----
+# Assignment 5: R Script → Quarto Report
 
-# Overview {#sec-five}
+## Overview {#sec-five}
 
 This week, you will take your Week 3 homework assignment (NYPD Shooting Incidents) and convert it into a **Quarto** report (`.qmd`). Using the same prompt and the work you already completed, your task is to create a fully reproducible, publishable HTML report.
 
@@ -15,12 +12,12 @@ Your final output should read like a short research note: code + narrative expla
 
 By completing this assignment, you will be able to:
 
--   Convert an analysis workflow from an R script into a reproducible Quarto document
--   Organize work into labeled code chunks that render cleanly to HTML
--   Combine narrative text with analysis code to communicate findings
--   Use inline R expressions to report values dynamically
--   Create publication-quality tables and visualizations for the web
--   Publish a reproducible report and share it via a link
+- Convert an analysis workflow from an R script into a reproducible Quarto document
+- Organize work into labeled code chunks that render cleanly to HTML
+- Combine narrative text with analysis code to communicate findings
+- Use inline R expressions to report values dynamically
+- Create publication-quality tables and visualizations for the web
+- Publish a reproducible report and share it via a link
 
 ------------------------------------------------------------------------
 
@@ -51,8 +48,8 @@ Your Quarto document must include the following sections and components.
 
 Include:
 
--   Title
--   Your name as the *author*
+- Title
+- Your name as the *author*
 
 ## 2. Setup chunk
 
@@ -73,10 +70,10 @@ Your report must contain *at least* the following four code chunks:
 
 4.  **Tables & Graphs**
 
-    -   At least **one table** created with `knitr::kable()`
-    -   At least **two ggplot2 graphs**:
-        -   one related to `time_of_day`
-        -   one supporting your personal insight
+    - At least **one table** created with `knitr::kable()`
+    - At least **two ggplot2 graphs**:
+      - one related to `time_of_day`
+      - one supporting your personal insight
 
 *All tables and graphs must have captions!*
 
@@ -84,9 +81,9 @@ Your report must contain *at least* the following four code chunks:
 
 After **each** code chunk, write a short explanation describing:
 
--   what you did
--   why you did it
--   what you learned or produced
+- what you did
+- why you did it
+- what you learned or produced
 
 ## 5. Inline R expression
 
@@ -119,8 +116,8 @@ In **3–5 sentences**, explain how this workflow could potentially help you in 
 1.  Render your Quarto document to HTML.
 2.  Publish it online (e.g., RPubs).
 3.  Submit:
-    -   the link to the published HTML
-    -   your `.qmd` file
+    - the link to the published HTML
+    - your `.qmd` file
 
 ------------------------------------------------------------------------
 
@@ -130,10 +127,10 @@ This assignment focuses on reproducibility as **communication**.
 
 In your report:
 
--   Chunk labels should be meaningful (e.g., `data-ingest`, `cleaning`, `insights`, `plots`)
--   Your narrative should match your code (a reader should understand what each chunk accomplishes)
--   Inline R values should be used to avoid hard-coding numbers that may change if the dataset updates
--   Your HTML output should render cleanly and be readable without needing the original script
+- Chunk labels should be meaningful (e.g., `data-ingest`, `cleaning`, `insights`, `plots`)
+- Your narrative should match your code (a reader should understand what each chunk accomplishes)
+- Inline R values should be used to avoid hard-coding numbers that may change if the dataset updates
+- Your HTML output should render cleanly and be readable without needing the original script
 
 ------------------------------------------------------------------------
 

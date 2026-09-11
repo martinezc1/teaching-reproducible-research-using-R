@@ -1,9 +1,6 @@
----
-title: "Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups"
-subtitle: "Chi-Square • Residual Analysis • Contributions • Cramer's V"
----
+# Assignment 9: Streaming Analytics — Understanding Platform Popularity Across Age Groups
 
-# Overview {#sec-nine}
+## Overview {#sec-nine}
 
 The **Streaming Analytics Division (SAD)** has hired you as their new **Data Analyst**. Your mission is to determine whether **age group influences streaming platform preference**.
 
@@ -50,8 +47,8 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 Submit **two files**:
 
-1. Your `.qmd` file  
-2. Your knitted and published `.html` file  
+1.  Your `.qmd` file\
+2.  Your knitted and published `.html` file
 
 Your document must:
 
@@ -170,10 +167,10 @@ Compute **Cramer’s V** to measure the strength of association between Age Cate
 
 Interpret the value using these guidelines:
 
-- 0.00–0.10 → Very Weak  
-- 0.10–0.30 → Weak  
-- 0.30–0.50 → Moderate  
-- Above 0.50 → Strong  
+- 0.00–0.10 → Very Weak\
+- 0.10–0.30 → Weak\
+- 0.30–0.50 → Moderate\
+- Above 0.50 → Strong
 
 Provide a short, plain-language explanation of the effect size.
 
@@ -223,9 +220,9 @@ Avoid jargon without explanation.
 
 In 4–6 sentences, answer:
 
-1. Why is the Chi-Square test appropriate for categorical data?
-2. What is the difference between statistical significance and effect size?
-3. Why is it important to examine residuals and contributions rather than only the p-value?
+1.  Why is the Chi-Square test appropriate for categorical data?
+2.  What is the difference between statistical significance and effect size?
+3.  Why is it important to examine residuals and contributions rather than only the p-value?
 
 ------------------------------------------------------------------------
 
@@ -248,6 +245,6 @@ The goal is that another analyst could reproduce your entire Chi-Square analysis
 
 # Publishing Instructions
 
-1. Render your `.qmd` file to HTML.
-2. Confirm warnings and messages do not appear in the final document.
-3. Submit both your `.qmd` file and your published `.html` report.
+1.  Render your `.qmd` file to HTML.
+2.  Confirm warnings and messages do not appear in the final document.
+3.  Submit both your `.qmd` file and your published `.html` report.

@@ -1,9 +1,6 @@
----
-title: "Final Project: NYC Open Data 2026 Proposal"
-subtitle: "Independent Civic Research • Reproducible Workflow • Public-Facing Communication"
----
+# Final Project: NYC Open Data 2026 Proposal
 
-# Overview {#sec-final}
+## Overview {#sec-final}
 
 Your final project for this course is to design and conduct an **original research project** using NYC Open Data.
 
@@ -11,11 +8,11 @@ Your project will be written as a fully reproducible **Quarto document** and str
 
 This assignment is designed to:
 
-- Give you experience designing an independent research project  
-- Provide hands-on work with open civic datasets  
-- Produce a polished portfolio-ready artifact  
-- Strengthen your reproducible workflow and data communication skills  
-- Prepare you to submit to NYC Open Data Week 2026 if you choose  
+- Give you experience designing an independent research project\
+- Provide hands-on work with open civic datasets\
+- Produce a polished portfolio-ready artifact\
+- Strengthen your reproducible workflow and data communication skills\
+- Prepare you to submit to NYC Open Data Week 2026 if you choose
 
 By the end of this course, you will have created a professional-quality research document suitable for public presentation.
 
@@ -71,10 +68,10 @@ Your final submission must:
 
 Your workflow should clearly demonstrate:
 
-- Data import  
-- Cleaning and transformation  
-- Analysis aligned with your research question  
-- Transparent decision-making  
+- Data import\
+- Cleaning and transformation\
+- Analysis aligned with your research question\
+- Transparent decision-making
 
 ------------------------------------------------------------------------
 
@@ -163,8 +160,8 @@ Explain how your project:
 
 Submit both:
 
-- Your `.qmd` file  
-- Your knitted HTML or PDF output  
+- Your `.qmd` file\
+- Your knitted HTML or PDF output
 
 ------------------------------------------------------------------------
 
@@ -207,26 +204,26 @@ You may opt out if you prefer.
 
 # Grading (100 Points Total)
 
-- Dataset & Research Question (15 pts)  
-  Clarity, appropriateness, creativity  
+- Dataset & Research Question (15 pts)\
+  Clarity, appropriateness, creativity
 
-- Reproducibility (20 pts)  
-  Working document, organized workflow, transparent code  
+- Reproducibility (20 pts)\
+  Working document, organized workflow, transparent code
 
-- Analysis (20 pts)  
-  Depth, correctness, alignment with question  
+- Analysis (20 pts)\
+  Depth, correctness, alignment with question
 
-- Visualizations (10 pts)  
-  Clarity, design, relevance  
+- Visualizations (10 pts)\
+  Clarity, design, relevance
 
-- Public Framing & Civic Relevance (10 pts)  
-  Event description, audience, connection to Open Data  
+- Public Framing & Civic Relevance (10 pts)\
+  Event description, audience, connection to Open Data
 
-- Class Presentation (15 pts)  
-  Clarity, engagement, professionalism  
+- Class Presentation (15 pts)\
+  Clarity, engagement, professionalism
 
-- Professionalism & Formatting (10 pts)  
-  Writing quality, citations, organization  
+- Professionalism & Formatting (10 pts)\
+  Writing quality, citations, organization
 
 ------------------------------------------------------------------------
 
@@ -236,12 +233,12 @@ This final project emphasizes transparent and repeatable workflows.
 
 Your document must:
 
-- Load all required packages explicitly  
-- Import data programmatically  
-- Avoid manual editing of datasets  
-- Clearly document cleaning decisions  
-- Avoid hard-coding results in interpretation  
-- Render cleanly without errors  
+- Load all required packages explicitly\
+- Import data programmatically\
+- Avoid manual editing of datasets\
+- Clearly document cleaning decisions\
+- Avoid hard-coding results in interpretation\
+- Render cleanly without errors\
 - Set a seed if using sampling, modeling, or randomness
 
 The goal is that another analyst could reproduce your findings exactly.
@@ -250,8 +247,8 @@ The goal is that another analyst could reproduce your findings exactly.
 
 # Resources
 
-- NYC Open Data Portal: https://opendata.cityofnewyork.us/  
-- Past Open Data Week Events: https://2025.open-data.nyc/ 
+- NYC Open Data Portal: https://opendata.cityofnewyork.us/\
+- Past Open Data Week Events: https://2025.open-data.nyc/
 
 ------------------------------------------------------------------------
 
@@ -259,8 +256,8 @@ The goal is that another analyst could reproduce your findings exactly.
 
 Required:
 
-- `.qmd` file  
-- Knitted HTML or PDF output  
+- `.qmd` file\
+- Knitted HTML or PDF output
 
 ------------------------------------------------------------------------
 
@@ -268,7 +265,7 @@ Required:
 
 By completing this final project, you will leave the course with:
 
-- An independent, reproducible research project  
-- A polished presentation  
-- A potential publication credit  
-- A strong foundation for an Open Data Week 2026 submission  
+- An independent, reproducible research project\
+- A polished presentation\
+- A potential publication credit\
+- A strong foundation for an Open Data Week 2026 submission

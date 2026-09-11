@@ -1,9 +1,6 @@
----
-title: "Final Assignment: Building Your Reproducible Quarto Book"
-subtitle: "Portfolio Development • Professional Publishing • Becoming an Author"
----
+# Final Assignment: Building Your Reproducible Quarto Book
 
-# Overview {#sec-book}
+## Overview {#sec-book}
 
 Your final assignment is to transform all of your completed course work into a polished, cohesive **Quarto book**.
 
@@ -11,18 +8,18 @@ Throughout the semester, every assignment was written in Quarto format for a rea
 
 You will:
 
-- Convert your assignments into a structured Quarto book project  
-- Organize them into chapters  
-- Polish formatting and presentation  
-- Publish your completed book  
+- Convert your assignments into a structured Quarto book project\
+- Organize them into chapters\
+- Polish formatting and presentation\
+- Publish your completed book
 
 This book will serve as a **professional portfolio artifact** that you can share with:
 
-- Potential employers  
-- Graduate programs  
-- Research labs  
-- Collaborators  
-- Friends and family  
+- Potential employers\
+- Graduate programs\
+- Research labs\
+- Collaborators\
+- Friends and family
 
 By completing this assignment, you are not just submitting coursework —
 
@@ -34,11 +31,11 @@ You are officially becoming an author.
 
 By completing this project, you will:
 
-- Organize multiple Quarto documents into a unified book structure  
-- Apply consistent formatting and narrative across chapters  
-- Improve clarity, presentation, and documentation  
-- Practice professional-level data communication  
-- Publish a complete analytical portfolio  
+- Organize multiple Quarto documents into a unified book structure\
+- Apply consistent formatting and narrative across chapters\
+- Improve clarity, presentation, and documentation\
+- Practice professional-level data communication\
+- Publish a complete analytical portfolio
 
 ------------------------------------------------------------------------
 
@@ -71,14 +68,14 @@ Your book must render cleanly without errors.
 
 Your book must include the following chapters, in this exact order:
 
-1. R Script → R Markdown Report  
-2. Homework: Continuing the Law Firm Analysis (Part 2)  
-3. Midterm  
-4. NBA Analytics – Exploring Team Performance Through Reproducible Analysis  
-5. Florida Crime Analytics – Uncovering the Root of Florida’s Crime Surge  
-6. Streaming Analytics – Understanding Platform Popularity Across Age Groups  
-7. Wage Analytics – Predicting High vs Low Earners Using Logistic Regression  
-8. RMarkdown, Shiny, and NYC 311 Data  
+1.  R Script → R Markdown Report\
+2.  Homework: Continuing the Law Firm Analysis (Part 2)\
+3.  Midterm\
+4.  NBA Analytics – Exploring Team Performance Through Reproducible Analysis\
+5.  Florida Crime Analytics – Uncovering the Root of Florida’s Crime Surge\
+6.  Streaming Analytics – Understanding Platform Popularity Across Age Groups\
+7.  Wage Analytics – Predicting High vs Low Earners Using Logistic Regression\
+8.  RMarkdown, Shiny, and NYC 311 Data
 
 Each chapter must be its own `.qmd` file.
 
@@ -88,9 +85,9 @@ Each chapter must be its own `.qmd` file.
 
 Your book must include a professional title page containing:
 
-- A clear, descriptive book title  
-- Your full name  
-- Course name and semester  
+- A clear, descriptive book title\
+- Your full name\
+- Course name and semester\
 - A short **“About This Book”** section (2–4 sentences)
 
 This page should feel polished and intentional.
@@ -103,10 +100,10 @@ Your book must include a cover image.
 
 Your cover image can be:
 
-- Something you designed  
-- An image related to your analyses  
-- A professional photo or graphic  
-- A visual that represents your identity as a data analyst  
+- Something you designed\
+- An image related to your analyses\
+- A professional photo or graphic\
+- A visual that represents your identity as a data analyst
 
 The image must be appropriate and professional.
 
@@ -116,9 +113,9 @@ The image must be appropriate and professional.
 
 Each chapter must begin with a short introduction explaining:
 
-- The purpose of the assignment  
-- The skills or methods used  
-- Any relevant context for the reader  
+- The purpose of the assignment\
+- The skills or methods used\
+- Any relevant context for the reader
 
 If the original assignment does not contain a chapter introduction, you must add one.
 
@@ -130,9 +127,9 @@ Think of this as guiding a new reader through your work.
 
 Every figure, plot, and table must include:
 
-- A clear, descriptive caption  
-- An explanation of what the reader is viewing  
-- Why the figure or table matters  
+- A clear, descriptive caption\
+- An explanation of what the reader is viewing\
+- Why the figure or table matters
 
 Use proper Quarto chunk options (e.g., `fig-cap`) to ensure captions render correctly.
 
@@ -144,11 +141,11 @@ There should be no unlabeled figures in your book.
 
 Your final chapter must be a reflective essay (minimum 400 words) addressing:
 
-- What you learned this semester  
-- What challenged you the most  
-- What you are most proud of  
-- How your skills and confidence have changed  
-- How reproducibility has influenced your thinking  
+- What you learned this semester\
+- What challenged you the most\
+- What you are most proud of\
+- How your skills and confidence have changed\
+- How reproducibility has influenced your thinking
 
 This chapter should be written in thoughtful, professional prose.
 
@@ -158,12 +155,12 @@ This chapter should be written in thoughtful, professional prose.
 
 Your book should:
 
-- Render cleanly from beginning to end  
-- Have consistent formatting across chapters  
-- Include clear headings and subheadings  
-- Avoid redundant code or messy output  
-- Suppress unnecessary warnings/messages  
-- Demonstrate attention to detail  
+- Render cleanly from beginning to end\
+- Have consistent formatting across chapters\
+- Include clear headings and subheadings\
+- Avoid redundant code or messy output\
+- Suppress unnecessary warnings/messages\
+- Demonstrate attention to detail
 
 This is not a collection of assignments.
 
@@ -177,8 +174,8 @@ You must publish your completed Quarto book.
 
 Your submission must include:
 
-- A link to your published book  
-- Your complete Quarto book project folder  
+- A link to your published book\
+- Your complete Quarto book project folder
 
 Your published book should be accessible and shareable.
 
@@ -186,23 +183,23 @@ Your published book should be accessible and shareable.
 
 # Grading (100 Points Total)
 
-- Structure & Organization (20 pts)  
-  Proper chapter order, functioning book structure  
+- Structure & Organization (20 pts)\
+  Proper chapter order, functioning book structure
 
-- Reproducibility (20 pts)  
-  Clean rendering, working code, no errors  
+- Reproducibility (20 pts)\
+  Clean rendering, working code, no errors
 
-- Presentation & Formatting (20 pts)  
-  Consistent style, captions, polished layout  
+- Presentation & Formatting (20 pts)\
+  Consistent style, captions, polished layout
 
-- Chapter Introductions (10 pts)  
-  Clear context provided for each chapter  
+- Chapter Introductions (10 pts)\
+  Clear context provided for each chapter
 
-- Final Reflection (15 pts)  
-  Depth, thoughtfulness, clarity  
+- Final Reflection (15 pts)\
+  Depth, thoughtfulness, clarity
 
-- Professionalism (15 pts)  
-  Overall quality, cohesion, publication readiness  
+- Professionalism (15 pts)\
+  Overall quality, cohesion, publication readiness
 
 ------------------------------------------------------------------------
 
@@ -210,12 +207,12 @@ Your published book should be accessible and shareable.
 
 Your book must:
 
-- Render entirely from source files  
-- Load all required packages explicitly  
-- Avoid hard-coded outputs  
-- Avoid manual edits to results  
-- Use consistent chunk labeling  
-- Be reproducible on another machine  
+- Render entirely from source files\
+- Load all required packages explicitly\
+- Avoid hard-coded outputs\
+- Avoid manual edits to results\
+- Use consistent chunk labeling\
+- Be reproducible on another machine
 
 The goal is that anyone could download your project and recreate your entire book.
 
@@ -225,11 +222,11 @@ The goal is that anyone could download your project and recreate your entire boo
 
 By completing this assignment, you will leave the course with:
 
-- A complete analytical book  
-- A published portfolio artifact  
-- Demonstrated mastery of reproducible workflows  
-- Authorship credit  
-- A powerful representation of your growth  
+- A complete analytical book\
+- A published portfolio artifact\
+- Demonstrated mastery of reproducible workflows\
+- Authorship credit\
+- A powerful representation of your growth
 
 This is the culmination of your semester’s work.
 

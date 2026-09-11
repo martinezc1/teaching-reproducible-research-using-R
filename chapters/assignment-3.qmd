@@ -1,8 +1,6 @@
----
-title: "Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization"
----
+# Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization
 
-# Overview {#sec-three}
+## Overview {#sec-three}
 
 In this assignment, you will work with **NYPD Shooting Incident Data** using the `nycOpenData` package to practice data cleaning, feature engineering, exploratory insight generation, and data visualization with `ggplot2`.
 
@@ -14,12 +12,12 @@ Compared to previous assignments, this one is more open-ended: you will make a f
 
 By completing this assignment, you will be able to:
 
--   Retrieve real-world NYC civic data using `nycOpenData`
--   Identify and handle missing data in a defensible way
--   Engineer new features from dates/times and categorical columns
--   Generate exploratory insights using grouping and summaries
--   Communicate findings using well-designed `ggplot2` visualizations
--   Write a short interpretation that connects summaries and plots to your insights
+- Retrieve real-world NYC civic data using `nycOpenData`
+- Identify and handle missing data in a defensible way
+- Engineer new features from dates/times and categorical columns
+- Generate exploratory insights using grouping and summaries
+- Communicate findings using well-designed `ggplot2` visualizations
+- Write a short interpretation that connects summaries and plots to your insights
 
 ------------------------------------------------------------------------
 
@@ -37,10 +35,10 @@ Submit **one `.R` script file**.
 
 Your script must:
 
--   Run from top to bottom without errors
--   Include your insight statements and written summary as **comments** where requested
--   Contain **two `ggplot2` plots** with clear titles and labeled axes
--   Include at least **one faceted plot** using `facet_wrap()`
+- Run from top to bottom without errors
+- Include your insight statements and written summary as **comments** where requested
+- Contain **two `ggplot2` plots** with clear titles and labeled axes
+- Include at least **one faceted plot** using `facet_wrap()`
 
 ------------------------------------------------------------------------
 
@@ -60,28 +58,28 @@ Complete all of the following in your script:
 
 ### 1A. Missing data removal (defensible choice)
 
--   Choose **one column** where it is reasonable to remove missing values.
--   Compute and report (in a comment) **how many values are missing** in that column before removal.
--   Remove rows with missing values in that column.
--   In a comment, explain **why** that column was “safe” to use.
+- Choose **one column** where it is reasonable to remove missing values.
+- Compute and report (in a comment) **how many values are missing** in that column before removal.
+- Remove rows with missing values in that column.
+- In a comment, explain **why** that column was “safe” to use.
 
 ### 1B. Lowercase a column
 
--   Choose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.
+- Choose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.
 
 ### 1C. Create `time_of_day`
 
--   Create a new column called `time_of_day` with three categories:
-    -   Morning
-    -   Afternoon
-    -   Night
--   You define the time boundaries.
--   Briefly note your boundaries in a comment.
+- Create a new column called `time_of_day` with three categories:
+  - Morning
+  - Afternoon
+  - Night
+- You define the time boundaries.
+- Briefly note your boundaries in a comment.
 
 ### 1D. Create `days_since`
 
--   Create a column called `days_since` showing the number of days between today’s date and the date of the shooting.
--   Use `as.Date()` and/or `lubridate` as needed.
+- Create a column called `days_since` showing the number of days between today’s date and the date of the shooting.
+- Use `as.Date()` and/or `lubridate` as needed.
 
 ------------------------------------------------------------------------
 
@@ -103,22 +101,22 @@ Create two plots using `ggplot2`:
 
 ### Plot 3A. `time_of_day` plot
 
--   Must directly relate to your `time_of_day` variable
+- Must directly relate to your `time_of_day` variable
 
 ### Plot 3B. personal insight plot
 
--   Must support your second insight
+- Must support your second insight
 
-Both plots must include: 
+Both plots must include:
 
--   Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`) 
--   Informative axis labels 
--   A clear title 
--   Custom font/size settings via `theme()`
+- Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`)
+- Informative axis labels
+- A clear title
+- Custom font/size settings via `theme()`
 
-Additional requirement: 
+Additional requirement:
 
--   At least **one** plot must use `facet_wrap()`
+- At least **one** plot must use `facet_wrap()`
 
 ------------------------------------------------------------------------
 
@@ -126,8 +124,8 @@ Additional requirement:
 
 At the end of your script, write a short paragraph (as comments) describing:
 
--   What you discovered from your insights
--   What the graphs revealed that was not obvious from the raw data
+- What you discovered from your insights
+- What the graphs revealed that was not obvious from the raw data
 
 ------------------------------------------------------------------------
 
@@ -212,14 +210,14 @@ This assignment focuses on reproducibility when working with **real civic data**
 
 In your script:
 
--   Clearly document your analytic choices (especially your `time_of_day` boundaries) in comments.
+- Clearly document your analytic choices (especially your `time_of_day` boundaries) in comments.
 
--   Keep your pipeline modular by creating a cleaned object (e.g.,`cleaned`), and build from it.
+- Keep your pipeline modular by creating a cleaned object (e.g.,`cleaned`), and build from it.
 
--   After creating your new variables, include a quick checkpoint such as:
+- After creating your new variables, include a quick checkpoint such as:
 
-    -   `count(cleaned, time_of_day)` or
+  - `count(cleaned, time_of_day)` or
 
-    -   `summary(cleaned$days_since)` to verify your features were created correctly.
+  - `summary(cleaned$days_since)` to verify your features were created correctly.
 
 The goal is that another reader can see *exactly what choices you made*, reproduce your engineered variables, and understand how you arrived at your two insights.

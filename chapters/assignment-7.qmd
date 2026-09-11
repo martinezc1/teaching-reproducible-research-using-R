@@ -1,15 +1,12 @@
----
-title: "Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis"
-subtitle: "Functions • Correlation • Partial Correlation • Executive Communication"
----
+# Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis
 
-# Overview {#sec-seven}
+## Overview {#sec-seven}
 
 The NBA season is about to begin, and you have just been hired as a **Data Analyst for the National Basketball Association**. Commissioner **Adam Silver** wants insights into last season’s team performances — specifically:
 
-- How offensive and defensive metrics relate to one another  
-- Whether teams from the Eastern and Western Conferences differ  
-- Whether team-level characteristics help explain performance patterns  
+- How offensive and defensive metrics relate to one another\
+- Whether teams from the Eastern and Western Conferences differ\
+- Whether team-level characteristics help explain performance patterns
 
 You have been given an Excel workbook containing all 30 NBA teams, with each team stored on a separate sheet. Your job is to build a **fully reproducible Quarto analysis** that loads, cleans, visualizes, and analyzes the data.
 
@@ -44,8 +41,8 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 Submit **two files**:
 
-1. Your `.qmd` file  
-2. Your knitted `.html` file  
+1.  Your `.qmd` file\
+2.  Your knitted `.html` file
 
 Your document must:
 
@@ -70,26 +67,29 @@ You must programmatically load all 30 teams from the Excel workbook.
 
 Create a function that:
 
-- Loads a single sheet from the workbook  
-- Adds a new column identifying the `Team` (using the sheet name)  
-- Creates a binary column called `Won_award` (0 = No, 1 = Yes)  
+- Loads a single sheet from the workbook\
+
+- Adds a new column identifying the `Team` (using the sheet name)\
+
+- Creates a binary column called `Won_award` (0 = No, 1 = Yes)\
+
 - Calculates the following metrics:
 
-  - `PRA = Points + Rebounds + Assists` (offensive metric)  
+  - `PRA = Points + Rebounds + Assists` (offensive metric)\
   - `STOCKS = Steals + Blocks` (defensive metric)
 
 Then:
 
-- Use `excel_sheets()` to list all sheet names  
-- Apply your function to every sheet using `lapply()`  
-- Combine all teams into one complete dataset using a row-binding method  
+- Use `excel_sheets()` to list all sheet names\
+- Apply your function to every sheet using `lapply()`\
+- Combine all teams into one complete dataset using a row-binding method
 
 ### Requirements
 
-- Your code must not manually load sheets one-by-one  
-- The final dataset must include all 30 teams  
-- Include a checkpoint confirming the total number of rows  
-- Report the total number of observations using an inline R expression  
+- Your code must not manually load sheets one-by-one\
+- The final dataset must include all 30 teams\
+- Include a checkpoint confirming the total number of rows\
+- Report the total number of observations using an inline R expression
 
 Briefly explain why writing a function improves reproducibility.
 
@@ -101,11 +101,12 @@ You are provided with a Conference lookup sheet.
 
 You must:
 
-- Merge Conference information into your combined dataset  
+- Merge Conference information into your combined dataset\
+
 - Recode Conference as a binary variable for analysis:
 
-  - East = 1  
-  - West = 0  
+  - East = 1\
+  - West = 0
 
 Include a small checkpoint confirming that both conferences are represented correctly.
 
@@ -124,20 +125,20 @@ Create **at least two visualizations** using `ggplot2`.
 
 ### Required Plot 2
 
-- A second visualization of your choice  
+- A second visualization of your choice\
   (Examples: distribution of PRA by conference, age vs PRA, STOCKS vs Age, etc.)
 
 For each plot, write 3–4 sentences describing:
 
-- What patterns you observe  
-- Whether offensive and defensive metrics appear related  
-- Whether conferences appear visually different  
+- What patterns you observe\
+- Whether offensive and defensive metrics appear related\
+- Whether conferences appear visually different
 
 All plots must include:
 
-- Clear titles  
-- Axis labels  
-- A caption  
+- Clear titles\
+- Axis labels\
+- A caption
 
 ------------------------------------------------------------------------
 
@@ -149,16 +150,16 @@ All plots must include:
 
 Test whether Conference (East = 1, West = 0) is related to:
 
-- PRA  
-- STOCKS  
+- PRA\
+- STOCKS
 
 Report:
 
-- Correlation coefficient (r)  
-- Direction (positive or negative)  
-- Strength (weak, moderate, strong)  
-- Statistical significance  
-- Plain-language interpretation  
+- Correlation coefficient (r)\
+- Direction (positive or negative)\
+- Strength (weak, moderate, strong)\
+- Statistical significance\
+- Plain-language interpretation
 
 ------------------------------------------------------------------------
 
@@ -166,17 +167,17 @@ Report:
 
 Create a small correlation matrix including at least:
 
-- Age  
-- PRA  
-- STOCKS  
+- Age\
+- PRA\
+- STOCKS
 
 Visualize the matrix using `ggcorrplot`.
 
 Then answer:
 
-- Which relationships are strongest?  
-- Are offensive and defensive metrics strongly related?  
-- Does Age appear meaningfully associated with performance?  
+- Which relationships are strongest?\
+- Are offensive and defensive metrics strongly related?\
+- Does Age appear meaningfully associated with performance?
 
 ------------------------------------------------------------------------
 
@@ -184,13 +185,13 @@ Then answer:
 
 Run a partial correlation examining the relationship between:
 
-- PRA and STOCKS  
-- While controlling for either Age or Minutes Played  
+- PRA and STOCKS\
+- While controlling for either Age or Minutes Played
 
 Interpret:
 
-- How the relationship changes when controlling for the third variable  
-- Whether the association appears independent of that control variable  
+- How the relationship changes when controlling for the third variable\
+- Whether the association appears independent of that control variable
 
 Explain in plain language what "controlling for" means.
 
@@ -200,16 +201,16 @@ Explain in plain language what "controlling for" means.
 
 Write a short professional memo addressed to:
 
-**Adam Silver  
+**Adam Silver\
 Commissioner, National Basketball Association**
 
 Your memo must include:
 
-- A summary of your key findings  
-- Whether Eastern and Western Conference teams appear statistically different  
-- Whether offensive and defensive performances tend to move together  
-- One limitation of your analysis  
-- One recommended next step  
+- A summary of your key findings\
+- Whether Eastern and Western Conference teams appear statistically different\
+- Whether offensive and defensive performances tend to move together\
+- One limitation of your analysis\
+- One recommended next step
 
 Your tone should be professional and executive-level, not academic.
 
@@ -219,10 +220,10 @@ Your tone should be professional and executive-level, not academic.
 
 When interpreting correlations, always include:
 
-- The direction (positive or negative)  
-- The strength (weak, moderate, strong)  
-- Whether it is statistically significant  
-- A plain-language explanation  
+- The direction (positive or negative)\
+- The strength (weak, moderate, strong)\
+- Whether it is statistically significant\
+- A plain-language explanation
 
 Example of plain-language style:
 
@@ -234,9 +235,9 @@ Example of plain-language style:
 
 In 4–6 sentences, answer:
 
-1. Why is reproducible workflow especially important in sports analytics?  
-2. How does programmatically loading data (rather than manual steps) improve reliability?  
-3. What did you learn about interpreting correlations versus visual patterns?  
+1.  Why is reproducible workflow especially important in sports analytics?\
+2.  How does programmatically loading data (rather than manual steps) improve reliability?\
+3.  What did you learn about interpreting correlations versus visual patterns?
 
 ------------------------------------------------------------------------
 
@@ -246,12 +247,12 @@ This assignment emphasizes reproducible data pipelines.
 
 Your document must:
 
-- Load all sheets programmatically  
-- Avoid manual data entry  
-- Use clearly labeled code chunks  
-- Avoid hard-coding values in written interpretation  
-- Use inline R expressions where appropriate  
-- Render cleanly to HTML  
+- Load all sheets programmatically\
+- Avoid manual data entry\
+- Use clearly labeled code chunks\
+- Avoid hard-coding values in written interpretation\
+- Use inline R expressions where appropriate\
+- Render cleanly to HTML
 
 The goal is that another analyst could rerun your entire workflow and verify your findings without guessing what steps were taken.
 

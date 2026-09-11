@@ -1,9 +1,6 @@
----
-title: "Assignment 1: Base R Foundations"
-subtitle: "R as a Calculator • Vectors • Data Frames • Built-in Datasets"
----
+# Assignment 1: Base R Foundations
 
-# Overview {#sec-one}
+## Overview {#sec-one}
 
 This assignment introduces core concepts in base R, including arithmetic operations, object assignment, vectors, data frames, and built-in datasets. The goal is to build comfort with fundamental R syntax before moving into more advanced workflows.
 
@@ -15,13 +12,13 @@ You will complete all tasks in a single `.R` script.
 
 By completing this assignment, you will be able to:
 
--   Perform arithmetic operations in R
--   Assign results to objects using `<-`
--   Create and manipulate vectors
--   Construct and subset data frames
--   Explore built-in datasets
--   Produce a simple base R visualization
--   Organize a script using clear comments
+- Perform arithmetic operations in R
+- Assign results to objects using `<-`
+- Create and manipulate vectors
+- Construct and subset data frames
+- Explore built-in datasets
+- Produce a simple base R visualization
+- Organize a script using clear comments
 
 ------------------------------------------------------------------------
 
@@ -39,11 +36,11 @@ Submit **one `.R` script file**.
 
 Your script must:
 
--   Be clearly organized into labeled sections\
-    *(e.g., `# Part 1: R as a Calculator`)*
--   Include all required calculations and outputs
--   Include your reflection as comments at the end
--   Run from top to bottom without errors
+- Be clearly organized into labeled sections\
+  *(e.g., `# Part 1: R as a Calculator`)*
+- Include all required calculations and outputs
+- Include your reflection as comments at the end
+- Run from top to bottom without errors
 
 ------------------------------------------------------------------------
 
@@ -76,15 +73,15 @@ Your script must:
 ## 3. Data Frames
 
 1.  Create a data frame called `class_df` with columns:
-    -   name\
-    -   age\
-    -   major
+    - name\
+    - age\
+    - major
 2.  Add at least four fictional classmates.
 3.  Create `age_in_2009`.
 4.  Create `favorite_professor`.
 5.  Use indexing to:
-    -   Select only name and major.
-    -   Filter rows for Psych majors.
+    - Select only name and major.
+    - Filter rows for Psych majors.
 
 ------------------------------------------------------------------------
 
@@ -116,15 +113,15 @@ For this first assignment, focus on script organization and documentation.
 
 At the top of your script, include a structured comment block containing:
 
--   Assignment name\
--   Your name\
--   Date\
--   A brief description of what the script accomplishes
+- Assignment name\
+- Your name\
+- Date\
+- A brief description of what the script accomplishes
 
 Your script should:
 
--   Be divided into clearly labeled sections
--   Run from top to bottom without manual intervention
--   Avoid unnecessary objects
+- Be divided into clearly labeled sections
+- Run from top to bottom without manual intervention
+- Avoid unnecessary objects
 
 This assignment establishes your baseline reproducibility habits for the semester.

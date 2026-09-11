@@ -1,8 +1,6 @@
----
-title: "Assignment 2: Exploring Pixar with the Tidyverse"
----
+# Assignment 2: Exploring Pixar with the Tidyverse
 
-# Overview {#sec-two}
+## Overview {#sec-two}
 
 This assignment continues our introduction to the **Tidyverse** using data from the `pixarfilms` package.
 
