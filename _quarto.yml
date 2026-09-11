@@ -31,6 +31,8 @@ format:
     theme:
       - cosmo
       - brand
+    number-sections: false
+    
   pdf:
     documentclass: scrreprt
     code-copy: true
