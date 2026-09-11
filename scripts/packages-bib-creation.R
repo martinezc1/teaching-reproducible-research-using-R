@@ -1,5 +1,5 @@
 pkgs <- c(
-  "base","tidyverse","nycOpenData","lubridate"
+  "base","tidyverse","nycOpenData","lubridate", "reproresearchR", "skimr"
 )
 
 # This writes a valid BibTeX file with proper keys

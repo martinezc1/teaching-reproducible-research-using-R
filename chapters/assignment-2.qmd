@@ -1,5 +1,5 @@
 ---
-title: "Assignment 2: mtcars Wrangling and Feature Engineering"
+title: "Assignment 2: Exploring Pixar with the Tidyverse"
 ---
 
 # Overview {#sec-two}
@@ -10,207 +10,236 @@ You will complete a partially written (“skeletal”) script by filling in miss
 
 ------------------------------------------------------------------------
 
-# Learning Objectives
+# Overview {#sec-two}
+
+This assignment continues our introduction to the **Tidyverse** using data from the `pixarfilms` package.
+
+The `pixarfilms` package contains several datasets describing Pixar movies, including their genres, box-office performance, audience responses, and release information.
+
+You will use these datasets to answer a series of questions about Pixar's history and films.
+
+------------------------------------------------------------------------
+
+## Learning Objectives
 
 By completing this assignment, you will be able to:
 
--   Use `dplyr` verbs (`rename()`, `mutate()`, `group_by()`, `summarize()`, `arrange()`) to clean and transform data
--   Engineer new features from existing numeric variables
--   Use `case_when()` to create interpretable categories
--   Convert numeric codes into readable factors
--   Produce grouped summaries and identify “top N” rows within groups
--   Create a pivot-style summary table using grouped aggregation
+- Use `dplyr` verbs such as `select()`, `distinct()`, `mutate()`, `count()`, `group_by()`, `summarize()`, and `arrange()` to explore data
+- Identify unique values within a dataset
+- Create new variables from existing variables
+- Use `case_when()` to recode categorical information
+- Identify the highest and lowest values using `slice_max()` and `slice_min()`
+- Calculate grouped summary statistics
+- Apply Tidyverse skills to a new dataset independently
+- Develop and answer your own data-driven question
 
 ------------------------------------------------------------------------
 
-# Textbook Connection
+## Textbook Connection
 
-This assignment builds directly from **Chapter 2: Introduction to tidyverse** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+This assignment builds directly from **Chapter 2: Introduction to tidyverse** in [*Reproducible Research Using R*](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
-Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+Students are encouraged to review the chapter and the code we worked through together in class before beginning this assignment.
 
 ------------------------------------------------------------------------
 
-# Submission Instructions
+## Submission Instructions
 
 Submit **one `.R` script file**.
 
 Your script must:
 
--   Run from top to bottom without errors
--   Include clear section comments (e.g., `# Step 1: Rename columns`)
--   Contain your reflection responses as comments at the end of the file
+- Run from top to bottom without errors
+- Include clear section comments for each question
+- Save newly created datasets when instructed
+- Contain your written responses as comments where requested
+
+Begin your script by loading the packages needed for this assignment:
+
+``` r
+library(tidyverse)
+library(pixarfilms)
+```
 
 ------------------------------------------------------------------------
 
 # Assignment Tasks
 
-## mtcars Data Wrangling and Feature Engineering
+## 1. Exploring Pixar Genres
 
-**Goal:** Your lab has test results for a fleet of cars (`mtcars`). Clean up the columns, create useful features, and answer questions your team cares about.
+The `genres` dataset contains the genres associated with each Pixar film. Notice that a movie can appear more than once because a single movie may belong to multiple genres.
 
-Complete the following steps using the **Tidyverse**:
+### 1.1 What Genres Appear in Pixar Films?
 
-1.  **Make columns human-readable**\
-    Rename and store in a new dataset called `cars`:
+First, let's find out which genres appear in the dataset.
 
-    -   `mpg` → `miles_per_gallon`\
-    -   `hp` → `horsepower`\
-    -   `wt` → `weight_1000lb`
+Using the `genres` dataset:
 
-2.  **Engineer a performance feature**\
-    Create `hp_per_ton` (where one ton ≈ 2,000 lb).
+1.  Use `distinct()` to identify the unique genres represented in Pixar films.
+2.  Determine the **total number of distinct genres**.
+3.  Arrange the unique genres alphabetically.
 
-3.  **Create a power class**\
-    Using `case_when()`, create `power_class`:
+**Question:** How many distinct genres appear in the dataset?
 
-    -   `< 150` horsepower → `"Low"`
-    -   `150–250` horsepower → `"Medium"`
-    -   `> 250` horsepower → `"High"`
+### 1.2 How Many Genres Does Each Film Have?
 
-4.  **Make cylinder groups readable**\
-    Convert `cyl` to a factor with labels:
+Next, investigate how many genres are associated with each Pixar film.
 
-    -   `"4 cyl"`, `"6 cyl"`, `"8 cyl"`
+Using the `genres` dataset:
 
-5.  **Mileage by cylinders**\
-    Group by `cyl` and compute for `miles_per_gallon`:
+1.  Count the number of genres associated with each film.
+2.  Arrange the results from the **greatest number of genres to the fewest**.
+3.  Save the result as `film_genres`.
 
-    -   `n`
-    -   mean
-    -   standard deviation\
-        Sort results from best to worst average mileage.
-
-6.  **Top cars per cylinder**\
-    For each cylinder group, identify the top 3 most fuel-efficient cars (highest `miles_per_gallon`) and keep:
-
-    -   model (from row names)
-    -   `cyl`
-    -   `miles_per_gallon`
-    -   `horsepower`
-
-7.  **Transmission mix and share**\
-    Recode `am` into `trans`:
-
-    -   `0` → `"Automatic"`
-    -   `1` → `"Manual"`\
-        Compute counts and percent share of transmission type within each cylinder group.
-
-8.  **Pivot-style summary**\
-    Create a summary table for each `cyl × gear` combination that includes:
-
-    -   minimum `miles_per_gallon`
-    -   maximum `miles_per_gallon`
-    -   average `miles_per_gallon`
-    -   average `hp_per_ton`\
-        Save as `pivot_cars`.
+**Question:** Which Pixar film or films are associated with the greatest number of genres?
 
 ------------------------------------------------------------------------
 
-## Starter Code (Skeletal Script)
+## 2. Which Pixar Films Made the Most Money?
 
-Copy this into your `.R` script and complete the missing pieces. (@R-tidyverse)
+The `box_office` dataset contains information about the production budget and box-office performance of Pixar films.
 
-```{r}
-#| label: task-skeleton
-#| eval: false
-#| echo: true
-#| warning: false
-#| message: false
+For this assignment, we will estimate how much money a film made by subtracting its production budget from its worldwide box-office revenue.
 
-library(tidyverse)
+Using `box_office`:
 
-# 1. Make columns human-readable
-cars <- mtcars %>%
-  rownames_to_column("model") %>%
-  rename(
-    miles_per_gallon = mpg,
-    horsepower       = hp,
-    weight_1000lb    = wt
-  )
+1.  Use `select()` to keep only the following variables:
 
-# 2. Engineer a performance feature
-cars <- cars %>%
-  mutate(
-    hp_per_ton = horsepower / (weight_1000lb * 0.5)
-  )
+    - `film`
+    - `budget`
+    - `box_office_worldwide`
 
-# 3. Create a power class
-cars <- cars %>%
-  mutate(
-    power_class = case_when(
-      horsepower < 150 ~ "Low",
-      horsepower >= 150 & horsepower <= 250 ~ "Medium",
-      horsepower > 250 ~ "High"
-    )
-  )
+2.  Use `mutate()` to create a new variable called `net`, calculated as:
 
-# 4. Make cylinder groups readable
-cars <- cars %>%
-  mutate(
-    cyl = factor(
-      cyl,
-      levels = c(4, 6, 8),
-      labels = c("4 cyl", "6 cyl", "8 cyl")
-    )
-  )
+    **worldwide box office - budget**
 
-# 5. Mileage by cylinders
-cars %>%
-  group_by(cyl) %>%
-  summarize(
-    n = n(),
-    mean_mpg = mean(miles_per_gallon, na.rm = TRUE),
-    sd_mpg   = sd(miles_per_gallon, na.rm = TRUE),
-    .groups  = "drop"
-  ) %>%
-  arrange(desc(mean_mpg))
+3.  Save the resulting dataset as `pixar_money`.
 
-# 6. Top cars per cylinder
-cars %>%
-  group_by(cyl) %>%
-  slice_max(miles_per_gallon, n = 3, with_ties = FALSE) %>%
-  select(model, cyl, miles_per_gallon, horsepower)
+4.  Using `slice_max()`, identify the **three films with the highest net**.
 
-# 7. Transmission mix & share
-cars %>%
-  mutate(trans = recode(am, `0` = "Automatic", `1` = "Manual")) %>%
-  count(cyl, trans) %>%
-  group_by(cyl) %>%
-  mutate(pct = n / sum(n))
+5.  Using `slice_min()`, identify the **three films with the lowest net**.
 
-# 8. Pivot-style summary
-pivot_cars <- cars %>%
-  group_by(cyl, gear) %>%
-  summarize(
-    min_mpg    = min(miles_per_gallon, na.rm = TRUE),
-    max_mpg    = max(miles_per_gallon, na.rm = TRUE),
-    avg_mpg    = mean(miles_per_gallon, na.rm = TRUE),
-    avg_hp_ton = mean(hp_per_ton, na.rm = TRUE),
-    .groups    = "drop"
-  )
-```
+**Questions:**
 
-## Reflection
+- Which Pixar film had the highest estimated net?
+- Which Pixar film had the lowest estimated net?
 
-At the end of your script, answer the following as comments:
+::: callout-note
+For this assignment, `net` is a simplified measure of financial performance. A film's production budget and worldwide box-office revenue do not account for all costs or sources of revenue.
+:::
 
-- Which piece of code felt the hardest for you? Why?
+------------------------------------------------------------------------
 
-- Which piece of code felt the easiest for you? Why?
+## 3. Turning `cinema_score` Grades into Numbers
+
+The `public_response` dataset contains several measures of how Pixar films were received by critics and audiences.
+
+One of these variables is `cinema_score`, which uses letter grades such as `"A+"`, `"A"`, `"A-"`, and so on.
+
+Let's convert these letter grades into numeric scores.
+
+Using the `public_response` dataset:
+
+1.  Use `mutate()` and `case_when()` to create a new variable called `cinema_numeric`.
+2.  Use the **grading scale from our course syllabus** to determine the numeric value associated with each letter grade.
+3.  Save the resulting dataset as `pixar_scores`.
+4.  Calculate the **average numeric** `cinema_score` across Pixar films.
+5.  Identify the **three films with the highest numeric** `cinema_score`.
+6.  Identify the **three films with the lowest numeric** `cinema_score`.
+
+**Questions:**
+
+- What was the average numeric `cinema_score` for Pixar films?
+- Which films received the highest converted scores?
+- Which films received the lowest converted scores?
+
+------------------------------------------------------------------------
+
+## 4. Pixar Through the Decades
+
+The `pixar_films` dataset contains basic information about Pixar's films, including their release dates and runtimes.
+
+We want to investigate how Pixar's films have changed across decades.
+
+### 4.1 Create a Decade Variable
+
+Using `pixar_films`, use `mutate()` to create a new variable called `decade` based on `release_date`.
+
+Your categories should identify films as belonging to the:
+
+- 1990s
+- 2000s
+- 2010s
+- 2020s
+
+Save the resulting dataset as `pixar_decades`.
+
+### 4.2 Summarize Pixar Films by Decade
+
+Next, group the films by `decade` and calculate:
+
+- Number of films
+- Mean runtime
+- Median runtime
+- Minimum runtime
+- Maximum runtime
+
+Arrange the resulting table from the **most recent decade to the oldest**.
+
+Save this summary as `decade_summary`.
+
+**Question:** Based on your summary, do Pixar movies appear to have become longer, shorter, or stayed approximately the same length over time? Briefly explain your answer as a comment in your script.
+
+------------------------------------------------------------------------
+
+## 5. Pixar Data Challenge
+
+Now it's your turn!
+
+Using **any dataset in the `pixarfilms` package**, come up with **one question about Pixar that you find interesting**.
+
+Some possibilities include questions about:
+
+- Box-office performance
+- Genres
+- Movie ratings
+- Academy Awards
+- Release dates
+- Runtime
+
+You are not limited to these topics.
+
+Write your question as a comment in your script.
+
+Then:
+
+1.  Use at least **three Tidyverse functions** to investigate your question.
+2.  Show the code used to answer it.
+3.  Write **1–2 sentences as comments** explaining what you found.
+
+------------------------------------------------------------------------
+
+# Reflection
+
+At the end of your script, answer the following questions as comments:
+
+- Which part of this assignment felt the hardest for you? Why?
+- Which part felt the easiest for you? Why?
+- Which Pixar film is your favorite? *(There is no wrong answer... probably.)*
 
 ------------------------------------------------------------------------
 
 # Reproducibility Practice
 
-This assignment focuses on **readability and “checkpoints”** in a multi-step wrangling workflow.
+This assignment focuses on creating a **clear and reproducible data-analysis workflow**.
 
 In your script:
 
-- Use section headers that match the steps (1–8) so the workflow is easy to follow.
+- Use section headers that match Questions 1–5.
+- Give newly created objects clear and meaningful names.
+- Do not overwrite the original datasets from the `pixarfilms` package.
+- Use `View()`, `glimpse()`, `summary()`, `count()`, or other checkpoint functions when helpful to inspect your work.
+- Make sure your completed script runs from **top to bottom without errors**.
 
-- Do not overwrite objects unintentionally (you should end with objects named`cars`and`pivot_cars`).
+Remember: the goal is not simply to get an answer. Your code should make it possible for someone else to understand **how you got there**.
 
-- After Step 4, include a quick “checkpoint” line such as`glimpse(cars)`or`count(cars, cyl)`to verify the transformation worked.
-
-The goal is that another reader can follow your transformation pipeline step-by-step and verify the results at key moments.
