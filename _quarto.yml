@@ -36,7 +36,7 @@ format:
     code-copy: true
     code-summary: "Show the code"
     toc: true
-    number-sections: true
+    number-sections: false
 
 editor: visual
 

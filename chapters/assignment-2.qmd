@@ -4,14 +4,6 @@ title: "Assignment 2: Exploring Pixar with the Tidyverse"
 
 # Overview {#sec-two}
 
-This assignment continues our introduction to the **Tidyverse** by walking through a structured data-cleaning and feature-engineering workflow using the built-in `mtcars` dataset.
-
-You will complete a partially written (“skeletal”) script by filling in missing code so that each step runs successfully and produces the expected outputs.
-
-------------------------------------------------------------------------
-
-# Overview {#sec-two}
-
 This assignment continues our introduction to the **Tidyverse** using data from the `pixarfilms` package.
 
 The `pixarfilms` package contains several datasets describing Pixar movies, including their genres, box-office performance, audience responses, and release information.
@@ -242,4 +234,3 @@ In your script:
 - Make sure your completed script runs from **top to bottom without errors**.
 
 Remember: the goal is not simply to get an answer. Your code should make it possible for someone else to understand **how you got there**.
-
