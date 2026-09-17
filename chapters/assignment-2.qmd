@@ -55,7 +55,7 @@ library(pixarfilms)
 
 ## Assignment Tasks
 
-### 1. Exploring Pixar Genres
+### Exploring Pixar Genres
 
 The `genres` dataset contains the genres associated with each Pixar film. Notice that a movie can appear more than once because a single movie may belong to multiple genres.
 
@@ -85,7 +85,7 @@ Using the `genres` dataset:
 
 ------------------------------------------------------------------------
 
-### 2. Which Pixar Films Made the Most Money?
+### Which Pixar Films Made the Most Money?
 
 The `box_office` dataset contains information about the production budget and box-office performance of Pixar films.
 
@@ -120,7 +120,7 @@ For this assignment, `net` is a simplified measure of financial performance. A f
 
 ------------------------------------------------------------------------
 
-### 3. Turning `cinema_score` Grades into Numbers
+### Turning `cinema_score` Grades into Numbers
 
 The `public_response` dataset contains several measures of how Pixar films were received by critics and audiences.
 
@@ -145,7 +145,7 @@ Using the `public_response` dataset:
 
 ------------------------------------------------------------------------
 
-### 4. Pixar Through the Decades
+### Pixar Through the Decades
 
 The `pixar_films` dataset contains basic information about Pixar's films, including their release dates and runtimes.
 
@@ -182,7 +182,7 @@ Save this summary as `decade_summary`.
 
 ------------------------------------------------------------------------
 
-### 5. Pixar Data Challenge
+### Pixar Data Challenge
 
 Now it's your turn!
 

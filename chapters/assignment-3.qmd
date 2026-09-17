@@ -37,37 +37,35 @@ Your script must:
 
 - Run from top to bottom without errors
 - Include your insight statements and written summary as **comments** where requested
-- Contain **two `ggplot2` plots** with clear titles and labeled axes
+- Contain **three `ggplot2` plots** with clear titles and labeled axes
 - Include at least **one faceted plot** using `facet_wrap()`
 
 ------------------------------------------------------------------------
 
 ## Assignment Tasks
 
-### 0. Data Source
+### Data Source
 
-You must use the `nycOpenData` package and the function:
-
-`nyc_shooting_incidents()`
+You must use the `nycOpenData` package.
 
 ------------------------------------------------------------------------
 
-### 1. Cleaning and Feature Engineering
+### Cleaning and Feature Engineering
 
 Complete all of the following in your script:
 
-#### 1A. Missing data removal (defensible choice)
+#### Missing Data Removal (Defensible Choice)
 
 - Choose **one column** where it is reasonable to remove missing values.
 - Compute and report (in a comment) **how many values are missing** in that column before removal.
 - Remove rows with missing values in that column.
-- In a comment, explain **why** that column was “safe” to use.
+- In a comment, explain **why** that column was "safe" to use.
 
-#### 1B. Lowercase a column
+#### Lowercase a Column
 
-- Choose one column (e.g., borough, perp_race, vic_race) and convert values to lowercase.
+- Choose one categorical column **other than `boro`** (e.g., `perp_race`, `vic_race`) and convert all values to lowercase.
 
-#### 1C. Create `time_of_day`
+#### Create `time_of_day`
 
 - Create a new column called `time_of_day` with three categories:
   - Morning
@@ -76,131 +74,61 @@ Complete all of the following in your script:
 - You define the time boundaries.
 - Briefly note your boundaries in a comment.
 
-#### 1D. Create `days_since`
+#### Create `days_since`
 
-- Create a column called `days_since` showing the number of days between today’s date and the date of the shooting.
+- Create a column called `days_since` showing the number of days between today's date and the date of the shooting.
 - Use `as.Date()` and/or `lubridate` as needed.
+
+#### Turn Borough Names to Title Case
+
+- In the `boro` column, convert each borough name to title case, so that only the first letter of each word is capitalized.
+  - For example: `BROOKLYN` → `Brooklyn`
 
 ------------------------------------------------------------------------
 
-### 2. Insights
+### Insights
 
 Provide the following insights as **comments** in your script:
 
-1.  **One insight about `time_of_day`**\
-    Example format: “Shootings are more frequent during \_\_\_ than \_\_\_ suggestion...”
+1. **One insight about `time_of_day`**  
+   Example format: "Shootings are more frequent during ___ than ___."
 
-2.  **One additional insight of your choice**\
-    Explore anything you find interesting in the dataset (be creative).
-
-------------------------------------------------------------------------
-
-### 3. Visualizations (ggplot2)
-
-Create two plots using `ggplot2`:
-
-#### Plot 3A. `time_of_day` plot
-
-- Must directly relate to your `time_of_day` variable
-
-#### Plot 3B. personal insight plot
-
-- Must support your second insight
-
-Both plots must include:
-
-- Color using an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`)
-- Informative axis labels
-- A clear title
-- Custom font/size settings via `theme()`
-
-Additional requirement:
-
-- At least **one** plot must use `facet_wrap()`
+2. **One additional insight of your choice**  
+   Explore anything you find interesting in the dataset. Be creative!
 
 ------------------------------------------------------------------------
 
-### 4. Written Summary
+### Visualizations (`ggplot2`)
+
+Create **three visualizations** using `ggplot2`:
+
+1. **Time of Day Plot:** Create a visualization that directly relates to your `time_of_day` variable.
+
+2. **Personal Insight Plot:** Create a visualization that supports the **second insight you identified** in the previous section.
+
+3. **Your Choice Plot:** Create a visualization that explores another relationship, pattern, or trend in the data that you find interesting.
+
+For each visualization:
+
+- Choose an appropriate `geom_*()` for the data you are visualizing
+- Include an informative title
+- Include clear x- and y-axis labels
+- Use color through an aesthetic mapping (`aes(color = ...)` or `aes(fill = ...)`)
+- Customize font and/or text sizes using `theme()`
+
+Across your three visualizations:
+
+- Use **at least two different `geom_*()` types**
+- At least **one** visualization must use `facet_wrap()`
+
+------------------------------------------------------------------------
+
+### Written Summary
 
 At the end of your script, write a short paragraph (as comments) describing:
 
 - What you discovered from your insights
 - What the graphs revealed that was not obvious from the raw data
-
-------------------------------------------------------------------------
-
-### Starter Code Template
-
-Copy this template into your script and complete the tasks above. (@R-tidyverse) (@R-lubridate) (@R-nycOpenData)
-
-```{r}
-#| label: assignment-03-starter-template
-#| eval: false
-#| echo: true
-#| warning: false
-#| message: false
-
-#############################################
-# Assignment 3: NYPD Shootings
-# Cleaning, Insights, and Visualization
-#############################################
-
-# ---- Setup ----
-library(tidyverse)
-library(lubridate)
-library(nycOpenData)
-
-# ---- Data Ingest ----
-shooting_data <- nyc_shooting_incidents()
-
-# ==============================
-# 1. CLEANING & FEATURE ENGINEERING
-# ==============================
-
-# 1A. Missingness (choose one column to drop NAs)
-# missing_n <- sum(is.na(shooting_data$YOUR_COLUMN))
-# Write a comment: how many were missing + why this column is safe
-# cleaned <- shooting_data %>% drop_na(YOUR_COLUMN)
-
-# 1B. Lowercase one categorical column
-# cleaned <- cleaned %>% mutate(YOUR_COLUMN = str_to_lower(YOUR_COLUMN))
-
-# 1C. Create time_of_day (Morning / Afternoon / Night)
-# cleaned <- cleaned %>%
-#   mutate(
-#     occur_date = as.Date(occur_date),
-#     occur_time = hm(occur_time),
-#     hour = hour(occur_time),
-#     time_of_day = case_when(
-#       hour >= ___ & hour < ___ ~ "Morning",
-#       hour >= ___ & hour < ___ ~ "Afternoon",
-#       TRUE ~ "Night"
-#     )
-#   )
-
-# 1D. Create days_since
-# cleaned <- cleaned %>%
-#   mutate(days_since = as.integer(Sys.Date() - as.Date(occur_date)))
-
-
-# ==============================
-# 2. INSIGHTS (write as comments)
-# ==============================
-
-
-# ==============================
-# 3. VISUALIZATIONS
-# ==============================
-
-# Plot A: time_of_day plot (include facet_wrap on at least one plot)
-
-# Plot B: personal insight plot
-
-
-# ==============================
-# 4. WRITTEN SUMMARY (comments)
-# ==============================
-```
 
 ------------------------------------------------------------------------
 
@@ -212,7 +140,7 @@ In your script:
 
 - Clearly document your analytic choices (especially your `time_of_day` boundaries) in comments.
 
-- Keep your pipeline modular by creating a cleaned object (e.g.,`cleaned`), and build from it.
+- Keep your pipeline modular by creating a cleaned object (e.g., `cleaned`), and build from it.
 
 - After creating your new variables, include a quick checkpoint such as:
 
@@ -220,4 +148,4 @@ In your script:
 
   - `summary(cleaned$days_since)` to verify your features were created correctly.
 
-The goal is that another reader can see *exactly what choices you made*, reproduce your engineered variables, and understand how you arrived at your two insights.
+The goal is that another reader can see *exactly what choices you made*, reproduce your engineered variables, and understand how you arrived at your insights.
