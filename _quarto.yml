@@ -31,6 +31,7 @@ format:
     theme:
       - cosmo
       - brand
+    google-analytics: "G-XKJ7C6DWDE"
     
   pdf:
     documentclass: scrreprt
