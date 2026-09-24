@@ -4,6 +4,7 @@ project:
 book:
   title: "Teaching Reproducible Research Using R"
   author: "Christian Martinez"
+  google-analytics: "G-JWFQFEXRJ4"
   chapters:
     - index.qmd
     - chapters/course-blueprint.qmd
@@ -31,7 +32,6 @@ format:
     theme:
       - cosmo
       - brand
-    google-analytics: "G-JWFQFEXRJ4"
     
   pdf:
     documentclass: scrreprt
