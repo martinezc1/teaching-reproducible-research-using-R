@@ -229,3 +229,43 @@ Your document must:
 - Render cleanly to HTML without manual intervention
 
 The goal is that another analyst could rerun your entire workflow and verify every statistical conclusion.
+
+------------------------------------------------------------------------
+
+## Citing Your R Packages
+
+An important part of reproducible research is acknowledging the software that makes our analyses possible.
+
+During today's group activity, we learned how to generate a bibliography and cite R packages directly in Quarto.
+
+Now it's your turn to apply those skills independently!
+
+### Your Task
+
+1.  Create a file called `packages.bib` containing references for the R packages used in your assignment.
+
+2.  Save your bibliography file within your R project, either alongside your `.qmd` document or in a dedicated folder.
+
+3.  Update your Quarto YAML to include the bibliography.
+
+4.  Include citations for all R packages used in your analysis throughout your written report.
+
+5.  Make sure your references appear automatically when you render your document to HTML.
+
+Your citations should appear naturally in your writing. For example, you might cite the package used to retrieve the dataset, the package used to create your visualizations, or the package used to conduct your statistical analyses.
+
+::: callout-tip
+## Need a Reminder?
+
+- `knitr::write_bib()` to generate a bibliography
+
+- `citation()` to explore how R packages should be cited
+
+- Adding `bibliography: packages.bib` to our Quarto YAML
+
+- Using citation keys such as `[@R-ggplot2]` within our writing
+
+Remember to check the citation keys inside your own `packages.bib` file!
+:::
+
+**Important:** Your citations should be integrated into your report, not simply listed at the bottom. The goal is to acknowledge the tools you used while explaining your analytical process.
