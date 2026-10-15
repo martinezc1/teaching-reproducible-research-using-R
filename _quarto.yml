@@ -22,6 +22,7 @@ book:
     - chapters/assignment-final.qmd
     - chapters/assignment-book.qmd
   appendices:
+    - chapters/assignment-undergrad-midterm.qmd
     - chapters/References.qmd
 
 bibliography: bibliography/packages.bib

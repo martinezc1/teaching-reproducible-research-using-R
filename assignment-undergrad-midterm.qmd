@@ -1,0 +1,404 @@
+# Undergraduate Midterm: Exercise & Sleep
+
+## Overview {#sec-undergrad-midterm}
+
+You are a researcher in sleep expert **Dr. Matthew Walker's lab**. You have just run an experiment investigating how exercise relates to sleep habits.
+
+You measured:
+
+- Average hours of sleep **before** the experiment
+- Average hours of sleep **after** the experiment
+- **Sleep efficiency** at the end of the experiment
+
+Dr. Walker wants you to investigate whether participants experienced changes in their sleep duration after participating in an exercise program.
+
+He is also interested in whether these changes differ between males and females.
+
+Your goal is to analyze the data and provide a **clear, evidence-based summary of your findings**.
+
+This midterm assesses your ability to apply the skills we've learned so far and create a **reproducible research report using R and Quarto**.
+
+------------------------------------------------------------------------
+
+## Learning Objectives
+
+By completing this midterm, you will be able to:
+
+- Import data from a multi-sheet Excel workbook
+- Clean and merge datasets
+- Create new variables and identify missing values
+- Calculate and interpret descriptive statistics
+- Create clear visualizations using `ggplot2`
+- Conduct and interpret t-tests
+- Create a reproducible report using Quarto
+- Incorporate inline R code and cross-references
+- Cite R packages used in your analysis
+- Communicate your findings through written interpretations
+
+------------------------------------------------------------------------
+
+## Textbook Connection
+
+This assignment builds on the material covered in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+You are encouraged to use the textbook, previous assignments, and our in-class activities as references.
+
+**Remember:** You do not need to memorize every function or command. Part of learning to code is learning how to find and apply examples!
+
+------------------------------------------------------------------------
+
+## Submission Instructions
+
+Submit **three files**:
+
+1.  Your `.qmd` file
+2.  Your rendered `.html` file
+3.  Your `packages.bib` file
+
+Your report must:
+
+- Render without errors
+- Include written explanations between code chunks
+- Use clear section headings
+- Include readable tables and visualizations
+- Follow the Quarto requirements below
+
+------------------------------------------------------------------------
+
+## Quarto & Reproducibility Requirements
+
+Your goal is to create a **professional research report**, not simply a collection of R code and statistical outputs.
+
+### 1. YAML & Document Organization
+
+Your report must include:
+
+- A descriptive title
+- Your name as the author
+- A date
+- A clickable table of contents
+- Numbered sections
+
+You are responsible for updating your YAML to include these features.
+
+### 2. Code Chunk Labels
+
+Every R code chunk must have a unique, descriptive label.
+
+For example:
+
+- `data-import`
+- `data-cleaning`
+- `descriptive-statistics`
+- `ttest-sleep`
+
+Additionally:
+
+- Figure-producing chunks must begin with `fig-`
+- Table-producing chunks must begin with `tbl-`
+
+### 3. Figures, Tables & Cross-References
+
+All figures and tables must include descriptive captions.
+
+You must also **reference each figure and table in your written explanations** using Quarto cross-references.
+
+For example:
+
+- `@fig-sleep-change`
+- `@tbl-sleep-summary`
+
+Your written explanations should describe what the figures and tables show.
+
+::: callout-tip
+## Remember!
+
+When you use the appropriate labels and captions, Quarto automatically numbers your figures and tables.
+
+Instead of manually writing "Figure 1", you can use `@fig-sleep-change` to create a reference that updates automatically.
+:::
+
+### 4. Inline R Code
+
+Your report must include **at least two instances of inline R code**.
+
+Use inline R code to report values such as:
+
+- The number of participants
+- Average sleep duration
+- Average sleep improvement
+- Statistical results
+
+Your written results should update automatically when your code is rerun.
+
+### 5. Citing Your R Packages
+
+An important part of reproducible research is acknowledging the software that makes our analyses possible.
+
+For this midterm, you will practice **citing the R packages used in your analysis**.
+
+You must:
+
+1.  Create a file called `packages.bib` containing references for the R packages you used.
+2.  Include your bibliography file in your Quarto YAML.
+3.  Cite the packages used in your analysis.
+4.  Make sure your references appear automatically when you render your report.
+
+::: callout-tip
+## Need a Reminder?
+
+You can use `knitr::write_bib()` to generate citations for your R packages.
+
+For example:
+
+```{r}
+#| label: create-bibliography
+#| eval: false
+
+knitr::write_bib(
+  c("readxl", "dplyr", "ggplot2"),
+  file = "packages.bib"
+)
+```
+
+This is an example! Your bibliography should contain the packages you actually use.
+
+You will also need to add your bibliography to your Quarto YAML:
+
+``` yaml
+bibliography: packages.bib
+```
+
+Review the textbook section on citing R packages for additional guidance.
+:::
+
+------------------------------------------------------------------------
+
+## Midterm Tasks
+
+### 1. Setup & Data Import
+
+#### Tasks
+
+- Load all packages you use.
+
+- Import **both sheets** from `midterm_sleep_exercise.xlsx` using `readxl`:
+
+  - `participant_info_midterm`
+  - `sleep_data_midterm`
+
+- Preview both datasets using an appropriate function, such as `glimpse()` or `head()`.
+
+#### Requirements
+
+- Use clearly labeled code chunks.
+- Briefly describe the datasets you imported.
+
+------------------------------------------------------------------------
+
+### 2. Merge & Base Cleaning
+
+#### Tasks
+
+- Clean column names so they are consistent and easy to work with.
+
+- Standardize labels for:
+
+  - `Exercise_Group` (e.g., "cardio", "CARDIO" → "Cardio")
+  - `Sex` (e.g., "m", "MALE" → "Male")
+
+- Merge the two datasets into one dataset.
+
+#### Requirements
+
+- Your final dataset should contain **one row per participant**.
+- Your dataset should include participant information and sleep measurements.
+- Show how many rows are in your merged dataset.
+- Briefly explain how you merged the datasets.
+
+------------------------------------------------------------------------
+
+### 3. Create a New Variable
+
+#### Tasks
+
+Create a variable called `Sleep_Difference` that represents the change in sleep duration:
+
+`Sleep_Difference = post_sleep - pre_sleep_num`
+
+A positive value indicates that a participant slept more after the experiment.
+
+A negative value indicates that a participant slept less.
+
+Next:
+
+- Identify how many observations are missing `Sleep_Difference`.
+- Remove observations with missing `Sleep_Difference`.
+
+#### Requirements
+
+- Show how many observations were removed.
+- Briefly explain why you removed them.
+- Use inline R code to report the number of observations removed.
+
+------------------------------------------------------------------------
+
+### 4. Descriptive Statistics
+
+#### Tasks
+
+Calculate descriptive statistics for `Sleep_Difference`.
+
+Include:
+
+- Mean
+- Standard deviation
+- Minimum
+- Maximum
+
+Next, calculate the **mean Sleep_Difference by Sex**.
+
+#### Requirements
+
+- Present your results in clearly organized tables using `kable()` or an equivalent function.
+- Include descriptive table captions using `tbl-cap`.
+- Use the `tbl-` prefix for table-producing chunks.
+- Reference your tables in your written explanation.
+
+Write **2–3 sentences** describing what your results suggest.
+
+------------------------------------------------------------------------
+
+### 5. Visualizations (2 Plots)
+
+Create **two** visualizations:
+
+1.  **Boxplot:** `Sleep_Difference` by `Sex`
+2.  **Scatterplot:** `pre_sleep_num` vs. `post_sleep`, including a trend line
+
+#### Requirements
+
+Each visualization must include:
+
+- A descriptive title
+- Clear x- and y-axis labels
+- A clean theme (e.g., `theme_minimal()`)
+- A Quarto figure caption using `fig-cap`
+- A unique chunk label beginning with `fig-`
+
+After each visualization, write **1–3 sentences** describing what it suggests.
+
+You must **reference each visualization in your written explanation** using Quarto cross-references.
+
+For example:
+
+"As shown in @fig-sleep-change, ..."
+
+------------------------------------------------------------------------
+
+### 6. t-tests
+
+Run the following **two t-tests**:
+
+1.  **Paired t-test:** Compare sleep duration before and after the experiment (`pre_sleep_num` and `post_sleep`).
+2.  **Independent-samples t-test:** Compare `Sleep_Difference` between males and females.
+
+#### Requirements
+
+For each t-test, report:
+
+- Relevant group means
+- t statistic
+- Degrees of freedom
+- p-value
+
+Then write **2–3 sentences** interpreting each test.
+
+Consider:
+
+- Was the result statistically significant?
+- What does the result suggest about sleep duration?
+- Is the difference meaningful in practical terms?
+
+::: callout-note
+## Important!
+
+A statistically significant result does not automatically mean that a difference is large or practically important.
+
+Think about what your results mean in the context of sleep duration.
+:::
+
+------------------------------------------------------------------------
+
+### 7. Synthesis & Recommendation
+
+Write **4–6 sentences** answering:
+
+**Based on your analyses, what can you conclude about changes in sleep duration following the exercise program?**
+
+Your response should address:
+
+- Did participants generally sleep more or less after the experiment?
+- Was the change statistically significant?
+- Did sleep improvements differ between males and females?
+- What would you recommend Dr. Walker investigate next?
+
+#### Requirements
+
+- Support your conclusions using your descriptive statistics and t-tests.
+- Reference at least one figure or table using Quarto cross-references.
+- Include at least one instance of inline R code.
+- Explain your findings in plain language.
+
+Your recommendation should be understandable to someone who has not seen your R code.
+
+::: callout-note
+## Interpreting Your Findings
+
+Remember that observing a change in sleep duration does not necessarily prove that exercise caused the change.
+
+Your conclusions should reflect what the data can actually tell us.
+:::
+
+------------------------------------------------------------------------
+
+### 8. Reflection
+
+Write **3–5 sentences** addressing:
+
+- What was most challenging?
+- What did you feel confident about?
+- What would you do differently next time to improve your analysis or report?
+
+------------------------------------------------------------------------
+
+## Publishing Instructions
+
+1.  Render your `.qmd` file to HTML.
+2.  Confirm that your table of contents appears correctly.
+3.  Verify that your figures and tables are properly numbered and cross-referenced.
+4.  Confirm that inline R code displays the correct values.
+5.  Confirm that your package citations and references appear correctly.
+6.  Make sure your report renders without errors.
+7.  Submit your `.qmd`, `.html`, and `packages.bib` files.
+
+------------------------------------------------------------------------
+
+## Reproducibility Practice
+
+This midterm evaluates both your statistical analysis and your ability to communicate research findings.
+
+Your report must:
+
+- Load all packages explicitly
+- Import both sheets programmatically
+- Merge the datasets correctly
+- Handle missing values
+- Use descriptive code chunk labels
+- Include labeled figures and tables
+- Reference figures and tables in your written explanations
+- Use inline R code
+- Cite the R packages used in your analysis
+- Render successfully to HTML
+
+**Remember:** Your goal is not simply to run statistical tests. Your goal is to create a reproducible research report that someone else can read, understand, and reproduce.
