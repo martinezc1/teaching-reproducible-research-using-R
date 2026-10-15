@@ -1,3 +1,5 @@
+# Midterm: Exercise & Sleep
+
 ## Overview {#sec-midterm}
 
 You are a researcher in sleep expert Dr. **Matthew Walker's lab**. You have just run an experiment measuring the effect of different **exercise methods** on sleep habits.
