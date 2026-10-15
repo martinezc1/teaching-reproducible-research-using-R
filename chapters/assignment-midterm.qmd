@@ -1,13 +1,11 @@
-# Midterm: Exercise & Sleep
-
 ## Overview {#sec-midterm}
 
-You are a researcher in sleep expert **Matthew Walker’s lab**. You have just run an experiment measuring the effect of different **exercise methods** on sleep habits.
+You are a researcher in sleep expert Dr. **Matthew Walker's lab**. You have just run an experiment measuring the effect of different **exercise methods** on sleep habits.
 
 You measured:
 
-- Average hours of sleep **before** the experiment\
-- Average hours of sleep **after** the experiment\
+- Average hours of sleep **before** the experiment
+- Average hours of sleep **after** the experiment
 - **Sleep efficiency** at the end of the experiment
 
 Dr. Walker needs you to identify **which (if any) exercise method best improves sleep**, and to make a clear, evidence-based recommendation.
@@ -29,50 +27,158 @@ By completing this midterm, you will be able to:
 - Conduct and interpret t-tests and ANOVAs
 - Run and interpret Tukey post-hoc comparisons
 - Synthesize results into an actionable recommendation
+- Create a professional, reproducible report using Quarto
+- Incorporate inline R code and cross-references into scientific writing
+- Properly cite R packages used in your analysis
 
 ------------------------------------------------------------------------
 
 ## Textbook Connection
 
-This assignment builds directly from **Chapters 1-5 (and 10)** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+This assignment builds directly from **Chapters 1-6 (and 10)** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
 
-Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+Students are encouraged to review these chapters before beginning this assignment, as they provide the conceptual foundation and reproducible workflow demonstrated here.
 
 ------------------------------------------------------------------------
 
 ## Submission Instructions
 
-Submit **two files**:
+Submit **three files**:
 
-1.  Your `.qmd` file\
-2.  Your knitted and published `.html` file
+1.  Your `.qmd` file
+2.  Your rendered and published `.html` file
+3.  Your `packages.bib` bibliography file
 
 Your report must:
 
-- Knit/render without errors
+- Render without errors
 - Include short narrative text between code chunks
 - Use clear section headers matching the numbered tasks below
 - Suppress unnecessary warnings/messages in the final HTML
-- Include readable plots and (recommended) formatted tables (e.g., `kable()`)
+- Include readable plots and professionally formatted tables
+- Follow all Quarto and reproducibility requirements outlined below
+
+------------------------------------------------------------------------
+
+## Quarto & Reproducibility Requirements
+
+In addition to completing the statistical analyses, you are expected to produce a **professional, fully reproducible Quarto report**.
+
+### 1. YAML & Document Organization
+
+Your report must include:
+
+- A descriptive title
+- Your name as the author
+- A date
+- A clickable table of contents
+- Numbered sections
+
+You are responsible for modifying your YAML to include these features.
+
+### 2. Code Chunk Labels
+
+Every R code chunk must have a **unique, descriptive label**.
+
+Your labels should clearly communicate the purpose of the code.
+
+For example:
+
+- `data-import`
+- `data-cleaning`
+- `descriptive-statistics`
+- `ttest-sex`
+
+Additionally:
+
+- All figure-producing chunks must begin with `fig-`
+- All table-producing chunks must begin with `tbl-`
+
+### 3. Figures, Tables & Cross-References
+
+All visualizations and tables must have descriptive captions and appropriate labels.
+
+You must also **reference every figure and table in your written narrative** using Quarto's cross-referencing system.
+
+For example:
+
+- `@fig-sleep-difference`
+- `@tbl-descriptive-statistics`
+
+Your references should appear naturally in your interpretation, just as they would in a published research paper.
+
+**Simply referencing a figure or table is not enough.** You must explain what the results suggest.
+
+::: callout-tip
+## Remember!
+
+Quarto automatically numbers your figures and tables when you use the appropriate labels and captions.
+
+This means you should not manually write "Figure 1" or "Table 2" in your interpretations.
+
+Instead, use cross-references so your document updates automatically!
+:::
+
+### 4. Inline R Code
+
+Your report must include **at least three instances of inline R code**.
+
+At least one instance must appear in your final synthesis and recommendation.
+
+Use inline R code to dynamically report statistical values, such as:
+
+- Means
+- Standard deviations
+- Test statistics
+- p-values
+
+**Do not manually type statistical results into your narrative when they can be generated using inline R code.**
+
+Your report should automatically update if the underlying data or analysis changes.
+
+### 5. Citing Your R Packages
+
+All R packages used in your analysis must be properly cited.
+
+You must:
+
+1.  Create a file called `packages.bib` containing references for the R packages used in your analysis.
+2.  Include your bibliography file in your Quarto YAML.
+3.  Cite all R packages used throughout your written report.
+4.  Ensure your references appear automatically when you render your document to HTML.
+
+Your citations should appear naturally in your writing.
+
+::: callout-tip
+## Need a Reminder?
+
+You can use `knitr::write_bib()` to generate bibliography entries for your R packages.
+
+Review our previous Quarto lesson and assignments if you need a refresher on creating a bibliography and using citations.
+:::
 
 ------------------------------------------------------------------------
 
 ## Midterm Tasks
 
-------------------------------------------------------------------------
-
 ### 1. Setup & Data Import
 
 #### Tasks
 
-- Load all packages you use\
+- Load all packages you use.
 
 - Import **both sheets** from `midterm_sleep_exercise.xlsx` using `readxl`:
 
-  - `participant_info_midterm`\
+  - `participant_info_midterm`
   - `sleep_data_midterm`
 
-- Preview both datasets using appropriate functions (e.g., `glimpse()` or `head()`)
+- Preview both datasets using appropriate functions (e.g., `glimpse()` or `head()`).
+
+#### Requirements
+
+- Use clearly labeled code chunks.
+- Briefly describe the datasets you imported.
+- Include an appropriate citation for the package used to import your data.
 
 ------------------------------------------------------------------------
 
@@ -80,20 +186,21 @@ Your report must:
 
 #### Tasks
 
-- Clean column names so they are consistent and easy to work with\
+- Clean column names so they are consistent and easy to work with.
 
 - Standardize labels for:
 
-  - `Exercise_Group` (e.g., “cardio”, “CARDIO” → “Cardio”)\
-  - `Sex` (e.g., “m”, “MALE” → “Male”)
+  - `Exercise_Group` (e.g., "cardio", "CARDIO" → "Cardio")
+  - `Sex` (e.g., "m", "MALE" → "Male")
 
-- Merge the two datasets into a single dataset
+- Merge the two datasets into a single dataset.
 
 #### Requirements
 
-- Final dataset should be **one row per participant**
-- Dataset should include demographics + sleep variables
-- Include a checkpoint verifying row count and that the merge behaved as expected
+- Final dataset should be **one row per participant**.
+- Dataset should include demographics + sleep variables.
+- Include a checkpoint verifying row count and that the merge behaved as expected.
+- Briefly explain your cleaning and merging decisions.
 
 ------------------------------------------------------------------------
 
@@ -105,17 +212,17 @@ Your report must:
 
   - `Sleep_Difference = post_sleep - pre_sleep_num`
 
-- Create `AgeGroup2` using `case_when()` with exactly **two groups**\
-  (example: `< 40` vs `>= 40`)
+- Create `AgeGroup2` using `case_when()` with exactly **two groups** (example: `< 40` vs `>= 40`).
 
-- Identify how many rows are missing `Sleep_Difference`
+- Identify how many rows are missing `Sleep_Difference`.
 
-- Drop rows with missing `Sleep_Difference`
+- Drop rows with missing `Sleep_Difference`.
 
 #### Requirements
 
-- Include a checkpoint showing how many rows were removed and why
-- Your narrative should briefly justify your missing-data decision
+- Include a checkpoint showing how many rows were removed and why.
+- Your narrative should briefly justify your missing-data decision.
+- Use inline R code to report how many observations were removed.
 
 ------------------------------------------------------------------------
 
@@ -142,17 +249,21 @@ Then report group-wise summaries by `Exercise_Group` for:
 
 #### Requirements
 
-- Group summaries must be clearly readable
-- Tables should be formatted professionally using `kable()` and appropriate captions.
+- Group summaries must be clearly readable.
+- Briefly interpret the most meaningful patterns in your descriptive statistics.
+- Tables must be formatted professionally using `kable()` or an equivalent table-formatting function.
+- All tables must include descriptive captions using Quarto's `tbl-cap` option.
+- All table-producing chunks must use the `tbl-` prefix.
+- **Reference every table in your written narrative** using Quarto cross-references.
 
 ------------------------------------------------------------------------
 
-### 5. Visualizations (3 plots)
+### 5. Visualizations (3 Plots)
 
 Create **three** plots:
 
-1.  Boxplot: `Sleep_Difference` by `Exercise_Group`\
-2.  Boxplot: `Sleep_Efficiency` by `Exercise_Group`\
+1.  Boxplot: `Sleep_Difference` by `Exercise_Group`
+2.  Boxplot: `Sleep_Efficiency` by `Exercise_Group`
 3.  Scatterplot: `Sleep_Difference` vs `Sleep_Efficiency`, with a trend line
 
 #### Requirements
@@ -162,9 +273,14 @@ Each plot must include:
 - Descriptive title
 - Clear x- and y-axis labels
 - A clean theme (e.g., `theme_minimal()`)
-- Appropriate captions
+- A descriptive Quarto figure caption using `fig-cap`
+- A unique chunk label beginning with `fig-`
 
-After each plot, write 1–3 sentences describing what the plot suggests.
+After each plot, write **1–3 sentences** describing what the plot suggests.
+
+You must **reference each visualization directly in your written interpretation** using Quarto's cross-referencing system (e.g., `@fig-sleep-difference`).
+
+Your interpretation should discuss meaningful patterns, differences, or relationships shown in the visualization.
 
 ------------------------------------------------------------------------
 
@@ -172,7 +288,7 @@ After each plot, write 1–3 sentences describing what the plot suggests.
 
 Run **two** t-tests:
 
-1.  `Sleep_Difference ~ Sex`\
+1.  `Sleep_Difference ~ Sex`
 2.  `Sleep_Difference ~ AgeGroup2`
 
 #### Requirements
@@ -206,8 +322,8 @@ For each ANOVA, include:
 - F statistic
 - df
 - p-value
-- A brief effect-size comment
 - PRE from `supernova()` (required)
+- A brief interpretation of the effect size
 
 Then run Tukey post-hoc tests:
 
@@ -216,7 +332,8 @@ Then run Tukey post-hoc tests:
 Interpret results:
 
 - Which groups differ significantly?
-- Which exercise group appears to “win” for each outcome?
+- Which exercise group appears to "win" for each outcome?
+- How much variation in the outcome is explained by exercise group, based on PRE?
 
 ------------------------------------------------------------------------
 
@@ -228,7 +345,7 @@ Write **4–6 sentences** answering:
 
 #### Requirements
 
-- You may only pick **one** regimen
+- You may only pick **one** regimen.
 
 - Support your recommendation with specific statistical evidence:
 
@@ -236,7 +353,15 @@ Write **4–6 sentences** answering:
   - Key Tukey contrasts
   - Any meaningful patterns from your plots/tables
 
-Your recommendation must be actionable and executive-friendly.
+- Include at least one instance of inline R code.
+
+- Reference relevant figures and/or tables from earlier in your report using Quarto cross-references.
+
+- Acknowledge any important limitations or conflicting evidence.
+
+Your recommendation must be **actionable and executive-friendly**.
+
+Imagine Dr. Walker only has time to read this section. He should understand your recommendation and the evidence supporting it without needing to examine your R code.
 
 ------------------------------------------------------------------------
 
@@ -248,25 +373,40 @@ Write **3–5 sentences** addressing:
 - What did you feel confident about?
 - What would you do differently next time to improve your analysis or report?
 
+You may reflect on your statistical analyses, data cleaning, Quarto workflow, or reproducibility practices.
+
 ------------------------------------------------------------------------
 
 ## Publishing Instructions
 
 1.  Render your `.qmd` file to HTML.
-2.  Confirm warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.
+2.  Confirm that your table of contents appears and works correctly.
+3.  Verify that all figures and tables are properly numbered and cross-referenced.
+4.  Confirm that inline R code displays the correct values.
+5.  Confirm that your package citations and references appear correctly.
+6.  Confirm that unnecessary warnings and messages do not appear in the final document.
+7.  Submit your `.qmd`, published `.html`, and `packages.bib` files.
 
 ------------------------------------------------------------------------
 
 ## Reproducibility Practice
 
-This midterm evaluates not only statistical accuracy, but workflow transparency. Your report must:
+This midterm evaluates not only statistical accuracy, but **workflow transparency and professional scientific communication**.
+
+Your report must:
 
 - Load all packages explicitly
 - Import both sheets programmatically
 - Confirm merge success with row counts
-- Explicitly handle missing values (no silent removal)
-- Use clearly labeled code chunks
+- Explicitly handle missing values
+- Use unique, descriptive labels for every R code chunk
+- Use `fig-` and `tbl-` prefixes for figures and tables
+- Include captions and cross-references for every figure and table
+- Incorporate inline R code into your written interpretations
+- Cite all R packages used in the analysis
+- Generate a references section automatically
 - Avoid hard-coding statistical values in written interpretation
 - Suppress unnecessary warnings/messages
 - Render cleanly to HTML
+
+**Remember:** Your goal is not simply to run statistical tests. Your goal is to produce a fully reproducible research report that another researcher could read, understand, and reproduce.
