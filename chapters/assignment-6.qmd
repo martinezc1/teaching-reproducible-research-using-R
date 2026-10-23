@@ -1,4 +1,4 @@
-# Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations
+# ANOVA and Payment Patterns in NYC Camera Violations
 
 ## Overview {#sec-six}
 

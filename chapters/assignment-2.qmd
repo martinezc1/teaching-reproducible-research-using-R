@@ -1,4 +1,4 @@
-# Assignment 2: Exploring Pixar with the Tidyverse
+# Exploring Pixar with the Tidyverse
 
 ## Overview {#sec-two}
 

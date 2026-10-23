@@ -1,4 +1,4 @@
-# Assignment 5: R Script → Quarto Report
+# R Script → Quarto Report
 
 ## Overview {#sec-five}
 

@@ -1,4 +1,4 @@
-# Assignment 8: Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge
+# Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge
 
 ## Overview {#sec-eight}
 

@@ -33,6 +33,8 @@ format:
     theme:
       - cosmo
       - brand
+    toc: true
+    number-sections: true
     
   pdf:
     documentclass: scrreprt

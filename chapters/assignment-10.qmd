@@ -1,4 +1,4 @@
-# Assignment 10: Wage Analytics — Predicting High vs Low Earners Using Logistic Regression
+# Wage Analytics — Predicting High vs Low Earners Using Logistic Regression
 
 ## Overview {#sec-ten}
 

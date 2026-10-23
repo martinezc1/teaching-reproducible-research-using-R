@@ -1,4 +1,4 @@
-# Assignment 7: NBA Analytics — Exploring Team Performance Through Reproducible Analysis
+# CUNY Analytics — Exploring Team Performance Through Reproducible Analysis
 
 ## Overview {#sec-seven}
 
@@ -12,254 +12,241 @@ You have been given an Excel workbook containing all 30 NBA teams, with each tea
 
 Your final product should read like a professional analytics report prepared for an executive audience.
 
-------------------------------------------------------------------------
+You have been hired as a **Sports Data Analyst for the CUNY Athletic Conference**. Your assignment is to investigate the relationships between basketball statistics and game outcomes for **Brooklyn College men's basketball**, using completed post-COVID seasons **2021–2022 through 2025–2026**.
 
-## Learning Objectives
+Use the `CUNYsports` R package and the `basketball_game_by_game_team_overall_final` table. Each observation should represent one Brooklyn College game; verify this after filtering. Your report should be a polished, reproducible **Quarto chapter**. Next week's linear regression chapter will extend the question you develop here.
 
-By completing this assignment, you will be able to:
+::: callout-note
+### Dracula Theme
 
-- Write reusable functions in R for structured data ingestion
-- Load multi-sheet Excel workbooks programmatically
-- Engineer new performance metrics
-- Merge datasets using lookup tables
-- Conduct correlation and partial correlation analyses
-- Interpret statistical relationships in plain language
-- Communicate findings clearly to a non-technical executive audience
-- Produce a fully reproducible Quarto document
+For this assignment, you must use the **Dracula theme** throughout your Quarto document and all visualizations.
 
-------------------------------------------------------------------------
+You can find the official Dracula theme, color palette, and additional resources on [GitHub](https://github.com/dracula/dracula-theme).
 
-## Textbook Connection
-
-This assignment builds directly from **Chapter 7: Correlation** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
-
-Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+Remember that `highlight-style: dracula` only changes syntax highlighting. You must also apply Dracula styling to your HTML document and your `ggplot2` visualizations, as demonstrated in class.
+:::
 
 ------------------------------------------------------------------------
 
-## Submission Instructions
+## Learning Objectives {#sec-objectives}
 
-Submit **two files**:
+By completing this assignment, you will:
 
-1.  Your `.qmd` file\
-2.  Your knitted `.html` file
-
-Your document must:
-
-- Knit without errors
-- Contain clearly labeled sections
-- Include all required visualizations
-- Include all correlation analyses
-- Include a professional memo to Adam Silver
-- Use at least one inline R expression
+- Retrieve data reproducibly from an R package.
+- Filter and validate game-level data for a specific school, division, and set of seasons.
+- Create and interpret descriptive tables and Dracula-themed visualizations.
+- Conduct Pearson, point-biserial, and partial correlations.
+- Explain statistical findings and limitations for a nontechnical audience.
+- Cite software, use inline R, and cross-reference sections, figures, and tables in Quarto.
+- Develop a question that will carry forward into next week's regression chapter.
 
 ------------------------------------------------------------------------
 
-## Assignment Tasks
+## Textbook Connection {#sec-textbook}
+
+Review **Chapter 7: Correlation** in [*Reproducible Research Using R*](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/), along with the section on **citing R packages**.
 
 ------------------------------------------------------------------------
 
-### 1. Data Ingest and Preparation
+## Submission and Formatting Requirements {#sec-submission}
 
-You must programmatically load all 30 teams from the Excel workbook.
+Submit **three files**: your `.qmd` source, your packages.bib file, and the rendered `.html` link from posit connect cloud. Your report must:
 
-#### Required Tasks
+1.  Render successfully with no unnecessary warnings or messages.
+2.  Use a **Dracula-themed HTML document and Dracula-themed plots** (not only Dracula syntax highlighting).
+3.  Include descriptive writing, clearly labeled sections, and a professional executive memo.
+4.  Cite **every R package you use**, including `CUNYsports`, using the package citation workflow from the textbook. Include an appropriate references section/bibliography.
+5.  Include **at least one inline R expression** that reports a computed value.
+6.  Give **every section** a unique Quarto identifier in the form `{#sec-name}` and refer to **at least one section** using `@sec-name` in your prose.
+7.  Give **every table and figure** a Quarto label (`tbl-...` or `fig-...`) and caption. Refer to **at least two figures and two tables** in your written interpretation using cross-references such as `@fig-season-comparison` and `@tbl-season-by-season`. Do not merely list references: integrate them into complete sentences.
+8.  Avoid hard-coding numerical findings in your prose when an inline R expression would be appropriate.
 
-Create a function that:
-
-- Loads a single sheet from the workbook\
-
-- Adds a new column identifying the `Team` (using the sheet name)\
-
-- Creates a binary column called `Won_award` (0 = No, 1 = Yes)\
-
-- Calculates the following metrics:
-
-  - `PRA = Points + Rebounds + Assists` (offensive metric)\
-  - `STOCKS = Steals + Blocks` (defensive metric)
-
-Then:
-
-- Use `excel_sheets()` to list all sheet names\
-- Apply your function to every sheet using `lapply()`\
-- Combine all teams into one complete dataset using a row-binding method
-
-#### Requirements
-
-- Your code must not manually load sheets one-by-one\
-- The final dataset must include all 30 teams\
-- Include a checkpoint confirming the total number of rows\
-- Report the total number of observations using an inline R expression
-
-Briefly explain why writing a function improves reproducibility.
+::: callout-warning
+A cross-reference works only if its target exists and is correctly labeled. For example, a table with chunk label `tbl-season-by-season` can be discussed as: “As shown in @tbl-season-by-season, ...”.
+:::
 
 ------------------------------------------------------------------------
 
-### 2. Adding Conference Information
+## Assignment Tasks {#sec-tasks}
 
-You are provided with a Conference lookup sheet.
+### Retrieve and Explore the Data {#sec-retrieve}
 
-You must:
+Load `CUNYsports`, `tidyverse`, `ggcorrplot`, and any other packages you need. Use the `CUNYsports` documentation functions to inspect the table and variables, then retrieve:
 
-- Merge Conference information into your combined dataset\
+`basketball_game_by_game_team_overall_final`
 
-- Recode Conference as a binary variable for analysis:
+Before filtering, examine the unique values in `school`, `gender`, `season_label`, `home_away`, and `team_side`.
 
-  - East = 1\
-  - West = 0
+### Prepare Brooklyn College Men's Basketball Data {#sec-prepare}
 
-Include a small checkpoint confirming that both conferences are represented correctly.
+Filter the data to:
 
-Briefly explain why binary coding is useful for correlation analysis.
+- **School:** Brooklyn College.
+- **Division:** Men's basketball.
+- **Seasons:** 2021–2022, 2022–2023, 2023–2024, 2024–2025, and 2025–2026.
+
+Confirm that your final data contains one observation per game and that each requested season is represented. If a season is unavailable, report that rather than inventing observations.
+
+Create:
+
+- `Home_game`: 1 for home games and 0 for away games. Exclude neutral-site games **from analyses using this binary variable**, but retain them for other analyses if appropriate.
+- `STOCKS`: `steals + blocks`.
+
+Check for missing values and confirm that `point_differential` is measured from Brooklyn College's perspective. Describe how you handled missing or invalid observations.
+
+#### Table: Season-by-Season Summary \[#sec-season-by-season-plot\]
+
+Create a **captioned, cross-referenceable table** labeled `tbl-season-by-season`, reporting for each season:
+
+- Number of games.
+- Wins and losses.
+- Average point differential.
+
+Use the `DT` package to display this data. Include a sentence interpreting this table and citing it using `@tbl-season-by-season`.
+
+#### Table: Home and Away Summary {#sec-home-away-plot}
+
+Create a second captioned table labeled `tbl-home-away` summarizing the number of games and mean point differential for home and away games. Reference it in your written discussion using `@tbl-home-away`.
+
+### Visual Exploration {#sec-visualize}
+
+Create **at least three Dracula-themed figures** using `ggplot2`. Each must have a meaningful title, readable axis labels, a caption, and a Quarto figure label.
+
+#### Figure: Season-by-Season Performance {#sec-season-by-season-graph}
+
+Create a **boxplot** showing `point_differential` by `season_label` across the five seasons. Label it `fig-season-comparison`.
+
+In 3–4 sentences, discuss which seasons appear stronger or weaker, differences in variability, and any unusual games. Reference `@fig-season-comparison` in your interpretation.
+
+#### Figure: Shooting Efficiency and Game Outcomes {#sec-shooting-efficiency-graph}
+
+Create a scatterplot with:
+
+- X-axis: `effective_field_goal_percentage`.
+- Y-axis: `point_differential`.
+- Color: `home_away`.
+- A linear trend line using `geom_smooth(method = "lm")`.
+
+Label it `fig-shooting-margin`. Discuss the direction, apparent linearity, and possible outliers. Reference `@fig-shooting-margin` in your discussion.
+
+#### Figure: Your Choice {#sec-your-choice-graph}
+
+Choose one additional relationship to visualize, such as turnovers versus point differential, assists versus scoring, or STOCKS versus point differential. Label it `fig-independent-exploration` and explain why you selected it.
+
+**All three figures must use the Dracula theme.** A default `ggplot2` theme does not meet this requirement.
+
+### Correlation Analysis {#sec-correlations}
+
+#### Point-Biserial Correlations {#sec-point-biserial}
+
+Using the binary `Home_game` variable, examine its relationship with:
+
+- `point_differential`.
+- `effective_field_goal_percentage`.
+
+Report *r*, direction, strength, statistical significance, and plain-language meaning for both. Explain whether the results provide evidence of a home-court association.
+
+#### Correlation Matrix {#sec-correlation-matrix}
+
+Create a correlation matrix containing at least:
+
+- `point_differential`
+- `effective_field_goal_percentage`
+- `total_rebounds`
+- `assists`
+- `turnovers`
+- `steals`
+- `blocks`
+
+Visualize it with `ggcorrplot`, using Dracula styling. Label the result `fig-correlation-matrix` and cite `@fig-correlation-matrix` in your discussion.
+
+**Answer**: Which variables show the strongest positive and negative associations with point differential? Which relationships surprised you?
+
+#### Partial Correlation {#sec-partial-correlation}
+
+First calculate the Pearson correlation between **assists** and **point differential**. Then calculate the partial correlation between the same two variables while controlling for **effective field-goal percentage**, using `ppcor`.
+
+Explain what “controlling for” means, compare the two coefficients, and discuss whether the relationship changes. Use the same complete-case observations for both coefficients so the comparison is meaningful.
+
+### Your Independent Research Question {#sec-research-question}
+
+Develop **one research question** about Brooklyn College men's basketball across the five seasons. It must include a quantitative outcome and at least one quantitative explanatory variable.
+
+State your question, explain its importance, identify the variables, create a scatterplot (you may reuse Figure 3 if appropriate), calculate a Pearson correlation, and interpret the result in one paragraph.
+
+**Next week's connection:** You will use **the same dataset and research question** for a linear regression analysis. Choose a question you would like to explore further. End this section by explaining how regression might extend your correlation findings.
 
 ------------------------------------------------------------------------
 
-### 3. Visual Exploration
-
-Create **at least two visualizations** using `ggplot2`.
-
-#### Required Plot 1
-
-- A scatterplot showing the relationship between `PRA` and `STOCKS`
-- Points must be colored by Conference
-
-#### Required Plot 2
-
-- A second visualization of your choice\
-  (Examples: distribution of PRA by conference, age vs PRA, STOCKS vs Age, etc.)
-
-For each plot, write 3–4 sentences describing:
-
-- What patterns you observe\
-- Whether offensive and defensive metrics appear related\
-- Whether conferences appear visually different
-
-All plots must include:
-
-- Clear titles\
-- Axis labels\
-- A caption
-
-------------------------------------------------------------------------
-
-### 4. Correlation Analysis
-
-------------------------------------------------------------------------
-
-#### A. Point-Biserial Correlation
-
-Test whether Conference (East = 1, West = 0) is related to:
-
-- PRA\
-- STOCKS
-
-Report:
-
-- Correlation coefficient (r)\
-- Direction (positive or negative)\
-- Strength (weak, moderate, strong)\
-- Statistical significance\
-- Plain-language interpretation
-
-------------------------------------------------------------------------
-
-#### B. Correlation Matrix
-
-Create a small correlation matrix including at least:
-
-- Age\
-- PRA\
-- STOCKS
-
-Visualize the matrix using `ggcorrplot`.
-
-Then answer:
-
-- Which relationships are strongest?\
-- Are offensive and defensive metrics strongly related?\
-- Does Age appear meaningfully associated with performance?
-
-------------------------------------------------------------------------
-
-#### C. Partial Correlation
-
-Run a partial correlation examining the relationship between:
-
-- PRA and STOCKS\
-- While controlling for either Age or Minutes Played
-
-Interpret:
-
-- How the relationship changes when controlling for the third variable\
-- Whether the association appears independent of that control variable
-
-Explain in plain language what "controlling for" means.
-
-------------------------------------------------------------------------
-
-### 5. Executive Memo to Adam Silver
+## Executive Memo {#sec-executive-memo}
 
 Write a short professional memo addressed to:
 
-**Adam Silver\
-Commissioner, National Basketball Association**
+**CUNY Athletic Conference — Athletics Administration**
 
-Your memo must include:
-
-- A summary of your key findings\
-- Whether Eastern and Western Conference teams appear statistically different\
-- Whether offensive and defensive performances tend to move together\
-- One limitation of your analysis\
-- One recommended next step
-
-Your tone should be professional and executive-level, not academic.
+Summarize the main findings, home-court associations, performance metrics most closely related to scoring margin, one limitation, and one recommendation for future analysis. Write for a nontechnical audience. Refer to at least one of your labeled tables or figures within the memo.
 
 ------------------------------------------------------------------------
 
-## Guidelines for Interpretation
+## Reflection and Looking Ahead {#sec-reflection}
 
-When interpreting correlations, always include:
+In approximately 4–6 sentences, address:
 
-- The direction (positive or negative)\
-- The strength (weak, moderate, strong)\
-- Whether it is statistically significant\
-- A plain-language explanation
+1.  How does `CUNYsports` support reproducible research?
+2.  What did the season-by-season analysis reveal that a single-season analysis might miss?
+3.  What did partial correlation add to your interpretation?
+4.  How might next week's regression chapter build on this work?
 
-Example of plain-language style:
+### Reproducibility Practice {#sec-reproducibility-practice}
 
-> As PRA increases, STOCKS also tends to increase, suggesting that teams with stronger offensive production may also contribute more defensive playmaking.
+This assignment emphasizes **reproducible research, professional presentation, and effective scientific communication**.
+
+Your Quarto document must:
+
+- Retrieve the basketball data programmatically using the `CUNYsports` package.
+
+- Filter the dataset to include Brooklyn College men's basketball across the five post-COVID seasons (2021–2022 through 2025–2026).
+
+- Avoid manual data entry or modification.
+
+- Use clearly labeled R code chunks.
+
+- Avoid hard-coding statistical results in written interpretations; use inline R expressions where appropriate.
+
+- Apply the **Dracula theme** to your Quarto document and all visualizations.
+
+- Include descriptive titles, axis labels, and captions for all figures and tables.
+
+- Use Quarto cross-references for figures (`@fig-name`), tables (`@tbl-name`), and sections (`@sec-name`) at least once each in your written discussion.
+
+- Assign a unique section identifier using `{#sec-name}` to every major section of your document.
+
+- Properly cite **all R packages used** in your analysis, following the textbook's instructions.
+
+- Render cleanly to HTML without unnecessary warnings, messages, or errors.
+
+::: callout-tip
+#### Can we build upon this...?
+
+This assignment will serve as the foundation for **next week's linear regression chapter**. Organize your analyses, research questions, and interpretations so that you can build upon them in your next assignment.
+:::
+
+The goal is that another researcher could reproduce your entire analysis, understand your analytical decisions, and follow your findings without needing additional instructions. Your final product should be something you would be proud to include in a publicly accessible research portfolio.
 
 ------------------------------------------------------------------------
 
-## Reflection
+## Final Checklist {#sec-checklist}
 
-In 4–6 sentences, answer:
-
-1.  Why is reproducible workflow especially important in sports analytics?\
-2.  How does programmatically loading data (rather than manual steps) improve reliability?\
-3.  What did you learn about interpreting correlations versus visual patterns?
-
-------------------------------------------------------------------------
-
-# Publishing Instructions
-
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.
-
-------------------------------------------------------------------------
-
-## Reproducibility Practice
-
-This assignment emphasizes reproducible data pipelines.
-
-Your document must:
-
-- Load all sheets programmatically\
-- Avoid manual data entry\
-- Use clearly labeled code chunks\
-- Avoid hard-coding values in written interpretation\
-- Use inline R expressions where appropriate\
-- Render cleanly to HTML
-
-The goal is that another analyst could rerun your entire workflow and verify your findings without guessing what steps were taken.
+- [ ] Filtered to Brooklyn College men's basketball for the five specified seasons.
+- [ ] Verified team-side records, game uniqueness, and category coding.
+- [ ] Included `tbl-season-by-season` and `tbl-home-away` with captions and prose references.
+- [ ] Included season boxplot, shooting-efficiency scatterplot, and independent visualization.
+- [ ] Included a Dracula-themed correlation matrix.
+- [ ] Used Dracula styling for **the entire HTML report and every plot**.
+- [ ] Completed point-biserial, Pearson, and partial correlations.
+- [ ] Developed a question to carry into next week's regression assignment.
+- [ ] Cited all R packages and included a bibliography.
+- [ ] Used an inline R expression.
+- [ ] Gave every section a `{#sec-name}` ID and used at least one `@sec-name` reference.
+- [ ] Used cross-references to at least two figures and two tables in prose.
+- [ ] Submitted the `.qmd`, `.bib`, and posit connect cloud link.

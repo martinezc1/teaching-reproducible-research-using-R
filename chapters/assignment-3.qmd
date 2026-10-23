@@ -1,4 +1,4 @@
-# Assignment 3: NYPD Shooting Incidents — Cleaning, Insights, and Visualization
+# NYPD Shooting Incidents — Cleaning, Insights, and Visualization
 
 ## Overview {#sec-three}
 
@@ -90,11 +90,11 @@ Complete all of the following in your script:
 
 Provide the following insights as **comments** in your script:
 
-1. **One insight about `time_of_day`**  
-   Example format: "Shootings are more frequent during ___ than ___."
+1.  **One insight about `time_of_day`**\
+    Example format: "Shootings are more frequent during \_\_\_ than \_\_\_."
 
-2. **One additional insight of your choice**  
-   Explore anything you find interesting in the dataset. Be creative!
+2.  **One additional insight of your choice**\
+    Explore anything you find interesting in the dataset. Be creative!
 
 ------------------------------------------------------------------------
 
@@ -102,11 +102,11 @@ Provide the following insights as **comments** in your script:
 
 Create **three visualizations** using `ggplot2`:
 
-1. **Time of Day Plot:** Create a visualization that directly relates to your `time_of_day` variable.
+1.  **Time of Day Plot:** Create a visualization that directly relates to your `time_of_day` variable.
 
-2. **Personal Insight Plot:** Create a visualization that supports the **second insight you identified** in the previous section.
+2.  **Personal Insight Plot:** Create a visualization that supports the **second insight you identified** in the previous section.
 
-3. **Your Choice Plot:** Create a visualization that explores another relationship, pattern, or trend in the data that you find interesting.
+3.  **Your Choice Plot:** Create a visualization that explores another relationship, pattern, or trend in the data that you find interesting.
 
 For each visualization:
 

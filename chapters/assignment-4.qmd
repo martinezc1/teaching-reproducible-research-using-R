@@ -1,4 +1,4 @@
-# Assignment 4: Merging Data and Comparing Means with t-tests
+# Merging Data and Comparing Means with t-tests
 
 ## Overview {#sec-four}
 

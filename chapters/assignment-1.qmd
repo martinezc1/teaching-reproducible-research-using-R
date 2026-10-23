@@ -1,4 +1,4 @@
-# Assignment 1: Base R Foundations
+# Base R Foundations
 
 ## Overview {#sec-one}
 
