@@ -2,16 +2,6 @@
 
 ## Overview {#sec-seven}
 
-The NBA season is about to begin, and you have just been hired as a **Data Analyst for the National Basketball Association**. Commissioner **Adam Silver** wants insights into last season’s team performances — specifically:
-
-- How offensive and defensive metrics relate to one another\
-- Whether teams from the Eastern and Western Conferences differ\
-- Whether team-level characteristics help explain performance patterns
-
-You have been given an Excel workbook containing all 30 NBA teams, with each team stored on a separate sheet. Your job is to build a **fully reproducible Quarto analysis** that loads, cleans, visualizes, and analyzes the data.
-
-Your final product should read like a professional analytics report prepared for an executive audience.
-
 You have been hired as a **Sports Data Analyst for the CUNY Athletic Conference**. Your assignment is to investigate the relationships between basketball statistics and game outcomes for **Brooklyn College men's basketball**, using completed post-COVID seasons **2021–2022 through 2025–2026**.
 
 Use the `CUNYsports` R package and the `basketball_game_by_game_team_overall_final` table. Each observation should represent one Brooklyn College game; verify this after filtering. Your report should be a polished, reproducible **Quarto chapter**. Next week's linear regression chapter will extend the question you develop here.
