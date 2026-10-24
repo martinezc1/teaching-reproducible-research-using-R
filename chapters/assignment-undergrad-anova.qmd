@@ -1,0 +1,490 @@
+# Assignment 6: ANOVA and Payment Patterns in NYC Camera Violations
+
+## Overview
+
+Congratulations! You've been hired as a data scientist for a law firm that specializes in fighting parking and camera tickets in New York City.
+
+The firm wants to better understand patterns in NYC camera violations. Specifically, they want to know whether certain groups receive different fine amounts or make different payments.
+
+Last week, we learned how to use **t-tests** to compare the means of two groups.
+
+This week, we're taking things a step further!
+
+You will use **Analysis of Variance (ANOVA)** to investigate differences across multiple groups using real-world NYC Open Data.
+
+Your goal is to determine whether the differences you observe are statistically significant and whether they might be useful for the law firm.
+
+Remember to include a hyperlink to the dataset through the [NYC Open Data Portal](https://data.cityofnewyork.us/) in your introduction.
+
+\::: callout-note
+
+## Why Are We Learning ANOVA in Psychology?
+
+Although today's dataset involves traffic violations, ANOVA is widely used in **psychology, sociology, and other social sciences**.
+
+Researchers frequently want to compare outcomes across three or more groups.
+
+For example:
+
+- **Cognitive psychology:** Do students using three different study strategies earn different average exam scores?
+
+- **Clinical psychology:** Do participants receiving different types of therapy report different average anxiety scores?
+
+- **Social psychology:** Does average helping behavior differ across three experimental conditions?
+
+- **Sociology:** Does average income differ across educational attainment groups?
+
+In each example, researchers are comparing a **numeric outcome** across multiple groups.
+
+ANOVA allows us to test whether there is evidence that at least one population group mean differs from the others.
+
+**The same statistical technique we use to compare NYC traffic violations can also help us answer questions about human behavior!**\
+\:::
+
+------------------------------------------------------------------------
+
+## Learning Objectives
+
+By completing this assignment, you will be able to:
+
+- Retrieve real-world NYC data using an R package.
+
+- Clean and prepare data for statistical analysis.
+
+- Identify independent and dependent variables.
+
+- Conduct and interpret one-way ANOVAs.
+
+- Create visualizations comparing multiple groups.
+
+- Interpret F-statistics and p-values.
+
+- Explore post-hoc comparisons using Tukey's HSD.
+
+- Distinguish between statistical significance and practical importance.
+
+- Present your findings in a reproducible Quarto document.
+
+------------------------------------------------------------------------
+
+## Textbook Connection
+
+This assignment builds directly from **Chapter 5: Comparing Multiple Groups** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+Review the chapter and our previous live coding scripts before beginning the assignment.
+
+You may use these resources as references, but your analysis and written interpretations should be your own.
+
+------------------------------------------------------------------------
+
+## Submission Instructions
+
+Submit the following:
+
+1.  Your completed `.qmd` file.
+
+2.  A link to your published HTML report on Posit Connect Cloud.
+
+3.  Your `packages.bib` bibliography file.
+
+Your Quarto document must:
+
+- Render successfully without errors.
+
+- Include clearly labeled sections.
+
+- Include at least one visualization.
+
+- Include descriptive statistics and ANOVA results.
+
+- Include written interpretations of your findings.
+
+- Use at least one inline R expression.
+
+- Cite at least two R packages used in your analysis.
+
+- Automatically generate a reference list.
+
+**Important:** Unlike our in-class group activities, you are responsible for organizing and writing your own Quarto document.
+
+------------------------------------------------------------------------
+
+## Part 1: Load and Explore the Data
+
+Begin by loading the NYC camera violations dataset using the `nycOpenData` package.
+
+You may refer to our previous assignments and live coding scripts for examples.
+
+### Your Tasks
+
+1.  Load the necessary R packages.
+
+2.  Retrieve the NYC camera violations dataset.
+
+3.  Use `glimpse()`, `head()`, or `summary()` to explore the data.
+
+4.  Include a hyperlink to the dataset in your introduction.
+
+5.  Report the number of observations using an inline R expression.
+
+### Questions
+
+Answer the following in your report:
+
+1.  What does this dataset represent?
+
+2.  How many observations are included?
+
+3.  Identify two variables that might be useful for investigating payment patterns.
+
+\::: callout-tip
+
+## Reminder: Inline R
+
+Instead of manually typing the number of rows in your report, use an inline R expression.
+
+For example, if your dataset is named `camera_data`, you could write:
+
+`The dataset contains`r nrow(camera_data)`observations.`
+
+This ensures that the reported number updates automatically if the data changes.\
+\:::
+
+------------------------------------------------------------------------
+
+## Part 2: Prepare Our Data
+
+Before conducting ANOVA, we need to make sure our variables are in the correct format.
+
+For this assignment, we will focus on:
+
+- `fine_amount`
+
+- `payment_amount`
+
+- `issue_date`
+
+- `violation_type`
+
+## 2A. Convert Numeric Variables
+
+Use `mutate()` and `as.numeric()` to ensure that `fine_amount` and `payment_amount` are numeric.
+
+Remove observations with missing values in the variables needed for each analysis.
+
+**Your Task:** Include a `glimpse()` or `summary()` checkpoint showing that your numeric variables were converted successfully.
+
+## 2B. Create Day of Week
+
+Next, we want to investigate whether fine amounts differ depending on the day a violation was issued.
+
+Using `issue_date`, create a new variable called `day_of_week`.
+
+You may use the `lubridate` package.
+
+\::: callout-tip
+
+## Need a Hint?
+
+Remember that `lubridate` includes useful functions for working with dates.
+
+For example:
+
+- `as.Date()` converts values into dates when the format is recognized.
+
+- `wday()` can extract the day of the week.
+
+- `filter()` can remove observations with missing values.
+
+Make sure your dates are correctly formatted before extracting the day of the week.\
+\:::
+
+**Your Task:** Create a table showing how many observations belong to each day of the week.
+
+### Quick Check
+
+Why is it important to make sure our variables are stored in the correct format before conducting statistical analyses?
+
+**Your Response:**
+
+------------------------------------------------------------------------
+
+## Part 3: ANOVA Investigation 1 — Fine Amount by Day of Week
+
+Let's begin our first ANOVA investigation!
+
+The law firm wants to know:
+
+> Do average fine amounts differ depending on the day of the week a camera violation was issued?
+
+## Step 1: Identify Your Variables
+
+Before running ANOVA, identify:
+
+- **Dependent variable:** \_\_\_\_\_\_\_\_\_\_
+
+- **Independent variable:** \_\_\_\_\_\_\_\_\_\_
+
+## Step 2: Descriptive Statistics
+
+Use `favstats()` or another method from class to calculate the average fine amount for each day of the week.
+
+**Questions:**
+
+1.  Which day has the highest average fine amount?
+
+2.  Which day has the lowest average fine amount?
+
+## Step 3: Conduct a One-Way ANOVA
+
+Use `aov()` to determine whether average fine amounts differ across days of the week.
+
+\::: callout-tip
+
+## ANOVA Reminder
+
+The general structure is:
+
+`aov(numeric_variable ~ group_variable, data = dataset)`
+
+You can use `summary()` to examine the ANOVA results.\
+\:::
+
+### Interpret Your Results
+
+Answer the following:
+
+1.  What is the F-statistic?
+
+2.  What is the p-value?
+
+3.  Is the result statistically significant at the 0.05 level?
+
+4.  What does this suggest about fine amounts across days of the week?
+
+\::: callout-important
+
+## Statistical Significance vs. Practical Importance
+
+A statistically significant result does not automatically mean that the difference is large or important.
+
+With very large datasets, even small differences between group means can produce statistically significant results.
+
+For example, imagine that average fines differ by only a few cents across days of the week.
+
+That difference might be statistically significant, but would it really help a law firm make better decisions?
+
+**This is why we should consider both statistical significance and the actual size of the differences.**\
+\:::
+
+## Step 4: Explore Post-Hoc Comparisons
+
+If your ANOVA is statistically significant, use `TukeyHSD()` to investigate which days differ from one another.
+
+If your ANOVA is not statistically significant, explain why post-hoc comparisons may not be necessary for this investigation.
+
+**Question:** Identify one statistically significant pairwise comparison, if any.
+
+## Step 5: Interpret Your Findings
+
+Write a short paragraph (approximately 3–4 sentences) summarizing:
+
+- Whether fine amounts differ significantly by day of week.
+
+- Which days have higher or lower average fines.
+
+- Whether the differences seem practically meaningful.
+
+------------------------------------------------------------------------
+
+## Part 4: ANOVA Investigation 2 — Payment Amount by Violation Type
+
+Now let's investigate something that might be more useful to the law firm.
+
+Instead of focusing on the amount of the fine, we will examine the amount actually paid.
+
+Our research question is:
+
+> Do average payment amounts differ across different types of camera violations?
+
+This time, you will complete the analysis with less guidance.
+
+## Your Tasks
+
+1.  Identify the dependent and independent variables.
+
+2.  Calculate descriptive statistics for payment amounts by violation type.
+
+3.  Create a boxplot using `ggplot2`.
+
+4.  Conduct a one-way ANOVA using `aov()`.
+
+5.  Examine the F-statistic and p-value.
+
+6.  Interpret the results in a short paragraph.
+
+Your boxplot must include:
+
+- A descriptive title.
+
+- Clearly labeled axes.
+
+- Violation type on the x-axis.
+
+- Payment amount on the y-axis.
+
+### Interpret Your Findings
+
+Answer the following:
+
+1.  Which violation type has the highest average payment amount?
+
+2.  Is the ANOVA statistically significant?
+
+3.  Do the differences appear large enough to be practically meaningful?
+
+4.  Why might payment amounts be more useful to the law firm than fine amounts?
+
+\::: callout-note
+
+## Think Like a Researcher!
+
+Remember that statistical significance tells us whether the data provide evidence of differences between group means.
+
+It does not automatically tell us why those differences exist.
+
+For example, differences in payment amounts could reflect differences in fine schedules, payment status, or other factors.
+
+We should be careful not to interpret these findings as evidence that violation type directly causes different payment behavior.\
+\:::
+
+------------------------------------------------------------------------
+
+## Part 5: Final Reflection
+
+Now that you've completed both ANOVA investigations, imagine you are presenting your findings to the law firm.
+
+Write a short reflection (approximately **4–6 sentences**) addressing:
+
+1.  What is the difference between statistical significance and practical importance?
+
+2.  Which of your two ANOVA investigations would be more useful to the law firm, and why?
+
+3.  What is one recommendation you would make based on your findings?
+
+4.  How could ANOVA be used to answer a research question in psychology or sociology?
+
+For the final question, you may use one of the examples from the beginning of the assignment or develop your own.
+
+------------------------------------------------------------------------
+
+## Part 6: Citing Your R Packages
+
+An important part of reproducible research is acknowledging the software that makes our analyses possible.
+
+During our group activity, we learned how to generate a bibliography and cite R packages directly in Quarto.
+
+Now it's your turn to apply those skills independently!
+
+### Your Tasks
+
+1.  Create a file called `packages.bib` containing references for the R packages used in your assignment.
+
+2.  Save it alongside your `.qmd` document.
+
+3.  Add `bibliography: packages.bib` to your Quarto YAML.
+
+4.  Include citations for at least **two R packages** used in your analysis.
+
+5.  Make sure your references appear automatically when you render your document.
+
+\::: callout-tip
+
+### Need a Reminder?
+
+- `knitr::write_bib()` generates a bibliography.
+
+- `citation()` displays citation information for R packages.
+
+- `bibliography: packages.bib` connects your bibliography to Quarto.
+
+- `[@R-ggplot2]` is an example of a citation key.
+
+Remember to check the actual citation keys inside your `packages.bib` file!\
+\:::
+
+Your citations should appear naturally in your writing.
+
+For example, you might cite the package used to retrieve the data or the package used to create your visualizations.
+
+### Example: Generating a Bibliography
+
+We can use the `write_bib()` function from the `knitr` package to automatically generate citations for the R packages used in our analysis.
+
+For example, suppose we used `ggplot2`, `dplyr`, and `nycOpenData` in our research.
+
+We could run the following code in our **R Console**:
+
+```{r}
+knitr::write_bib(
+  c("ggplot2", "dplyr", "nycOpenData"),
+  file = "packages.bib"
+)
+```
+
+This code creates a file called `packages.bib` containing citation information for those three packages.
+
+Notice that:
+
+- `c()` contains the names of the packages we want to cite.
+- `"packages.bib"` is the name of the bibliography file we are creating.
+- We can add or remove package names depending on which packages we used in our analysis.
+
+Once the file is created, we can connect it to our Quarto document by adding the following to our YAML:
+
+```yaml
+bibliography: packages.bib
+```
+
+We can then cite our packages directly in our writing using citation keys, such as `[@R-ggplot2]`.
+
+**Your Turn:** Modify the example above to generate a bibliography containing the R packages you used in this assignment.
+
+::: callout-tip
+### Remember!
+
+Always check the citation keys inside your `packages.bib` file before using them in Quarto.
+
+Your citation keys may differ depending on the package!
+:::
+
+
+------------------------------------------------------------------------
+
+## Final Checklist
+
+Before submitting, make sure:
+
+- My Quarto document renders successfully.
+
+- I loaded and explored the NYC camera violations dataset.
+
+- I cleaned the necessary variables.
+
+- I completed both ANOVA investigations.
+
+- I included descriptive statistics and a boxplot.
+
+- I interpreted the ANOVA results.
+
+- I completed the final reflection.
+
+- I used at least one inline R expression.
+
+- I cited at least two R packages.
+
+- My bibliography appears automatically.
+
+- I submitted my `.qmd`, published report link, and `packages.bib` file.
+
+**Remember:** Your goal is not simply to produce statistically significant results. Your goal is to conduct a reproducible analysis and explain what your findings actually mean.
