@@ -99,8 +99,6 @@ Your Quarto document must:
 
 - Include written interpretations of your findings.
 
-- Use at least one inline R expression.
-
 - Cite at least two R packages used in your analysis.
 
 - Automatically generate a reference list.
@@ -125,8 +123,6 @@ You may refer to our previous assignments and live coding scripts for examples.
 
 4.  Include a hyperlink to the dataset in your introduction.
 
-5.  Report the number of observations using an inline R expression.
-
 ### Questions
 
 Answer the following in your report:
@@ -138,17 +134,6 @@ Answer the following in your report:
 3.  Identify two variables that might be useful for investigating payment patterns.
 
 \::: callout-tip
-
-## Reminder: Inline R
-
-Instead of manually typing the number of rows in your report, use an inline R expression.
-
-For example, if your dataset is named `camera_data`, you could write:
-
-`The dataset contains`r nrow(camera_data)`observations.`
-
-This ensures that the reported number updates automatically if the data changes.\
-\:::
 
 ------------------------------------------------------------------------
 
@@ -442,7 +427,7 @@ Notice that:
 
 Once the file is created, we can connect it to our Quarto document by adding the following to our YAML:
 
-```yaml
+``` yaml
 bibliography: packages.bib
 ```
 
@@ -457,7 +442,6 @@ Always check the citation keys inside your `packages.bib` file before using them
 
 Your citation keys may differ depending on the package!
 :::
-
 
 ------------------------------------------------------------------------
 
@@ -478,8 +462,6 @@ Before submitting, make sure:
 - I interpreted the ANOVA results.
 
 - I completed the final reflection.
-
-- I used at least one inline R expression.
 
 - I cited at least two R packages.
 
