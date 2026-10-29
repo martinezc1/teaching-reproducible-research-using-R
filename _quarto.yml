@@ -24,6 +24,7 @@ book:
   appendices:
     - chapters/assignment-undergrad-midterm.qmd
     - chapters/assignment-undergrad-anova.qmd
+    - chapters/assignment-9-individual.qmd
     - chapters/References.qmd
 
 bibliography: bibliography/packages.bib
