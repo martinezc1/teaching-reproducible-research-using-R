@@ -1,272 +1,247 @@
-# Florida Crime Analytics — Uncovering the Root of Florida’s Crime Surge
+# CUNY Analytics — From Correlation to Regression
 
-## Overview {#sec-eight}
+## Overview {#sec-cuny-regression}
 
-The **Florida Police Department (FPD)** has hired you as their new **Data Analyst**. Your mission is to uncover which socioeconomic factors are most strongly associated with rising crime rates across Florida counties.
+Last week, you worked as a **Sports Data Analyst for the CUNY Athletic Conference**, investigating relationships between basketball statistics and game outcomes for Brooklyn College men's basketball across the 2021–2022 through 2025–2026 seasons.
 
-Using county-level data, you will conduct a **fully reproducible Quarto analysis** to determine whether **income, education, or urbanization** best explain differences in crime rates.
+You prepared the data, explored team performance, conducted correlation analyses, and developed an independent research question. **This week, you will continue that same investigation—not start a new one.**
 
-Your findings will help inform statewide prevention strategies, resource allocation, and community outreach efforts.
+Your new assignment is to use **linear regression** to examine how well your original explanatory variable accounts for differences in your chosen quantitative outcome, whether adding other basketball statistics improves the model, and whether the conclusions you drew last week still hold.
 
-This assignment assesses your ability to:
-
-- Clean and prepare structured data
-- Compute and interpret correlations
-- Build and compare regression models
-- Evaluate model fit using R² and AIC
-- Communicate statistical findings to a non-technical executive audience
-
-------------------------------------------------------------------------
+Your final product should be a **fully reproducible Quarto chapter** that can eventually follow your correlation chapter in your Quarto book.
 
 ## Learning Objectives
 
 By completing this assignment, you will be able to:
 
-- Clean and standardize real-world datasets
-- Perform exploratory data analysis (EDA)
-- Interpret correlation matrices
-- Build simple and multiple regression models
-- Compare models using R², Adjusted R², and AIC
-- Explain regression results in plain language
-- Produce a reproducible Quarto report suitable for executive review
-
-------------------------------------------------------------------------
+- Extend an existing research question from correlation to regression.
+- Fit and interpret a simple linear regression model.
+- Explain a regression equation, predicted values, residuals, and R².
+- Visualize fitted values and examine model assumptions.
+- Fit and compare multiple regression models using R², Adjusted R², and AIC.
+- Evaluate whether accounting for additional predictors changes your original conclusions.
+- Communicate findings clearly in a reproducible, published Quarto report.
 
 ## Textbook Connection
 
-This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+Review **Chapter 8: Linear Regression** in [*Reproducible Research Using R*](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/). You may also revisit **Chapter 7: Correlation** when connecting this week's findings to your previous chapter.
 
-Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+## Submission and Formatting Requirements
 
-------------------------------------------------------------------------
+Submit **three items**:
 
-## Textbook Connection
+1.  **Your `.qmd` source file** containing the complete analysis and writing.
+2.  **Your `packages.bib` file** containing citations for all R packages used.
+3.  **A working link to the HTML report published on Posit Connect Cloud.** A local `.html` file does **not** replace this link.
 
-This assignment builds directly from **Chapter 8: Linear Regression** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+Your report must:
 
-Students are encouraged to review the chapter before beginning this assignment, as it provides the conceptual foundation and reproducible workflow demonstrated here.
+- Render without unnecessary warnings, messages, or errors.
+- Use a consistent, professional visual style. **The Dracula theme is not required.**
+- Include labeled and captioned figures and tables.
+- Include at least **two figure cross-references**, **two table cross-references**, and **one section cross-reference** in your prose.
+- Give every major section a unique Quarto identifier, such as `{#sec-simple-regression}`.
+- Include at least one **inline R expression** reporting a calculated result rather than a hard-coded number.
+- Cite all R packages used and include a references section using `packages.bib`.
+- Include a professional executive memo.
 
-------------------------------------------------------------------------
+::: callout-note
+## Reduce, Reuse, Recycle!
 
-## Submission Instructions
-
-Submit **two files**:
-
-1.  Your `.qmd` file\
-2.  Your knitted and published `.html` file
-
-Your document must:
-
-- Knit without errors
-- Suppress warnings and messages in the final HTML
-- Include clearly labeled sections
-- Include all required visualizations
-- Include regression tables and model comparisons
-- Include a professional memo to the Chief of the FPD
-- Use at least one inline R expression
-
-------------------------------------------------------------------------
+Continue using the **same prepared Brooklyn College men's basketball dataset and independent research question** from last week. Reuse your existing data preparation code as needed so this chapter renders reproducibly, but **do not repeat** the descriptive tables, exploratory plots, correlation matrix, or partial-correlation analysis from your previous report.
+:::
 
 ## Assignment Tasks
 
-------------------------------------------------------------------------
+### Continuing Your Investigation
 
-### 1. Data Loading and Preparation
+Begin by restating the independent research question you developed last week. Identify your **quantitative outcome variable** and your **primary quantitative explanatory variable**.
 
-You have been provided with an Excel file containing the following columns:
+In **3–4 sentences**, summarize what your previous correlation analysis found (including its direction and strength) and explain what you hope regression will add. Refer to your previous chapter as the motivation for this new analysis; you do not need to calculate the correlation again.
 
-| Column | Description                      |
-|--------|----------------------------------|
-| County | County name                      |
-| C      | Crime rate (per 1,000 residents) |
-| I      | Median income (in thousands)     |
-| HS     | High-school graduation rate (%)  |
-| U      | Urban population (%)             |
+If your original question cannot reasonably be addressed using linear regression, make a small, clearly explained adjustment while keeping the same underlying basketball topic and dataset.
 
-#### Required Tasks
+### Simple Linear Regression
 
-You must:
+Use `lm()` to fit **one simple linear regression model** that addresses your research question.
 
-- Load the dataset reproducibly
+For example, if you investigated shooting efficiency and point differential:
 
-- Rename the columns to:
+```{r}
+#| eval: false
 
-  - `Crime`
-  - `Income`
-  - `HighSchoolGrad`
-  - `UrbanPop`
+model_1 <- lm(
+  point_differential ~ effective_field_goal_percentage,
+  data = basketball_data
+)
 
-- Format all county names so that only the first letter is capitalized
+summary(model_1)
+```
 
-- Inspect the dataset structure
+*The code above is an example. Use your own research question, variable names, and prepared dataset.*
 
-- Provide summary statistics
+**Required tasks:**
 
-Include a brief explanation of why consistent naming and formatting are essential for reproducible modeling.
+1.  Display your regression results and create a **coefficient table** using `broom::tidy()` or an equivalent method.
+2.  Identify and interpret the **intercept** and **slope**, including the units of the predictor and outcome.
+3.  Write your estimated regression equation in the form **predicted y = intercept + slope \* x**.
+4.  Report the predictor's **p-value** and the model's **R²**. Explain what R² means in the context of your research question.
+5.  Create **one scatterplot** with the fitted regression line using `geom_smooth(method = "lm")`. Give the figure a caption and refer to it in your discussion.
 
-------------------------------------------------------------------------
+In a short paragraph, explain what regression tells you that your original correlation coefficient did not.
 
-### 2. Exploratory Data Analysis
+### Predictions, Residuals, and Model Diagnostics
 
-Conduct exploratory analysis to understand the structure and distribution of the data.
+A regression model does more than describe a line: it generates predicted values, and the differences between those predictions and the actual outcomes are called **residuals**.
 
-#### Required Components
+**Required tasks:**
 
-- Compute descriptive statistics (mean, median, range) for all numeric variables
-- Create at least **two visualizations** (e.g., histograms, boxplots, scatterplots)
-- Provide written interpretation of what you observe
+1.  Use `predict()` to calculate the model's fitted values and `residuals()` to calculate residuals. Add both to your analysis dataset, keeping the rows aligned with those used to fit the model.
+2.  Create a **residual plot** with predicted values on the x-axis, residuals on the y-axis, and a horizontal line at zero.
+3.  Conduct a **Breusch–Pagan test** using `lmtest::bptest()`.
+4.  Interpret the residual plot and test result. Do the residuals show a pattern? Is there evidence that residual variance changes across fitted values?
 
-Your interpretation should address:
+For example:
 
-- Distribution shapes
-- Potential outliers
-- Initial patterns between predictors and crime
+```{r}
+#| eval: false
 
-#### Bonus (Optional)
+predict(model_1)
+residuals(model_1)
+lmtest::bptest(model_1)
+```
 
-Using `ggplot2` and mapping tools, create a heatmap of Florida counties based on crime rates.
+In approximately **3–4 sentences**, explain what your diagnostics suggest about the model and identify one limitation. A nonsignificant Breusch–Pagan test does not prove that all regression assumptions are satisfied.
 
-------------------------------------------------------------------------
+::: callout-tip
+## Connection to Our Pizza Sales Example
 
-### 3. Correlation Analysis
+In class, we used `lm()`, `predict()`, and `residuals()` to investigate whether pizza prices could explain sales volume. You are applying the **same workflow** to basketball performance. Focus on interpreting the output rather than simply displaying it.
+:::
 
-Investigate which factors are most strongly associated with crime.
+### Multiple Regression and Model Comparison
 
-#### Required Tasks
+Your simple model uses one explanatory variable. Now investigate whether including other basketball statistics improves how well your model explains variation in your outcome.
 
-- Compute a correlation matrix including:
+Build **four models in total**:
 
-  - Crime
-  - Income
-  - HighSchoolGrad
-  - UrbanPop
+1.  **Model 1 — Baseline:** Your simple regression model from the previous section.
+2.  **Model 2 — Expanded:** Your primary predictor plus one additional basketball statistic.
+3.  **Model 3 — Alternative:** Your primary predictor plus a different additional basketball statistic.
+4.  **Model 4 — Full:** Your primary predictor and both additional statistics.
 
-- Identify which predictor shows the strongest relationship with Crime
+For example:
 
-- Interpret the direction (positive or negative)
+```{r}
+#| eval: false
 
-- Interpret the strength (weak, moderate, strong)
+m1 <- lm(point_differential ~ effective_field_goal_percentage,
+         data = basketball_data)
 
-(Optional) Visualize the correlation matrix using a correlation plotting tool.
+m2 <- lm(point_differential ~ effective_field_goal_percentage + turnovers,
+         data = basketball_data)
 
-In your written interpretation, explain:
+m3 <- lm(point_differential ~ effective_field_goal_percentage + total_rebounds,
+         data = basketball_data)
 
-- Which factor appears most important
-- Whether any predictors appear highly correlated with one another
-- Why correlation does not imply causation
+m4 <- lm(point_differential ~ effective_field_goal_percentage +
+           turnovers + total_rebounds,
+         data = basketball_data)
+```
 
-------------------------------------------------------------------------
+*Choose additional variables that make sense for your own research question. Fit all four models to the **same complete-case observations** so their metrics can be compared fairly.*
 
-### 4. Building Regression Models
+**Required tasks:**
 
-You will now build models to predict county-level crime rates.
+- Create a **model comparison table** reporting **R², Adjusted R², AIC, and the overall model p-value** for each model.
+- Use `broom::glance()` and, if helpful, `purrr::map_df()` or `purrr::map_dfr()` to assemble the table.
+- Examine the coefficients and statistical significance of the predictors in your full model using `summary()` or `broom::tidy()`.
 
-#### Required Models
+In your interpretation, explain:
 
-1.  A **simple regression model** using the predictor you believe fits best
+- Which model has the highest R² and Adjusted R².
+- Which model has the lowest AIC.
+- Whether additional predictors improved model fit enough to justify the added complexity.
+- Whether your original predictor remains statistically significant after accounting for the other variables.
+- Which model you would recommend and **why**.
 
-2.  At least **two multiple regression models**, such as:
+Explain why **Adjusted R² and AIC** are useful when comparing models with different numbers of predictors. Remember that stronger fit to the observed games does not necessarily establish accurate prediction of future games.
 
-    - Income + HighSchoolGrad\
-    - Income + UrbanPop\
-    - A full model with all predictors
+**Optional bonus — Interaction:** Fit one additional model containing an interaction term between two predictors. Explain what the interaction represents and whether it changes your interpretation.
 
-3.  (Optional) Include an interaction term if theoretically justified
+### Did Regression Change Your Conclusions?
 
-#### Model Comparison
+This section is the **bridge between your two research chapters**.
 
-Compare models using:
+Return to the findings you reported in your correlation chapter and answer the following in **one thoughtful paragraph**:
 
-- R²
-- Adjusted R²
-- AIC
+> After conducting simple and multiple linear regression, do your original conclusions still hold? Did your original explanatory variable remain important after accounting for other basketball statistics? Did any new predictors change how you understand your research question? What did regression reveal that correlation alone could not?
 
-Interpret:
+Use evidence from your regression coefficients, statistical significance, and model comparison metrics. Reference at least one figure or table from this chapter.
 
-- Which predictors are statistically significant
-- Which model explains the most variance
-- Which model best balances simplicity and explanatory power
+Do not claim that an observed association proves that changing a statistic will cause a team to win more games.
 
-Explain why Adjusted R² and AIC are useful when comparing multiple models.
+## Executive Memo
 
-------------------------------------------------------------------------
+Write a short, follow-up professional memo addressed to:
 
-### 5. Executive Memo to the Chief of the Florida Police Department
-
-Write a short professional memo addressed to:
-
-**Chief\
-Florida Police Department**
+**CUNY Athletic Conference — Athletics Administration**
 
 Your memo must include:
 
-- The best-performing model
-- The most influential predictor(s)
-- The proportion of variance explained (R²)
-- Clear, plain-language interpretation
-- One limitation of your analysis
-- One actionable recommendation for resource allocation or prevention strategy
+- Your original research question and the most important new finding.
+- Your recommended model and why you selected it.
+- The most relevant predictor(s) and the model's R².
+- A plain-language explanation of what the findings mean for basketball performance.
+- **One limitation** of the analysis.
+- **One actionable recommendation** for future analysis, coaching strategy, or performance evaluation.
 
-Your tone should be executive-level and professional.
-
-------------------------------------------------------------------------
-
-## Guidelines for Interpretation
-
-When discussing results, always include:
-
-- **Direction** — Positive or negative relationship\
-- **Strength** — Weak, moderate, or strong\
-- **Significance** — Statistically significant or not\
-- **Plain language meaning**
-
-Example:
-
-> Counties with lower median income tend to have higher crime rates. For every \$1,000 increase in median income, predicted crime decreases while holding other factors constant.
-
-Avoid technical jargon without explanation.
-
-------------------------------------------------------------------------
-
-## Final Question
-
-At the end of your report, include a short written response to:
-
-> Based on your analysis, which model best predicts Florida’s county-level crime rates, and why?
-
-Be specific and reference your model comparison metrics.
-
-------------------------------------------------------------------------
+Reference at least one labeled figure or table in your memo. Write for a coach or administrator who may not be familiar with statistical terminology.
 
 ## Reflection
 
-In 4–6 sentences, answer:
+In **4–6 sentences**, answer:
 
-1.  Why is reproducibility especially important when working with public policy data?
-2.  What did you learn about the difference between correlation and regression?
-3.  How does model comparison improve decision-making?
+1.  How did regression extend your previous correlation analysis?
+2.  What did you learn from examining predicted values and residuals?
+3.  How did comparing multiple models affect your conclusions?
+4.  How will the connection between these two assignments improve your eventual Quarto book?
 
-------------------------------------------------------------------------
+## Publishing and Reproducibility
 
-# Publishing Instructions
+Your new chapter must be able to render independently and reproduce its results. **Reuse the necessary data preparation code from last week** rather than manually copying results or importing a previously rendered table. Do not recreate last week's descriptive analysis unless a small piece is genuinely necessary for the new model.
 
-1.  Render your `.qmd` file to HTML.
-2.  Confirm that warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.
+Before submitting:
 
-------------------------------------------------------------------------
+1.  Render your `.qmd` successfully to HTML.
+2.  Confirm that all captions, cross-references, inline R values, citations, and tables work correctly.
+3.  Check that warnings and unnecessary messages are suppressed in the published report.
+4.  Publish the HTML report to **Posit Connect Cloud**.
+5.  Open the **published URL** and confirm that the complete report displays correctly.
+6.  Submit your **`.qmd` file**, **`packages.bib` file**, and **working Posit Connect Cloud URL**.
 
-## Reproducibility Practice
+::: callout-tip
+## Two Homeworks, One Research Story
 
-This assignment emphasizes reproducible modeling and executive communication.
+Your previous homework asked: **What relationships exist?**
 
-Your document must:
+This chapter asks: **How can we model those relationships, and what changes when we consider multiple variables?**
+:::
 
-- Load data programmatically
-- Avoid manual data manipulation outside the script
-- Use clearly labeled code chunks
-- Avoid hard-coding results in narrative
-- Use inline R expressions where appropriate
-- Suppress warnings/messages in the final published HTML
+## Final Checklist
 
-The goal is that another analyst could rerun your analysis and verify every claim.
+- [ ] Continued the same basketball research question and reused existing data preparation code.
+- [ ] Explained the connection to last week's correlation findings without repeating the earlier analyses.
+- [ ] Fitted and interpreted a simple linear regression model.
+- [ ] Included a coefficient table and regression scatterplot.
+- [ ] Interpreted the slope, intercept, p-value, equation, and R².
+- [ ] Generated fitted values and residuals.
+- [ ] Included a residual plot and interpreted a Breusch–Pagan test.
+- [ ] Fitted four regression models using comparable observations.
+- [ ] Included a model comparison table with R², Adjusted R², AIC, and overall model p-values.
+- [ ] Explained whether regression changed the conclusions from the previous chapter.
+- [ ] Completed the executive memo and reflection.
+- [ ] Included at least two figure, two table, and one section cross-references.
+- [ ] Included an inline R expression, package citations, and a bibliography.
+- [ ] Used a professional, consistent style (no required Dracula theme).
+- [ ] Submitted the `.qmd`, `packages.bib`, and **published Posit Connect Cloud link**.
