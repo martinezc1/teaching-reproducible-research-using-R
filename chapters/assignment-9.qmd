@@ -49,8 +49,8 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 Submit **two files**:
 
-1.  Your `.qmd` file\
-2.  Your knitted and published `.html` file
+1.  Your `.qmd` file.
+2.  Your published posit connect cloud link.
 
 Your document must:
 
@@ -232,7 +232,7 @@ In 4–6 sentences, answer:
 
 1.  Render your `.qmd` file to HTML.
 2.  Confirm warnings and messages do not appear in the final document.
-3.  Submit both your `.qmd` file and your published `.html` report.
+3.  Submit both your `.qmd` file and your published posit connect cloud report.
 
 ------------------------------------------------------------------------
 
@@ -250,3 +250,56 @@ Your document must:
 - Render cleanly to HTML
 
 The goal is that another analyst could reproduce your entire Chi-Square analysis and verify every conclusion.
+
+------------------------------------------------------------------------
+
+## Final Submission Checklist
+
+Before submitting your assignment, make sure you have completed the following:
+
+### Data Preparation
+
+- [ ] I inspected and summarized the dataset.
+- [ ] I calculated the frequencies for Age Category and Platform Preference.
+- [ ] I created and interpreted a contingency table.
+
+### Visualizations
+
+- [ ] I created a stacked bar chart showing proportions.
+- [ ] I created a clustered bar chart showing counts.
+- [ ] Both graphs have descriptive titles, labeled axes, legends, and a theme.
+- [ ] I included 3–4 sentences interpreting each graph.
+
+### Statistical Analysis
+
+- [ ] I conducted a Chi-Square test of independence.
+- [ ] I reported and interpreted the $\chi^2$ statistic, degrees of freedom, and p-value.
+- [ ] I examined the observed, expected, and residual values.
+- [ ] I identified which age–platform combinations were over- or under-represented.
+- [ ] I calculated each cell's contribution to the Chi-Square statistic.
+- [ ] I created and interpreted a heatmap of percentage contributions.
+- [ ] I calculated and interpreted Cramer's V.
+
+### Written Interpretation
+
+- [ ] I explained whether the relationship was statistically significant.
+- [ ] I discussed which age groups and platforms contributed most to the relationship.
+- [ ] I explained the strength of the association.
+- [ ] I provided a professional summary connecting my findings to marketing decisions.
+- [ ] I completed the 4–6 sentence reflection.
+
+### Quarto and Reproducibility
+
+- [ ] My document has a descriptive title and clearly labeled sections.
+- [ ] My code chunks have meaningful labels.
+- [ ] My tables and figures are clearly presented and easy to understand.
+- [ ] I used at least one inline R expression.
+- [ ] My statistical results are calculated using R rather than manually entered.
+- [ ] My document renders successfully without errors, warnings, or unnecessary messages.
+
+### Final Submission
+
+- [ ] I reviewed my rendered HTML document for formatting and readability.
+- [ ] I published my completed assignment to Posit Connect Cloud.
+- [ ] I confirmed that my Posit Connect Cloud link works and is accessible.
+- [ ] I submitted both my `.qmd` file and my Posit Connect Cloud link.
