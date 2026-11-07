@@ -32,8 +32,10 @@ By completing this assignment, you will be able to:
 - Interpret observed, expected, and residual frequencies
 - Decompose the Chi-Square statistic into cell-level contributions
 - Visualize categorical data using stacked and clustered bar charts
-- Calculate and interpret Cramer’s V
+- Calculate and interpret Cramer's V
 - Communicate statistical findings in accessible language
+- Properly label, caption, and cross-reference tables and figures
+- Cite R packages and generate a reproducible bibliography
 
 ------------------------------------------------------------------------
 
@@ -47,25 +49,65 @@ Students are encouraged to review the chapter before beginning this assignment, 
 
 ## Submission Instructions
 
-Submit **two files**:
+Submit **three items**:
 
-1.  Your `.qmd` file.
-2.  Your published posit connect cloud link.
+1. Your completed `.qmd` file.
+2. Your `packages.bib` file.
+3. A working link to your published report on Posit Connect Cloud.
 
 Your document must:
 
-- Knit without errors
-- Suppress warnings and messages in the final HTML
-- Include clearly labeled sections
-- Include all required tables and visualizations
-- Include full statistical interpretations
-- Use at least one inline R expression
+- Render without errors or unnecessary warnings and messages.
+- Include clearly labeled sections.
+- Include all required tables and visualizations.
+- Include full statistical interpretations.
+- Use at least one inline R expression.
+- Label all tables with the `tbl-` prefix.
+- Label all figures with the `fig-` prefix.
+- Include informative captions for every table and figure.
+- Cross-reference every table and figure in your written discussion.
+- Cite every R package used and include a References section.
+
+### Quarto Formatting and Citations
+
+As you complete your analysis, apply the reproducibility practices we have used throughout the semester.
+
+#### Tables and Figures
+
+Every table and figure must have a unique chunk label and an informative caption.
+
+Use:
+
+- `tbl-` for tables
+- `fig-` for figures and visualizations
+
+For example, a contingency table might use `tbl-contingency`, while a stacked bar chart might use `fig-stacked-bar`.
+
+**You must also reference each output in your writing.**
+
+For example:
+
+"As shown in @tbl-contingency, platform preferences differ across age groups."
+
+Or:
+
+"@fig-stacked-bar illustrates the distribution of streaming platform preferences within each age category."
+
+Do not simply insert a table or figure without discussing it.
+
+#### Package Citations
+
+All R packages used in your analysis must be cited.
+
+Use `knitr::write_bib()` to generate your `packages.bib` file and include it in your Quarto bibliography.
+
+Cite packages in your writing using the appropriate citation keys, such as `@R-ggplot2`, when those keys are present in your generated bibliography.
+
+Include a **References** section at the end of your document.
 
 ------------------------------------------------------------------------
 
 ## Assignment Tasks
-
-------------------------------------------------------------------------
 
 ### 1. Data Preparation
 
@@ -197,11 +239,15 @@ Your final report must include:
 
 - The contingency table
 - Both visualizations (stacked and clustered)
-- Chi-Square results (χ², df, p-value)
+- Chi-Square results ($\chi^2$, df, p-value)
 - Observed, expected, and residual tables
 - Contribution table and heatmap
-- Cramer’s V calculation and interpretation
+- Cramer's V calculation and interpretation
 - Final written summary
+- Properly labeled and captioned tables and figures
+- Cross-references throughout your writing
+- Inline R expressions
+- R package citations and a bibliography
 
 ------------------------------------------------------------------------
 
@@ -291,9 +337,13 @@ Before submitting your assignment, make sure you have completed the following:
 ### Quarto and Reproducibility
 
 - [ ] My document has a descriptive title and clearly labeled sections.
+- [ ] Every displayed table has a `tbl-` label and caption.
+- [ ] Every figure has a `fig-` label and caption.
+- [ ] I cross-referenced every table and figure in my writing.
 - [ ] My code chunks have meaningful labels.
-- [ ] My tables and figures are clearly presented and easy to understand.
 - [ ] I used at least one inline R expression.
+- [ ] I generated `packages.bib` and cited all R packages used.
+- [ ] My document includes a References section.
 - [ ] My statistical results are calculated using R rather than manually entered.
 - [ ] My document renders successfully without errors, warnings, or unnecessary messages.
 
@@ -302,4 +352,4 @@ Before submitting your assignment, make sure you have completed the following:
 - [ ] I reviewed my rendered HTML document for formatting and readability.
 - [ ] I published my completed assignment to Posit Connect Cloud.
 - [ ] I confirmed that my Posit Connect Cloud link works and is accessible.
-- [ ] I submitted both my `.qmd` file and my Posit Connect Cloud link.
+- [ ] I submitted my `.qmd` file, `packages.bib` file, and Posit Connect Cloud link.
