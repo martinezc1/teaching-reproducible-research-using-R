@@ -383,8 +383,7 @@ Now it's your turn to apply those skills independently!
 
 5.  Make sure your references appear automatically when you render your document.
 
-\::: callout-tip
-
+::: callout-tip
 ### Need a Reminder?
 
 - `knitr::write_bib()` generates a bibliography.
@@ -395,8 +394,8 @@ Now it's your turn to apply those skills independently!
 
 - `[@R-ggplot2]` is an example of a citation key.
 
-Remember to check the actual citation keys inside your `packages.bib` file!\
-\:::
+Remember to check the actual citation keys inside your `packages.bib` file!
+:::
 
 Your citations should appear naturally in your writing.
 
@@ -410,7 +409,7 @@ For example, suppose we used `ggplot2`, `dplyr`, and `nycOpenData` in our resear
 
 We could run the following code in our **R Console**:
 
-```{r}
+```r
 knitr::write_bib(
   c("ggplot2", "dplyr", "nycOpenData"),
   file = "packages.bib"
@@ -449,24 +448,24 @@ Your citation keys may differ depending on the package!
 
 Before submitting, make sure:
 
-- My Quarto document renders successfully.
+- [ ] My Quarto document renders successfully.
 
-- I loaded and explored the NYC camera violations dataset.
+- [ ] I loaded and explored the NYC camera violations dataset.
 
-- I cleaned the necessary variables.
+- [ ] I cleaned the necessary variables.
 
-- I completed both ANOVA investigations.
+- [ ] I completed both ANOVA investigations.
 
-- I included descriptive statistics and a boxplot.
+- [ ] I included descriptive statistics and a boxplot.
 
-- I interpreted the ANOVA results.
+- [ ] I interpreted the ANOVA results.
 
-- I completed the final reflection.
+- [ ] I completed the final reflection.
 
-- I cited at least two R packages.
+- [ ] I cited at least two R packages.
 
-- My bibliography appears automatically.
+- [ ] My bibliography appears automatically.
 
-- I submitted my `.qmd`, published report link, and `packages.bib` file.
+- [ ] I submitted my `.qmd`, published report link, and `packages.bib` file.
 
-**Remember:** Your goal is not simply to produce statistically significant results. Your goal is to conduct a reproducible analysis and explain what your findings actually mean.
+> **Remember:** Your goal is not simply to produce statistically significant results. Your goal is to conduct a reproducible analysis and explain what your findings actually mean.
