@@ -1,0 +1,899 @@
+# Final Project: NYC Open Data Research Showcase
+
+## Overview {#sec-final}
+
+For your final project, you will design and conduct an **original research project using NYC Open Data**.
+
+Throughout this semester, you have learned how to import, clean, analyze, visualize, and communicate data using R and Quarto. Now it is time to bring those skills together!
+
+You will select one of five approved NYC Open Data datasets, develop your own research question, and use statistical analysis to investigate it.
+
+Your final project will be written as a fully reproducible **Quarto document**.
+
+By the end of this project, you will have created a research report that you can publish online, share with others, and potentially include in your professional portfolio.
+
+### Learning Objectives
+
+By completing this project, you will be able to:
+
+- Develop an original, data-driven research question.
+
+- Explore and analyze publicly available civic data.
+
+- Clean and transform datasets using R.
+
+- Select and apply appropriate statistical methods.
+
+- Create meaningful data visualizations.
+
+- Interpret statistical findings in plain English.
+
+- Communicate research to a non-technical audience.
+
+- Produce a fully reproducible Quarto document.
+
+- Publish and share your research online.
+
+------------------------------------------------------------------------
+
+## Part 1: Choose Your Dataset {#sec-datasets}
+
+You must select **one of the five approved NYC Open Data datasets** below.
+
+Each dataset explores a different aspect of life in New York City.
+
+You may investigate **any research question you want**, provided that:
+
+1.  Your question can be answered using your selected dataset.
+
+2.  Your analysis uses statistical methods covered in this course.
+
+3.  Your research question is approved by your instructor.
+
+The example questions below are intended to help you brainstorm. **You are not required to use any of them.**
+
+::: {.callout-tip title="Working With NYC Open Data Using the nycOpenData Package"}
+Throughout this course, we have emphasized **reproducible research**, and your final project should follow the same principles.
+
+You are strongly encouraged to use the [`nycOpenData` R package](https://cran.r-project.org/package=nycOpenData) to access and explore your selected dataset directly in R.
+
+Using `nycOpenData` allows you to:
+
+- Access NYC Open Data datasets programmatically.
+- Explore available datasets and their variables.
+- Import data directly into your R workflow.
+- Create a reproducible analysis without manually downloading and editing CSV files.
+
+Don't forget to cite the package in your report using `@R-nycOpenData` and include the corresponding entry in your `packages.bib` file!
+:::
+
+### Option 1: NYC 311 Service Requests
+
+**Dataset:** [311 Service Requests from 2020 to Present](https://data.cityofnewyork.us/d/erm2-nwe9)
+
+New Yorkers use NYC 311 to report problems and request non-emergency city services.
+
+The dataset includes information about complaints, government agencies, locations, and dates.
+
+**Example research questions:**
+
+- Do certain boroughs report different types of complaints?
+
+- Are noise complaints more common during particular months?
+
+- Do complaint patterns change throughout the year?
+
+- Are certain types of service requests resolved more quickly than others?
+
+- How do complaints differ across NYC neighborhoods?
+
+**Possible statistical methods:**
+
+- Chi-square tests
+
+- Descriptive statistics
+
+- Correlation
+
+- Linear regression
+
+- Grouped comparisons
+
+### Option 2: NYC Restaurant Inspections
+
+**Dataset:** [DOHMH New York City Restaurant Inspection Results](https://data.cityofnewyork.us/d/43nn-pn8j)
+
+The NYC Department of Health and Mental Hygiene conducts restaurant inspections to evaluate compliance with health regulations.
+
+This dataset includes restaurant information, inspection results, violations, and scores.
+
+**Example research questions:**
+
+- Do restaurant inspection scores differ across boroughs?
+
+- Are certain violations more common in particular cuisines?
+
+- Is there a relationship between inspection scores and inspection outcomes?
+
+- Do inspection scores change over time?
+
+- Are certain violation categories more common than others?
+
+**Possible statistical methods:**
+
+- Chi-square tests
+
+- T-tests
+
+- ANOVA
+
+- Correlation
+
+- Linear regression
+
+**Important:** Restaurants may appear multiple times because they can have multiple inspections and violations. Consider this when determining what each row represents and how to analyze the data.
+
+### Option 3: NYC Payroll
+
+**Dataset:** [Citywide Payroll Data (Fiscal Year)](https://data.cityofnewyork.us/d/k397-673e)
+
+New York City employs people across many different government agencies and occupations.
+
+This dataset contains information about city employees, agencies, job titles, and compensation.
+
+**Example research questions:**
+
+- Do average salaries differ across city agencies?
+
+- Is there a relationship between regular gross pay and overtime pay?
+
+- Do certain job titles receive more overtime compensation?
+
+- How have salaries changed across fiscal years?
+
+- How does compensation vary across occupational categories?
+
+**Possible statistical methods:**
+
+- Descriptive statistics
+
+- T-tests
+
+- ANOVA
+
+- Correlation
+
+- Linear regression
+
+**Important:** Pay fields may represent different types of compensation, and the data may contain records from multiple fiscal years. Define your variables and population carefully.
+
+### Option 4: NYC Motor Vehicle Crashes
+
+**Dataset:** [Motor Vehicle Collisions – Crashes](https://data.cityofnewyork.us/d/h9gi-nx95)
+
+This dataset contains information about reported motor vehicle collisions throughout New York City.
+
+It includes crash dates, locations, injuries, fatalities, and contributing factors.
+
+**Example research questions:**
+
+- Do crash frequencies differ across boroughs?
+
+- Are crashes more common during certain times of day?
+
+- Is there a relationship between crash timing and the number of injuries?
+
+- Do contributing factors differ across boroughs?
+
+- Are crashes involving injuries more common during particular days of the week?
+
+**Possible statistical methods:**
+
+- Chi-square tests
+
+- T-tests
+
+- ANOVA
+
+- Correlation
+
+- Linear regression
+
+**Important:** This dataset describes reported crashes, not all driving activity. A higher number of crashes does not automatically mean a location is more dangerous without considering traffic exposure.
+
+### Option 5: NYC Parking and Camera Violations
+
+**Dataset:** [Open Parking and Camera Violations](https://data.cityofnewyork.us/d/nc67-uf89)
+
+New York City issues parking and camera-based traffic violations.
+
+This dataset contains records of open violations, including information about fines, violation types, and other available characteristics.
+
+**Example research questions:**
+
+- Which types of violations have the highest average fines?
+
+- Do fine amounts differ across violation categories?
+
+- Are certain violations more common than others?
+
+- Is there a relationship between original fines and outstanding amounts?
+
+- How do violation patterns differ across available geographic categories?
+
+**Possible statistical methods:**
+
+- Chi-square tests
+
+- T-tests
+
+- ANOVA
+
+- Correlation
+
+- Linear regression
+
+**Important:** This dataset contains open violations. It should not automatically be interpreted as representing every violation issued in NYC. Review the available fields before developing your research question.
+
+------------------------------------------------------------------------
+
+## Part 2: Develop Your Research Question {#sec-question}
+
+Once you have selected your dataset, you must develop an **original research question**.
+
+Your research question should be:
+
+- **Specific:** Clearly identify what you want to investigate.
+
+- **Measurable:** Answerable using variables in your dataset.
+
+- **Statistical:** Suitable for at least one statistical method covered in class.
+
+- **Meaningful:** Connected to something interesting or important about NYC.
+
+For example:
+
+**Too broad:**
+
+> Are NYC restaurants safe?
+
+**More specific:**
+
+> Do average restaurant inspection scores differ across NYC boroughs?
+
+The second question identifies measurable variables and can be investigated using statistical analysis.
+
+You are encouraged to be creative!
+
+However, your question must be realistic given the available data and the methods you have learned.
+
+------------------------------------------------------------------------
+
+## Part 3: Research Proposal Checkpoint {#sec-proposal}
+
+Before beginning your full analysis, you must submit a brief research proposal for instructor approval.
+
+Your proposal should include:
+
+### 1. Selected Dataset
+
+Identify which of the five approved datasets you selected.
+
+Include a hyperlink to the dataset.
+
+### 2. Research Question
+
+Write your research question in one or two sentences.
+
+### 3. Variables
+
+Identify the variables you plan to investigate.
+
+Explain what each variable represents.
+
+### 4. Statistical Method
+
+Identify at least one statistical method you plan to use.
+
+Examples include:
+
+- Chi-square test
+
+- Independent-samples t-test
+
+- ANOVA
+
+- Correlation
+
+- Linear regression
+
+Explain briefly why the method is appropriate.
+
+### 5. Planned Visualization
+
+Describe at least one visualization you plan to create.
+
+Examples include a bar chart, scatterplot, boxplot, or line chart.
+
+Explain what you hope the visualization will communicate.
+
+**Your instructor must approve your proposal before you proceed with the full project.**
+
+You may revise your research question or analysis plan after approval, but significant changes should be discussed with your instructor.
+
+------------------------------------------------------------------------
+
+## Part 4: Final Quarto Research Report {#sec-report}
+
+Your final research report must be written using **Quarto and R**.
+
+Your report should combine written explanations, R code, statistical results, and visualizations into one cohesive document.
+
+The goal is not simply to generate statistical output.
+
+**Your goal is to use data to answer a question and communicate what you discovered.**
+
+Your document must contain the following sections.
+
+### 1. Introduction
+
+Introduce your topic and research question.
+
+Your introduction should explain:
+
+- What you are investigating.
+
+- Why you selected this topic.
+
+- Why the question is interesting or important.
+
+- What you hope to learn.
+
+Clearly state your research question.
+
+Write for a reader who may not have a background in statistics.
+
+### 2. Dataset Description
+
+Introduce your selected dataset.
+
+Include:
+
+- The dataset name.
+
+- A hyperlink to its NYC Open Data page.
+
+- A brief explanation of what the dataset contains.
+
+- The variables relevant to your research question.
+
+- The time period covered by your analysis.
+
+- The number of observations included in your analysis.
+
+Explain why the dataset is appropriate for answering your research question.
+
+### 3. Data Import and Preparation
+
+Import your data using R.
+
+Demonstrate appropriate data preparation techniques covered in class.
+
+Depending on your dataset, this may include:
+
+- Selecting relevant variables.
+
+- Filtering observations.
+
+- Handling missing values.
+
+- Creating new variables.
+
+- Grouping observations.
+
+- Calculating summary statistics.
+
+- Converting variables into appropriate data types.
+
+**Explain the important cleaning and transformation decisions you make.**
+
+You do not need to perform every type of cleaning listed above.
+
+Only perform transformations that are relevant to your research question.
+
+Your final workflow must be reproducible. Avoid manually editing your dataset outside R.
+
+#### Working With Large Datasets
+
+Some approved NYC Open Data datasets contain millions of observations.
+
+You are **not required to analyze the entire dataset**.
+
+You may work with a smaller, clearly defined subset of the data.
+
+For example, you might investigate:
+
+- One calendar year.
+
+- One borough.
+
+- A particular category of complaints.
+
+- A specific group of government agencies.
+
+- A defined period of restaurant inspections.
+
+If you use a subset, explain how you selected it and why.
+
+Your data import and filtering process must be documented so another person can reproduce your analysis.
+
+### 4. Descriptive Analysis
+
+Before conducting statistical tests, explore your data.
+
+Include **at least one descriptive analysis** relevant to your research question.
+
+Examples include:
+
+- Frequencies and percentages.
+
+- Means and medians.
+
+- Standard deviations.
+
+- Grouped summary statistics.
+
+- Minimum and maximum values.
+
+Present relevant results using a properly formatted table or visualization.
+
+Explain what the descriptive results reveal about your data.
+
+### 5. Statistical Analysis
+
+You must conduct **at least one statistical analysis** using a method covered in this course.
+
+Approved methods include:
+
+- Chi-square test
+
+- Independent-samples t-test
+
+- ANOVA
+
+- Pearson correlation
+
+- Simple linear regression
+
+Select a method that is appropriate for your research question and variables.
+
+Your analysis must include:
+
+1.  **Research question:** What are you investigating?
+
+2.  **Method:** Which statistical method did you select?
+
+3.  **Justification:** Why is this method appropriate?
+
+4.  **Results:** What did the statistical analysis reveal?
+
+5.  **Interpretation:** What do these results mean in plain English?
+
+Where appropriate, report relevant statistical information such as:
+
+- Test statistics
+
+- P-values
+
+- Means or group differences
+
+- Correlation coefficients
+
+- Regression coefficients
+
+- R-squared
+
+You should also consider the assumptions and limitations of your chosen method.
+
+**Important:** Statistical significance does not necessarily mean that a result is practically important, and correlation does not establish causation.
+
+Your interpretation should reflect what the data can reasonably support.
+
+::: {.callout-important title="Statistical Analysis Requirement"}
+Descriptive statistics and visualizations alone do not satisfy the statistical analysis requirement.
+
+You must apply at least one of the approved statistical methods covered in class and explain why it is appropriate for your research question and data.
+:::
+
+### 6. Data Visualizations
+
+Your report must include **at least two distinct visualizations created using `ggplot2`**.
+
+Your visualizations should help answer your research question.
+
+Examples include:
+
+- Bar charts
+
+- Histograms
+
+- Boxplots
+
+- Scatterplots
+
+- Line charts
+
+Each visualization must:
+
+- Have a meaningful title.
+
+- Include appropriate axis labels.
+
+- Use readable text and formatting.
+
+- Include a caption.
+
+- Be relevant to your research question.
+
+- Be discussed in the written narrative.
+
+Your visualizations should communicate different information rather than repeating the same result.
+
+For example, one visualization might show the overall distribution of a variable, while another compares that variable across groups.
+
+### 7. Discussion and Interpretation
+
+This is one of the most important parts of your project.
+
+Explain what you learned from your analysis.
+
+Your discussion should address:
+
+- What were your main findings?
+
+- Did the results answer your research question?
+
+- Were any results surprising?
+
+- What limitations should readers consider?
+
+- What additional questions could be investigated?
+
+Avoid simply repeating numerical results.
+
+Instead, explain what those results mean.
+
+For example:
+
+**Weak interpretation:**
+
+> The p-value was 0.02.
+
+**Stronger interpretation:**
+
+> The statistical test suggests that restaurant inspection scores differ across the groups examined. However, the results do not establish why these differences exist.
+
+Your interpretation should be understandable to someone unfamiliar with statistical terminology.
+
+### 8. Civic Relevance and Open Data
+
+Explain why your findings matter beyond the classroom.
+
+Consider:
+
+- Who might be interested in your research?
+
+- What could New Yorkers learn from your findings?
+
+- Could the results be useful to journalists, researchers, community organizations, or policymakers?
+
+- How does publicly available data make this research possible?
+
+Connect your project to the broader value of open data.
+
+### 9. Conclusion
+
+End your report with a brief conclusion.
+
+Summarize:
+
+- Your original research question.
+
+- Your most important finding.
+
+- What your analysis contributes to understanding NYC.
+
+- One possible direction for future research.
+
+Your conclusion should leave readers with a clear understanding of what you discovered.
+
+------------------------------------------------------------------------
+
+## Part 5: Quarto and Reproducibility Requirements {#sec-reproducibility}
+
+Your final report must demonstrate the reproducible research skills developed throughout the semester.
+
+### Quarto Document
+
+Your report must:
+
+- Be written in a `.qmd` file.
+
+- Include narrative, code, and output in one document.
+
+- Render successfully to HTML.
+
+- Suppress unnecessary warnings and messages.
+
+- Use meaningful section headings.
+
+- Include clearly labeled code chunks.
+
+### Figures and Tables
+
+All figures and tables must be properly labeled and referenced.
+
+Use Quarto labels beginning with:
+
+- `fig-` for figures.
+
+- `tbl-` for tables.
+
+For example:
+
+`fig-restaurant-scores`
+
+`tbl-summary-statistics`
+
+You must refer to figures and tables within your written narrative using Quarto cross-references.
+
+For example:
+
+> As shown in \@fig-restaurant-scores, inspection scores vary across the groups examined.
+
+Or:
+
+> \@tbl-summary-statistics presents the descriptive statistics for the variables included in the analysis.
+
+**Every figure and table must be discussed in your narrative.**
+
+Tables should be formatted using `knitr::kable()` or another appropriate method demonstrated in class.
+
+### Citations and References
+
+Your report must properly cite:
+
+- Your selected NYC Open Data dataset.
+
+- R packages used in your analysis.
+
+- Any additional external sources used.
+
+Include a bibliography file named `packages.bib`.
+
+Use package citations such as:
+
+`@R-ggplot2`
+
+`@R-dplyr`
+
+`@R-knitr`
+
+Your bibliography should include the corresponding entries for packages you cite.
+
+All external information must be appropriately attributed.
+
+### Reproducible Code
+
+Your document must:
+
+- Load required packages explicitly.
+
+- Import data using R code.
+
+- Document important cleaning decisions.
+
+- Avoid manual modifications to the source data.
+
+- Use relative file paths where applicable.
+
+- Avoid hard-coding statistical results.
+
+- Set a random seed when using randomness.
+
+- Render without errors.
+
+A reader should be able to follow your workflow from data import to final results.
+
+------------------------------------------------------------------------
+
+## Part 6: Length and Formatting
+
+Your report must include:
+
+- **350–500 words of written narrative**, excluding code, tables, captions, and references.
+
+- At least one descriptive analysis.
+
+- At least one appropriate statistical analysis.
+
+- At least two `ggplot2` visualizations.
+
+- Properly labeled and cross-referenced figures and tables.
+
+- A discussion of findings and limitations.
+
+- Proper citations and a bibliography.
+
+- A cleanly rendered HTML document.
+
+The word count is a target range. Clear, substantive explanations are more important than filling space.
+
+You are welcome to exceed 500 words if additional explanation improves your report.
+
+------------------------------------------------------------------------
+
+## Part 7: Publish Your Research {#sec-publish}
+
+Once your report is complete, publish your HTML document using **Posit Connect Cloud**.
+
+Your published report should:
+
+- Be accessible through a working public link.
+
+- Display all figures and tables correctly.
+
+- Include the complete research narrative.
+
+- Render without visible errors.
+
+You will submit the published link along with your project files.
+
+The goal is to create something that can be shared beyond the classroom.
+
+------------------------------------------------------------------------
+
+## Part 8: Class Publication Opportunity
+
+At the end of the semester, selected or approved student projects may be compiled into a **collaborative Quarto book**.
+
+Each participating student's research project could become its own chapter.
+
+The final book could showcase how students used public data to investigate different aspects of life in New York City.
+
+This would create:
+
+- A public collection of student research.
+
+- A portfolio artifact students can share.
+
+- An opportunity to demonstrate reproducible research.
+
+- A collaborative educational resource.
+
+Participation in public publication is optional.
+
+Students may opt out without any impact on their grade.
+
+Outstanding projects may also provide a foundation for future presentations or submissions to **NYC Open Data Week 2027**.
+
+------------------------------------------------------------------------
+
+## Grading Rubric {#sec-grading}
+
+Your final project will be graded out of **100 points**.
+
+| Category | Points | Expectations |
+|----|----|----|
+| Research Question and Civic Relevance | 15 | Clear, original, appropriate question; completed proposal checkpoint; meaningful civic connection |
+| Data Preparation and Reproducibility | 20 | Correct data import, appropriate cleaning, transparent workflow, reproducible code |
+| Statistical Analysis and Interpretation | 30 | Appropriate statistical method, correct execution, clear justification, meaningful interpretation, consideration of assumptions and limitations |
+| Visualizations and Cross-References | 15 | Two informative visualizations, clear labels, captions, correct Quarto cross-references |
+| Writing, Citations, and Quarto Formatting | 20 | Organized narrative, appropriate citations, bibliography, clean HTML output, professional presentation of written research |
+| **Total** | **100** |  |
+
+**Remember:** You are being evaluated on the quality of your research process, analysis, and interpretation—not whether your results are statistically significant.
+
+------------------------------------------------------------------------
+
+## Submission Checklist {#sec-checklist}
+
+Before submitting, make sure you have completed everything below.
+
+### Research
+
+- [ ] Selected one of the five approved datasets.
+
+- [ ] Developed an original research question.
+
+- [ ] Submitted and received approval for the research proposal.
+
+- [ ] Identified the relevant variables.
+
+- [ ] Completed at least one descriptive analysis.
+
+- [ ] Completed at least one appropriate statistical analysis.
+
+- [ ] Interpreted the results in plain English.
+
+- [ ] Discussed limitations and civic relevance.
+
+### Quarto
+
+- [ ] Included all required report sections.
+
+- [ ] Created at least two `ggplot2` visualizations.
+
+- [ ] Added appropriate figure and table labels.
+
+- [ ] Cross-referenced all figures and tables.
+
+- [ ] Formatted tables appropriately.
+
+- [ ] Included package citations.
+
+- [ ] Included `packages.bib`.
+
+- [ ] Documented data preparation decisions.
+
+- [ ] Confirmed the document renders without errors.
+
+### Publication
+
+- [ ] Published the report to Posit Connect Cloud.
+
+- [ ] Tested the published link.
+
+------------------------------------------------------------------------
+
+## Final Submission
+
+Submit the following:
+
+1.  Your completed `.qmd` file.
+
+2.  Your `packages.bib` file.
+
+3.  Your public Posit Connect Cloud link.
+
+4.  Any local data files necessary to reproduce your analysis, unless your document imports the data directly from a stable public source.
+
+------------------------------------------------------------------------
+
+## Resources
+
+**NYC Open Data**
+
+- [NYC Open Data Portal](https://opendata.cityofnewyork.us/)
+
+- [NYC 311 Service Requests](https://data.cityofnewyork.us/d/erm2-nwe9)
+
+- [NYC Restaurant Inspections](https://data.cityofnewyork.us/d/43nn-pn8j)
+
+- [NYC Payroll](https://data.cityofnewyork.us/d/k397-673e)
+
+- [NYC Motor Vehicle Crashes](https://data.cityofnewyork.us/d/h9gi-nx95)
+
+- [NYC Parking and Camera Violations](https://data.cityofnewyork.us/d/nc67-uf89)
+
+**Course Materials**
+
+- [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/)
+
+- [Quarto Documentation](https://quarto.org/docs/)
+
+- [Posit Connect Cloud](https://connect.posit.cloud/)
+
+------------------------------------------------------------------------
+
+## Final Takeaway
+
+Throughout this course, you have learned how to work with data, apply statistical methods, create visualizations, and communicate results.
+
+Now you have the opportunity to bring those skills together in a project that is entirely your own.
+
+There is no single correct research question, and there is no requirement that your analysis produce a statistically significant result.
+
+What matters is that you ask a meaningful question, use appropriate methods, and communicate what the evidence reveals.
+
+**Your final project is more than an assignment. It is an opportunity to contribute your own perspective to understanding New York City through data.**

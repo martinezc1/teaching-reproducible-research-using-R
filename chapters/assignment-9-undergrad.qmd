@@ -1,0 +1,624 @@
+# Undergraduate Assignment: Streaming Analytics — Understanding Platform Popularity Across Age Groups
+
+## Overview {#sec-nine}
+
+The **Streaming Analytics Division (SAD)** has hired you as its new **Data Analyst**!
+
+Your mission is to investigate whether people's preferred streaming platforms are associated with their age groups.
+
+The company is interested in five streaming platform categories:
+
+- Netflix
+
+- Hulu
+
+- Disney+
+
+- Amazon
+
+- Other
+
+It also wants to compare three age groups:
+
+- 18–25
+
+- 26–40
+
+- 41+
+
+Your research question is:
+
+> **Is there a statistically significant relationship between age category and preferred streaming platform?**
+
+Using simulated survey data, you will conduct a reproducible analysis in R and Quarto to help the company better understand its potential audiences.
+
+You will:
+
+1.  Explore and summarize categorical data.
+
+2.  Create frequency tables.
+
+3.  Visualize streaming preferences across age groups.
+
+4.  Conduct a chi-square test of independence.
+
+5.  Examine observed and expected frequencies.
+
+6.  Interpret Pearson residuals.
+
+7.  Communicate your findings in a professional report.
+
+------------------------------------------------------------------------
+
+## Learning Objectives
+
+By completing this assignment, you will be able to:
+
+- Identify and summarize categorical variables.
+
+- Construct and interpret frequency tables.
+
+- Create informative bar charts using `ggplot2`.
+
+- Conduct a chi-square test of independence.
+
+- Interpret the chi-square statistic, degrees of freedom, and p-value.
+
+- Compare observed and expected frequencies.
+
+- Use Pearson residuals to identify patterns.
+
+- Communicate statistical findings in plain language.
+
+- Produce a reproducible Quarto report with captions, cross-references, and citations.
+
+## Textbook Connection
+
+This assignment builds directly on **Chapter 6: Analyzing Categorical Data** in [Reproducible Research Using R](https://martinezc1-reproducible-research-using-r.share.connect.posit.cloud/).
+
+You should also refer to the R script from class and our group activity investigating drink preferences and time of day.
+
+The techniques are the same, but this time you will apply them to a new research question independently.
+
+------------------------------------------------------------------------
+
+## Submission Instructions
+
+Submit three items:
+
+1.  Your completed `.qmd` file.
+
+2.  Your `packages.bib` file.
+
+3.  A working link to your published HTML report on Posit Connect Cloud.
+
+Your document must:
+
+- Render successfully without errors.
+
+- Suppress unnecessary warnings and messages.
+
+- Include clearly labeled sections and code chunks.
+
+- Include all required tables, figures, and statistical results.
+
+- Include written interpretations throughout the report.
+
+- Use `tbl-` labels for tables and `fig-` labels for figures.
+
+- Include informative captions and cross-reference every table and figure.
+
+- Cite the R packages used in your analysis.
+
+- Include a References section.
+
+- Use at least one inline R expression.
+
+### Quarto Formatting Reminder
+
+Every displayed table and figure must have a meaningful label and caption.
+
+For example, a table chunk might begin with:
+
+```         
+#| label: tbl-frequency
+#| tbl-cap: "Streaming platform preferences across age groups."
+```
+
+You would then reference it in your writing:
+
+"As shown in \@tbl-frequency, streaming platform preferences vary across age categories."
+
+For figures, use the `fig-` prefix and reference them using `@fig-...`.
+
+**Remember: Tables and figures should support your written analysis, not replace it.**
+
+### Package Citations
+
+Use `knitr::write_bib()` to create your bibliography.
+
+For example:
+
+```         
+knitr::write_bib(
+  c("tidyverse", "readxl", "knitr"),
+  file = "packages.bib"
+)
+```
+
+Add any other packages you use and cite them in your report using the appropriate `@R-` citation keys.
+
+------------------------------------------------------------------------
+
+
+## Part 1: Data Preparation and Exploration
+
+### Step 1: Load Your Data
+
+Import the provided streaming survey dataset into R.
+
+Save your dataset as `streaming_data`.
+
+Use the appropriate import function based on the file format.
+
+```{r}
+#| label: import-data
+
+# Load your packages and import the dataset.
+```
+
+### Step 2: Explore the Dataset
+
+Before conducting any statistical analysis, investigate the structure of your dataset.
+
+Use at least **three functions** to explore your data.
+
+Some functions you have used in class include:
+
+- `glimpse()`
+- `summary()`
+- `skim()`
+- `head()`
+- `unique()`
+
+```{r}
+#| label: explore-data
+
+# Explore your dataset.
+```
+
+Answer the following questions in your report:
+
+1. How many observations are in the dataset?
+2. What variables are available?
+3. Which variables are categorical?
+4. Why is a chi-square test appropriate for investigating the research question?
+
+### Step 3: Create Frequency Tables
+
+A frequency table displays how many observations belong to each category.
+
+Create two frequency tables:
+
+- One showing the number of participants in each age category.
+- One showing the number of participants who prefer each streaming platform.
+
+You may use `table()` or another appropriate function.
+
+Display your results using `knitr::kable()`.
+
+```{r}
+#| label: tbl-age-frequency
+#| tbl-cap: "Number of survey participants by age category."
+
+# Create your age frequency table.
+```
+
+```{r}
+#| label: tbl-platform-frequency
+#| tbl-cap: "Frequency of preferred streaming platforms."
+
+# Create your platform frequency table.
+```
+
+Briefly describe which age group has the most participants and which streaming platform is most popular overall.
+
+------------------------------------------------------------------------
+
+## Part 2: Visualizing Categorical Relationships
+
+Visualizations allow us to identify patterns that may not be immediately obvious from frequency tables.
+
+Create **two visualizations** using `ggplot2`.
+
+### Step 4: Proportional Stacked Bar Chart
+
+Create a proportional stacked bar chart showing streaming platform preferences within each age group.
+
+Your visualization should:
+
+- Display age categories on the x-axis.
+- Use streaming platforms as the fill variable.
+- Display proportions rather than raw counts.
+- Include a meaningful title, axis labels, and legend.
+- Use an appropriate theme.
+
+**Hint:** Recall how we used `geom_bar(position = "fill")` in class.
+
+```{r}
+#| label: fig-stacked-platform
+#| fig-cap: "Proportion of streaming platform preferences within each age group."
+
+# Create your proportional stacked bar chart.
+```
+
+In 2–3 sentences, explain which platforms appear most popular among different age groups.
+
+Reference your figure in your interpretation.
+
+### Step 5: Grouped Bar Chart
+
+Next, create a grouped (side-by-side) bar chart comparing the number of participants who prefer each platform across age groups.
+
+Your visualization should include the same formatting requirements as the previous figure.
+
+**Hint:** Recall that `position = "dodge"` places bars next to one another.
+
+```{r}
+#| label: fig-grouped-platform
+#| fig-cap: "Counts of streaming platform preferences across age groups."
+
+# Create your grouped bar chart.
+```
+
+#### Questions
+
+1. What patterns do you observe?
+2. How does this visualization differ from the proportional stacked bar chart?
+3. Which visualization is more useful for comparing preferences when age groups contain different numbers of participants? Explain.
+
+------------------------------------------------------------------------
+
+## Part 3: Chi-Square Test of Independence
+
+So far, we have examined streaming preferences using frequency tables and visualizations.
+
+But are the differences we observed statistically significant?
+
+We can investigate this using a **chi-square test of independence**.
+
+### Step 6: State Your Hypotheses
+
+Before conducting your test, state your hypotheses.
+
+**Null hypothesis ($H_0$):** Age category and streaming platform preference are independent.
+
+**Alternative hypothesis ($H_1$):** Age category and streaming platform preference are associated.
+
+We will use a significance level of $\alpha = .05$.
+
+### Step 7: Conduct the Chi-Square Test
+
+Use `chisq.test()` to investigate whether age category and streaming platform preference are statistically associated.
+
+You can create the necessary two-variable table directly inside `chisq.test()` using `table()`.
+
+For example, the general structure is:
+
+```r
+chisq.test(table(data$Variable1, data$Variable2))
+```
+
+Save your results as `chi_result`.
+
+```{r}
+#| label: chi-square-test
+
+# Conduct your chi-square test.
+```
+
+#### Interpret Your Results
+
+Report the following:
+
+1. Chi-square statistic ($\chi^2$).
+2. Degrees of freedom (df).
+3. p-value.
+
+Then answer:
+
+- Is the result statistically significant at $\alpha = .05$?
+- Do you reject or fail to reject the null hypothesis?
+- What does your result tell us about streaming platform preferences and age?
+
+Your interpretation should be written in complete sentences.
+
+::: {.callout-note}
+#### Statistical Significance
+
+A statistically significant chi-square test provides evidence that two categorical variables are associated.
+
+However, it does not tell us that one variable causes the other.
+
+It also does not automatically tell us which combinations are responsible for the association.
+
+We will investigate those patterns next.
+:::
+
+------------------------------------------------------------------------
+
+## Part 4: Observed and Expected Frequencies
+
+A chi-square test compares the frequencies we actually observe with the frequencies we would expect if the variables were independent.
+
+The chi-square statistic is calculated using:
+
+$$
+\chi^2 = \sum \frac{(O-E)^2}{E}
+$$
+
+Where:
+
+- **O:** Observed frequency.
+- **E:** Expected frequency.
+
+### Step 8: Examine Observed Frequencies
+
+Extract the observed frequencies from your chi-square test.
+
+**Hint:** Your classroom script used the `$observed` component.
+
+Display your results as a table.
+
+```{r}
+#| label: tbl-observed
+#| tbl-cap: "Observed streaming platform preferences by age category."
+
+# Extract and display observed frequencies.
+```
+
+### Step 9: Examine Expected Frequencies
+
+Next, extract the expected frequencies.
+
+These represent the counts we would expect if age category and streaming platform preference were independent.
+
+```{r}
+#| label: tbl-expected
+#| tbl-cap: "Expected frequencies under the assumption of independence."
+
+# Extract and display expected frequencies.
+```
+
+#### Questions
+
+1. Are the observed and expected frequencies identical?
+2. Identify one age–platform combination where the observed frequency is higher than expected.
+3. Identify one combination where the observed frequency is lower than expected.
+
+### Step 10: Check Expected Frequencies
+
+A common introductory guideline is that expected frequencies should be at least 5.
+
+Use R to determine whether all expected frequencies meet this guideline.
+
+**Hint:** Recall our use of `all()` in class.
+
+```{r}
+#| label: expected-check
+
+# Check whether all expected frequencies are at least 5.
+```
+
+Explain what your result indicates about the suitability of the chi-square approximation.
+
+------------------------------------------------------------------------
+
+## Part 5: Pearson Residuals
+
+The chi-square test tells us whether two categorical variables are associated.
+
+But which combinations differ most from what we would expect?
+
+**Pearson residuals** help us investigate this.
+
+Remember:
+
+- A positive residual indicates more observations than expected.
+- A negative residual indicates fewer observations than expected.
+- Larger absolute residuals indicate larger deviations relative to expected frequency.
+
+### Step 11: Examine Pearson Residuals
+
+Extract the Pearson residuals from your chi-square test.
+
+**Hint:** Recall the `$residuals` component demonstrated in class.
+
+```{r}
+#| label: tbl-residuals
+#| tbl-cap: "Pearson residuals for age category and streaming platform preference."
+
+# Extract and display Pearson residuals.
+```
+
+#### Interpret Your Results
+
+Answer the following:
+
+1. Which age–platform combination has the largest positive residual?
+2. Which combination has the largest negative residual?
+3. What do these findings tell us about streaming preferences across age groups?
+
+Explain your findings in approximately 3–4 sentences.
+
+::: {.callout-tip}
+#### Connecting the Results
+
+Think about how the pieces of your analysis fit together.
+
+Your chi-square test evaluates whether the variables are associated.
+
+The observed and expected frequencies show what happened compared with what independence would predict.
+
+Your residuals help identify combinations that differ most from what we would expect under independence.
+:::
+
+
+------------------------------------------------------------------------
+
+## Part 6: Final Interpretation
+
+You have completed your analysis!
+
+Now imagine you are presenting your findings to the Streaming Analytics Division's marketing team.
+
+Write a **professional summary of approximately 2–3 paragraphs** addressing the following:
+
+1.  **Research question:** What relationship were you investigating?
+
+2.  **Visualizations:** What patterns did you observe across age groups?
+
+3.  **Statistical significance:** Was the relationship statistically significant? Report the chi-square statistic, degrees of freedom, and p-value.
+
+4.  **Residuals:** Which age–platform combinations differed most from what was expected?
+
+5.  **Marketing implications:** How could the company use these findings to inform marketing or promotional decisions?
+
+6.  **Limitations:** What is one limitation of your analysis?
+
+Your summary should resemble a professional analytics report rather than a list of homework answers.
+
+Remember to reference relevant figures and tables in your discussion.
+
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+
+## Reflection
+
+In approximately 4–6 sentences, answer the following:
+
+1.  Why is a chi-square test appropriate for this dataset?
+
+2.  Why is it important to examine percentages rather than only raw frequencies?
+
+3.  What additional information do Pearson residuals provide beyond the p-value?
+
+4.  Why does a statistically significant association not necessarily imply causation?
+
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+
+## Reproducibility Requirements
+
+This assignment emphasizes transparent, reproducible research.
+
+Your document must:
+
+- Import data programmatically.
+
+- Construct tables using R.
+
+- Generate figures using R.
+
+- Calculate statistical results using R.
+
+- Use meaningful chunk labels.
+
+- Include informative figure and table captions.
+
+- Cross-reference all tables and figures.
+
+- Cite all R packages used.
+
+- Include a bibliography.
+
+- Use at least one inline R expression.
+
+- Render successfully without errors.
+
+Avoid manually typing statistical results that could instead be generated using R.
+
+The goal is for another analyst to reproduce your analysis and verify your findings.
+
+------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------
+
+## Final Submission Checklist
+
+Before submitting, confirm that you have completed the following:
+
+### Data Preparation
+
+- [ ] Imported and explored the dataset.
+
+- [ ] Created frequency tables for age category and streaming platform.
+
+### Visualizations
+
+- [ ] Created a proportional stacked bar chart.
+
+- [ ] Created a grouped bar chart.
+
+- [ ] Included meaningful titles, axis labels, legends, and captions.
+
+- [ ] Interpreted and cross-referenced both figures.
+
+### Statistical Analysis
+
+- [ ] Conducted a chi-square test of independence.
+
+- [ ] Reported the chi-square statistic, degrees of freedom, and p-value.
+
+- [ ] Explained whether the relationship was statistically significant.
+
+- [ ] Examined observed and expected frequencies.
+
+- [ ] Checked expected frequencies.
+
+- [ ] Extracted and interpreted Pearson residuals.
+
+### Written Interpretation
+
+- [ ] Explained the patterns observed in the data.
+
+- [ ] Connected statistical results to the research question.
+
+- [ ] Discussed potential marketing implications.
+
+- [ ] Identified at least one limitation.
+
+- [ ] Completed the final reflection.
+
+### Quarto and Reproducibility
+
+- [ ] All displayed tables have `tbl-` labels and captions.
+
+- [ ] All figures have `fig-` labels and captions.
+
+- [ ] Every table and figure is referenced in the narrative.
+
+- [ ] Used at least one inline R expression.
+
+- [ ] Generated `packages.bib`.
+
+- [ ] Cited all R packages used.
+
+- [ ] Included a References section.
+
+- [ ] Rendered the document successfully.
+
+### Final Submission
+
+- [ ] Submitted the `.qmd` file.
+
+- [ ] Submitted the `packages.bib` file.
+
+- [ ] Published the report to Posit Connect Cloud.
+
+- [ ] Confirmed the published link works.
